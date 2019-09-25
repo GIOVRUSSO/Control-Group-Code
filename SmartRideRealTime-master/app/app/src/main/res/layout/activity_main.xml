@@ -1,0 +1,123 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="@string/devices"
+        android:id="@+id/launcherLayout"
+        />
+
+    <TextView
+        android:id="@+id/tvConnection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/launcherLayout"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="-1dp"></ListView>
+
+    <Button
+        android:id="@+id/startCooperativeCompetitiveControl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="256dp"
+        android:layout_marginTop="70dp"
+        android:onClick="startCooperativeCompetitiveControlActivity"
+        android:text="Start Bifurcation control" />
+
+    <Button
+        android:id="@+id/startRangeLimitingControl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="256dp"
+        android:layout_marginTop="221dp"
+        android:onClick="startTrafficLightNudgingControlActivity"
+        android:text="Start Traffic Light Nudging control" />
+
+    <Button
+        android:id="@+id/startGeofencing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="256dp"
+        android:layout_marginTop="221dp"
+        android:onClick="startGeofencingActivity"
+        android:text="Start Geofencing" />
+
+    <!--
+    <Button
+        android:id="@+id/adminButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="265dp"
+        android:layout_marginTop="33dp"
+        android:onClick="goToSendCommand"
+        android:text="Manually send request to bike" />
+
+
+    <Button
+        android:id="@+id/database"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="257dp"
+        android:layout_marginTop="133dp"
+        android:onClick="goToDb"
+        android:text="View data saved in database" />
+
+    <Button
+        android:id="@+id/mband"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="257dp"
+        android:layout_marginTop="221dp"
+        android:onClick="startCaloriesActivity"
+        android:text="Go to start calories control" />
+
+    <Button
+        android:id="@+id/viewCalsControlData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="257dp"
+        android:layout_marginTop="306dp"
+        android:onClick="ViewCaloriesControlActivity"
+        android:text="View calories control results" />
+
+    <Button
+        android:id="@+id/startPollutionControl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="257dp"
+        android:layout_marginTop="388dp"
+        android:onClick="StartPollutionControlActivity"
+        android:text="Start pollution control" /> -->
+
+
+
+
+
+</RelativeLayout>
