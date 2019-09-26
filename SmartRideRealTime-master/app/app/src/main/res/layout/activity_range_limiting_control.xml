@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:orientation="vertical" >
+
+<Button
+    android:id="@+id/setCurrentLocationAsBaseButton"
+    style="?android:attr/buttonStyleSmall"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_alignRight="@+id/verticalBorder"
+    android:layout_alignEnd="@+id/verticalBorder"
+    android:text="Set current location as base"
+    android:onClick="setCurrentLocationAsBase"
+    />
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/base"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_weight="1"
+        android:maxLines="1"
+        android:text="Base Location L/L"
+        />
+
+    <TextView
+        android:id="@+id/current"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:maxLines="1"
+        android:text="Current Location L/L"
+        />
+
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/baseLocationLL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:text="No Data"
+            />
+
+        <TextView
+            android:id="@+id/currentLocationLL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:text="No Data"
+            />
+
+    </LinearLayout>
+
+
+<TextView
+    android:id="@+id/textView_1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="36dp"
+    android:layout_marginBottom="18dp"
+    android:text="@string/distance_from_boundary_label"
+    />
+
+<TextView
+    android:id="@+id/textView_2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/textView_1"
+    android:layout_centerHorizontal="true"
+    android:text="No Data"
+    android:textColor="#CCCCCC"
+    android:textSize="40sp" />
+
+
+<TextView
+    android:id="@+id/textView_3"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="36dp"
+    android:layout_marginBottom="18dp"
+    android:text="@string/assist_enabled_label" />
+
+<TextView
+    android:id="@+id/textView_4"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/textView_3"
+    android:layout_centerHorizontal="true"
+    android:text="True"
+    android:textColor="#CCCCCC"
+    android:textSize="40sp" />
+</LinearLayout>
