@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">E4 Link</string>
+    <string name="accel">Accelerometers</string>
+    <string name="accel_x">x:</string>
+    <string name="accel_y">y:</string>
+    <string name="accel_z">z:</string>
+    <string name="bvp_label">BVP</string>
+    <string name="eda_label">EDA</string>
+    <string name="ibi_label">IBI</string>
+    <string name="emptyText">-</string>
+    <string name="temp_label">Temperature</string>
+    <string name="battery_label">Battery</string>
+
+    <!-- Dropbox accessing authority-->
+    <!--<string name="App Key">55bv7mrnhh43eth</string>-->
+    <!--<string name="App Secret">uyh8y3vm4yr5uii</string>-->
+    <string name="ACCESS_TOKEN">lY_d3DAmzgAAAAAAAAAAdn7IAKZUPyYJXhaYmllRlCFZwhYgt_m6fNafXq8DcgWK</string>
+
+</resources>
