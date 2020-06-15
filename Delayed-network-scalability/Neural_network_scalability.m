@@ -5,10 +5,10 @@ N = 60;%number of neurons
 %the condition 2&3&4 are satisfied with the following chosen parameters
 c = 10;
 w1 = zeros(N,N);%the weights for the delayed communication
-w2 = 0.15*rand(N,N);%the weights for the delayed communication
+w2 = csvread('w2.csv');%the weights for the delayed communication
 %define the simulation time
 time = 40;tg = 0.01;t = 0:tg:time;lengtht = size(t,2);
-d = 11;%communication delay=(d-1)*tg
+d = 101;%communication delay=(d-1)*tg
 dis = zeros(lengtht,N);
 perturbedID = randsample(N,N-5);%select the N-5 perturbed neurons
 %disturbance in time interval [5s,6s] and [15s,16s]
@@ -16,7 +16,7 @@ for i = 1:N-5
     dis(1501+d:1601+d,perturbedID(i))=10*rand(1);
     dis(501+d:601+d,perturbedID(i))=10*rand(1);
 end
-u = randi(10,N,1);%the constant interger input
+u = csvread('u.csv');%the constant interger input
 x = zeros(lengtht,N);%initial state
 %% equilibrium
 for i = d+1:lengtht
