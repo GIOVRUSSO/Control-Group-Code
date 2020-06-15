@@ -3,6 +3,7 @@ Author: S. Xie (University College Dublin)
 This repo collects the scripts to replicate the numerical results of the work 'Scalability in nonlinear network systems affected by delays and disturbances' by S. Xie, G. Russo, R. Middleton. See https://sites.google.com/view/giovanni-russo/publications?authuser=0 for the preprint.
 
 Namely:
+
 (1) the files 'u.csv' and 'w2.csv' contain the parameters used for the simulations of the Hopfield neural network considered in the above work;
 (2) the script 'Neural_network_scalability.m' simulates the hopfield neural network;  
 (3) the script 'Robotic_formation_scalability.m' simulates the robotic formation network considered in one of the examples.  
