@@ -4,7 +4,7 @@ This repo collects the scripts to replicate the numerical results of the work 'S
 
 Namely:
 
-(1) the files 'u.csv' and 'w2.csv' contain the parameters used for the simulations of the Hopfield neural network considered in the above work. In particular, 'u.csv' contains the constant inputs and 'w2.csv' contains the weights satisfying the sufficient conditions for scalability given in the work;
+(1) the files 'u.csv' and 'w2.csv' contain the parameters used for the simulations of the Hopfield neural network considered in the above work. In particular, 'u.csv' contains the constant inputs and 'w2.csv' contains the weights satisfying the sufficient conditions for scalability given in the work. Put these files in the same folder together with script 'Neural_network_scalability.m' to enable 'csvread'.  
 
 (2) the script 'Neural_network_scalability.m' simulates the hopfield neural network;  
 
