@@ -1,4 +1,4 @@
-Author: S. Xie (University College Dublin)
+Author of the scripts: S. Xie (University College Dublin)
 
 This repo collects the scripts to replicate the numerical results of the work 'Scalability in nonlinear network systems affected by delays and disturbances' by S. Xie, G. Russo, R. Middleton. See https://sites.google.com/view/giovanni-russo/publications?authuser=0 for the preprint.
 
