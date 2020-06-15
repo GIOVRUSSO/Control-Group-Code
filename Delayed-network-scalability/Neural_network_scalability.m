@@ -27,7 +27,7 @@ for i = d+1:lengtht
 end
 figure
 for i = 1:N
-    plot(t(d+1:end),x(d+1:end,i));hold on
+    plot(t(1:lengtht-d),x(d+1:end,i));hold on
 end
 set(gca,'FontSize',14);xlabel('t[s]','FontSize',16);ylabel('x_i','FontSize',16)
 %compute the equilibrium
@@ -43,9 +43,9 @@ end
 figure
 for i = 1:N
     if any(i==perturbedID)
-        ln1 = plot(t(d+1:end),(x(d+1:end,i)-xequ(i)),'k');hold on
+        ln1 = plot(t(1:lengtht-d),(x(d+1:end,i)-xequ(i)),'k');hold on
     else
-        ln2 = plot(t(d+1:end),(x(d+1:end,i)-xequ(i)),'r');
+        ln2 = plot(t(1:lengtht-d),(x(d+1:end,i)-xequ(i)),'r');
     end
 end
 set(gca,'FontSize',14);xlabel('t[s]','FontSize',16);ylabel('Deviation','FontSize',16)
