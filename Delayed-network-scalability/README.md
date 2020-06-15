@@ -5,6 +5,9 @@ This repo collects the scripts to replicate the numerical results of the work 'S
 Namely:
 
 (1) the files 'u.csv' and 'w2.csv' contain the parameters used for the simulations of the Hopfield neural network considered in the above work. In particular, 'u.csv' contains the constant inputs and 'w2.csv' contains the weights satisfying the sufficient conditions for scalability given in the work;
+
 (2) the script 'Neural_network_scalability.m' simulates the hopfield neural network;  
-(3) the script 'Robotic_formation_scalability.m' simulates the robotic formation network considered in one of the examples.  
+
+(3) the script 'Robotic_formation_scalability.m' simulates the robotic formation network considered in one of the examples;
+
 (4) the script 'upper_boundvs_increasingdelay.m' plots the upper bound of the state deviation for the robots when the delay increases.  
