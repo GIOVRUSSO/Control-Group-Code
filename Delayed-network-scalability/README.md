@@ -12,4 +12,4 @@ Namely:
 
 (4) the script 'upper_boundvs_increasingdelay.m' plots the upper bound of the state deviation for the robots when the delay increases.  
 
-PS. the disturbance in each simulation is generated with random amplitudes, which might leads to a slight difference in the amplitude of deviation to that shown in the paper.  
+PS. the disturbance in each simulation is generated with random amplitudes, which might leads to a slight difference in the amplitude of deviation to that shown in the work.  
