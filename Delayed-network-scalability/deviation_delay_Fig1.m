@@ -18,13 +18,11 @@ d2 = zeros(size(t,2),layer*4,layer);%disturbance on y axis
 ID = zeros(4*layer,layer);
 for j=1:layer
     ID(1:4*j-1,j) = randsample(4*j,4*j-1);
-    for i=1:4*j
+    for i=1:4*j-1
         am1(i,j) = rand(1);
         am2(i,j) = rand(1);
-        for k = 1:4*j-1
-            d1(:,ID(k,j),j) = 2*am1(i,j)*sin(t).*exp(-0.2*t);
-            d2(:,ID(k,j),j) = 2*am2(i,j)*sin(t).*exp(-0.2*t);
-        end
+        d1(:,ID(i,j),j) = 2*am1(i,j)*sin(t).*exp(-0.2*t);
+        d2(:,ID(i,j),j) = 2*am2(i,j)*sin(t).*exp(-0.2*t);
     end
 end
 
@@ -32,10 +30,10 @@ end
 kp0 = 0.7;
 kv0 = 1;
 kp = 0.035;
-w = 1;
 
 veq = 2;%constant linear speed throughout
 omega = pi/20;%constant angular velocity during maneuvering
+
 for d=1:2000
 
 %creat position/angle vectors
@@ -254,9 +252,9 @@ for k = d+1:size(t,2)
        %calculate the angle for disturbance state dependence
        theta(k,i,j) = theta(k-1,i,j)+((-1/2/l)*layvx(k-1,i,j)*sin(theta(k-1,i,j))+(1/2/l)*layvy(k-1,i,j)*cos(theta(k-1,i,j)))*tg;       
        %control input
-       xacc = ax(k-1,1)+w*kp*(neighbour_x(k-1,i,j)-neighbour_xd(k-1,i,j))...
+       xacc = ax(k-1,1)+kp*(neighbour_x(k-1,i,j)-neighbour_xd(k-1,i,j))...
            +kp0*(laypxd(k-1,i,j)-laypx(k-1,i,j))+kv0*(vx(k-1,1)-layvx(k-1,i,j))+[1/m*cos(theta(k-1,i,j)) -l/I*sin(theta(k-1,i,j))]*[d11(k-1,i,j);d22(k-1,i,j)];
-       yacc = ay(k-1,1)+w*kp*(neighbour_y(k-1,i,j)-neighbour_yd(k-1,i,j))...
+       yacc = ay(k-1,1)+kp*(neighbour_y(k-1,i,j)-neighbour_yd(k-1,i,j))...
            +kp0*(laypyd(k-1,i,j)-laypy(k-1,i,j))+kv0*(vy(k-1,1)-layvy(k-1,i,j))+[1/m*sin(theta(k-1,i,j)) l/I*cos(theta(k-1,i,j))]*[d11(k-1,i,j);d22(k-1,i,j)];
        layvx(k,i,j) = layvx(k-1,i,j)+tg*xacc;
        layvy(k,i,j) = layvy(k-1,i,j)+tg*yacc;
