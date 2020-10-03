@@ -4,7 +4,7 @@ This repo collects the scripts to replicate the numerical results of the work 'S
 
 Namely:
 
-(1) the files 'u.csv' and 'w2.csv' contain the parameters used for the simulations of the Hopfield neural network considered in the above work. In particular, 'u.csv' contains the constant inputs and 'w2.csv' contains the weights satisfying the sufficient conditions for scalability given in the work. Put these files in the same folder together with script 'Neural_network_scalability.m' to enable 'csvread'. 
+(1) the files 'u.csv' and 'w2.csv' contain the parameters used for the simulations of the Hopfield neural network considered in the above work. In particular, 'u.csv' contains the constant inputs and 'w2.csv' contains the weights satisfying the sufficient conditions for scalability given in the work. Put these files in the same folder together with script 'Neural_network_Fig4.m' to enable 'csvread'. 
 
 (2) the script 'deviations_delay_Fig1.m' simulates the maximum deviation of the robotic hand position across all the robots as a function of delay, which gives Figure 1, right panel;
 
