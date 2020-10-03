@@ -185,10 +185,10 @@ for k = d+1:size(t,2)
                 neighbour_xd(k-1,i,4) = laypxd(k-d,i-4,4)+laypxd(k-d,i+4,4)+laypxd(k-d,i,3)+laypxd(k-d,i,5)-4*laypxd(k-d,i,4);
                 neighbour_yd(k-1,i,4) = laypyd(k-d,i-4,4)+laypyd(k-d,i+4,4)+laypyd(k-d,i,3)+laypyd(k-d,i,5)-4*laypyd(k-d,i,4);
              elseif i>=13 && i<=15
-                neighbour_x(k-1,i,4) = laypx(k-d,i-4,4)+laypx(k-d,i-7,4)+laypx(k-d,i-4,3)+laypx(k-d,i,5)-4*laypx(k-d,i,4);
-                neighbour_y(k-1,i,4) = laypy(k-d,i-4,4)+laypy(k-d,i-7,4)+laypy(k-d,i-4,3)+laypy(k-d,i,5)-4*laypy(k-d,i,4);
-                neighbour_xd(k-1,i,4) = laypxd(k-d,i-4,4)+laypxd(k-d,i-7,4)+laypxd(k-d,i-4,3)+laypxd(k-d,i,5)-4*laypxd(k-d,i,4);
-                neighbour_yd(k-1,i,4) = laypyd(k-d,i-4,4)+laypyd(k-d,i-7,4)+laypyd(k-d,i-4,3)+laypyd(k-d,i,5)-4*laypyd(k-d,i,4);
+                neighbour_x(k-1,i,4) = laypx(k-d,i-4,4)+laypx(k-d,i-11,4)+laypx(k-d,i-4,3)+laypx(k-d,i,5)-4*laypx(k-d,i,4);
+                neighbour_y(k-1,i,4) = laypy(k-d,i-4,4)+laypy(k-d,i-11,4)+laypy(k-d,i-4,3)+laypy(k-d,i,5)-4*laypy(k-d,i,4);
+                neighbour_xd(k-1,i,4) = laypxd(k-d,i-4,4)+laypxd(k-d,i-11,4)+laypxd(k-d,i-4,3)+laypxd(k-d,i,5)-4*laypxd(k-d,i,4);
+                neighbour_yd(k-1,i,4) = laypyd(k-d,i-4,4)+laypyd(k-d,i-11,4)+laypyd(k-d,i-4,3)+laypyd(k-d,i,5)-4*laypyd(k-d,i,4);
              end
                 neighbour_x(k-1,1,4) = laypx(k-d,5,4)+laypx(k-d,16,4)+laypx(k-d,1,3)+laypx(k-d,1,5)-4*laypx(k-d,1,4);
                 neighbour_y(k-1,1,4) = laypy(k-d,5,4)+laypy(k-d,16,4)+laypy(k-d,1,3)+laypy(k-d,1,5)-4*laypy(k-d,1,4);
