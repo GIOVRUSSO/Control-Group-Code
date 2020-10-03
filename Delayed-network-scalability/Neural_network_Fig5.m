@@ -51,7 +51,7 @@ for i = 1:N
     if any(i==perturbedID)
         print 0
     else
-        ln2 = plot(t(d+1:end),(x(d+1:end,i)-double(xequ(i))),'Color',[1 0.02*i 0]);hold on
+        ln2 = plot(0:tg:time-d*tg,(x(d+1:end,i)-double(xequ(i))),'Color',[1 0.02*i 0]);hold on
     end
 end
 set(gca,'FontSize',14);xlabel('t[s]','FontSize',16);ylabel('Deviations','FontSize',16)
