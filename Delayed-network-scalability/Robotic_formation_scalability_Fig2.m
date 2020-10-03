@@ -15,13 +15,11 @@ d2 = zeros(size(t,2),layer*4,layer);%disturbance on y axis
 ID = zeros(4*layer,layer);
 for j=1:layer
     ID(1:4*j-1,j) = randsample(4*j,4*j-1);
-    for i=1:4*j
+    for i=1:4*j-1
         am1(i,j) = rand(1);
         am2(i,j) = rand(1);
-        for k = 1:4*j-1
-            d1(:,ID(k,j),j) = 2*am1(k,j)*sin(t).*exp(-0.2*t);
-            d2(:,ID(k,j),j) = 2*am2(k,j)*sin(t).*exp(-0.2*t);
-        end
+        d1(:,ID(i,j),j) = 2*am1(i,j)*sin(t).*exp(-0.2*t);
+        d2(:,ID(i,j),j) = 2*am2(i,j)*sin(t).*exp(-0.2*t);
     end
 end
 %gains and weights
