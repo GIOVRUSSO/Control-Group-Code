@@ -19,15 +19,15 @@ d2(:,ID,1) = 2*sin(t).*exp(-0.2*t);
 
 
 %gains and weights
-kp0 = 0.7;%0.3
-kv0 = 1;
-kp = 0.035;%1.3
+kp0 = 0.7;%0.3 to get middle panel
+kv0 = 1;%1 to get middle panel
+kp = 0.035;%1.3 to get middle panel
 
 veq = 2;%constant linear speed throughout
 omega = pi/20;%constant angular velocity during maneuvering
 d = 11;%delay=(d-1)*tg
 
-%creat position/angle vectors
+%creat leader position/angle vectors
 px = zeros(size(t,2),1);
 py = zeros(size(t,2),1);
 pxd = zeros(size(t,2),1);
@@ -93,6 +93,7 @@ neighbour_y = zeros(size(t,2),layer*4,layer);
 neighbour_xd = zeros(size(t,2),layer*4,layer);
 neighbour_yd = zeros(size(t,2),layer*4,layer);
 theta = zeros(size(t,2),layer*4,layer);
+% each agents is connected to the agent immediate ahead and behind them in same circle and one closest from inner circle.
 for k = d+1:size(t,2)
    for j = 1:layer
       for i = 1:4*j
@@ -168,10 +169,10 @@ for k = d+1:size(t,2)
                 neighbour_xd(k-1,i,4) = laypxd(k-d,i-4,4)+laypxd(k-d,i+4,4)+laypxd(k-d,i,3)-3*laypxd(k-d,i,4);
                 neighbour_yd(k-1,i,4) = laypyd(k-d,i-4,4)+laypyd(k-d,i+4,4)+laypyd(k-d,i,3)-3*laypyd(k-d,i,4);
              elseif i>=13 && i<=15
-                neighbour_x(k-1,i,4) = laypx(k-d,i-4,4)+laypx(k-d,i-7,4)+laypx(k-d,i-4,3)-3*laypx(k-d,i,4);
-                neighbour_y(k-1,i,4) = laypy(k-d,i-4,4)+laypy(k-d,i-7,4)+laypy(k-d,i-4,3)-3*laypy(k-d,i,4);
-                neighbour_xd(k-1,i,4) = laypxd(k-d,i-4,4)+laypxd(k-d,i-7,4)+laypxd(k-d,i-4,3)-3*laypxd(k-d,i,4);
-                neighbour_yd(k-1,i,4) = laypyd(k-d,i-4,4)+laypyd(k-d,i-7,4)+laypyd(k-d,i-4,3)-3*laypyd(k-d,i,4);
+                neighbour_x(k-1,i,4) = laypx(k-d,i-4,4)+laypx(k-d,i-11,4)+laypx(k-d,i-4,3)-3*laypx(k-d,i,4);
+                neighbour_y(k-1,i,4) = laypy(k-d,i-4,4)+laypy(k-d,i-11,4)+laypy(k-d,i-4,3)-3*laypy(k-d,i,4);
+                neighbour_xd(k-1,i,4) = laypxd(k-d,i-4,4)+laypxd(k-d,i-11,4)+laypxd(k-d,i-4,3)-3*laypxd(k-d,i,4);
+                neighbour_yd(k-1,i,4) = laypyd(k-d,i-4,4)+laypyd(k-d,i-11,4)+laypyd(k-d,i-4,3)-3*laypyd(k-d,i,4);
              end
                 neighbour_x(k-1,1,4) = laypx(k-d,5,4)+laypx(k-d,16,4)+laypx(k-d,1,3)-3*laypx(k-d,1,4);
                 neighbour_y(k-1,1,4) = laypy(k-d,5,4)+laypy(k-d,16,4)+laypy(k-d,1,3)-3*laypy(k-d,1,4);
@@ -352,10 +353,10 @@ for k = d+1:size(t,2)
                 neighbour_y(k-1,1,11) = laypy(k-d,5,11)+laypy(k-d,44,11)+laypy(k-d,1,10)-3*laypy(k-d,1,11);
                 neighbour_xd(k-1,1,11) = laypxd(k-d,5,11)+laypxd(k-d,44,11)+laypxd(k-d,1,10)-3*laypxd(k-d,1,11);
                 neighbour_yd(k-1,1,11) = laypyd(k-d,5,11)+laypyd(k-d,44,11)+laypyd(k-d,1,10)-3*laypyd(k-d,1,11);
-                neighbour_x(k-1,44,11) = laypx(k-d,1,11)+laypx(k-d,40,11)+laypx(k-d,36,10)-3*laypx(k-d,44,11);
-                neighbour_y(k-1,44,11) = laypy(k-d,1,11)+laypy(k-d,40,11)+laypy(k-d,36,10)-3*laypy(k-d,44,11);
-                neighbour_xd(k-1,44,11) = laypxd(k-d,1,11)+laypxd(k-d,40,11)+laypxd(k-d,36,10)-3*laypxd(k-d,44,11);
-                neighbour_yd(k-1,44,11) = laypyd(k-d,1,11)+laypyd(k-d,40,11)+laypyd(k-d,36,10)-3*laypyd(k-d,44,11); 
+                neighbour_x(k-1,44,11) = laypx(k-d,1,11)+laypx(k-d,40,11)+laypx(k-d,40,10)-3*laypx(k-d,44,11);
+                neighbour_y(k-1,44,11) = laypy(k-d,1,11)+laypy(k-d,40,11)+laypy(k-d,40,10)-3*laypy(k-d,44,11);
+                neighbour_xd(k-1,44,11) = laypxd(k-d,1,11)+laypxd(k-d,40,11)+laypxd(k-d,40,10)-3*laypxd(k-d,44,11);
+                neighbour_yd(k-1,44,11) = laypyd(k-d,1,11)+laypyd(k-d,40,11)+laypyd(k-d,40,10)-3*laypyd(k-d,44,11); 
          elseif j==12
              if i>=2 && i<=4
                 neighbour_x(k-1,i,12) = laypx(k-d,i+4,12)+laypx(k-d,i+43,12)+laypx(k-d,i,11)-3*laypx(k-d,i,12);
