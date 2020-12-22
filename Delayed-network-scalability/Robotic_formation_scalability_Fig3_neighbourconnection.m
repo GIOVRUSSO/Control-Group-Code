@@ -1,6 +1,5 @@
 clc
 close all
-
 %robot parameters
 l = 0.12;
 m = 10.1;
@@ -13,7 +12,7 @@ time =100;tg = 0.01;t = 0:tg:time;
 %define the disturbance
 d1 = zeros(size(t,2),layer*4,layer);%disturbance on x axis
 d2 = zeros(size(t,2),layer*4,layer);%disturbance on y axis
-ID=randsample(4,1);%change here to get more agents perturbed from each circle
+ID=randsample(4,1);
 d1(:,ID,1) = 2*sin(t).*exp(-0.2*t);
 d2(:,ID,1) = 2*sin(t).*exp(-0.2*t);
 
@@ -87,12 +86,17 @@ for j = 1:layer
 end
 pxd(:,1) = px(:,1);
 pyd(:,1) = py(:,1);
+positiondev = zeros(size(t,2),4*layer,layer);
 %% define followers dynamics in normal disturbance
 neighbour_x = zeros(size(t,2),layer*4,layer);
 neighbour_y = zeros(size(t,2),layer*4,layer);
 neighbour_xd = zeros(size(t,2),layer*4,layer);
 neighbour_yd = zeros(size(t,2),layer*4,layer);
-theta = zeros(size(t,2),layer*4,layer);
+theta = pi/2*ones(size(t,2),layer*4,layer);
+d11 = zeros(d+size(t,2),4*layer,layer);
+d11(d+1:end,:,:) = d1;
+d22 = zeros(d+size(t,2),4*layer,layer);
+d22(d+1:end,:,:) = d2;
 % each agents is connected to the agent immediate ahead and behind them in same circle and one closest from inner circle.
 for k = d+1:size(t,2)
    for j = 1:layer
@@ -437,13 +441,14 @@ for k = d+1:size(t,2)
        theta(k-1,i,j) = theta(k-2,i,j)+((-1/2/l)*layvx(k-2,i,j)*sin(theta(k-2,i,j))+(1/2/l)*layvy(k-2,i,j)*cos(theta(k-2,i,j)))*tg;       
        %control input
        xacc = ax(k-1,1)+kp*(neighbour_x(k-1,i,j)-neighbour_xd(k-1,i,j))...
-           +kp0*(laypxd(k-1,i,j)-laypx(k-1,i,j))+kv0*(vx(k-1,1)-layvx(k-1,i,j))+[1/m*cos(theta(k-1,i,j)) -l/I*sin(theta(k-1,i,j))]*[d1(k-1,i,j);d2(k-1,i,j)];
+           +kp0*(laypxd(k-1,i,j)-laypx(k-1,i,j))+kv0*(vx(k-1,1)-layvx(k-1,i,j))+[1/m*cos(theta(k-1,i,j)) -l/I*sin(theta(k-1,i,j))]*[d11(k-1,i,j);d22(k-1,i,j)];
        yacc = ay(k-1,1)+kp*(neighbour_y(k-1,i,j)-neighbour_yd(k-1,i,j))...
-           +kp0*(laypyd(k-1,i,j)-laypy(k-1,i,j))+kv0*(vy(k-1,1)-layvy(k-1,i,j))+[1/m*sin(theta(k-1,i,j)) l/I*cos(theta(k-1,i,j))]*[d1(k-1,i,j);d2(k-1,i,j)];
+           +kp0*(laypyd(k-1,i,j)-laypy(k-1,i,j))+kv0*(vy(k-1,1)-layvy(k-1,i,j))+[1/m*sin(theta(k-1,i,j)) l/I*cos(theta(k-1,i,j))]*[d11(k-1,i,j);d22(k-1,i,j)];
        layvx(k,i,j) = layvx(k-1,i,j)+tg*xacc;
        layvy(k,i,j) = layvy(k-1,i,j)+tg*yacc;
        laypx(k,i,j) = laypx(k-1,i,j)+(layvx(k-1,i,j)+layvx(k,i,j))/2*tg;
        laypy(k,i,j) = laypy(k-1,i,j)+(layvy(k-1,i,j)+layvy(k,i,j))/2*tg;
+       positiondev(k,i,j) = norm([laypx(k,i,j)-laypxd(k,i,j),laypy(k,i,j)-laypyd(k,i,j)]);
       end
    end
 end 
@@ -455,79 +460,37 @@ for j=1:layer
             if any(i==ID(:,j))
                 print 0
             else
-                ln1 = plot(t(d+1:end),laypx(d+1:end,i,j)-laypxd(d+1:end,i,j),'r','linewidth',1);hold on
+                plot(t(d+1:end),positiondev(d+1:end,i,j),'r','linewidth',1);hold on
             end
         elseif j ==2
-            plot(t(d+1:end),laypx(d+1:end,i,2)-laypxd(d+1:end,i,2),'Color',[1 0.07 0],'linewidth',1);
+            plot(t(d+1:end),positiondev(d+1:end,i,j),'Color',[1 0.07 0],'linewidth',1);
         elseif j ==3
-            plot(t(d+1:end),laypx(d+1:end,i,j)-laypxd(d+1:end,i,j),'Color',[1 0.13 0],'linewidth',1)
+            plot(t(d+1:end),positiondev(d+1:end,i,j),'Color',[1 0.13 0],'linewidth',1)
         elseif j==4
-            plot(t(d+1:end),laypx(d+1:end,i,j)-laypxd(d+1:end,i,j),'Color',[1 0.19 0],'linewidth',1)
+            plot(t(d+1:end),positiondev(d+1:end,i,j),'Color',[1 0.19 0],'linewidth',1)
         elseif j==5
-            plot(t(d+1:end),laypx(d+1:end,i,j)-laypxd(d+1:end,i,j),'Color',[1 0.25 0],'linewidth',1)
+            plot(t(d+1:end),positiondev(d+1:end,i,j),'Color',[1 0.25 0],'linewidth',1)
         elseif j==6
-            plot(t(d+1:end),laypx(d+1:end,i,j)-laypxd(d+1:end,i,j),'Color',[1 0.31 0],'linewidth',1)
+            plot(t(d+1:end),positiondev(d+1:end,i,j),'Color',[1 0.31 0],'linewidth',1)
         elseif j==7
-            plot(t(d+1:end),laypx(d+1:end,i,j)-laypxd(d+1:end,i,j),'Color',[1 0.37 0],'linewidth',1)
+            plot(t(d+1:end),positiondev(d+1:end,i,j),'Color',[1 0.37 0],'linewidth',1)
         elseif j==8
-            plot(t(d+1:end),laypx(d+1:end,i,j)-laypxd(d+1:end,i,j),'Color',[1 0.43 0],'linewidth',1)
+            plot(t(d+1:end),positiondev(d+1:end,i,j),'Color',[1 0.43 0],'linewidth',1)
         elseif j ==9
-            plot(t(d+1:end),laypx(d+1:end,i,j)-laypxd(d+1:end,i,j),'Color',[1 0.50 0],'linewidth',1)
+            plot(t(d+1:end),positiondev(d+1:end,i,j),'Color',[1 0.50 0],'linewidth',1)
         elseif j==10
-            plot(t(d+1:end),laypx(d+1:end,i,j)-laypxd(d+1:end,i,j),'Color',[1 0.56 0],'linewidth',1)
+            plot(t(d+1:end),positiondev(d+1:end,i,j),'Color',[1 0.56 0],'linewidth',1)
         elseif j==11
-            plot(t(d+1:end),laypx(d+1:end,i,j)-laypxd(d+1:end,i,j),'Color',[1 0.7 0],'linewidth',1)
+            plot(t(d+1:end),positiondev(d+1:end,i,j),'Color',[1 0.7 0],'linewidth',1)
         elseif j==12
-            plot(t(d+1:end),laypx(d+1:end,i,j)-laypxd(d+1:end,i,j),'Color',[1 0.8 0],'linewidth',1)
+            plot(t(d+1:end),positiondev(d+1:end,i,j),'Color',[1 0.8 0],'linewidth',1)
         elseif j==13
-            plot(t(d+1:end),laypx(d+1:end,i,j)-laypxd(d+1:end,i,j),'Color',[1 0.9 0],'linewidth',1)
+            plot(t(d+1:end),positiondev(d+1:end,i,j),'Color',[1 0.9 0],'linewidth',1)
         elseif j==14
-            plot(t(d+1:end),laypx(d+1:end,i,j)-laypxd(d+1:end,i,j),'Color',[1 1 0],'linewidth',1)
+            plot(t(d+1:end),positiondev(d+1:end,i,j),'Color',[1 1 0],'linewidth',1)
         end
     end
 end
-set(gca,'FontSize',24)
-xlabel('t[s]','FontSize',30)
-ylabel('x-deviations[m]','FontSize',30)
-
-figure
-for j=1:layer
-    for i = 1:4*j
-        if j == 1
-            if any(i==ID(:,j))
-                print 0
-            else
-                plot(t(d+1:end),laypy(d+1:end,i,j)-laypyd(d+1:end,i,j),'r','linewidth',1);hold on
-            end
-        elseif j == 2
-            plot(t(d+1:end),laypx(d+1:end,i,2)-laypxd(d+1:end,i,2),'Color',[1 0.07 0],'linewidth',1);hold on
-        elseif j ==3
-            plot(t(d+1:end),laypy(d+1:end,i,j)-laypyd(d+1:end,i,j),'Color',[1 0.13 0],'linewidth',1)
-        elseif j==4
-            plot(t(d+1:end),laypy(d+1:end,i,j)-laypyd(d+1:end,i,j),'Color',[1 0.19 0],'linewidth',1)
-        elseif j==5
-            plot(t(d+1:end),laypy(d+1:end,i,j)-laypyd(d+1:end,i,j),'Color',[1 0.25 0],'linewidth',1)
-        elseif j==6
-            plot(t(d+1:end),laypy(d+1:end,i,j)-laypyd(d+1:end,i,j),'Color',[1 0.31 0],'linewidth',1)
-        elseif j==7
-            plot(t(d+1:end),laypy(d+1:end,i,j)-laypyd(d+1:end,i,j),'Color',[1 0.37 0],'linewidth',1)
-        elseif j==8
-            plot(t(d+1:end),laypy(d+1:end,i,j)-laypyd(d+1:end,i,j),'Color',[1 0.43 0],'linewidth',1)
-        elseif j ==9
-            plot(t(d+1:end),laypy(d+1:end,i,j)-laypyd(d+1:end,i,j),'Color',[1 0.50 0],'linewidth',1)
-        elseif j==10
-            plot(t(d+1:end),laypy(d+1:end,i,j)-laypyd(d+1:end,i,j),'Color',[1 0.56 0],'linewidth',1)
-        elseif j==11
-            plot(t(d+1:end),laypy(d+1:end,i,j)-laypyd(d+1:end,i,j),'Color',[1 0.7 0],'linewidth',1)
-        elseif j==12
-            plot(t(d+1:end),laypy(d+1:end,i,j)-laypyd(d+1:end,i,j),'Color',[1 0.8 0],'linewidth',1)
-        elseif j==13
-            plot(t(d+1:end),laypy(d+1:end,i,j)-laypyd(d+1:end,i,j),'Color',[1 0.9 0],'linewidth',1)
-        elseif j==14
-            plot(t(d+1:end),laypy(d+1:end,i,j)-laypyd(d+1:end,i,j),'Color',[1 1 0],'linewidth',1)
-        end
-    end
-end
-set(gca,'FontSize',24)
-xlabel('t[s]','FontSize',30)
-ylabel('y-deviations[m]','FontSize',30)
+set(gca,'FontSize',22)
+xlabel('$t[s]$','Interpreter','latex','FontSize',24)
+ylabel({'$\vert \eta_i(t)-\eta_i^d(t) \vert_2$'},'Interpreter','latex','FontSize',24)
