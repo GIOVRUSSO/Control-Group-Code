@@ -1,4 +1,5 @@
 clc
+clear all
 close all
 %robot parameters
 l = 0.12;
@@ -12,10 +13,8 @@ time =100;tg = 0.01;t = 0:tg:time;
 %define the disturbance
 d1 = zeros(size(t,2),layer*4,layer);%disturbance on x axis
 d2 = zeros(size(t,2),layer*4,layer);%disturbance on y axis
-ID=randsample(4,1);
-d1(:,ID,1) = 2*sin(t).*exp(-0.2*t);
-d2(:,ID,1) = 2*sin(t).*exp(-0.2*t);
-
+d1(:,1,1) = 2*sin(t).*exp(-0.2*t);
+d2(:,1,1) = 2*sin(t).*exp(-0.2*t);
 
 %gains and weights
 kp0 = 0.7;%0.3 to get middle panel
