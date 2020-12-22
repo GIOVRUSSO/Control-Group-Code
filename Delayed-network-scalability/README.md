@@ -12,11 +12,11 @@ Namely:
 
 (4) the script 'Figure3_top&middle.m' simulates the robotic formation network with 14 circles, which gives Figure 3, top panel and middle pannel;
 
-(5) the script 'Robotic_formation_scalability_Fig3_fullyconnected.m' simulates the robotic formation network with 14 circles, which gives Figure 3, bottom panel;
+(5) the script 'Figure3_bottom.m' simulates the robotic formation network with 14 circles, which gives Figure 3, bottom panel;
 
-(6) the script 'Neural_network_Fig4.m' simulates the hopfield neural network, which gives Figure 4;
+(6) the script 'Figure4.m' simulates the hopfield neural network, which gives Figure 4;
 
-(7) the script 'Neural_network_Fig5.m' simulates the scalable/nonscalable hopfield neural network, which gives Figure 5.
+(7) the script 'Figure5.m' simulates the scalable/nonscalable hopfield neural network, which gives Figure 5.
 
 
 
