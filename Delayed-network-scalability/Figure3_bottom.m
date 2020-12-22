@@ -9,9 +9,8 @@ time =100;tg = 0.01;t = 0:tg:time;
 %define the disturbance
 d1 = zeros(size(t,2),layer*4,layer);%disturbance on x axis
 d2 = zeros(size(t,2),layer*4,layer);%disturbance on y axis
-ID = randsample(4,1);%perturbed agent ID
-d1(:,ID,1) = 2*sin(t).*exp(-0.2*t);
-d2(:,ID,1) = 2*sin(t).*exp(-0.2*t);
+d1(:,1,1) = 2*sin(t).*exp(-0.2*t);
+d2(:,1,1) = 2*sin(t).*exp(-0.2*t);
 
 %gains and weights
 kp0 = 0.7;
@@ -154,7 +153,6 @@ for j=1:layer
         end
     end
 end
-% set(gca,'FontSize',24)
 set(gca,'FontSize',22)
 xlabel('$t[s]$','Interpreter','latex','FontSize',26)
 ylabel({'$\vert \eta_i(t)-\eta_i^d(t) \vert_2$'},'Interpreter','latex','FontSize',26)
