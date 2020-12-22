@@ -7,7 +7,7 @@ c = 10;
 w1 = zeros(N,N);%the weights for the delayed communication
 w2 = csvread('w2.csv');%the weights for the delayed communication
 %define the simulation time
-time = 40;tg = 0.01;t = 0:tg:time;lengtht = size(t,2);
+time = 41;tg = 0.01;t = 0:tg:time;lengtht = size(t,2);
 d = 101;%communication delay=(d-1)*tg
 dis = zeros(lengtht,N);
 perturbedID = randsample(N,N-5);%select the N-5 perturbed neurons
@@ -25,11 +25,13 @@ for i = d+1:lengtht
         x(i,j) = x(i-1,j)+dotx(i,j)*tg;
     end
 end
+xd = x;
 figure
+subplot(2,1,1)
 for i = 1:N
-    plot(t(1:lengtht-d),x(d+1:end,i));hold on
+    plot(0:tg:time-d*tg,xd(d+1:end,i));hold on
 end
-set(gca,'FontSize',14);xlabel('t[s]','FontSize',16);ylabel('x_i','FontSize',16)
+set(gca,'FontSize',16);ylabel('$x_i$','Interpreter','latex','FontSize',24)
 %compute the equilibrium
 y = sym('y',[1 N]);
 xequ = struct2array(solve(-c*eye(N)*y'+w1*tanh(y)'+w2*tanh(y)'+u==zeros(N,1)));
@@ -40,13 +42,14 @@ for i = d+1:lengtht
         x(i,j) = x(i-1,j)+dotx(i,j)*tg;
     end
 end
-figure
+subplot(2,1,2)
 for i = 1:N
     if any(i==perturbedID)
-        ln1 = plot(t(1:lengtht-d),(x(d+1:end,i)-xequ(i)),'k');hold on
+        ln1 = plot(0:tg:time-d*tg,(x(d+1:end,i)-xequ(i)),'k');hold on
     else
-        ln2 = plot(t(1:lengtht-d),(x(d+1:end,i)-xequ(i)),'r');
+        ln2 = plot(0:tg:time-d*tg,(x(d+1:end,i)-xequ(i)),'r');
     end
 end
-set(gca,'FontSize',14);xlabel('t[s]','FontSize',16);ylabel('Deviation','FontSize',16)
+
+set(gca,'FontSize',16);xlabel('$t[s]$','Interpreter','latex','FontSize',24);ylabel('$Deviations$','Interpreter','latex','FontSize',24)
 legend([ln1,ln2],{'Perturbed neurons','Unperturbed neurons'})
