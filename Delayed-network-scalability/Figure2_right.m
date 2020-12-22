@@ -12,19 +12,10 @@ N = 2*layer*(layer+1);%number of follower robots
 
 time =40;tg = 0.01;t = 0:tg:time;%simulation time
 
-%define the disturbance
-% d1 = zeros(size(t,2),layer*4,layer);%disturbance on x axis
-% d2 = zeros(size(t,2),layer*4,layer);%disturbance on y axis
-% for i=1:4
-%     d1(:,i,1) = 2*sin(t).*exp(-0.2*t);
-%     d2(:,i,1) = 2*sin(t).*exp(-0.2*t);
-% end
-
 d1 = zeros(size(t,2),layer*4,layer);%disturbance on x axis
 d2 = zeros(size(t,2),layer*4,layer);%disturbance on y axis
-ID=randsample(4,1);%change here to get more agents perturbed from each circle
-d1(:,ID,1) = 2*sin(t).*exp(-0.2*t);
-d2(:,ID,1) = 2*sin(t).*exp(-0.2*t);
+d1(:,1,1) = 2*sin(t).*exp(-0.2*t);
+d2(:,1,1) = 2*sin(t).*exp(-0.2*t);
 %gains and weights
 kp0 = 0.7;
 kv0 = 1;
