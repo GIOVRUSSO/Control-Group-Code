@@ -583,9 +583,11 @@ end
 for j = 1:layer
     for i = 1:4*layer
         positiondev_max(i,j,layer) = max(positiondev(:,i,j));
-        maxdev_layer(layer) = max(positiondev_max(:,j,layer));
     end
 end
+end
+for j = 1:layer
+    maxdev_layer(j) = max(positiondev_max(:,j,:),[],'all');
 end
 figure 
 plot(1:6,maxdev_layer(:),'o-')
