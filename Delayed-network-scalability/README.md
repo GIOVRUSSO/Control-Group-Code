@@ -10,7 +10,7 @@ Namely:
 
 (3) the script 'Robotic_formation_scalability_Fig2.m' simulates the robotic formation network with 6 circles, which gives Figure 2.
 
-(4) the script 'Robotic_formation_scalability_Fig3_neighbourconnection.m' simulates the robotic formation network with 14 circles, which gives Figure 3, top panel and middle pannel;
+(4) the script 'Figure3_top&middle.m' simulates the robotic formation network with 14 circles, which gives Figure 3, top panel and middle pannel;
 
 (5) the script 'Robotic_formation_scalability_Fig3_fullyconnected.m' simulates the robotic formation network with 14 circles, which gives Figure 3, bottom panel;
 
