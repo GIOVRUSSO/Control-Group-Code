@@ -1,4 +1,5 @@
 clc
+close all
 
 N = 50;%number of neurons
 %the condition 2&3&4 are satisfied with the following chosen parameters
