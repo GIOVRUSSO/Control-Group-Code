@@ -1,16 +1,14 @@
-
+clc
+close all
+clear all
 %robot parameters
 l = 0.12;
 m = 10.1;
 I = 0.13;
-
-disdev = zeros(size(t,2),6);
-maxdev = zeros(1,6);
+time =40;tg = 0.01;t = 0:tg:time;%simulation time
+maxdev_layer = zeros(1,6);
 positiondev = zeros(size(t,2),4*6,6);
 positiondev_max = zeros(4*6,6);
-
-%layer = 5;%number of layers of the formation pattern
-time =40;tg = 0.01;t = 0:tg:time;%simulation time
 for layer = 1:6
 %define the disturbance
 d1 = zeros(size(t,2),layer*4,layer);%disturbance on x axis
@@ -84,7 +82,6 @@ for j = 1:layer
 end
 pxd(:,1) = px(:,1);
 pyd(:,1) = py(:,1);
-
 %% define followers dynamics in normal disturbance
 neighbour_x = zeros(size(t,2),layer*4,layer);
 neighbour_y = zeros(size(t,2),layer*4,layer);
@@ -570,7 +567,7 @@ for k = d+1:size(t,2)
          end
        %calculate the angle for disturbance state dependence
        theta(k-1,i,j) = theta(k-2,i,j)+((-1/2/l)*layvx(k-2,i,j)*sin(theta(k-2,i,j))+(1/2/l)*layvy(k-2,i,j)*cos(theta(k-2,i,j)))*tg;       
-       %control input+
+       %control input
        xacc = ax(k-1,1)+kp*(neighbour_x(k-1,i,j)-neighbour_xd(k-1,i,j))...
            +kp0*(laypxd(k-1,i,j)-laypx(k-1,i,j))+kv0*(vx(k-1,1)-layvx(k-1,i,j))+[1/m*cos(theta(k-1,i,j)) -l/I*sin(theta(k-1,i,j))]*[d11(k-1,i,j);d22(k-1,i,j)];
        yacc = ay(k-1,1)+kp*(neighbour_y(k-1,i,j)-neighbour_yd(k-1,i,j))...
@@ -586,13 +583,12 @@ end
 for j = 1:layer
     for i = 1:4*layer
         positiondev_max(i,j,layer) = max(positiondev(:,i,j));
-        maxdev_layer(:,layer) = max(positiondev_max(:,j,layer));
+        maxdev_layer(layer) = max(positiondev_max(:,j,layer));
     end
 end
 end
-%% 
 figure 
-ln1 = plot(1:6,maxdev_layer(:),'o-')
+plot(1:6,maxdev_layer(:),'o-')
 set(gca,'FontSize',24)
 xlabel('$Number \ of \ circles$','Interpreter','latex','FontSize',24)
 ylabel('$\max_i\Vert \eta_i(t)-\eta_i^d(t)\Vert_{\mathcal{L}_\infty}$','Interpreter','latex','FontSize',24)
