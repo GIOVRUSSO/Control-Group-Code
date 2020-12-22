@@ -13,19 +13,10 @@ positiondev_max = zeros(4*6,6);
 time =40;tg = 0.01;t = 0:tg:time;%simulation time
 for layer = 1:6
 %define the disturbance
-% d1 = zeros(size(t,2),layer*4,layer);%disturbance on x axis
-% d2 = zeros(size(t,2),layer*4,layer);%disturbance on y axis
-% ID=randsample(4,1);%change here to get more agents perturbed from each circle
-% 
-% for i=1:4
-%     d1(:,i,1) = 2*sin(t).*exp(-0.2*t);
-%     d2(:,i,1) = 2*sin(t).*exp(-0.2*t);
-% end
 d1 = zeros(size(t,2),layer*4,layer);%disturbance on x axis
 d2 = zeros(size(t,2),layer*4,layer);%disturbance on y axis
-ID=randsample(4,1);%change here to get more agents perturbed from each circle
-d1(:,4,1) = 2*sin(t).*exp(-0.2*t);
-d2(:,4,1) = 2*sin(t).*exp(-0.2*t);
+d1(:,1,1) = 2*sin(t).*exp(-0.2*t);
+d2(:,1,1) = 2*sin(t).*exp(-0.2*t);
 %gains and weights
 kp0 = 0.7;
 kv0 = 1;
@@ -40,7 +31,6 @@ px = zeros(size(t,2),1);
 py = zeros(size(t,2),1);
 pxd = zeros(size(t,2),1);
 pyd = zeros(size(t,2),1);
-
 
 %define virtual leader dynamics. The initial states are
 %definded in the time interval [0,d*tg] and equal to desired state at 0s.
@@ -593,18 +583,13 @@ for k = d+1:size(t,2)
       end
    end
 end
-
 for j = 1:layer
     for i = 1:4*layer
         positiondev_max(i,j,layer) = max(positiondev(:,i,j));
         maxdev_layer(:,layer) = max(positiondev_max(:,j,layer));
     end
 end
-
 end
-
-
-
 %% 
 figure 
 ln1 = plot(1:6,maxdev_layer(:),'o-')
@@ -612,13 +597,3 @@ set(gca,'FontSize',24)
 xlabel('$Number \ of \ circles$','Interpreter','latex','FontSize',24)
 ylabel('$\max_i\Vert \eta_i(t)-\eta_i^d(t)\Vert_{\mathcal{L}_\infty}$','Interpreter','latex','FontSize',24)
 
-
-% %% 
-% for j=1:layer
-%     for st = 1:size(t,2)
-%         positiondev(st,j) = max(norm([laypx(st,:,j)-laypxd(st,:,j),laypy(st,:,j)-laypyd(st,:,j)],2)); 
-%     end
-%     maxdev(j)=max(disdev(:,j));
-% end
-% maxall(layer) = max(maxdev);
-% [maxall(layer),Index(layer)] = max(maxdev);
