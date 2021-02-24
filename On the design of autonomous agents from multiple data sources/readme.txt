@@ -1,4 +1,6 @@
-This repository gathers the full-size figures and plots of the PMFs for the sources and target behavior featured in VI of the paper : On the design of autonomous agents from multiple data sources (E. Garrabé, G. Russo).
+Author of the scripts and figures: Émiland Garrabé (University of Salerno).
+
+This repository gathers the full-size figures and plots of the PMFs for the sources and target behavior featured in Section VI of the work: "On the design of autonomous agents from multiple data sources" by E. Garrabé and G. Russo.
 
 The files are the following:
 
@@ -9,4 +11,4 @@ The files are the following:
 * The file 'fig3_case1.jpg' is the first half of the third figure of the paper, with the agent PMFs for case 1 (left) and the route sampled from these PMFs (right)
 * The file 'fig3_case2.jpg' is the first half of the third figure of the paper, with the agent PMFs for case 2 (left) and the route sampled from these PMFs (right)
 
-The code for the experiment, along with the figures, were made by Émiland Garrabé.
+The experiments were carried out by Émiland Garrabé and the code can be made available upon request.
