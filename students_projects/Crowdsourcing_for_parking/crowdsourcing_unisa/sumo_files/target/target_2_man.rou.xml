@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 03/20/21 20:06:14 by Eclipse SUMO netedit Version 1.8.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <sumo-net-file value="G:\Il%20mio%20Drive\Tesi%20Magistrale\crowdsourcing_routing\crowdsourcing_unisa\sumo_files\osm.net.xml"/>
+    </input>
+
+    <output>
+        <output-file value="G:\Il%20mio%20Drive\Tesi%20Magistrale\crowdsourcing_routing\crowdsourcing_unisa\sumo_files\osm.net.xml"/>
+        <output.street-names value="true"/>
+    </output>
+
+    <processing>
+        <geometry.min-radius.fix.railways value="false"/>
+        <geometry.max-grade.fix value="false"/>
+        <offset.disable-normalization value="true"/>
+        <lefthand value="false"/>
+    </processing>
+
+    <junctions>
+        <no-turnarounds value="true"/>
+        <junctions.corner-detail value="5"/>
+        <junctions.limit-turn-speed value="5.5"/>
+        <rectangular-lane-cut value="false"/>
+    </junctions>
+
+    <pedestrian>
+        <walkingareas value="false"/>
+    </pedestrian>
+
+    <netedit>
+        <route-files value="G:\Il%20mio%20Drive\Tesi%20Magistrale\crowdsourcing_routing\crowdsourcing_unisa\sumo_files\target\target_2_man.rou.xml"/>
+    </netedit>
+
+    <report>
+        <aggregate-warnings value="5"/>
+    </report>
+
+</configuration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vehicle id="vehicle_0" depart="0.00">
+        <route edges="62166872 330224640 62166847#0 62166847#1 147391538#4 147391538#4 392822668 392822664#5 392822664#0 392822664#1 392822663 392822665#0 392822665#1 392822665#2 392822665#2 392822665#4 392822665#6 392822665#7 392822665#7 82534343#2 82534343#3 82534343#4 110971337 110971342#0 122726139 122726140#0 122726125 79867013#0 79867013#0 79867013#1 298563412#1 298563412"
+               color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_1" depart="0.00">
+        <route edges="79262660#0 79262672#1 906615576#0 79262633#1 79262633#4 79262633#9 79262633#15 79262663#0 79396139#0 -79396109#2 906498862 79396163#0 79396163#1 79396145 758800288#1 758800287 442156760#2 442156759#1 442156759#2 442156759#3 442156759#4 442156760#0 -79867013#3 298563412#1"
+               color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_10" depart="0.00">
+        <route edges="392822667 -147391538#5 -147391538#3 169424742 62166875#1" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_11" depart="0.00">
+        <route edges="-79262633#0 110971340#0 392822664#1 392822663" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_12" depart="0.00">
+        <route edges="906498861 442154683 79396163#0" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_13" depart="0.00">
+        <route edges="79262635#0 79396109#0 -79396117#1 79396117#0 -79396109#2" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_14" depart="0.00">
+        <route edges="79396109#3 -79262663#0 -395276155#1 395276155#0 79262663#0" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_15" depart="0.00">
+        <route edges="-79262633#16 79869142#0 -79869142#1 79262633#15" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_16" depart="0.00">
+        <route edges="-79262633#14 906517535 -906517535 79262633#9" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_18" depart="0.00">
+        <route edges="-79262633#3 -79262633#0" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_2" depart="0.00">
+        <route edges="147391538#0 147391538#2 147391538#3 147391538#4" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_20" depart="0.00">
+        <route edges="444635707 79262674 79396124#0 906511012 444643434 442062982#10 906498862" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_21" depart="0.00">
+        <route edges="-442062982#10 906498863#0 -906511012 906511011#0 -906511011#2 906511012 444643434" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_22" depart="0.00">
+        <route edges="-442062982#9 -443232854 79396124#0" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_23" depart="0.00">
+        <route edges="-442062982#7 -442062982#4 -79396093 79396093 442062982#3 442062982#6 442062982#8 442062982#10"
+               color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_24" depart="0.00">
+        <route edges="-442062982#2 906498865 -906498865 442062982#2 442062982#3" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_25" depart="0.00">
+        <route edges="-442062982#1 442062984#1 82534335#4 82534335#1 82534335#2 442062984#0 442062982#0 442062982#2"
+               color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_26" depart="0.00">
+        <route edges="-441754000#2 906511008 82534343#4" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_27" depart="0.00">
+        <route edges="79396110#0 79396116#0 79396116#4 79396116#5 443232790#0 442062982#6" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_28" depart="0.00">
+        <route edges="79396110#3 82534324#0 557412468 -557412468 -82534324#0 -79396110#5 -79396110#2 82534335#2 442062984#0 442062982#0"
+               color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_29" depart="0.00">
+        <route edges="906511009 -906511009 -79396110#5" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_3" depart="0.00">
+        <route edges="62166875#0 62166875#1 -330224640 -62166872 62166872" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_30" depart="0.00">
+        <route edges="82534324#1 -82534324#6 -82534324#0 -79396110#5" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_31" depart="0.00">
+        <route edges="441754000#0 82534335#1 82534335#2 442062984#0 442062982#0" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_32" depart="0.00">
+        <route edges="-443232790#1 -79396116#5 79396155#0 -79396155#1 79396116#5" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_33" depart="0.00">
+        <route edges="-79396116#4 79396099 -79396099 79396116#4" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_34" depart="0.00">
+        <route edges="-79396116#3 -79396110#2" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_35" depart="0.00">
+        <route edges="-79262674 -79262658 79262663#0" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_36" depart="0.00">
+        <route edges="-79396124#1 443232854 442062982#8" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_37" depart="0.00">
+        <route edges="-79396183#3 -442062982#4" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_38" depart="0.00">
+        <route edges="79396183#2 79396124#0" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_39" depart="0.00">
+        <route edges="122726134#0 122726134#1 442156756 442156759#4" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_4" depart="0.00">
+        <route edges="-79867013#1 122726116 -122726137 79867013#1" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_40" depart="0.00">
+        <route edges="442156757 -84678509#2 84678509#2 442154357 442156759#2" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_41" depart="0.00">
+        <route edges="442156758 -122726134#1 -122726134#0 122726134#0" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_42" depart="0.00">
+        <route edges="298563412#2 122726134#1" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_43" depart="0.00">
+        <route edges="442156982 758800288#1" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_44" depart="0.00">
+        <route edges="-79396150#5 79396150#0 442154682#1 79396163#1" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_45" depart="0.00">
+        <route edges="79396147#0 -79396147#1 442154682#1 79396163#1" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_46" depart="0.00">
+        <route edges="79396163#2 892584574#0 -79396181 79396181 -892584574#0 758800288#0 758800288#1" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_47" depart="0.00">
+        <route edges="892584574#1 -891016337#2 -79262663#6 -79262663#2 79396139#0" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_48" depart="0.00">
+        <route edges="292874238#0 -79264372#1 79264326#0 79264326#1 -79264326#1 -79264326#0 79264372#1 -292874238#0 -891016337#2"
+               color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_49" depart="0.00">
+        <route edges="292874238#1 292874238#2 292874238#3 906615576#0" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_5" depart="0.00">
+        <route edges="-79867013#0 84678475 122726140#2 122726140#4 122726140#5 122726140#0" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_50" depart="0.00">
+        <route edges="-292874238#4 -292874238#2 -292874238#1 -292874238#0" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_51" depart="0.00">
+        <route edges="-892584574#1 -892584574#0" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_52" depart="0.00">
+        <route edges="79262663#1 79262663#3 891016337#0 -892584574#1" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_53" depart="0.00">
+        <route edges="79264323 -79264323 -79264326#0 79264372#1 -292874238#0" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_54" depart="0.00">
+        <route edges="-79264372#0 79264372#0 79264372#1 -292874238#0" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_55" depart="0.00">
+        <route edges="79262664#0 -79262639 -292874238#1" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_56" depart="0.00">
+        <route edges="79262657#0 -79262657#3 -292874238#2" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_57" depart="0.00">
+        <route edges="79262642#0 -79262638 -79262642#1 -79262642#0 -79262663#2" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_58" depart="0.00">
+        <route edges="79262655#0 79262655#2 -79262650 79262655#4 -79262655#1 -79262663#6" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_59" depart="0.00">
+        <route edges="-79262633#8 -79262633#3" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_6" depart="0.00">
+        <route edges="84678515 442152904 -442152904 442152905 122726140#5" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_60" depart="0.00">
+        <route edges="441702871 82534343#3 82534343#4 110971337" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_61" depart="0.00">
+        <route edges="110971330#0 110971330#1" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_62" depart="0.00">
+        <route edges="82534343#5 82534343#6" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_63" depart="0.00">
+        <route edges="79867013#2 442156760#2" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_64" depart="0.00">
+        <route edges="79869125#0 -79869125#1 -392822665#0" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_65" depart="0.00">
+        <route edges="79262672#0 79262672#1" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_66" depart="0.00">
+        <route edges="79262642#1 79262638 -79262642#0" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_67" depart="0.00">
+        <route edges="-79262655#4 79262650 -79262655#2 -79262655#2 -79262655#1" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_68" depart="0.00">
+        <route edges="-79262655#3 -79262655#2" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_69" depart="0.00">
+        <route edges="79262655#3 79262655#4" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_7" depart="0.00">
+        <route edges="84678483 -110971342#2 110971334 110971330#1 82534343#6 82534343#1" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_70" depart="0.00">
+        <route edges="122726140#1 122726140#2" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_71" depart="0.00">
+        <route edges="-147391538#2 -147391538#1 147391538#0" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_72" depart="0.00">
+        <route edges="169424746 -147391538#2" color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_8" depart="0.00">
+        <route edges="-392822665#7 -392822665#6 -392822665#5 -392822665#3 -392822665#1 -392822665#0 392822666 392822664#3 392822664#4"
+               color="cyan"/>
+    </vehicle>
+    <vehicle id="vehicle_9" depart="0.00">
+        <route edges="84678511#0 -84678511#0 392822665#4" color="cyan"/>
+    </vehicle>
+</routes>

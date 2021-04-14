@@ -1,0 +1,3 @@
+randomTrips --random --end 100 -n sumo_files/osm.net.xml --period 1 --validate --remove-loops -o sumo_files/target_0.trips.xml -r sumo_files/target_0.rou.xml --weights-prefix=sumo_files/weights_0
+randomTrips --random --end 100 -n sumo_files/osm.net.xml --period 1 --validate --remove-loops -o sumo_files/target_1.trips.xml -r sumo_files/target_1.rou.xml --weights-prefix=sumo_files/weights_1
+randomTrips --random --end 100 -n sumo_files/osm.net.xml --period 1 --validate --remove-loops -o sumo_files/target_2.trips.xml -r sumo_files/target_2.rou.xml --weights-prefix=sumo_files/weights_2

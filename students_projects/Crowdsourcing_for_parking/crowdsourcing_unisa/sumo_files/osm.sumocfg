@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 02/18/21 18:28:01 by Eclipse SUMO sumo Version 1.8.0
+-->
+
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="osm.net.xml"/>
+        <additional-files value="add.add.xml"/>
+        <!--<additional-files value="add_scenari_3x.add.xml"/>-->
+        <route-files value="routes.rou.xml"/>
+    </input>
+    <!--
+        <processing>
+            <ignore-route-errors value="true"/>
+        </processing>
+
+        <routing>
+            <device.rerouting.adaptation-steps value="180"/>
+            <device.rerouting.adaptation-interval value="3600"/>
+        </routing>
+
+        <report>
+            <verbose value="true"/>
+            <duration-log.statistics value="true"/>
+            <no-step-log value="true"/>
+        </report>
+    -->
+    <gui_only>
+        <gui-settings-file value="sett.view.xml"/>
+    </gui_only>
+
+</configuration>

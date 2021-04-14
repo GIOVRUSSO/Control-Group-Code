@@ -1,0 +1,1 @@
+sumo-gui -c configuration.sumocfg

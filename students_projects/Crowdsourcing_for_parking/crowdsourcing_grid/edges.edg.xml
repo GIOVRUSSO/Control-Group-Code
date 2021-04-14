@@ -1,0 +1,57 @@
+<edges>
+    <!--righe-->
+    <edge from="n00" to="n01" id="e00-01" type="1L25"/>
+    <edge from="n01" to="n02" id="e01-02" type="1L25"/>
+    <edge from="n02" to="n03" id="e02-03" type="1L25"/>
+    <edge from="n03" to="n04" id="e03-04" type="1L25"/>
+
+    <edge from="n05" to="n06" id="e05-06" type="1L25"/>
+    <edge from="n06" to="n07" id="e06-07" type="1L25"/>
+    <edge from="n07" to="n08" id="e07-08" type="1L25"/>
+    <edge from="n08" to="n09" id="e08-09" type="1L25"/>
+
+    <edge from="n10" to="n11" id="e10-11" type="1L25"/>
+    <edge from="n11" to="n12" id="e11-12" type="1L25"/>
+    <edge from="n12" to="n13" id="e12-13" type="1L25"/>
+    <edge from="n13" to="n14" id="e13-14" type="1L25"/>
+
+    <edge from="n15" to="n16" id="e15-16" type="1L25"/>
+    <edge from="n16" to="n17" id="e16-17" type="1L25"/>
+    <edge from="n17" to="n18" id="e17-18" type="1L25"/>
+    <edge from="n18" to="n19" id="e18-19" type="1L25"/>
+
+    <edge from="n20" to="n21" id="e20-21" type="1L25"/>
+    <edge from="n21" to="n22" id="e21-22" type="1L25"/>
+    <edge from="n22" to="n23" id="e22-23" type="1L25"/>
+    <edge from="n23" to="n24" id="e23-24" type="1L25"/>
+
+    <!--colonne-->
+    <edge from="n00" to="n05" id="e00-05" type="1L25"/>
+    <edge from="n01" to="n06" id="e01-06" type="1L25"/>
+    <edge from="n02" to="n07" id="e02-07" type="1L25"/>
+    <edge from="n03" to="n08" id="e03-08" type="1L25"/>
+    <edge from="n04" to="n09" id="e04-09" type="1L25"/>
+
+    <edge from="n05" to="n10" id="e05-10" type="1L25"/>
+    <edge from="n06" to="n11" id="e06-11" type="1L25"/>
+    <edge from="n07" to="n12" id="e07-12" type="1L25"/>
+    <edge from="n08" to="n13" id="e08-13" type="1L25"/>
+    <edge from="n09" to="n14" id="e09-14" type="1L25"/>
+
+    <edge from="n10" to="n15" id="e10-15" type="1L25"/>
+    <edge from="n11" to="n16" id="e11-16" type="1L25"/>
+    <edge from="n12" to="n17" id="e12-17" type="1L25"/>
+    <edge from="n13" to="n18" id="e13-18" type="1L25"/>
+    <edge from="n14" to="n19" id="e14-19" type="1L25"/>
+
+    <edge from="n15" to="n20" id="e15-20" type="1L25"/>
+    <edge from="n16" to="n21" id="e16-21" type="1L25"/>
+    <edge from="n17" to="n22" id="e17-22" type="1L25"/>
+    <edge from="n18" to="n23" id="e18-23" type="1L25"/>
+    <edge from="n19" to="n24" id="e19-24" type="1L25"/>
+
+    <!--start e stop-->
+    <edge from="nstart" to="n00" id="estart" type="1L25"/>
+    <edge from="n24" to="nstop" id="estop" type="1L25"/>
+
+</edges>

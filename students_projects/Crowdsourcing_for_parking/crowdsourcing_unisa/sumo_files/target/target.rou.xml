@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 02/27/21 12:25:18 by Eclipse SUMO netedit Version 1.8.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <sumo-net-file value="G:\Il%20mio%20Drive\Tesi%20Magistrale\crowdsourcing_routing\crowdsourcing_unisa\sumo_files\osm.net.xml"/>
+    </input>
+
+    <output>
+        <output-file value="G:\Il%20mio%20Drive\Tesi%20Magistrale\crowdsourcing_routing\crowdsourcing_unisa\sumo_files\osm.net.xml"/>
+        <output.street-names value="true"/>
+    </output>
+
+    <processing>
+        <geometry.min-radius.fix.railways value="false"/>
+        <geometry.max-grade.fix value="false"/>
+        <offset.disable-normalization value="true"/>
+        <lefthand value="false"/>
+    </processing>
+
+    <junctions>
+        <no-turnarounds value="true"/>
+        <junctions.corner-detail value="5"/>
+        <junctions.limit-turn-speed value="5.5"/>
+        <rectangular-lane-cut value="false"/>
+    </junctions>
+
+    <pedestrian>
+        <walkingareas value="false"/>
+    </pedestrian>
+
+    <netedit>
+        <route-files value="G:\Il%20mio%20Drive\Tesi%20Magistrale\crowdsourcing_routing\crowdsourcing_unisa\sumo_files\target.rou.xml"/>
+    </netedit>
+
+    <report>
+        <aggregate-warnings value="5"/>
+    </report>
+
+</configuration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vehicle id="target_0" depart="0.00">
+        <route edges="62166872 79262660#0 79262672#1 906615576#0 79262633#1 906615580#0 -906615585" color="cyan"/>
+    </vehicle>
+    <vehicle id="target_1" depart="1.00">
+        <route edges="62166872 330224640 62166847#0 62166847#1 147391538#4 392822668 392822664#5 392822664#0 392822664#1 392822663 392822665#0 392822665#1 -587489968#1 -587489968#0"
+               color="yellow"/>
+    </vehicle>
+    <vehicle id="target_2" depart="2.00">
+        <route edges="62166872 330224640 62166847#0 62166847#1 147391538#4 392822668 392822664#5 392822664#0 392822664#1 392822663 392822665#0 392822665#1 392822665#2 392822665#4 392822665#6 392822665#7 82534343#2 82534343#3 82534343#4 110971337 110971342#0 122726139 122726140#0 122726125 79867013#0 79867013#1 298563412#1 298563412"
+               color="red"/>
+    </vehicle>
+</routes>

@@ -1,0 +1,35 @@
+<nodes>
+    <node id="nstart" x="-25" y="-25"/>
+
+    <node id="n00" x="0" y="0"/>
+    <node id="n01" x="50" y="0"/>
+    <node id="n02" x="100" y="0"/>
+    <node id="n03" x="150" y="0"/>
+    <node id="n04" x="200" y="0"/>
+
+    <node id="n05" x="0" y="50"/>
+    <node id="n06" x="50" y="50"/>
+    <node id="n07" x="100" y="50"/>
+    <node id="n08" x="150" y="50"/>
+    <node id="n09" x="200" y="50"/>
+
+    <node id="n10" x="0" y="100"/>
+    <node id="n11" x="50" y="100"/>
+    <node id="n12" x="100" y="100"/>
+    <node id="n13" x="150" y="100"/>
+    <node id="n14" x="200" y="100"/>
+
+    <node id="n15" x="0" y="150"/>
+    <node id="n16" x="50" y="150"/>
+    <node id="n17" x="100" y="150"/>
+    <node id="n18" x="150" y="150"/>
+    <node id="n19" x="200" y="150"/>
+
+    <node id="n20" x="0" y="200"/>
+    <node id="n21" x="50" y="200"/>
+    <node id="n22" x="100" y="200"/>
+    <node id="n23" x="150" y="200"/>
+    <node id="n24" x="200" y="200"/>
+
+    <node id="nstop" x="225" y="225"/>
+</nodes>

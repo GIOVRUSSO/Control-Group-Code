@@ -1,0 +1,1 @@
+netconvert --node-files nodes.nod.xml --edge-files edges.edg.xml -t types.type.xml -o net.net.xml

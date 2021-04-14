@@ -1,0 +1,8 @@
+<edgedata>
+    <interval id="via" begin="0" end="3600">
+        <!-- gli edge dei parcheggi hanno una probabilità del 100%-->
+        <edge id="-906615585" value="33.33"/>
+        <edge id="-587489968#0" value="33.33"/>
+        <edge id="298563412" value="33.33"/>
+    </interval>
+</edgedata>

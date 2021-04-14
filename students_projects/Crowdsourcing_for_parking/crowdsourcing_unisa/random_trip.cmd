@@ -1,0 +1,1 @@
+randomTrips --random --end 100 -n sumo_files/osm.net.xml --period 1 --validate --remove-loops -o sumo_files/trips_clean.trips.xml -r sumo_files/routes_clean.rou.xml --weights-output-prefix=sumo_files/weight_clean

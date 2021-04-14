@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 01/14/21 17:14:40 by Eclipse SUMO netedit Version 1.8.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <sumo-net-file value="C:\Users\doddo22\Sumo\simulazione\sim.net.xml"/>
+    </input>
+
+    <output>
+        <output-file value="C:\Users\doddo22\Sumo\simulazione\sim.net.xml"/>
+    </output>
+
+    <processing>
+        <geometry.min-radius.fix.railways value="false"/>
+        <geometry.max-grade.fix value="false"/>
+        <offset.disable-normalization value="true"/>
+        <lefthand value="false"/>
+    </processing>
+
+    <junctions>
+        <no-turnarounds value="true"/>
+        <junctions.corner-detail value="5"/>
+        <junctions.limit-turn-speed value="5.5"/>
+        <rectangular-lane-cut value="false"/>
+    </junctions>
+
+    <pedestrian>
+        <walkingareas value="false"/>
+    </pedestrian>
+
+    <netedit>
+        <route-files value="C:\Users\doddo22\Sumo\simulazione\sim.rou.xml"/>
+    </netedit>
+
+    <report>
+        <aggregate-warnings value="5"/>
+    </report>
+
+</configuration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="type_0" vClass="passenger"/>
+
+    <route id="route_0" edges="estart e00-05 e05-10 e10-15 e15-20 e20-21 e21-22 e22-23 e23-24 estop"/>
+    <route id="route_1" edges="estart e00-01 e01-02 e02-03 e03-04 e04-09 e09-14 e14-19 e19-24 estop"/>
+
+    <routeDistribution id="route_2">
+        <route edges="estart e00-05 e05-06 e06-11 e11-12 e12-17 e17-18 e18-23 e23-24 estop" probability="0.0625"/>
+        <route edges="estart e00-01 e01-06 e06-11 e11-12 e12-17 e17-18 e18-23 e23-24 estop" probability="0.0625"/>
+
+        <route edges="estart e00-05 e05-06 e06-07 e07-12 e12-17 e17-18 e18-23 e23-24 estop" probability="0.0625"/>
+        <route edges="estart e00-01 e01-06 e06-07 e07-12 e12-17 e17-18 e18-23 e23-24 estop" probability="0.0625"/>
+
+        <route edges="estart e00-05 e05-06 e06-11 e11-12 e12-13 e13-18 e18-23 e23-24 estop" probability="0.0625"/>
+        <route edges="estart e00-01 e01-06 e06-11 e11-12 e12-13 e13-18 e18-23 e23-24 estop" probability="0.0625"/>
+
+        <route edges="estart e00-05 e05-06 e06-07 e07-12 e12-13 e13-18 e18-23 e23-24 estop" probability="0.0625"/>
+        <route edges="estart e00-01 e01-06 e06-07 e07-12 e12-13 e13-18 e18-23 e23-24 estop" probability="0.0625"/>
+
+        <route edges="estart e00-05 e05-06 e06-07 e07-12 e12-17 e17-18 e18-19 e19-24 estop" probability="0.0625"/>
+        <route edges="estart e00-01 e01-06 e06-07 e07-12 e12-17 e17-18 e18-19 e19-24 estop" probability="0.0625"/>
+
+        <route edges="estart e00-05 e05-06 e06-11 e11-12 e12-17 e17-18 e18-19 e19-24 estop" probability="0.0625"/>
+        <route edges="estart e00-01 e01-06 e06-11 e11-12 e12-17 e17-18 e18-19 e19-24 estop" probability="0.0625"/>
+
+        <route edges="estart e00-05 e05-06 e06-07 e07-12 e12-13 e13-18 e18-19 e19-24 estop" probability="0.0625"/>
+        <route edges="estart e00-01 e01-06 e06-07 e07-12 e12-13 e13-18 e18-19 e19-24 estop" probability="0.0625"/>
+
+        <route edges="estart e00-05 e05-06 e06-11 e11-12 e12-13 e13-18 e18-19 e19-24 estop" probability="0.0625"/>
+        <route edges="estart e00-01 e01-06 e06-11 e11-12 e12-13 e13-18 e18-19 e19-24 estop" probability="0.0625"/>
+    </routeDistribution>
+
+
+    <!--    <flow id="flow_0" type="type_0" route="route_0" color="cyan" number="100" period="10.0"/>-->
+    <!--    <flow id="flow_1" type="type_0" route="route_1" color="red" number="100" period="10.0"/>-->
+    <!--    <flow id="flow_2" type="type_0" route="route_2" color="yellow" number="100" period="10.0"/>-->
+
+    <vehicle id="vehicle_0" type="type_0" depart="0.00" route="route_0" color="green"/>
+    <vehicle id="vehicle_1" type="type_0" depart="0.00" route="route_1" color="yellow"/>
+    <vehicle id="vehicle_2" type="type_0" depart="0.00" route="route_2" color="0,170,204"/>
+</routes>
