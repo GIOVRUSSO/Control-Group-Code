@@ -1,4 +1,3 @@
-import os
 import xml.etree.ElementTree as ET
 
 import numpy as np
@@ -31,8 +30,7 @@ class Scenario():
             "21": self.scenario_21,
             "22": self.scenario_22,
             "23": self.scenario_23,
-            "31": self.scenario_31,
-            "32": self.scenario_32}
+            "31": self.scenario_31}
 
     def get_PMF_clean(self):
         return self.PMF_adjacency.copy(), self.total_cases.copy()
@@ -442,38 +440,6 @@ class Scenario():
         tree.write(routes_file)
         return n_agent, n_foe, period, step_start, lay_off, "All empty park with 75 Crowd Cars and 75 Sumo Cars"
 
-    def scenario_32(self, scena, edge_start, parking, routes_file):
-        n_agent = 50
-        n_foe = 50
-        period = 10.0
-        period_vehicle = 5
-        vehicles = 50
-        lay_off = 500
-        step_start = 0
-        park = 0
-        randomTripCommand = "randomTrips --random --end " + str(
-            vehicles * period) + " -n sumo_files/osm.net.xml --period " + str(
-            period_vehicle) + " --validate --remove-loops -r " + routes_file + \
-                            " --intermediate 1 --weights-prefix=sumo_files/weights_contribs"
-        os.system(randomTripCommand)
-
-        tree_routes = ET.parse(routes_file)
-        routes = tree_routes.getroot()
-
-        for i in range(n_foe):
-            trip = ET.Element("trip")
-
-            trip.attrib["id"] = "foe." + str(i)
-            trip.attrib["depart"] = str(step_start + period * i)
-            trip.attrib["from"] = edge_start
-            trip.attrib["to"] = parking['edge'][park]
-            trip.attrib["color"] = "green"
-            stop = ET.SubElement(trip, 'stop')
-            stop.attrib['parkingArea'] = parking['id_park'][park]
-            stop.attrib['duration'] = str(lay_off)
-
-        tree_routes.write(routes_file)
-        return n_agent, n_foe, period, step_start, lay_off, "All empty park with 50 Crowd Cars,\n50 Sumo Cars and 50 contributors"
 
     def default(self, scena, edge_start, parking, routes_file):
         return self.scenario_00(scena, edge_start, parking, routes_file)

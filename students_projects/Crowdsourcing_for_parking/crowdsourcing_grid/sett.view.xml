@@ -1,9 +1,9 @@
 <viewsettings>
-    <scheme name="real world">
+    <scheme name="custom_1">
         <opengl dither="0" fps="0" drawBoundaries="0" forceDrawPositionSelection="0" forceDrawRectangleSelection="0"
                 forceDrawDottedContour="0"/>
         <background backgroundColor="51,128,51" showGrid="0" gridXSize="100.00" gridYSize="100.00"/>
-        <edges laneEdgeMode="0" scaleMode="0" laneShowBorders="1" showBikeMarkings="1" showLinkDecals="1"
+        <edges laneEdgeMode="1" scaleMode="0" laneShowBorders="1" showBikeMarkings="1" showLinkDecals="1"
                showLinkRules="1" showRails="1" hideConnectors="1" widthExaggeration="1.00" minSize="0.00"
                showDirection="0" showSublanes="0" spreadSuperposed="0" edgeParam="EDGE_KEY" laneParam="LANE_KEY"
                vehicleParam="PARAM_NUMERICAL" vehicleTextParam="PARAM_TEXT" edgeData="speed" edgeValueHideCheck="0"
@@ -36,18 +36,18 @@
                 <entry color="0,80,180" name="selected"/>
             </colorScheme>
             <colorScheme name="by permission code" interpolated="1">
-                <entry color="240,240,240" threshold="0.00" name="nobody"/>
-                <entry color="grey" threshold="32.00" name="pedestrian"/>
-                <entry color="10,10,10" threshold="64.00" name="passenger"/>
-                <entry color="166,147,26" threshold="256.00" name="taxi"/>
-                <entry color="40,100,40" threshold="512.00" name="bus"/>
-                <entry color="80,80,80" threshold="2080.00" name="pedestrian_delivery"/>
-                <entry color="192,66,44" threshold="65536.00" name="bicycle"/>
-                <entry color="150,200,200" threshold="8388608.00" name="waterway"/>
-                <entry color="255,206,0" threshold="50495455.00" name="motorway"/>
-                <entry color="black" threshold="50593759.00" name="disallow_pedestrian"/>
-                <entry color="black" threshold="50593791.00" name="normal_road"/>
-                <entry color="green" threshold="67108863.00" name="all"/>
+                <entry color="240,240,240" threshold="0.00"/>
+                <entry color="grey" threshold="32.00"/>
+                <entry color="10,10,10" threshold="64.00"/>
+                <entry color="166,147,26" threshold="256.00"/>
+                <entry color="40,100,40" threshold="512.00"/>
+                <entry color="80,80,80" threshold="2080.00"/>
+                <entry color="192,66,44" threshold="65536.00"/>
+                <entry color="150,200,200" threshold="8388608.00"/>
+                <entry color="255,206,0" threshold="50495455.00"/>
+                <entry color="black" threshold="50593759.00"/>
+                <entry color="black" threshold="50593791.00"/>
+                <entry color="green" threshold="67108863.00"/>
             </colorScheme>
             <colorScheme name="by allowed speed (lanewise)" interpolated="1">
                 <entry color="red" threshold="0.00"/>
@@ -239,7 +239,7 @@
                 <entry color="magenta" threshold="2.00"/>
             </colorScheme>
             <colorScheme name="by insertion-backlog (streetwise)" interpolated="1">
-                <entry color="204,204,204" threshold="0.00"/>
+                <entry color="grey" threshold="0.00"/>
                 <entry color="green" threshold="1.00"/>
                 <entry color="yellow" threshold="10.00"/>
                 <entry color="red" threshold="100.00"/>
@@ -254,7 +254,7 @@
                 <entry color="204,204,204" threshold="0.00"/>
             </colorScheme>
             <colorScheme name="by edgeData (numerical, streetwise)" interpolated="1">
-                <entry color="204,204,204" name="missing data"/>
+                <entry color="204,204,204"/>
             </colorScheme>
             <colorScheme name="by distance (kilometrage)" interpolated="1">
                 <entry color="blue" threshold="-10000.00"/>
@@ -566,7 +566,7 @@
                 <entry color="189,189,179" threshold="-180.00"/>
                 <entry color="yellow" threshold="-20.00"/>
                 <entry color="red" threshold="-0.01"/>
-                <entry color="179,179,179" threshold="0.00" name="0"/>
+                <entry color="179,179,179" threshold="0.00"/>
                 <entry color="blue" threshold="0.01"/>
                 <entry color="cyan" threshold="20.00"/>
                 <entry color="179,189,189" threshold="180.00"/>
@@ -652,25 +652,25 @@
                 <entry color="0,102,204" name="selected"/>
             </colorScheme>
             <colorScheme name="by offset from best lane" interpolated="1">
-                <entry color="magenta" threshold="-100.00" name="opposite lane"/>
-                <entry color="red" threshold="-3.00" name="-3"/>
-                <entry color="yellow" threshold="-1.00" name="-1"/>
-                <entry color="179,179,179" threshold="0.00" name="0"/>
-                <entry color="cyan" threshold="1.00" name="1"/>
-                <entry color="blue" threshold="3.00" name="3"/>
+                <entry color="magenta" threshold="-100.00"/>
+                <entry color="red" threshold="-3.00"/>
+                <entry color="yellow" threshold="-1.00"/>
+                <entry color="179,179,179" threshold="0.00"/>
+                <entry color="cyan" threshold="1.00"/>
+                <entry color="blue" threshold="3.00"/>
             </colorScheme>
             <colorScheme name="by acceleration" interpolated="1">
                 <entry color="64,0,0" threshold="-9.00"/>
                 <entry color="red" threshold="-4.50"/>
                 <entry color="yellow" threshold="-0.10"/>
-                <entry color="179,179,179" threshold="0.00" name="0"/>
+                <entry color="179,179,179" threshold="0.00"/>
                 <entry color="cyan" threshold="0.10"/>
                 <entry color="blue" threshold="2.60"/>
                 <entry color="magenta" threshold="5.20"/>
             </colorScheme>
             <colorScheme name="by time gap on lane" interpolated="1">
                 <entry color="179,179,179" threshold="-1.00"/>
-                <entry color="yellow" threshold="0.00" name="0"/>
+                <entry color="yellow" threshold="0.00"/>
                 <entry color="cyan" threshold="1.00"/>
                 <entry color="blue" threshold="2.00"/>
             </colorScheme>
@@ -715,11 +715,11 @@
                 <entry color="red" threshold="900.00"/>
             </colorScheme>
             <colorScheme name="by lateral speed" interpolated="1">
-                <entry color="red" threshold="-3.00" name="-1.5"/>
-                <entry color="yellow" threshold="-1.00" name="-0.5"/>
-                <entry color="179,179,179" threshold="0.00" name="0"/>
-                <entry color="cyan" threshold="1.00" name="0.5"/>
-                <entry color="blue" threshold="3.00" name="1.5"/>
+                <entry color="red" threshold="-3.00"/>
+                <entry color="yellow" threshold="-1.00"/>
+                <entry color="179,179,179" threshold="0.00"/>
+                <entry color="cyan" threshold="1.00"/>
+                <entry color="blue" threshold="3.00"/>
             </colorScheme>
             <colorScheme name="by param (numerical)" interpolated="1">
                 <entry color="204,204,204" threshold="0.00"/>
@@ -919,5 +919,6 @@
         </polys>
         <legend showSizeLegend="1" showColorLegend="0" showVehicleColorLegend="0"/>
     </scheme>
+    <viewport zoom="100.00" x="126.13" y="123.87" angle="0.00"/>
     <delay value="200.00"/>
 </viewsettings>

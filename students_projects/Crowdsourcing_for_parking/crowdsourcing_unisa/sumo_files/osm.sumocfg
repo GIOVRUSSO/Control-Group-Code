@@ -13,6 +13,7 @@
         <route-files value="routes.rou.xml"/>
     </input>
     <!--
+
         <processing>
             <ignore-route-errors value="true"/>
         </processing>

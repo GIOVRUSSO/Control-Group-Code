@@ -1,0 +1,10 @@
+<edges>
+    <edge from="N1" to="N2" id="1to2" type="2L45"/>
+    <edge from="N2" to="N3" id="2to3" type="2L45"/>
+    <edge from="N3" to="N4" id="3to4" type="2L45"/>
+    <edge from="N4" to="N5" id="4to5" type="2L45"/>
+    <edge from="N5" to="N6" id="5to6" type="2L45"/>
+    <edge from="N6" to="N1" id="6to1" type="2L45"/>
+    <edge from="N2" to="N5" id="2to5" type="1L30"/>
+    <edge from="N5" to="N2" id="5to2" type="1L15"/>
+</edges>

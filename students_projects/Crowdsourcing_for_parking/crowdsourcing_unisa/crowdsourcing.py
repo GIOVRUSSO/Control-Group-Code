@@ -64,5 +64,6 @@ class Crowdsourcing():
                     #     break
 
         route_min = costs.argmin()
+        print("routes", routes)
         print("cost of the 3 routes", costs, "route chosen", route_min)
         self.agent.convert_route(routes[route_min])

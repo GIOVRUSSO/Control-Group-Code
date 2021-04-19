@@ -1,0 +1,13 @@
+<routes>
+    <vType id="bus" length="15.00" maxSpeed="22.00" vClass="bus" color="red" accel="1" decel="2.5" sigma="0.1"/>
+    <vType id="mcycle" length="2.00" maxSpeed="29.00" vClass="motorcycle" color="blue" accel="1" decel="2" sigma="1"/>
+    <vType id="pss" length="5.00" maxSpeed="33.00" vClass="passenger" color="yellow" accel="1" decel="4.5" sigma="0.5"/>
+
+    <route id="route_1" edges="1to2 2to3 3to4 4to5 5to6 6to1"/>
+    <vehicle id="vehicle_1" route="route_1" type="pss" depart="0.00"/>
+    <trip id="vehicle_2" type="bus" depart="0.00" from="1to2" to="6to1"/>
+
+
+    <flow id="flow_1" route="route_1" type="mcycle" begin="0.00" period="1" number="100"/>
+    <flow id="flow_2" type="pss" begin="0.00" from="3to4" to="2to3" period="1" number="100" color="green"/>
+</routes>

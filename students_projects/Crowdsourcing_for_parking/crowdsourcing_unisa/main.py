@@ -19,9 +19,9 @@ sumo_add_path = "sumo_files/add.add.xml"
 sumo_routes_sim_path = "sumo_files/routes.rou.xml"
 route_target_path = "sumo_files/target/"
 edge_start = "62166872"
-n_test_contribs = 1
+n_test_contribs = 3
 update_interval = 5
-scena = "32"
+scena = "31"
 
 
 def change_route_color(route):
@@ -96,7 +96,7 @@ if __name__ == '__main__':
         for i in range(n_agents):
             # print("Agent: ", i)
             if "agent." + str(i) in traci.vehicle.getIDList():
-                # traci.gui.trackVehicle(viewID=traci.gui.DEFAULT_VIEW, vehID="agent."+str(i))
+                # traci.gui.trackVehicle(viewID='View #0', vehID="agent."+str(i))
                 current_edge = traci.vehicle.getRoadID('agent.' + str(i))
                 distance = traci.vehicle.getDistance("agent." + str(i))
                 # code for saving data for the plot
@@ -136,6 +136,8 @@ if __name__ == '__main__':
         # code for save the data related at the sumo car
         for j in range(n_foes):
             if "foe." + str(j) in traci.vehicle.getIDList():
+                # traci.gui.trackVehicle(viewID='View #1', vehID="foe."+str(i))
+
                 distance_foe = traci.vehicle.getDistance("foe." + str(j))
                 # print("distance foe", distance_foe)
 

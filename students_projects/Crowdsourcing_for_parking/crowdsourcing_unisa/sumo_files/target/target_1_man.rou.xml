@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 04/06/21 13:27:52 by Eclipse SUMO netedit Version 1.8.0
+<!-- generated on 04/19/21 15:08:09 by Eclipse SUMO netedit Version 1.8.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
 
     <input>
-        <sumo-net-file value="G:\Il%20mio%20Drive\Tesi%20Magistrale\crowdsourcing_routing\crowdsourcing_unisa\sumo_files\osm.net.xml"/>
+        <sumo-net-file value="G:\Il%20mio%20Drive\Tesi%20Magistrale\Control-Group-Code\students_projects\Crowdsourcing_for_parking\crowdsourcing_unisa\sumo_files\osm.net.xml"/>
     </input>
 
     <output>
-        <output-file value="G:\Il%20mio%20Drive\Tesi%20Magistrale\crowdsourcing_routing\crowdsourcing_unisa\sumo_files\osm.net.xml"/>
+        <output-file value="G:\Il%20mio%20Drive\Tesi%20Magistrale\Control-Group-Code\students_projects\Crowdsourcing_for_parking\crowdsourcing_unisa\sumo_files\osm.net.xml"/>
         <output.street-names value="true"/>
     </output>
 
@@ -31,7 +31,7 @@
     </pedestrian>
 
     <netedit>
-        <route-files value="G:\Il%20mio%20Drive\Tesi%20Magistrale\crowdsourcing_routing\crowdsourcing_unisa\sumo_files\target\target_1_man.rou.xml"/>
+        <route-files value="G:\Il%20mio%20Drive\Tesi%20Magistrale\Control-Group-Code\students_projects\Crowdsourcing_for_parking\crowdsourcing_unisa\sumo_files\target\target_1_man.rou.xml"/>
     </netedit>
 
     <report>
@@ -46,9 +46,6 @@
     <vehicle id="vehicle_0" depart="0.00">
         <route edges="62166872 330224640 62166847#0 62166847#1 147391538#4 392822668 392822664#5 392822664#0 392822664#1 392822663 392822665#0 392822665#1 -587489968#1 -587489968#0"
                color="cyan"/>
-    </vehicle>
-    <vehicle id="vehicle_1" depart="0.00">
-        <route edges="147391538#0 147391538#2 147391538#3 147391538#4" color="cyan"/>
     </vehicle>
     <vehicle id="vehicle_10" depart="0.00">
         <route edges="392822665#2 84678511#0 -84678511#0" color="cyan"/>
@@ -82,9 +79,6 @@
     <vehicle id="vehicle_19" depart="0.00">
         <route edges="122726134#0 122726134#1 442156756 442156759#4 442156760#0 -79867013#3 -79867013#1 -79867013#0"
                color="cyan"/>
-    </vehicle>
-    <vehicle id="vehicle_2" depart="0.00">
-        <route edges="62166875#0 62166875#1 -330224640 -62166872 62166872" color="cyan"/>
     </vehicle>
     <vehicle id="vehicle_20" depart="0.00">
         <route edges="110971337 110971342#0 122726139 122726140#0 122726140#1 122726140#2" color="cyan"/>
@@ -220,9 +214,6 @@
     <vehicle id="vehicle_59" depart="0.00">
         <route edges="906498862 442154682#0 -79396150#5" color="cyan"/>
     </vehicle>
-    <vehicle id="vehicle_6" depart="0.00">
-        <route edges="79262672#0 79262672#1" color="cyan"/>
-    </vehicle>
     <vehicle id="vehicle_60" depart="0.00">
         <route edges="79396139#0 -79396117#1" color="cyan"/>
     </vehicle>
@@ -251,9 +242,6 @@
     <vehicle id="vehicle_68" depart="0.00">
         <route edges="-292874238#1 -292874238#0" color="cyan"/>
     </vehicle>
-    <vehicle id="vehicle_69" depart="0.00">
-        <route edges="79262660#0 79262672#1 79262672#1 110971340#0" color="cyan"/>
-    </vehicle>
     <vehicle id="vehicle_7" depart="0.00">
         <route edges="392822666 392822664#3 392822664#4 392822664#5" color="cyan"/>
     </vehicle>
@@ -268,23 +256,16 @@
         <route edges="79262655#3 79262655#4" color="cyan"/>
     </vehicle>
     <vehicle id="vehicle_73" depart="0.00">
-        <route edges="79262672#1 110971340#0" color="cyan"/>
+        <route edges="79262660#0 79262672#1 110971340#0" color="cyan"/>
     </vehicle>
     <vehicle id="vehicle_74" depart="0.00">
-        <route edges="79262660#0 79262672#1 110971340#0 392822664#1 392822663 392822665#0 392822665#1 -587489968#1"
-               color="cyan"/>
+        <route edges="79262672#0 79262672#1" color="cyan"/>
     </vehicle>
     <vehicle id="vehicle_75" depart="0.00">
-        <route edges="79262672#1 110971340#0" color="cyan"/>
+        <route edges="147391538#2 147391538#3 147391538#4" color="cyan"/>
     </vehicle>
     <vehicle id="vehicle_76" depart="0.00">
-        <route edges="79262672#1 110971340#0" color="cyan"/>
-    </vehicle>
-    <vehicle id="vehicle_77" depart="0.00">
-        <route edges="79262672#1 110971340#0" color="cyan"/>
-    </vehicle>
-    <vehicle id="vehicle_78" depart="0.00">
-        <route edges="79262672#1 110971340#0" color="cyan"/>
+        <route edges="62166875#0 62166875#1 -330224640 -62166872 62166872" color="cyan"/>
     </vehicle>
     <vehicle id="vehicle_8" depart="0.00">
         <route edges="79869125#0 -79869125#1 -392822665#0 392822666" color="cyan"/>

@@ -9,8 +9,8 @@ import numpy as np
 scena = "31"
 
 if scena == "00":
-    name_scenario, step_agents, distance_agents, step_foes, distance_foes, vehicle_biblio, vehicle_terminal, \
-    vehicle_multipiano, _, _, _, _ = pickle.load(open("output_data/scenario_" + scena + ".p", "rb"))
+    name_scenario, step_agents, distance_agents, step_foes, distance_foes, vehicle_biblio, vehicle_terminal, vehicle_multipiano = pickle.load(
+        open("output_data/scenario_" + scena + ".p", "rb"))
     x_agent = step_agents[0]
     y_agent = distance_agents[0]
     x_foe = step_foes[0]
@@ -146,6 +146,8 @@ if scena == "00":
 
     # plt.show()
     fig.savefig("plot/scenario_" + scena + ".png")
+    fig.savefig("plot/scenario_" + scena + ".pdf")
+
 
 elif scena == "01":
     name_scenario, step_agents, distance_agents, step_foes, distance_foes, vehicle_biblio, vehicle_terminal, \
@@ -289,6 +291,8 @@ elif scena == "01":
 
     # plt.show()
     fig.savefig("plot/scenario_" + scena + ".png")
+    fig.savefig("plot/scenario_" + scena + ".pdf")
+
 
 elif scena == "02":
     name_scenario, step_agents, distance_agents, step_foes, distance_foes, vehicle_biblio, vehicle_terminal, \
@@ -431,6 +435,8 @@ elif scena == "02":
 
     # plt.show()
     fig.savefig("plot/scenario_" + scena + ".png")
+    fig.savefig("plot/scenario_" + scena + ".pdf")
+
 
 elif scena == "11":
     name_scenario, step_agents, distance_agents, step_foes, distance_foes, vehicle_biblio, vehicle_terminal, \
@@ -583,6 +589,8 @@ elif scena == "11":
 
     # plt.show()
     fig.savefig("plot/scenario_" + scena + ".png")
+    fig.savefig("plot/scenario_" + scena + ".pdf")
+
 
 elif scena == "12":
     name_scenario, step_agents, distance_agents, step_foes, distance_foes, vehicle_biblio, vehicle_terminal, \
@@ -737,6 +745,8 @@ elif scena == "12":
 
     # plt.show()
     fig.savefig("plot/scenario_" + scena + ".png")
+    fig.savefig("plot/scenario_" + scena + ".pdf")
+
 
 elif scena == "21":
     name_scenario, step_agents, distance_agents, step_foes, distance_foes, vehicle_biblio, vehicle_terminal, \
@@ -888,6 +898,8 @@ elif scena == "21":
 
     # plt.show()
     fig.savefig("plot/scenario_" + scena + ".png")
+    fig.savefig("plot/scenario_" + scena + ".pdf")
+
 
 elif scena == "22":
     name_scenario, step_agents, distance_agents, step_foes, distance_foes, vehicle_biblio, vehicle_terminal, \
@@ -1049,6 +1061,8 @@ elif scena == "22":
 
     # plt.show()
     fig.savefig("plot/scenario_" + scena + ".png")
+    fig.savefig("plot/scenario_" + scena + ".pdf")
+
 
 elif scena == "23":
     name_scenario, step_agents, distance_agents, step_foes, distance_foes, vehicle_biblio, vehicle_terminal, \
@@ -1213,8 +1227,10 @@ elif scena == "23":
 
     # plt.show()
     fig.savefig("plot/scenario_" + scena + ".png")
+    fig.savefig("plot/scenario_" + scena + ".pdf")
 
-elif scena == "31" or scena == "32":
+
+elif scena == "31":
     name_scenario, step_agents, distance_agents, step_foes, distance_foes, vehicle_biblio, vehicle_terminal, \
     vehicle_multipiano, means_agent, variance_agent, means_foe, variance_foe = pickle.load(
         open("output_data/scenario_" + scena + ".p", "rb"))
@@ -1250,8 +1266,8 @@ elif scena == "31" or scena == "32":
 
     fig.suptitle("Travel Time - " + name_scenario, fontsize=16)
     # plt.show()
-    fig.savefig("plot/scenario_" + scena + "_1_travel_time.png", dpi=1200)
-
+    fig.savefig("plot/scenario_" + scena + "_1_travel_time.png")
+    fig.savefig("plot/scenario_" + scena + "_1_travel_time.pdf")
     # distance traveled plot
     y_agent_distance = [distance[-1] for distance in distance_agents]
     y_agent_mean_distance = np.mean(y_agent_distance)
@@ -1279,8 +1295,8 @@ elif scena == "31" or scena == "32":
 
     fig.suptitle("Distance Traveled - " + name_scenario, fontsize=16)
     # plt.show()
-    fig.savefig("plot/scenario_" + scena + "_2_distance_traveled.png", dpi=1200)
-
+    fig.savefig("plot/scenario_" + scena + "_2_distance_traveled.png")
+    fig.savefig("plot/scenario_" + scena + "_2_distance_traveled.pdf")
     # bar chart
     labels = ['<100', '100-200', '200-300', '300-400', '>400']
     y_agent = np.array(y_agent)
@@ -1322,8 +1338,8 @@ elif scena == "31" or scena == "32":
     fig.tight_layout()
 
     # plt.show()
-    fig.savefig("plot/scenario_" + scena + "_3_bar_chart.png", dpi=1200)
-
+    fig.savefig("plot/scenario_" + scena + "_3_bar_chart.png")
+    fig.savefig("plot/scenario_" + scena + "_3_bar_chart.pdf")
     # # mean and variance
     # fig, ax1 = plt.subplots(figsize=(8, 6), dpi=200, tight_layout=True)
     #

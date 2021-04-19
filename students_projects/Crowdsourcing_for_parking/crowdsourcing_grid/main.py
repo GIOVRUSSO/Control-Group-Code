@@ -106,8 +106,11 @@ if __name__ == '__main__':
 
     rewards = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],  # first reward
                [1, -10, 1, 1, 1, 1, 1, -10, 1, 1, 1, 1, 1, -10, 1, 1, 1, 1, 1, -10, 1, 1, 1, 1, 1],
+               # penalizes the under-diagonal
                [1, 1, 1, 1, 1, -10, 1, 1, 1, 1, 1, -10, 1, 1, 1, 1, 1, -10, 1, 1, 1, 1, 1, -10, 1],
-               [1, -10, 1, 1, 1, 1, 1, 1, 1, 1, 1, -10, 1, -10, 1, 1, 1, 1, 1, 1, 1, 1, 1, -10, 1]]
+               # penalizes the over-diagonal
+               [1, -10, 1, 1, 1, 1, 1, 1, 1, 1, 1, -10, 1, -10, 1, 1, 1, 1, 1, 1, 1, 1, 1, -10,
+                1]]  # penalizes the over-diagonal once and the under-diagonal once
     r_i = 3  # to select the reward (1xN_nodes)
 
     PMF_target = PMFs_contribs[2]
