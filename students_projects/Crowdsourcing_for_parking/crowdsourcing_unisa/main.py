@@ -21,7 +21,7 @@ route_target_path = "sumo_files/target/"
 edge_start = "62166872"
 n_test_contribs = 3
 update_interval = 5
-scena = "31"
+scena = "00"
 
 
 def change_route_color(route):
