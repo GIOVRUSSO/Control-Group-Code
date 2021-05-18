@@ -1,0 +1,6 @@
+<configuration>
+<input>
+        <net-file value="Napoli.net.xml"/>
+        <route-files value="Napoli.rou.xml"/>	
+</input>
+</configuration>

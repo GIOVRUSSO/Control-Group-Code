@@ -1,0 +1,11 @@
+<additionals>
+
+	<e1Detector id="detector_8" lane="-gneE231_1" pos="60" freq="900" file="det.out.xml" />
+	<e1Detector id="detector_9" lane="Via_SantaMaria_DegliAngeli_1" pos="60" freq="70" file="det.out.xml" />
+	<!-- <e1Detector id="detector_8" lane="gneE231_1" pos="60" freq="900" file="det.out.xml" /> -->
+
+	<e1Detector id="detector_40" lane="gneE231_1" pos="60" freq="900" file="det.out.xml" />
+	<e1Detector id="detector_10" lane="Vico_SantaMaria_1" pos="50" freq="900" file="det.out.xml" />
+	<!-- <e1Detector id="detector_80" lane="-gneE231_1" pos="60" freq="900" file="det.out.xml" /> -->
+	
+</additionals>
