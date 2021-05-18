@@ -1,0 +1,6 @@
+<configuration>
+   <input>
+       <net-file value="helloWorld.net.xml"/>
+       <route-files value="helloWorld.rou.xml"/>
+   </input>
+</configuration>
