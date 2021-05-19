@@ -1,1 +1,1 @@
-
+In this folder there is the simulation scenario of Sumo to take the data, which were used to calculate the pollution function of a vehicle, the calculation of the pollution function is under the name "Pollution_function_calculation.py".
