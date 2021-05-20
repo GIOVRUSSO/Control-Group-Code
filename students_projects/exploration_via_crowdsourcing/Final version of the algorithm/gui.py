@@ -66,8 +66,8 @@ class BoardGUI:
     self.divisions = divisions  # number of row or columns
     self.obs_list = obs_list  # index of obstacles
     self.cellsize = self.drawGrid(divisions) # dimension in pixel of the single cell
-    self.obstacle = self.loadImage('.obstacle.png')  # loading the representation of the obstacle
-    self.background = pygame.transform.scale(pygame.image.load(os.path.join('.sand.jpg')), (WIDTH, HEIGHT)) # loading the background
+    self.obstacle = self.loadImage('obstacle.png')  # loading the representation of the obstacle
+    self.background = pygame.transform.scale(pygame.image.load(os.path.join('sand.jpg')), (WIDTH, HEIGHT)) # loading the background
     self.drawImage(obs_list) # drawing the obstacles
     
   # This is an useful method that takes in input a cell index and return
