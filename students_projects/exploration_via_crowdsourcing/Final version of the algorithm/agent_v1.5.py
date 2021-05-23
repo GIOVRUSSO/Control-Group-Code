@@ -224,7 +224,10 @@ class Agent:
             if(pos == -1):
                 return -1
             forward_path.append(pos)
-            n_steps = n_steps - 1
+            if(pos == goal):
+                n_steps = 0;
+            else:
+                n_steps = n_steps - 1
         print("Output of the discovery: ",forward_path)
         # I save the next position in the case of a total loop
         next_cell = forward_path[1]
@@ -384,6 +387,8 @@ def main():
         x = a.move(end, n_step, n_advance)
         if(x == -1):
             print("\n### UNREACHABLE GOAL ###")
+            end_t = timer()-start_t
+            print("Time taken:", end_t)
             return
         path.extend(x)
         b.update(ffactor)
