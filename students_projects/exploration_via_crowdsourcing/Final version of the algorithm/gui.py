@@ -168,16 +168,12 @@ class Movement:
     delta_x = next_pos[0] - self.pos[0]
     delta_y = next_pos[1] - self.pos[1]
 
-    step = 20
+    step = 3
+    last_step = int(self.cellsize % step)
 
-    if delta_x != 0:
-      step_x = int(delta_x/step)
-      last_step_x = delta_x % step
-    if delta_y != 0:  
-      step_y = int(delta_y/step)
-      last_step_y = delta_y % step
+    n_step = int(self.cellsize/step) + 1 
 
-    for i in range(step):
+    for i in range(n_step):
 
       # This is a movement delay: determines how often we move 
       # the agent a certain step by updating the grid
@@ -187,26 +183,31 @@ class Movement:
       if(delta_x > 0):
         if(delta_x >= abs(delta_y)):
           # Checking if it is the last step
-          if i == step-1:
+          if i == n_step-1:
             # The last step is shorter than the others
-            self.pos[0] = self.pos[0] + last_step_x
-          # Moving the agent of a step along x axes to the right
-          self.pos[0] = self.pos[0] + step_x
+            self.pos[0] = self.pos[0] + last_step
+          else:
+            # Moving the agent of a step along x axes to the right
+            self.pos[0] = self.pos[0] + step
       if(delta_x < 0):
         if(abs(delta_x) >= abs(delta_y)):
-          if i == step-1:
-            self.pos[0] = self.pos[0] + last_step_x
-          self.pos[0] = self.pos[0] + step_x
+          if i == n_step-1:
+            self.pos[0] = self.pos[0] - last_step
+          else:
+            self.pos[0] = self.pos[0] - step
       if(delta_y > 0):
         if(abs(delta_x) < delta_y):
-          if i == step-1:
-            self.pos[1] = self.pos[1] + last_step_y
-          self.pos[1] = self.pos[1] + step_y
+          if i == n_step-1:
+            self.pos[1] = self.pos[1] + last_step
+          else:
+            self.pos[1] = self.pos[1] + step
       if(delta_y < 0):
         if(abs(delta_x) < abs(delta_y)):
-          if i == step-1:
-            self.pos[1] = self.pos[1] + last_step_y
-          self.pos[1] = self.pos[1] + step_y
+          if i == n_step-1:
+            self.pos[1] = self.pos[1] - last_step
+          else:
+            self.pos[1] = self.pos[1] - step
+
 
       # Adding the margin to the cell coordinates
       x = self.pos[0] + margin
