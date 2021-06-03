@@ -10,10 +10,12 @@ The files are the following:
 Figures featured in the journal version of the paper:
 * The file 'fullfig_scaled.jpg' is the only figure of the journal paper, displaying sampled routes for the target behavior (top left), sources (top right), the agent's sampled route for experimental case 2 (bottom left) and the pmfs from which this route was sampled (bottom right);
 
-Figures features in the extended version of the paper:
-* The file 'fig1.jpg' is the first figure of the extended paper, showing a connected car navigating a grid with behaviors from different services. The figure describes the connected cars scenario considered in the paper;
-* The file 'grids_rwd.jpg' is the second figure of the extended paper, displaying sampled routes for the target behavior (top left), sources (top right) and the reward for case 2 (bottom);
-* The file 'res_case1.jpg' reports the panels for the top half of the third figure of the extended paper;
-* The file 'res_case2.jpg' reports the panels for the bottom half of the third figure of the extended paper.
+Other figures:
+* The file 'fig1.jpg' graphically illustrates the use case we considered in the paper. The figure shows a connected car navigating within a grid. The car has access to different services. The figure describes the connected cars scenario considered in the paper;
+* The file 'grids_rwd.jpg' reports sampled routes for the target behavior (top left), sources (top right) and the reward for case 2 (bottom);
+* The file 'res_case1.jpg' reports the output of the crowdsourcing algorithm documented in our panel when the agent has no intrinsic rewards. As detailed in the paper, the car tracks the target behavior;
+* The file 'res_case2.jpg' reports the output of the crowdsourcing algorithm when the agent has the non-zero reward used in the paper. The car behavior will now be different from the one of the target.
+
+These figures are not contained in the published version of the paper and are instead contained in its extended version (see https://arxiv.org/abs/2103.02020).
 
 The experiments were carried out by Émiland Garrabé and the code can be made available upon request (send an email to egarrabe@unisa.it and giovarusso@unisa.it).
