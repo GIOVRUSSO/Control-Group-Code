@@ -3,16 +3,22 @@
 
 % Get the network matrices: note that the Matlab function 'WattsStrogatz' 
 % that can be found at https://www.mathworks.com/help/matlab/math/build-watts-strogatz-small-world-graph-model.html
+% The above lines are commented out (see note below). Uncomment if you want
+% to use matrices different from that of the paper.
 
-h = WattsStrogatz(100,3,0.7);
-L = full(laplacian(h));
-P = eye(100,100);
-  for i = 1:70
-      r = randi([1 100],1,1);
-      P(r,r) =0;
- end
-sigmar = 10;
-sigma = 5;
+% NOTE: if you want to use exactly the data from the paper, load the
+% matrices L and P from the file "data.mat"
+
+% h = WattsStrogatz(100,3,0.7);
+% L = full(laplacian(h));
+% P = eye(100,100);
+%   for i = 1:70
+%       r = randi([1 100],1,1);
+%       P(r,r) =0;
+%  end
+
+sigmar = 1;
+sigma = 0.1;
 tildeL = sigma*L + sigmar*P;
 
 % Preparing the time scale: this is obtained by perturbing the homogeneous
@@ -23,7 +29,7 @@ a = 1;
 b = 0.2;
 tin = [0:tf]*(a+b);
 tin = tin(tin<tf);
-tfin = tin + (1+0.05*randn(1,length(tin)));
+tfin = tin + (1+0.0005*randn(1,length(tin)));
 tfin = tfin(tfin<=tf);
 
 %First simulation: continuous and then discrete. Plotting also starts here.
@@ -55,10 +61,33 @@ end
 xlabel('x')
 ylabel('y')
 
+% Check conditions from the paper
+
+% This computes the \mu's from the simulation
+for i = 1:length(tfin)
+    mu(i) = tin(i+1)-tfin(i);
+end
+mu_max= max(mu(i)); %max \mu
+
+eigs = eig(tildeL); %eifs of \tilde{L}
+
+% Numerical computation of the 2-measure, needed to check the second term
+% in (42)
+for i= 1:length(eigs)
+measure(i) = 1/(2*mu_max)*(abs(1-2*mu_max*eigs(i))-1);
+end
+
+barS = 1; % comes from the derivative of S(x)
+d= 0.9;
+cbar2 = max(-d+barS, -1/mu_max+d)+max(measure); 
+%The above has to be negative in order to satisfy the condition, the output
+%is displayed next
+disp(['The value of $-\bar{c}^2$ in (42) of the paper is:', num2str(cbar2)])
+
 % Function for the time scale dynamics when \mu(t)=0
 
 function dydt = dstate (t,y,sL,sP)
-d = 0.5;
+d = 0.9;
 yr = y(1);
 yn = y(2:101);
 dyrdt = -d*yr +atan(yr);
@@ -69,7 +98,7 @@ end
 % Function for the time scale dynamics when \mu(t) \ne 0
 
 function yDelta = dstate_discrete (mu,y,sL,sP)
-d = 0.5;
+d = 0.9;
 yr = y(1);
 yn = y(2:101);
 yrDelta = yr + mu*(-d*yr +atan(yr));
