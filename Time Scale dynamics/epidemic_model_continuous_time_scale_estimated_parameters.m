@@ -17,6 +17,13 @@ xlabel('x')
 ylabel('y')
 legend('S(t)','I(t)','Q(t)','R(t)','FontSize',16)
 
+% Check on the norm to verify contractivity in the 1-norm
+figure
+for i=1:length(y(:,1))
+    err(i)= norm(y(i,:)-[N,0,0,0],1);
+end
+plot(t,err)
+
 % Dynamics 
 function dydt = dstate (t,y)
 alpha1= 0;
