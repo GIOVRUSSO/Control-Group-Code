@@ -13,7 +13,7 @@ tfin = tfin(tfin<=tf);
 
 % First simulation is in continuous time and then discrete
 
-y0 = [5 5 5 5];
+y0 = [1 1 1 1];
 tspan = [tin(1) tfin(1)];
 [t,y] = ode45(@dstate ,tspan ,y0);
 yDelta = dstate_discrete(b,y(length(t),:));
@@ -52,7 +52,7 @@ legend('S(t)','I(t)','Q(t)','R(t)','FontSize',16)
 function dydt = dstate (t,y)
 alpha1 = 1;
 alpha2 = 1;
-Lambda=10;
+Lambda=5;
 beta = 0.1;
 d = 1;
 zeta = 1;
@@ -76,7 +76,7 @@ end
 function yDelta = dstate_discrete (mu,y)
 alpha1 = 1;
 alpha2 = 1;
-Lambda=10;
+Lambda=5;
 beta = 0.1;
 d = 1;
 zeta = 1;
