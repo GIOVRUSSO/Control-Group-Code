@@ -1,7 +1,6 @@
 %Simulation of epidemic dynamics over a discrete time scale 
 % with randomnly chosen values of \mu(t)
 
-
 % Preparing the time scale
 
 tf = 10;
@@ -14,7 +13,7 @@ end
 
 % First time step and then plot
 
-y0 = [5 5 5 5];
+y0 = [1 1 1 1];
 yDelta = dstate_discrete(mu(1),y0);
 colorstring = 'rgbk';
 for j =1:4
@@ -45,7 +44,7 @@ axis([0,10,0,10])
 function yDelta = dstate_discrete (mu,y0)
 alpha1 = 1;
 alpha2 = 1;
-Lambda=10;
+Lambda=5;
 beta = 0.1;
 d = 1;
 zeta = 1;
