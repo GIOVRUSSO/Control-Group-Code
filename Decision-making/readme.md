@@ -13,27 +13,27 @@ The following files can be found in the repository:
 **·Pendulum KLC**
 **·Histogram binning** (generic code, see Annex for tutorial)
 
-###### Pendulum binning
+##### Pendulum binning
 While the general code used to perform histogram binning is provided on this github, we propose here to see it in action as a tool to estimate the plant of two different pendulums. The code also serves as a general example for offline estimation, with the data being generated before being binned.
 The pendulum class is simply used to generate the simulation data, with all the parameters (from mass to noise deviation and time discretization) being modifyable.
 The _database_ is then generated through 10.000 100-step episodes. The state is randomly initialized at the beginning of each episode, and the inputs are random, which has the advantage of providing a uniform-coverage database that is descriptive of the actual dynamics. Long episodes or non-unfiform policies would _bias_ the data generation process. This amount of data points makes the binning process somewhat lengthy (an order of an hour) but is the empirical minimum to get descriptive pfs given the state space's dimension and discretization.
 The data is then binned into arrays that represent marginal probabilities which are finally used to estimate the conditionnal plant pmfs using Bayes' rule.
 Finally, the plant pmfs corresponding to two pendulums (m=0.5kg and m=1kg) are stored as .npy files.
 
-###### Pendulum MPC
+##### Pendulum MPC
 Using the same pendulum class as before, an MPC controller is used on the pendulum. The library do-mpc is used for this controller, which has a cost of $\theta_k^2 + 0.1\gamma_k^2$ and a termminal cost of $\theta_k^2 + 0.5\gamma_k^2$, where $\theta_k$ and $\gamma_k$ are respectively the angular positin and speed at time $k$. The time horizon is 20.
 The actions are then supplemented with gaussian noise (std = 0.2) and discretized, which is in practice equivalent to sampling them from a stochastic policy obtained from the action returned by the MPC.
 Fifty simulations are then performed to validate the results, which are used as data for the (mean, std) angular position plot shown in the paper.
 
-###### Pendulum FPD
+##### Pendulum FPD
 The pendulum used for the MPC simulations has a mass of 0.5kg. This file is centered around using the _Control from demonstrations_ subset of FPD to adapt the corresponding MPC policy to the control of a 1kg pendulum. This is done by adding an _MPC-step_ method to the Pendulum class, which, from an MPC action, derives the expert policy before applying FPD to derive the actual policy and applying it to the pendulum, performing a simulation step in the process.
 Similarly to MPC, 50 simulations are performed as validation.
 
-###### Pendulum QLearning
+##### Pendulum QLearning
 The well-known tabular Q-Learning algorithm is applied to the pendulum. In line with the benchmarking aspect of the experiment, the discretization and cost signal are identical to the ones used for FPD.
 The algorithm uses a discounted approach, with a discount factor of 0.99 and a learning rate of 0.5. Learning is performed using 500-step episodes, and checkpoints are regularly used to evaluate the performance up until the agent raches a total of 100.000 learning episodes. The learning policy is $\epsilon$-greedy, with $\epsilon = 0.9$. At each checkpoint, the performance is evaluated using 300-episode simulations using the greedy policy. This is used to plot the (mean-std) reward at each checkpoint and to plot graphs similar to the ones done with MPC and FPD.
 
-###### Pendulum KLC
+##### Pendulum KLC
 The final algorithm used is the KL-Control. First, the system's passive dynamics are obtained by extracting the pmf $f^{(x)}(x_k|0,x_{k-1})$ for all $x_{k-1}$.
 Then, the states are enumerated from 1 to 2500, and this enumeration is used to build the matrix diag(exp(-q)) (where q is the same cost as used for the MPC and Q-Learning) and the transition probability matrix P, which is obtained from the previously-described passive dynamics.
 Finally, the eigenvector problem is solved using the power method. Here, the amount of iterations (50) is determined empirically for this specific problem, but in general we recomment using the following stopping condition: in two successive iterations, the norm of the resulting vectors is equal up to some tolerance.
@@ -46,10 +46,10 @@ An overarching function that can be found in many of the files is the discretize
 ### Authors and contributors
 **·Émiland Garrabé** (egarrabe@unisa.it) - author.
 
-###References
+### References
 [1] É. Garrabé, G. Russo, "Probabilistic design of optimal sequential decision-making algorithms in learning and control", 2022 (arXiv link pending)
 
-###Annex: Histogram binning guide
+### Annex: Histogram binning guide
 While technically not used for the project, we include the general code for the histogram binning in this repository. The following is the initially-written guide to use this code. a description of the algorithm and general good practices can also be found in the paper.
 
 _________________________________________________________________
