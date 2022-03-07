@@ -1,6 +1,6 @@
 # Tutorial in Probabilistic Design for Learning and Control
 ### Introduction
-Probabilistic Design aims at developping optimal control policies from data. This repository concentrates the supporting code for the review and tutorial paper _Probabilistic design of optimal sequential decision-making algorithms in learning and control_ (arXiv link pending).
+Probabilistic Design aims at developping optimal control policies from data. This repository concentrates the supporting code for the review and tutorial paper _Probabilistic design of optimal sequential decision-making algorithms in learning and control_ (https://arxiv.org/abs/2201.05212).
 
 _É. Garrabé, G. Russo, "Probabilistic design of optimal sequential decision-making algorithms in learning and control", 2022_
 
@@ -47,7 +47,7 @@ An overarching function that can be found in many of the files is the discretize
 **·Émiland Garrabé** (egarrabe@unisa.it) - author.
 
 ### References
-[1] É. Garrabé, G. Russo, "Probabilistic design of optimal sequential decision-making algorithms in learning and control", 2022 (arXiv link pending)
+[1] É. Garrabé, G. Russo, "Probabilistic design of optimal sequential decision-making algorithms in learning and control", 2022 (https://arxiv.org/abs/2201.05212)
 
 ### Annex: Histogram binning guide
 While technically not used for the project, we include the general code for the histogram binning in this repository. The following is the initially-written guide to use this code. a description of the algorithm and general good practices can also be found in the paper.
