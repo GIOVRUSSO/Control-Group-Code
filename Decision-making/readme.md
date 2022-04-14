@@ -19,6 +19,7 @@ The pendulum class is simply used to generate the simulation data, with all the 
 The _database_ is then generated through 10.000 100-step episodes. The state is randomly initialized at the beginning of each episode, and the inputs are random, which has the advantage of providing a uniform-coverage database that is descriptive of the actual dynamics. Long episodes or non-unfiform policies would _bias_ the data generation process. This amount of data points makes the binning process somewhat lengthy (an order of an hour) but is the empirical minimum to get descriptive pfs given the state space's dimension and discretization.
 The data is then binned into arrays that represent marginal probabilities which are finally used to estimate the conditionnal plant pmfs using Bayes' rule.
 Finally, the plant pmfs corresponding to two pendulums (m=0.5kg and m=1kg) are stored as .npy files.
+For simplicity's sake, we also provide the binned plants as .npy files in the plants.zip files. Keep in mind that the files need to be extracted in the same folder as the jupyter notebooks and that they are quite heavy (about a gigabytes each).
 
 ##### Pendulum MPC
 Using the same pendulum class as before, an MPC controller is used on the pendulum. The library do-mpc is used for this controller, which has a cost of $\theta_k^2 + 0.1\gamma_k^2$ and a termminal cost of $\theta_k^2 + 0.5\gamma_k^2$, where $\theta_k$ and $\gamma_k$ are respectively the angular positin and speed at time $k$. The time horizon is 20.
