@@ -1,8 +1,8 @@
-# Multiplexing control protocols to reject polynomial disturbances in complex networks
-## Introduction
+## Multiplexing control protocols to reject polynomial disturbances in complex networks
+### Introduction
 
-## Contents
+### Contents
 
-## Authors
+### Authors
 
-## References
+### References
