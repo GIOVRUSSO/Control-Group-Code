@@ -1,4 +1,4 @@
-## Multiplexing control protocols to reject polynomial disturbances in complex networks
+## On the design of integral multiplex control protocols in nonlinear network systems with delays
 ### Introduction
 
 ### Contents
