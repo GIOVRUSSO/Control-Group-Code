@@ -5,7 +5,7 @@ This repository collects the supporting code for the manuscript **On the design 
 *Shihao Xie, Giovanni Russo. On the design of integral multiplex control protocols in nonlinear network suystems with delays, 2022.*
 
 ### Contents
-The following list of **.m** file can be found in the repository, which reproduce the figures in the manuscript.
+The following list of **.m** files can be found in the repository, which reproduce the figures in the manuscript.
 - max_hand_position_deviation.m
 - in_silico_validation.m
 - robotarium_timestep.m
