@@ -6,7 +6,7 @@ This repository collects the supporting code for the manuscript **On the design 
 The following list of files can be found in the repository, which reproduce the figures in the manuscript.
 - max_hand_position_deviation.m
 - in_silico_validation.m
-- Robotarium
+- robotarium
   - robotarium_timestep.m
   - robotarium_simulator.m
   - robotarium_hardware.m
