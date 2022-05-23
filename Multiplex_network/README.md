@@ -13,7 +13,7 @@ The following list of files can be found in the repository, which reproduce the 
   - stepsize_hardware.mat
   - all other utilities to get the code run
 
-### Contributer
+### Author and contributer
 Shihao Xie (shihao.xie1@ucdconnect.ie)
 
 ### Reference
