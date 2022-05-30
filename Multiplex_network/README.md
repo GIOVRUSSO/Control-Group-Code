@@ -14,8 +14,7 @@ The following list of files can be found in the repository, which reproduce the 
   - all other utilities to get the code run
 
 ### Dynamic view of hand position deviation
-
-![s](https://public.flourish.studio/visualisation/10091192/)
+<div class="flourish-embed" data-src="story/1572969"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
 
 ### Author and contributer
 Shihao Xie (shihao.xie1@ucdconnect.ie)
