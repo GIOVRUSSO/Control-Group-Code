@@ -53,8 +53,13 @@ end
 end
 
 % plot control gain results, the optimal set of para is visual in the plot
-[a,b] = max(solution(:,4)+solution(:,5)+solution(:,6))
-solution(b,:)
+[a,b] = max(solution(:,4)+solution(:,5)+solution(:,6));
+fprintf('k0=%.4f\n',solution(b,1))
+fprintf('k1=%.4f\n',solution(b,2))
+fprintf('k2=%.4f\n',solution(b,3))
+fprintf('g0=%.4f\n',solution(b,4))
+fprintf('g1=%.4f\n',solution(b,5))
+fprintf('g2=%.4f\n',solution(b,6))
 figure
 plot(1:length(solution(:,1)),solution(:,4)+solution(:,5)+solution(:,6),'o')
 hold on
