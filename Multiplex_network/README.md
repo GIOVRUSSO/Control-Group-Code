@@ -1,6 +1,6 @@
 ## On the design of integral multiplex control protocols in nonlinear network systems with delays
 ### Introduction
-This repository collects the supporting code for the manuscript **On the design of integral multiplex control protocols in nonlinear network systems with delays** (arXiv link). In the manuscript, we designed a distributed integral control protocol for a network system in the form of multiplex architecture to *reject polynomial disturbances* and proposed sufficient conditions to guarantee *scalability* of the network system with regard to the residual disturbances.
+This repository collects the supporting code for the manuscript **On the design of integral multiplex control protocols in nonlinear network systems with delays** (arXiv link). In the manuscript, we designed a distributed integral control protocol for a network system in the form of multiplex architecture to *reject polynomial disturbances* and proposed sufficient conditions to guarantee *scalability* of the network system with regard to the residual disturbances. Here we report our codes to replicate all our results in the manuscript......
 
 ### Contents
 The following list of files can be found in the repository, which reproduce the parameters/figures in the manuscript.
@@ -10,7 +10,7 @@ This code solves a convex optimization problem to obtain the gains for the multi
 
 - **in_silico_validation.m**
 
-In this simulation, a total number of 1860 robots make up a formation of 30 concentric circles. For a given circle $i$ in the formation, there are $4i$ robots in the circle. The robot 1 and 3 in the inner circle are affected by the disturbances $d_1(t) = \[0.04+0.4\sin(0.5t)e^{-0.1t}, 0.04+0.4\sin(0.5t)e^{-0.1t}]$, $d_3(t) = \[-0.05t+0.4\sin(0.5t)e^{-0.1t}, -0.05t+0.4\sin(0.5t)e^{-0.1t}]$, respectively. Throughout all the simulations, we perturbe the same robots with the same disturbances. The hand position deviation of the robots are recorded. 
+In this simulation, a total number of 1860 robots make up a formation of 30 concentric circles. For a given circle $i$ in the formation, there are $4i$ robots in the circle. The robot 1 and 3 in the inner circle are affected by the disturbances $d_1(t) = \[0.04+0.4\sin(0.5t)e^{-0.1t}, 0.04+0.4\sin(0.5t)e^{-0.1t}]$, $d_3(t) = \[-0.05t+0.4\sin(0.5t)e^{-0.1t}, -0.05t+0.4\sin(0.5t)e^{-0.1t}]$, respectively. Throughout all the simulations, we perturbe the same robots with the same disturbances. The hand position deviation of the robots are recorded. also put figure number here......
 
 - **max_hand_position_deviation.m**
 
@@ -24,8 +24,12 @@ This code simulates the case when the number of robots in the formation are incr
 
 **robotarium_validation.m** provides a high-fidelity simulator in Matlab for the hardware experiments. Directly run the code and it will plot the hand position deviation of all the robots. 
 
-### A dynamic view of hand position deviation via Flourish
+### Results
+
+Flourish......
 https://public.flourish.studio/story/1572969/
+
+videos......
 
 ### Author and contributer
 Shihao Xie (shihao.xie1@ucdconnect.ie)
@@ -34,3 +38,4 @@ Shihao Xie (shihao.xie1@ucdconnect.ie)
 *Shihao Xie, Giovanni Russo. On the design of integral multiplex control protocols in nonlinear network suystems with delays, 2022.*
 
 ### Annex
+the formation and connection of the robots......
