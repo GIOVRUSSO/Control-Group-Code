@@ -1,7 +1,7 @@
 clear all
 close all
 
-layer = 3;
+layer = 30;
 N = 2*layer*(layer+1);
 delay = 11;
 iterations = 2350 + delay;
