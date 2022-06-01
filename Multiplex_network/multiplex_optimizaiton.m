@@ -53,6 +53,10 @@ end
 end
 
 % plot control gain results, the optimal set of para is visual in the plot
-figure;
+[a,b] = max(solution(:,4)+solution(:,5)+solution(:,6))
+solution(b,:)
+figure
 plot(1:length(solution(:,1)),solution(:,4)+solution(:,5)+solution(:,6),'o')
+hold on
+plot(b,solution(b,4)+solution(b,5)+solution(b,6),'x')
 xlabel('iterations')
