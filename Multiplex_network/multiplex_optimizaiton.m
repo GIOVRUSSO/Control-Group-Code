@@ -34,7 +34,7 @@ cvx_begin sdp quiet
             g1 >= 0; 
             g2 >= 0;
             %g0-2*g1 >= 0; %uncomment for robotarium harware parameters
-            %g0-2*g1 >= 0; %uncomment for robotarium harware parameters
+            %g0-2*g2 >= 0; %uncomment for robotarium harware parameters
             
             k0+g0 >=tol;
             k1+g1 >=tol;
