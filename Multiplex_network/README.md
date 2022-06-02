@@ -33,6 +33,10 @@ Please refer to [flourish data visualization](https://public.flourish.studio/sto
 
 - **Videos from Robotarium**
 
+
+https://user-images.githubusercontent.com/55105896/171673274-713b7240-6b49-4799-97ef-2fa57fcc68e1.mp4
+
+
 ### Author and contributer
 Shihao Xie (shihao.xie1@ucdconnect.ie)
 
