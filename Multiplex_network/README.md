@@ -22,7 +22,7 @@ This code simulates the case when the number of robots in the formation are incr
   - **stepsize_hardware.mat**
   - **all other utilities to get the code run**
 
-**robotarium_validation.m** provides a high-fidelity simulator in Matlab for the hardware experiments. Directly run the code and it will give a plot of hand position deviation for 12 robots in a formation of 2 concentric circles, with control gains obtained from **multiplex_optimization.m** and disturbances as described in **in_silico_validation.m**. In order to run the hardware experiments, comment all the plot commands in the code, i.e. line 203 and onwards, then submit it via https://www.robotarium.gatech.edu/dashboard (only submit the **robotarium_validation.m** code). 
+**robotarium_validation.m** provides a high-fidelity simulator in Matlab for the hardware experiments. Directly run the code and it will give a plot of hand position deviation for 12 robots in a formation of 2 concentric circles, with control gains obtained from **multiplex_optimization.m** and disturbances as described in **in_silico_validation.m**. In order to run the hardware experiments, comment all the plot commands in the code, i.e. line 203 and onwards, then submit it to [Robotarium](https://www.robotarium.gatech.edu/dashboard) (only submit the **robotarium_validation.m** code). 
 
 During the validation progress, the knowledge of step size of the hardware infrustructure is required to implement the multiplex layers of the integral control protocol. To this aim, we embedded the _tic-toc_ function in the code and reported the average step size from 10 sets of experiments in Figure 5. The average step size is around 0.033s which is consistent with the nominal value provided in Robotarium documents. However, some variability also occurs due to hardware complexity. To mitigate this variability and take this implementation aspect into account when deploying our control protocol on the hardware platform, we imposed the control gains of the integral actions to be smaller than the gains of the proportional action. This was done by solving the optimisation problem via **multiplex_optimization.m** this time uncommenting the following additional constraints in the code: $k_0 \ge 2k_1, k_0 \ge 2k_2, g_0 \ge 2g_1, g_0 \ge 2g_2$. We provide together with the code the average step size and average hand position deviation for all the robots across 10 sets of experiments in **stepsize_hardware.mat** and **posdev_hardware.mat** for readers' convenience. They will be loaded automatically and plotted once the code is run. We also refer the readers to Figure 6 in the manuscript for the plot in the *experimental validation* part.
 
@@ -31,8 +31,15 @@ During the validation progress, the knowledge of step size of the hardware infru
 
 Please refer to [flourish data visualization](https://public.flourish.studio/story/1572969/) for a dynamical view of the robots' average hand position deviation from 10 sets of hardware experiments.
 
-- **Videos from Robotarium**
+- **Video from Robotarium simulator**
 
+
+
+https://user-images.githubusercontent.com/55105896/171680439-bd8c03b4-e378-4364-b191-affb2b8533f8.mp4
+
+
+
+- **Video from Robotarium hardware**
 
 https://user-images.githubusercontent.com/55105896/171673274-713b7240-6b49-4799-97ef-2fa57fcc68e1.mp4
 
@@ -42,6 +49,3 @@ Shihao Xie (shihao.xie1@ucdconnect.ie)
 
 ### Reference
 *Shihao Xie, Giovanni Russo. On the design of integral multiplex control protocols in nonlinear network suystems with delays, 2022.*
-
-### Annex
-the formation and connection of the robots......
