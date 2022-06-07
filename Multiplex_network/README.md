@@ -47,4 +47,4 @@ https://user-images.githubusercontent.com/55105896/171673274-713b7240-6b49-4799-
 Shihao Xie (shihao.xie1@ucdconnect.ie)
 
 ### Reference
-*Shihao Xie, Giovanni Russo. On the design of integral multiplex control protocols in nonlinear network suystems with delays, 2022.*
+*Shihao Xie, Giovanni Russo. On the design of integral multiplex control protocols in nonlinear network systems with delays, 2022.*
