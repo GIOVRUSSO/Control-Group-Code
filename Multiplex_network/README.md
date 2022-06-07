@@ -40,7 +40,7 @@ https://user-images.githubusercontent.com/55105896/171680439-bd8c03b4-e378-4364-
 
 - **Video from Robotarium hardware**
 
-This video reports the robots' behaviour in one of the experiments we run via Robotarium hardware. The small oscillations throughout the experiment are caused by the variability of the step size from $0.033s$ for hardwares. We managed to reduce the effect of such variability by (i) choosing smaller control gains for multiplex layers; (ii) running 10 experiments and calculating the average hand position deviation for all the robots from these experiments.
+This video reports the robots' behaviour in one of the experiments we run via Robotarium hardware. The small oscillations throughout the experiment are caused by the variability of the step size from 0.033s for hardwares. We managed to reduce the effect of such variability by (i) choosing smaller control gains for multiplex layers; (ii) running 10 experiments and calculating the average hand position deviation for all the robots from these experiments.
 
 https://user-images.githubusercontent.com/55105896/171673274-713b7240-6b49-4799-97ef-2fa57fcc68e1.mp4
 
