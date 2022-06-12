@@ -1,6 +1,6 @@
 # Tutorial in Probabilistic Design for Learning and Control
 ### Introduction
-Probabilistic Design aims at developping optimal control policies from data. This repository concentrates the supporting code for the review and tutorial paper _Probabilistic design of optimal sequential decision-making algorithms in learning and control_ (https://arxiv.org/abs/2201.05212).
+Probabilistic Design aims at developping optimal control policies from data. This repository concentrates the supporting code for the review and tutorial paper _Probabilistic design of optimal sequential decision-making algorithms in learning and control_ ([see this link](https://arxiv.org/abs/2201.05212)).
 
 _É. Garrabé, G. Russo, "Probabilistic design of optimal sequential decision-making algorithms in learning and control", 2022_
 
