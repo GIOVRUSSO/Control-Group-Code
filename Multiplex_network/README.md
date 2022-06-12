@@ -1,6 +1,6 @@
 ## On the design of integral multiplex control protocols in nonlinear network systems with delays
 ### Introduction
-This repository collects the supporting code for the manuscript **On the design of integral multiplex control protocols in nonlinear network systems with delays** (arXiv link). In the manuscript, we designed an integral control protocol delivered via multiplex architecture for a network system to ***reject polynomial disturbances*** and guarantee the ***non-amplification of the residual disturbances***. We capture the fulfillment of these requirements via a ***scalability*** property of the network. There are two sets of validations given in the manuscript, including *in-silico validation* (Figure 3, 4) and *experimental validation* (Figure 5, 6). Here we report all the code, data and information to replicate all our results in the manuscript. The code can also be used to apply our methodology to different settings. If you use the code, please reference our work (see references).
+This repository collects the supporting code for the manuscript **On the design of integral multiplex control protocols in nonlinear network systems with delays** ([see this link](https://arxiv.org/abs/2206.03535)). In the manuscript, we designed an integral control protocol delivered via multiplex architecture for a network system to ***reject polynomial disturbances*** and guarantee the ***non-amplification of the residual disturbances***. We capture the fulfillment of these requirements via a ***scalability*** property of the network. There are two sets of validations given in the manuscript, including *in-silico validation* (Figure 3, 4) and *experimental validation* (Figure 5, 6). Here we report all the code, data and information to replicate all our results in the manuscript. The code can also be used to apply our methodology to different settings. If you use the code, please reference our work (see references).
 
 ### Contents
 The following list of files can be found in the repository, which reproduce the parameters/figures in the manuscript.
@@ -49,4 +49,4 @@ https://user-images.githubusercontent.com/55105896/171673274-713b7240-6b49-4799-
 Shihao Xie (shihao.xie1@ucdconnect.ie)
 
 ### Reference
-*Shihao Xie, Giovanni Russo. On the design of integral multiplex control protocols in nonlinear network systems with delays, 2022 ([Arxiv](https://arxiv.org/abs/2206.03535)).*
+*Shihao Xie, Giovanni Russo. On the design of integral multiplex control protocols in nonlinear network systems with delays, 2022 ([arXiv](https://arxiv.org/abs/2206.03535)).*
