@@ -26,9 +26,13 @@ This code simulates the case when the number of robots in the formation are incr
 During the hardware validation progress, the knowledge of step size of the hardware infrustructure is required to implement the multiplex layers of the integral control protocol. To this aim, we embedded the _tic-toc_ function in the code and reported the average step size from 10 sets of experiments in Figure 5. The average step size is around 0.033s which is consistent with the nominal value provided in Robotarium documents. However, some variability also occurs due to hardware implementations. This varaibility is handled as described in the referenced paper: we imposed the control gains of the integral actions to be smaller than the gains of the proportional action. This was done by solving the optimisation problem via **multiplex_optimization.m** this time uncommenting the following additional constraints in the code: $k_0 - 2k_1\ge0$, $k_0-2k_2\ge0$, $g_0-2g_1\ge0$, $g_0-2g_2\ge0$. We provide together with the code the average step size and average hand position deviation for all the robots across 10 sets of experiments in **stepsize_hardware.mat** and **posdev_hardware.mat** for readers' convenience. They will be loaded automatically and plotted once the code is run. We also refer the readers to Figure 6 in the manuscript for the plot in the *experimental validation* part.
 
 ### Results
+- **Disturbances**
+
+For better illustration, the animation of disturbances affecting the robots can be seen at [disturbances affecting robot 1 and 3](https://public.flourish.studio/story/1593251/). Notice that $d_1(t)$ contains a constant term and $d_3(t)$ includes a ramp component. However, both are rejected by the proposed integral multiplex controller, see next the animation of the robot hand position deviation and the videos from experiments.
+
 - **Hand position evolvement via Flourish**
 
-Please refer to [flourish data visualization](https://public.flourish.studio/story/1572969/) for a dynamical view of the robots' average hand position deviation from 10 sets of hardware experiments.
+Please refer to [flourish data visualization](https://public.flourish.studio/story/1572969/) for a dynamical view of the robots' average hand position deviation from 10 sets of hardware experiments. 
 
 - **Video from Robotarium simulator**
 
