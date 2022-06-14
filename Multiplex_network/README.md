@@ -40,7 +40,7 @@ https://user-images.githubusercontent.com/55105896/171680439-bd8c03b4-e378-4364-
 
 - **Video from Robotarium hardware**
 
-This video reports the robots' behaviour in one of the experiments we run via the Robotarium hardware. 
+This video reports the robots' behaviour in one of the experiments we run via the Robotarium hardware. The figures in the paper were obtained from a set of 10 experiments.
 
 https://user-images.githubusercontent.com/55105896/171673274-713b7240-6b49-4799-97ef-2fa57fcc68e1.mp4
 
