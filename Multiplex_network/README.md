@@ -10,7 +10,7 @@ This code solves a convex optimization problem to obtain the gains for the multi
 
 - **in_silico_validation.m**
 
-In this simulation, a total number of 1860 robots make up a formation of 30 concentric circles. For a given circle $i$ in the formation, there are $4i$ robots in the circle. The robot 1 and 3 in the inner circle are affected by the disturbances $d_1(t) = \[0.04+0.4\sin(0.5t)e^{-0.1t}, 0.04+0.4\sin(0.5t)e^{-0.1t}]$, $d_3(t) = \[-0.05t+0.4\sin(0.5t)e^{-0.1t}, -0.05t+0.4\sin(0.5t)e^{-0.1t}]$, respectively. Throughout all the simulations, we perturb the same robots (robot 1 and 3) with the same disturbances ($d_1(t)$ and $d_3(t)$). The hand position deviation of the robots are recorded in Figure 4 in the manuscript.
+In this simulation, a total number of 1860 robots make up a formation of 30 concentric circles. For a given circle $i$ in the formation, there are $4i$ robots in the circle. The robot 1 and 3 in the inner circle are affected by the disturbances $d_1(t) = \[0.04+0.4\sin(0.5t)e^{-0.1t}, 0.04+0.4\sin(0.5t)e^{-0.1t}]$, $d_3(t) = \[-0.05t+0.4\sin(0.5t)e^{-0.1t}, -0.05t+0.4\sin(0.5t)e^{-0.1t}]$, respectively. Throughout all the simulations, we perturb the same robots (robot 1 and 3) with the same disturbances ( $d_1(t)$ and $d_3(t)$ ). The hand position deviation of the robots are recorded in Figure 4 in the manuscript.
 
 - **max_hand_position_deviation.m**
 
