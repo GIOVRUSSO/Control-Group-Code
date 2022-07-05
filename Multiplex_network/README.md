@@ -26,9 +26,6 @@ This code simulates the case when the number of robots in the formation are incr
 During the hardware validation progress, the knowledge of step size of the hardware infrustructure is required to implement the multiplex layers of the integral control protocol. To this aim, we embedded the _tic-toc_ function in the code and reported the average step size from 10 sets of experiments in Figure 5. The average step size is around 0.033s which is consistent with the nominal value provided in Robotarium documents. However, some variability also occurs due to hardware implementations. This varaibility is handled as described in the referenced paper: we imposed the control gains of the integral actions to be smaller than the gains of the proportional action. This was done by solving the optimisation problem via **multiplex_optimization.m** this time uncommenting the following additional constraints in the code: $k_0 - 2k_1\ge0$, $k_0-2k_2\ge0$, $g_0-2g_1\ge0$, $g_0-2g_2\ge0$. We provide together with the code the average step size and average hand position deviation for all the robots across 10 sets of experiments in **stepsize_hardware.mat** and **posdev_hardware.mat** for readers' convenience. They will be loaded automatically and plotted once the code is run. We also refer the readers to Figure 6 in the manuscript for the plot in the *experimental validation* part.
 
 ### Results
-- **Disturbances**
-
-For better illustration, the animation of disturbances affecting the robots can be seen at [disturbances affecting robot 1 and 3](https://public.flourish.studio/story/1593251/). Notice that $d_1(t)$ contains a constant term and $d_3(t)$ includes a ramp component. However, both are rejected by the proposed integral multiplex controller, see next the animation of the robot hand position deviation and the videos from experiments.
 
 - **Hand position evolvement via Flourish**
 
@@ -36,17 +33,22 @@ Please refer to [flourish data visualization](https://public.flourish.studio/sto
 
 - **Video from Robotarium simulator**
 
-This video reports the robots' behaviour in the high fidelity simulator.
+This video reports the robots' behaviour in the high fidelity simulator together with disturbances affecting the robots, see how the constant component in $d_1$ and ramp component in $d_3$ are rejected.
 
-https://user-images.githubusercontent.com/55105896/171680439-bd8c03b4-e378-4364-b191-affb2b8533f8.mp4
+
+
+https://user-images.githubusercontent.com/55105896/177399519-278836ee-6e49-4c35-a59d-5eaf8269aee1.mp4
+
 
 
 
 - **Video from Robotarium hardware**
 
-This video reports the robots' behaviour in one of the experiments we run via the Robotarium hardware. The figures in the referenced paper were obtained from a set of 10 experiments.
+This video reports the robots' behaviour in one of the experiments we run via the Robotarium hardware together with disturbances affecting the robots. The figures in the referenced paper were obtained from a set of 10 experiments.
 
-https://user-images.githubusercontent.com/55105896/171673274-713b7240-6b49-4799-97ef-2fa57fcc68e1.mp4
+
+https://user-images.githubusercontent.com/55105896/177399544-68074a31-22c4-4f39-a3a5-de9751040a07.mp4
+
 
 
 ### Author and contributer
