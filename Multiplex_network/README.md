@@ -56,3 +56,7 @@ Shihao Xie (shihao.xie1@ucdconnect.ie)
 
 ### Reference
 *Shihao Xie, Giovanni Russo. On the design of integral multiplex control protocols in nonlinear network systems with delays, 2022 ([arXiv](https://arxiv.org/abs/2206.03535)).*
+
+### Annex: poster
+The poster that presents part of the work can be found via [Shihao_NecSys22.pdf](https://github.com/GIOVRUSSO/Control-Group-Code/files/9101320/Shihao_NecSys22.pdf). It was presented in NecSys22, an IFAC conference on network systems, in Zurich, Switzerland.
+
