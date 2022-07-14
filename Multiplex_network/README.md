@@ -17,6 +17,7 @@ In this simulation, a total number of 1860 robots make up a formation of 30 conc
 This code simulates the case when the number of robots in the formation are increased, starting with a formation of 1 circle (4 robots) to a formation with 30 concentric circles (1860 robots). We recorded at each simulation the maximum hand position deviation for each robot on a given circle and finally plotted the largest deviation on each circle across all the simulations in Figure 3.
 
 - **robotarium**
+The folder contains:
   - **robotarium_validation.m**
   - **posdev_hardware.mat**
   - **stepsize_hardware.mat**
