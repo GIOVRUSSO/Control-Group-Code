@@ -63,7 +63,7 @@ The poster that presents part of the work can be found via [Shihao_NecSys22.pdf]
 
 ![plot](https://github.com/GIOVRUSSO/Control-Group-Code/files/9101320/Shihao_NecSys22.pdf)
 
-[Shihao_NecSys22 (4).pdf](https://github.com/GIOVRUSSO/Control-Group-Code/files/9112565/Shihao_NecSys22.4.pdf)
+[embed]https://github.com/GIOVRUSSO/Control-Group-Code/files/9101320/Shihao_NecSys22.pdf[/embed] 
 
 
 
