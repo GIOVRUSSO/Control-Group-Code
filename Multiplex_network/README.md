@@ -61,9 +61,6 @@ Shihao Xie (shihao.xie1@ucdconnect.ie)
 ### Annex: poster
 The poster that presents part of the work can be found via [Shihao_NecSys22.pdf](https://github.com/GIOVRUSSO/Control-Group-Code/files/9101320/Shihao_NecSys22.pdf). It was presented in NecSys22, an IFAC conference on network systems, in Zurich, Switzerland.
 
-![plot](https://github.com/GIOVRUSSO/Control-Group-Code/files/9101320/Shihao_NecSys22.pdf)
-
-[embed]https://github.com/GIOVRUSSO/Control-Group-Code/files/9101320/Shihao_NecSys22.pdf[/embed] 
 
 
 
