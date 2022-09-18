@@ -4,6 +4,9 @@ This repository collects the supporting code for the manuscript **On the design 
 
 ### Contents
 The following list of files can be found in the repository, which reproduce the parameters/figures in the manuscript.
+- **The manuscript**
+
+
 - **optimisation_problem_for_parameters.m**
 
 This code solves a convex optimization problem to obtain the gains for the multiplex integral control protocol. Directly running the code gives the control gains ( $k_0$, $k_1$, $k_2$, $g_0$, $g_1$, $g_2$) for the control of MTDC gird.
