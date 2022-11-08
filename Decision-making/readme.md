@@ -4,13 +4,15 @@ Probabilistic Design aims at developping optimal control policies from data. Thi
 
 _É. Garrabé, G. Russo, "Probabilistic design of optimal sequential decision-making algorithms in learning and control", 2022_
 
+Update 08/11/2022: Minor edits were made to the FPD code in order to improve the reproducibility of the results. Namely, we explicitly implemented the FPD backward recursion and improved the policy computation for the MPC used within the code. We wish to thank Hozefa Jesawada for suggesting these possible improvements.
+
 ### Repository contents
-The following files can be found in the repository:
-**·Pendulum binning**
-**·Pendulum MPC**
-**·Pendulum FPD**
-**·Pendulum QLearning**
-**·Pendulum KLC**
+The following files can be found in the repository:\
+**·Pendulum binning**\
+**·Pendulum MPC**\
+**·Pendulum FPD**\
+**·Pendulum QLearning**\
+**·Pendulum KLC**\
 **·Histogram binning** (generic code, see Annex for tutorial)
 
 ##### Pendulum binning
@@ -27,8 +29,8 @@ The actions are then supplemented with gaussian noise (std = 0.2) and discretize
 Fifty simulations are then performed to validate the results, which are used as data for the (mean, std) angular position plot shown in the paper.
 
 ##### Pendulum FPD
-The pendulum used for the MPC simulations has a mass of 0.5kg. This file is centered around using the _Control from demonstrations_ subset of FPD to adapt the corresponding MPC policy to the control of a 1kg pendulum. This is done by adding an _MPC-step_ method to the Pendulum class, which, from an MPC action, derives the expert policy before applying FPD to derive the actual policy and applying it to the pendulum, performing a simulation step in the process.
-Similarly to MPC, 50 simulations are performed as validation.
+The pendulum used for the MPC simulations has a mass of 0.5kg. This implements the _Control from demonstrations_ FPD technique to control a 1kg pendulum without defining a second MPC controller. This is done by adding an _FPD-step_ method to the Pendulum class, which, from an MPC action, obtains the so-called _expert policy_ before applying FPD to derive the actual policy and apply it to the pendulum, performing a simulation step in the process. Before running simulations, a set of weights $\gamma_k$ are calculated with a time horizon of two steps.\ 
+Similarly to the MPC experiment, 50 simulations are performed as validation.
 
 ##### Pendulum QLearning
 The well-known tabular Q-Learning algorithm is applied to the pendulum. In line with the benchmarking aspect of the experiment, the discretization and cost signal are identical to the ones used for FPD.
