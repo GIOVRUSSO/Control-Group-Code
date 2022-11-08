@@ -34,7 +34,7 @@ Similarly to the MPC experiment, 50 simulations are performed as validation.
 
 ##### Pendulum QLearning
 The well-known tabular Q-Learning algorithm is applied to the pendulum. In line with the benchmarking aspect of the experiment, the discretization and cost signal are identical to the ones used for FPD.
-The algorithm uses a discounted approach, with a discount factor of 0.99 and a learning rate of 0.5. Learning is performed using 500-step episodes, and checkpoints are regularly used to evaluate the performance up until the agent raches a total of 100.000 learning episodes. The learning policy is $\epsilon$-greedy, with $\epsilon = 0.9$. At each checkpoint, the performance is evaluated using 300-episode simulations using the greedy policy. This is used to plot the (mean-std) reward at each checkpoint and to plot graphs similar to the ones done with MPC and FPD.
+The algorithm uses a discounted approach, with a discount factor of 0.99 and a learning rate of 0.5. Learning is performed using 500-step episodes, and checkpoints are regularly used to evaluate the performance up until the agent reaches a total of 100.000 learning episodes. The learning policy is $\epsilon$-greedy, with $\epsilon = 0.9$. At each checkpoint, the performance is evaluated using 300-episode simulations using the greedy policy. This is used to plot the (mean-std) reward at each checkpoint and to plot graphs similar to the ones done with MPC and FPD.
 
 ##### Pendulum KLC
 The final algorithm used is the KL-Control. First, the system's passive dynamics are obtained by extracting the pmf $f^{(x)}(x_k|0,x_{k-1})$ for all $x_{k-1}$.
