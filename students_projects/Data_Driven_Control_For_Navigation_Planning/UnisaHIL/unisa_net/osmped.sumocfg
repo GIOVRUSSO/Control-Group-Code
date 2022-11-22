@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="osmped.net.xml"/>
+        <additional-files value="add.add.xml"/>
+        <route-files value="pedestrians.rou.xml, traffic_jamming.rou.xml"/> 
+    </input>
+    <gui_only>
+        <gui-settings-file value="sett.view.xml"/>
+    </gui_only>
+
+</configuration>

@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2022-09-26 16:21:33 by Eclipse SUMO netconvert Version 1.14.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <type-files value="/usr/share/sumo/data/typemap/osmNetconvert.typ.xml"/>
+        <osm-files value="osm_bbox.osm.xml.gz"/>
+    </input>
+
+    <output>
+        <output-file value="osm.net.xml"/>
+        <output.street-names value="true"/>
+        <output.original-names value="true"/>
+        <ptstop-output value="osm_stops.add.xml"/>
+        <ptline-output value="osm_ptlines.xml"/>
+    </output>
+
+    <projection>
+        <proj.utm value="true"/>
+    </projection>
+
+    <processing>
+        <geometry.remove value="true"/>
+        <roundabouts.guess value="true"/>
+    </processing>
+
+    <tls_building>
+        <tls.discard-simple value="true"/>
+        <tls.join value="true"/>
+        <tls.guess-signals value="true"/>
+        <tls.default-type value="actuated"/>
+    </tls_building>
+
+    <ramp_guessing>
+        <ramps.guess value="true"/>
+    </ramp_guessing>
+
+    <junctions>
+        <junctions.join value="true"/>
+        <junctions.corner-detail value="5"/>
+    </junctions>
+
+    <railway>
+        <railway.topology.repair value="true"/>
+    </railway>
+
+    <report>
+        <verbose value="true"/>
+    </report>
+
+</configuration>
+-->
+
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+    
+    <parkingArea id="p_molo_manfredi" lane="672732730_0" startPos="0" endPos="30" roadsideCapacity="9"/>
+
+    <parkingArea id="p_molo_manfredi2" lane="-672732731_0" startPos="0" endPos="30" roadsideCapacity="9"/>
+
+    <parkingArea id="p_molo_manfredi3" lane="-672732728_0" startPos="0" endPos="30" roadsideCapacity="9"/>
+
+    <parkingArea id="p_molo_manfredi4" lane="401420254#0_0" startPos="0" endPos="30" roadsideCapacity="9"/>
+        
+    <parkingArea id="p_molo_manfredi5" lane="401420254#4_0" startPos="2" endPos="32" roadsideCapacity="9"/>
+
+    <parkingArea id="p_liberta" lane="-1001198066_0" startPos="0" endPos="30" roadsideCapacity="9"/>
+
+    <parkingArea id="p_stabia" lane="744932253_0" startPos="2" endPos="32" roadsideCapacity="9"/>
+
+    <parkingArea id="p_amendola" lane="670934106_0" startPos="4" endPos="48" roadsideCapacity="9"/>
+
+    <parkingArea id="p_amendola2" lane="670934108_0" startPos="2" endPos="48" roadsideCapacity="9"/>
+
+    <parkingArea id="p_concordia" lane="160821659#2_0" startPos="0" endPos="280" roadsideCapacity="9"/>
+
+    <parkingArea id="p_concordia2" lane="671983008_0" startPos="64" endPos="102" roadsideCapacity="9"/>
+
+    <parkingArea id="p_concordia3" lane="92961457#3_0" startPos="3" endPos="33" roadsideCapacity="9"/>
+
+    <parkingArea id="p_concordia4" lane="92961457#4_0" startPos="17" endPos="48" roadsideCapacity="9"/>
+
+    <parkingArea id="p_concordia5" lane="92961462_0" startPos="4" endPos="55" roadsideCapacity="9"/>
+
+    <parkingArea id="p_concordia6" lane="672273418#3_0" startPos="1" endPos="45" roadsideCapacity="9"/>
+
+    <parkingArea id="p_mazzini" lane="673737658#3_0" startPos="3" endPos="39" roadsideCapacity="9"/>
+
+    <parkingArea id="p_mazzini2" lane="673737658#6_0" startPos="3" endPos="39" roadsideCapacity="9"/>
+
+    <parkingArea id="p_stazione" lane="-565381618#0_0" startPos="90" endPos="110" roadsideCapacity="9"/>
+
+    <parkingArea id="p_foceirno" lane="163563222_0" startPos="75" endPos="132" roadsideCapacity="9"/>
+
+    <parkingArea id="p_vinciprova" lane="E5_0" startPos="5" endPos="35" roadsideCapacity="9"/>
+    
+    <parkingArea id="p_vinciprova2" lane="E6_0" startPos="3" endPos="22" roadsideCapacity="9"/>
+
+    <rerouter id="parkRerouter_manfredi" edges="672732730">
+        <interval begin="0" end="3600">
+            <parkingAreaReroute id="p_molo_manfredi"/>
+            <parkingAreaReroute id="p_molo_manfredi2"/>
+        </interval>
+    </rerouter>
+    
+    <rerouter id="parkRerouter_manfredi2" edges="-672732731">
+        <interval begin="0" end="3600">
+            <parkingAreaReroute id="p_molo_manfredi2"/>
+            <parkingAreaReroute id="p_molo_manfredi3"/>
+        </interval>
+    </rerouter>
+
+    <rerouter id="parkRerouter_manfredi3" edges="-672732728">
+        <interval begin="0" end="3600">
+            <parkingAreaReroute id="p_molo_manfredi3"/>
+            <parkingAreaReroute id="p_molo_manfredi4"/>
+        </interval>
+    </rerouter>
+
+    <rerouter id="parkRerouter_manfredi4" edges="401420254#0">
+        <interval begin="0" end="3600">
+            <parkingAreaReroute id="p_molo_manfredi4"/>
+            <parkingAreaReroute id="p_molo_manfredi5"/>
+        </interval>
+    </rerouter>
+
+    <rerouter id="parkRerouter_manfredi5" edges="401420254#4">
+        <interval begin="0" end="3600">
+            <parkingAreaReroute id="p_molo_manfredi5"/>
+            <parkingAreaReroute id="p_liberta"/>
+        </interval>
+    </rerouter>
+
+    <rerouter id="parkRerouter_liberta" edges="-1001198066">
+        <interval begin="0" end="3600">
+            <parkingAreaReroute id="p_liberta"/>
+            <parkingAreaReroute id="p_stabia"/>
+        </interval>
+    </rerouter> 
+
+    <rerouter id="parkRerouter_stabia" edges="744932253">
+        <interval begin="0" end="3600">
+            <parkingAreaReroute id="p_stabia"/>
+            <parkingAreaReroute id="p_amendola"/>
+        </interval>
+    </rerouter>
+
+    <rerouter id="parkRerouter_amendola" edges="670934106">
+        <interval begin="0" end="3600">
+            <parkingAreaReroute id="p_amendola"/>
+            <parkingAreaReroute id="p_amendola2"/>
+        </interval>
+    </rerouter>
+
+    <rerouter id="parkRerouter_amendola2" edges="670934108">
+        <interval begin="0" end="3600">
+            <parkingAreaReroute id="p_amendola2"/>
+            <parkingAreaReroute id="p_stabia"/>
+        </interval>
+    </rerouter>
+
+    <rerouter id="parkRerouter_concordia" edges="160821659#2">
+        <interval begin="0" end="3600">
+            <parkingAreaReroute id="p_concordia"/>
+            <parkingAreaReroute id="p_concordia2"/>
+        </interval>
+    </rerouter>
+
+    <rerouter id="parkRerouter_concordia2" edges="671983008">
+        <interval begin="0" end="3600">
+            <parkingAreaReroute id="p_concordia2"/>
+            <parkingAreaReroute id="p_concordia3"/>
+        </interval>
+    </rerouter>
+   
+    <rerouter id="parkRerouter_concordia3" edges="92961457#3">
+        <interval begin="0" end="3600">
+            <parkingAreaReroute id="p_concordia3"/>
+            <parkingAreaReroute id="p_concordia4"/>
+        </interval>
+    </rerouter> 
+
+    <rerouter id="parkRerouter_concordia4" edges="92961457#4">
+        <interval begin="0" end="3600">
+            <parkingAreaReroute id="p_concordia4"/>
+            <parkingAreaReroute id="p_concordia5"/>
+        </interval>
+    </rerouter>
+
+    <rerouter id="parkRerouter_concordia5" edges="92961462">
+        <interval begin="0" end="3600">
+            <parkingAreaReroute id="p_concordia5"/>
+            <parkingAreaReroute id="p_concordia6"/>
+        </interval>
+    </rerouter>
+
+    <rerouter id="parkRerouter_concordia6" edges="672273418#3">
+        <interval begin="0" end="3600">
+            <parkingAreaReroute id="p_concordia6"/>
+            <parkingAreaReroute id="p_concordia"/>
+        </interval>
+    </rerouter>
+
+    <rerouter id="parkRerouter_mazzini" edges="673737658#3">
+        <interval begin="0" end="3600">
+            <parkingAreaReroute id="p_mazzini"/>
+            <parkingAreaReroute id="p_mazzini2"/>
+        </interval>
+    </rerouter>
+
+    <rerouter id="parkRerouter_mazzini2" edges="673737658#6">
+        <interval begin="0" end="3600">
+            <parkingAreaReroute id="p_mazzini2"/>
+            <parkingAreaReroute id="p_mazzini"/>
+        </interval>
+    </rerouter>
+
+    <rerouter id="parkRerouter_foceirno" edges="163563222">
+        <interval begin="0" end="3600">
+            <parkingAreaReroute id="p_foceirno"/>
+            <parkingAreaReroute id="p_stazione"/>
+        </interval>
+    </rerouter>
+
+    <rerouter id="parkRerouter_vinciprova" edges="E5">
+        <interval begin="0" end="3600">
+            <parkingAreaReroute id="p_vinciprova"/>
+            <parkingAreaReroute id="p_vinciprova2"/>
+        </interval>
+    </rerouter>
+
+    <rerouter id="parkRerouter_vinciprova2" edges="E6">
+        <interval begin="0" end="3600">
+            <parkingAreaReroute id="p_vinciprova2"/>
+            <parkingAreaReroute id="p_foceirno"/>
+        </interval>
+    </rerouter>
+
+    <rerouter id="parkRerouter_stazione" edges="-565381618#0">
+        <interval begin="0" end="3600">
+            <parkingAreaReroute id="p_stazione"/>
+            <parkingAreaReroute id="p_vinciprova"/>
+        </interval>
+    </rerouter>
+
+
+</additional>

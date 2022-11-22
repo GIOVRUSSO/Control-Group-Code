@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2022-10-08 11:10:40 by Eclipse SUMO netedit Version 1.14.0
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <!-- Vehicles, persons and containers (sorted by depart) -->
+    <personFlow id="fxx_0" begin="0.00" end="3600.00" personsPerHour="1800.00">
+        <personTrip from="-587489968#1" to="-587489968#1"/>
+    </personFlow>
+    <personFlow id="fxx_1" begin="0.00" end="3600.00" personsPerHour="1800.00">
+        <personTrip from="587489968#1" to="587489968#1"/>
+    </personFlow>
+
+    <personFlow id="f_0" begin="0.00" end="3600.00" personsPerHour="1800.00">
+        <personTrip from="-79262633#16" to="-79262633#14"/>
+    </personFlow>
+    <personFlow id="f_1" begin="0.00" end="3600.00" personsPerHour="1800.00">
+        <personTrip from="-79262633#8" to="-79262633#3"/>
+    </personFlow>
+    <personFlow id="f_2" begin="0.00" end="3600.00" personsPerHour="1800.00">
+        <personTrip from="-79262633#0" to="-79262633#0"/>
+    </personFlow>
+
+    <personFlow id="f_045" begin="0.00" end="3600.00" personsPerHour="1800.00">
+        <personTrip from="-79867013#1" to="122726116"/>
+    </personFlow>
+    <personFlow id="f_111" begin="0.00" end="3600.00" personsPerHour="1800.00">
+        <personTrip from="-122726137" to="-79867013#0"/>
+    </personFlow>
+    <personFlow id="f_222" begin="0.00" end="3600.00" personsPerHour="1800.00">
+        <personTrip from="84678475" to="84678515"/>
+    </personFlow>
+    <personFlow id="f_366" begin="0.00" end="3600.00" personsPerHour="1800.00">
+        <personTrip from="442152904" to="442152904"/>
+    </personFlow>
+
+    <personFlow id="f_001" begin="0.00" end="3600.00" personsPerHour="1800.00">
+        <personTrip from="392822665#2" to="392822665#4"/>
+    </personFlow>
+    <personFlow id="f_100" begin="0.00" end="3600.00" personsPerHour="1800.00">
+        <personTrip from="441702871" to="441702871"/>
+    </personFlow>
+    <personFlow id="f_000" begin="0.00" end="3600.00" personsPerHour="5000.00">
+        <personTrip from="442156760#2" to="442156760#2"/>
+    </personFlow>
+    <personFlow id="f_11" begin="0.00" end="3600.00" personsPerHour="5000.00">
+        <personTrip from="79867013#2" to="79867013#2"/>
+    </personFlow>
+    <personFlow id="f_22" begin="0.00" end="3600.00" personsPerHour="5000.00">
+        <personTrip from="-292874238#4" to="-292874238#4"/>
+    </personFlow>
+</routes>

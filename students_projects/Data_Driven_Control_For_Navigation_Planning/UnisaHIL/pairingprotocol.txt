@@ -1,0 +1,7 @@
+1)  CONNESSIONE BLUETOOTH
+2) rfkill list e controllare che sia hci0
+3) sdptool browse 50:3D:C6:02:2B:73 e controllare il canale
+4)  sudo rfcomm bind hci0 50:3D:C6:02:2B:73 5
+5)  sudo chmod 777 /dev/rfcomm0
+
+
