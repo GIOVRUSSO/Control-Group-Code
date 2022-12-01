@@ -7,7 +7,7 @@ _É. Garrabé, G. Russo, "CRAWLING: a Crowdsourcing Algorithm on Wheels for Smar
 This repository contains the code needed to reproduce the simulations showcased in the paper, focused on two scenarios: in Scenario $1$, a fleet of students arrives on the University of Salerno at rush hour and seeks to find parking spaces on campus. In Scenario $2$ two cars are considered, both trying to achieve the same goal. However, a road obstruction makes this impossible for the second car. When pedestrians notice the obstruction, they share it on social media and the in-car service adapts to the event.\
 
 ###Repository contents
-·The subrepository _sumo\_files_ contains the auxiliary files for the SUMO simulation, namely the ones used to describe the campus road network.\
+·The zip file _sumo\_files.zip_ contains the auxiliary files for the SUMO simulation, namely the ones used to describe the campus road network. It has to be unzipped into a folder called _sumo\_files_ before use.\
 ·The files _agent.py_ and _crowdsourcing.py_ containt the respective classes for the agent (namely, a controlled car eauipped with CRAWLING) and the controller used in CRAWLING.\
 ·The file _behaviors.npy_ contains the stochastic policies of each of the primitives available to the decision-maker.\
 ####Scenario $1$-specific files
