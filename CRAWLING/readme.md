@@ -25,7 +25,11 @@ The SUMO simulator is used for the simulations, with our codebase being written 
 ### How to use this repository
 To use these files, a working SUMO installation is needed. Python, TraCI and the main scientific computing libraries need to be installed. Finally, for Scenario $2$, a Twitter account with developper access is needed to replicate the simulation.\
 To run Scenario $1$, choose how many cars are connected cars equipped with CRAWLING, between $0$ and $150$. Then, run the cells in _Simulation launcher.ipynb_, with the amount of connected cars passed as the argument of the function _simFiles_ in the last cell. The sizes of the subfleets and the starting road links, target behaviors of connected cars and direction of uncontrolled cars can be modified in the definition of the _simFiles_ function. Note that such road links are described by their ID, which can be found in the xml file describing the road network.\
-For Scenario $2$, the nain file can directly be run from the command line, which will open the simulator GUI and allow uers to play the simulation.
+For Scenario $2$, the nain file can directly be run from the command line, which will open the simulator GUI and allow uers to play the simulation. Scenario $2$ yields the following behavior, which can also be found in this repository as _video\_scenario2.webm_.
+
+[video_scenario2.webm](https://user-images.githubusercontent.com/10179753/207033728-0892432a-62cd-4403-8b82-1e43614a6dbe.webm)
+
+
 
 ### Authors and contributors
 Émiland Garrabé - author
