@@ -14,7 +14,7 @@ This code solves a convex optimization problem to obtain the gains for the multi
 
 - **MTDC_control.m**
 
-This code simulates the problem of controlling a grid of 5 terminals. All the communications between terminals are affected by randomly generated heterogeneous delays and one terminal is affected by a disturbance with a first order component. The control goal is to have the voltage deviation of all terminals reaching $0$.
+This code simulates the problem of controlling a grid of 30 terminals. All the communications between terminals are affected by time-varying heterogeneous delays and one terminal is affected by a disturbance with a first order component. The control goal is to have the voltage deviation of all terminals reaching $0$.
 
 
 
