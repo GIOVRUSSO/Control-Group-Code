@@ -6,7 +6,7 @@ An attractive idea in stochastic control is that of obtaining policies from a po
 _É. Garrabé, M. Lamberti, G. Russo, On Action Composition for Autonomous Sequential Decision-Making, 2023_
 
 ### Experiment description
-At rush hour, a fleet of connected cars arrive on the campus of the University of Salerno, with drivers seeking a parking space. $150$ cars enter the campus at $5$ second intervals. The cars follow directions output by the decision-making algorithm introduced in the paper, while another fleet follows a crowdsourcing decision-maker as a benchmark.
+At rush hour, a fleet of connected cars arrive on the campus of the University of Salerno, with drivers seeking a parking space. $100$ cars enter the campus at $5$-second intervals. The cars follow directions output by the decision-making algorithm introduced in the paper, while another fleet follows a crowdsourcing decision-maker as a benchmark.
 
 ### Repository contents
 In this repository, we provide all the files needed to replicate the numerical experiments in the paper, and the video showcasing our Hardware-in-the-Loop experiment. Namely, the files are:
