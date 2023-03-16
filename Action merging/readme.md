@@ -10,7 +10,7 @@ _É. Garrabé, M. Lamberti, G. Russo, On Action Composition for Autonomous Seque
 At rush hour, a fleet of connected cars arrive on the campus of the University of Salerno, with drivers seeking a parking space. $100$ cars enter the campus at $5$-second intervals. The cars follow directions output by the decision-making algorithm introduced in the paper, while another fleet follows a crowdsourcing decision-maker as a benchmark.
 
 ### Repository contents
-In this repository, we provide all the files needed to replicate the numerical experiments in the paper, and the video showcasing our Hardware-in-the-Loop experiment. Namely, the files are:
+In this repository, we provide all the files needed to replicate the numerical experiments in the paper, and the video showcasing our Hardware-in-the-Loop experiment. Namely, this repository contains:
 - _sumo\_files.zip_ contains all the files describing the campus road network in SUMO. It should be extracted into a folder called _sumo\_files_ before running simulations. 
 - _main.py_ is the main simulation file for the cars controlled by a Crowdsourcing decision-maker. The code within reads information files on the simulation, interfaces with the simulator through TraCI and, at the end of the simulation, logs the results.
 - _main\_merge.py_ is the main simulation file for cars Controlled by the decision-maker described in the paper.
@@ -19,8 +19,8 @@ In this repository, we provide all the files needed to replicate the numerical e
 - _agent.npy_ is a numpy array containing all the information about agents in the simulation. Such information is read by the main Python files at the beginning of the simulation and includes initial road link, departing time and target behavior of the agents.
 - _foe.npy_ contains similar information for uncontrolled cars. Such cars follow SUMO's automated routing, which is precomputed when they enter the simulation. While not useful in this case as simulations only include controlled cars, reading and writing to this file is still supported to allow users to customize simulations.
 - _behaviors.npy_ contains the sources, repository of all the stochastic behaviors to which the connected cars have access. Such behaviors are encoded as discrete probability functions.
-- _HIL\_route.mp4_ is the video obtained after running our HIL experiments. It features, side-by-side, a capture of the SUMO simulator, of a smartphone displaying the car's position in a GPS application, and live footage from the passenger's perspective. The video is embedded in this readme file.
 - The notebook _Simulation\_launcher.ipynb_ allows user to write on the files _agent.npy_ and _foe.npy_ by specifying the number of both types of cars to be included in a simulation, as well as their starting road link, departure times and individual goals. One can also directly program batches of simulations from this file for convenience.
+-- The video embedded in the next section, _HIL\_route.mp4_ was obtained after running our HIL experiments. It features, side-by-side, a capture of the SUMO simulator, of a smartphone displaying the car's position in a GPS application, and live footage from the passenger's perspective. If the embedding lower doesn't work, the video can also be reached through the following link: https://drive.google.com/file/d/1XPu_6-Fd-ZyGrnSD6JCfJ-7YQYguKcW8/view?usp=sharing
 
 ### Video
 [[Watch the video (external link)]![video thumbnail](https://user-images.githubusercontent.com/10179753/225648231-535825b4-60af-4252-88eb-01eaeacde6ec.png)
