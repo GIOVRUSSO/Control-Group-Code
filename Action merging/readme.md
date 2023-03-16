@@ -24,7 +24,7 @@ In this repository, we provide all the files needed to replicate the numerical e
 
 ### Video
 [![Watch the video]![video thumbnail](https://user-images.githubusercontent.com/10179753/225648231-535825b4-60af-4252-88eb-01eaeacde6ec.png)
-()](https://drive.google.com/file/d/1XPu_6-Fd-ZyGrnSD6JCfJ-7YQYguKcW8/view?usp=sharing)
+](https://drive.google.com/file/d/1XPu_6-Fd-ZyGrnSD6JCfJ-7YQYguKcW8/view?usp=sharing)
 
 ### Implementation details
 This section gives further details on the implementation of the simulations and HIL experiment.
