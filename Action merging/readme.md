@@ -23,7 +23,7 @@ In this repository, we provide all the files needed to replicate the numerical e
 - The notebook _Simulation\_launcher.ipynb_ allows user to write on the files _agent.npy_ and _foe.npy_ by specifying the number of both types of cars to be included in a simulation, as well as their starting road link, departure times and individual goals. One can also directly program batches of simulations from this file for convenience.
 
 ### Video
-[![Watch the video]![video thumbnail](https://user-images.githubusercontent.com/10179753/225648231-535825b4-60af-4252-88eb-01eaeacde6ec.png)
+[[Watch the video (external link)]![video thumbnail](https://user-images.githubusercontent.com/10179753/225648231-535825b4-60af-4252-88eb-01eaeacde6ec.png)
 ](https://drive.google.com/file/d/1XPu_6-Fd-ZyGrnSD6JCfJ-7YQYguKcW8/view?usp=sharing)
 
 ### Implementation details
