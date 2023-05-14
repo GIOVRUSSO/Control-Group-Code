@@ -25,7 +25,7 @@ In this repository, we provide all the files needed to replicate the numerical e
 ### Video
 The video, obtained from our HIL experiments, features, side-by-side, a capture of the SUMO simulator, of a smartphone displaying the car's position in a GPS application, and live footage from the passenger's perspective. If the embedding lower doesn't work, the video can also be reached through the following link: https://drive.google.com/file/d/1XPu_6-Fd-ZyGrnSD6JCfJ-7YQYguKcW8/view?usp=sharing
 
-[[Watch the HiL video Hhere (external link)]![video thumbnail](https://user-images.githubusercontent.com/10179753/225648231-535825b4-60af-4252-88eb-01eaeacde6ec.png)
+[[Watch the HiL video here (external link)]![video thumbnail](https://user-images.githubusercontent.com/10179753/225648231-535825b4-60af-4252-88eb-01eaeacde6ec.png)
 ](https://drive.google.com/file/d/1XPu_6-Fd-ZyGrnSD6JCfJ-7YQYguKcW8/view?usp=sharing)
 
 ### Implementation details
@@ -35,12 +35,17 @@ This section gives further details on the implementation of the simulations and 
 The sources are a repository of behaviors, from which connected cars can compose a behavior. In the paper, the sources are probability mass functions (pmfs), containing the conditional probabilities of a car merging into adjacent road links.
 Each source contains directions to a different section of the campus. This is done to ensure they provide varied choices to the agent on each link. In this work we choose three sources, two of them leading the agent to each of the parking lots, and the last towards the southern section of the campus. For each such direction and for each link, the corresponding source is obtained by computing the next road link on the route towards the destination (using SUMO's routing) and assigning a high probability to this road link, before adding uniform noise to all the other possible turns. This noise represents driver error or a requirement for user privacy, and fulfils Assumption 1 of the paper (when one considers as state space the set of adjacent links).
 
-##### State space restriction
+##### State space restriction and scalability
 We only compute the weights of Algorithm 1 for the road links that can be reached from the agent's position in $N$ time steps or less, where $N$ is the algorithm's time horizon. Indeed, links that are farther away will not have any impact on the current decision. This is due to the way the sources are computed, with only adjacent links being assigned non-zero probability. This trick significantly reduces the computation load of the decision-maker, with a decision being achieved in about half a second, which is a realistic time frame for this application.
+This also means that the algorithm's runtime is scalable w.r.t. network size and complexity. In fact, the main factor in the runtime becomes the receding horizon time window. Below, we show a plot of the runtime w.r.t. this parameter:
+![runtime](https://github.com/GIOVRUSSO/Control-Group-Code/assets/10179753/b25fdea5-a8c9-4ebf-9d46-476d7c45393a)
+
 
 ##### HIL implementation
 A standard smartphone is used as GPS sensor for this experiment. One could also buy a dedicated sensor or the one included in some modern laptop, but this approach is more general. The GPS data is sent to a laptop using an application, and stored in an rfcomm file. This file is read using the pySerial library, and translated in NMEA format. This is finally used to place a virtual avatar of the car in the simulation. When a road link change is detected, the controller is queried, and the output is sampled, with the given road link being highlighted in the simulation GUI. The driver then follows such directions. This functional pipeline is illustrated in the following figure:
 ![image](https://user-images.githubusercontent.com/10179753/225348461-59f6bd60-9d7f-44a4-bcc6-27c7b0fa022a.png)
+
+
 
 Finally, as explained in the file summary, the simulation video contains a side-by-side depiction of the simulation GUI, screen capture of a GPS application displaying the car's position, and passenger footage.
 
