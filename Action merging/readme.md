@@ -38,8 +38,7 @@ Each source contains directions to a different section of the campus. This is do
 
 ##### State space restriction and scalability
 We only compute the weights of Algorithm 1 for the road links that can be reached from the agent's position in $N$ time steps or less, where $N$ is the algorithm's time horizon. Indeed, links that are farther away will not have any impact on the current decision. This is due to the way the sources are computed, with only adjacent links being assigned non-zero probability. This trick significantly reduces the computation load of the decision-maker, with a decision being achieved in about half a second, which is a realistic time frame for this application.
-This also means that the algorithm's runtime is scalable w.r.t. network size and complexity. In fact, the main factor in the runtime becomes the receding horizon time window. Below, we show a plot of the runtime w.r.t. this parameter:
-![runtime](https://github.com/GIOVRUSSO/Control-Group-Code/assets/10179753/b25fdea5-a8c9-4ebf-9d46-476d7c45393a)
+This also means that the algorithm's runtime is scalable w.r.t. network size and complexity. In fact, the main factor in the runtime becomes the receding horizon time window.
 
 
 ##### HIL implementation
