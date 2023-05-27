@@ -103,7 +103,7 @@ for k = delay+1:iterations
         r1(:, i, k) = r1(:, i, k-1) + dr1(:, i, k-1) * ts;
         dr0(:, i, k-1) = dr0(:, i, k-1) + r1(:, i, k);        
         r0(:, i, k) = r0(:, i, k-1) + dr0(:, i, k-1) * ts;
-        vi(:, i, k) = vi(:, i, k) + r0(:, i, k) + d(:, i, (k-delay)); 
+        vi(:, i, k) = vi(:, i, k) + r0(:, i, k) + d(:, i, k); 
         for j = neighbors
             vi(:, i, k) = vi(:, i, k) + k0tau * tanh(kpsi*((xi(:, j, k-delay) - xi(:, i, k-delay)) - (xd(:, j, k-delay) - xd(:, i, k-delay))));
         end
