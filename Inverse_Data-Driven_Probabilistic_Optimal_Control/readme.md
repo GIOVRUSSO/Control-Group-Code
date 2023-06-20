@@ -4,5 +4,5 @@ This repository collects the supporting code for the manuscript **ON CONVEX DATA
 
 ### Contents
 The following list of files can be found in the repository, which reproduce the parameters/figures in the manuscript.
-- ###pendulum-running-example
-- ###robotarium
+- pendulum-running-example
+- robotarium
