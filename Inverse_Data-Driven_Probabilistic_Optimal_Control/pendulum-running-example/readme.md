@@ -1,4 +1,4 @@
-# Stabilizing a pendulum to unstable equilibrium
+posi# Stabilizing a pendulum to unstable equilibrium
 This folder contains all the necessary code required to replicate the results of the running pendulum example of the manuscript.
 
 ### Contents 
@@ -18,3 +18,8 @@ This file produces Gaussian process (GP) models of the system dynanics. First, w
 ### Pendulum IOC Discrete 
 This code implememts the discrete case of the running example of the manuscript. It takes Dicrete pmfs of the target and reference pendulum as input. We also define model predictive control (MPC) scheme for reference pendulum with mass =0.5kg. First, part of the code computes the policy given the actual state cost. We simulate the pendulum stablisation task by applying the inputs sampled from the policy. We conduct 20 simulations and collect the state-input trajectory data. Next, we define the feature set as given in the manuscript. Using the collected data we solve a convex optimisation problem for cost estimation. The cost is reconstructed using the obtained weights.
 In the last section of the code we generate the plots of the angular position ($\theta_k$) and the input ($u_k$).
+
+
+#### Pendulum IOC Continuous 
+
+This code implememts the continuous case of the running example of the manuscript. It takes GP models of the target and reference pendulum as input. To compute the integrals over the Gaussian distribution obtained from GP modelling, we use monte carlo sampling. Specifically, we calculate the average over 500 samples from the distribution. The rest of the code structure remains the same as the discrete case.
