@@ -8,7 +8,7 @@ The following list of directories can be found in the repository, which reproduc
 - robotarium
 
 ### Results
-Pendulum Example: discrete case
+*Pendulum Example: discrete case*
 
 ![Alt Text](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/pendulum-running-example/pendulum_joint_ci_1m_0.6l.jpeg)
 Target pendulum angular position and corresponding control input.  Results obtained when pfs are discrete and estimated via the histogram filter. (ii) pfs are estimated via Gaussian Processes.  Panels obtained from $20$ simulations and bold lines represent the mean and the shaded region is confidence interval corresponding to the standard deviation(same for all pendulum simulation plots).
@@ -17,7 +17,7 @@ Target pendulum angular position and corresponding control input.  Results obtai
 ![Alt Text](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/pendulum-running-example/pendulum_joint_estimated_ci_1m_0.6l.jpg)
 Angular position and corresponding control input, when the cost is estimated using algorithm 2 of [see link](). The pfs are considered discrete and estimated using histogram filter.
 
-Pendulum Example: Continous case
+*Pendulum Example: Continous case*
 
 ![ALT Text](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/pendulum-running-example/GP_pendulum_joint_ci_1m_0.6l.jpeg)
 Pendulum angular position and corresponding control input. Results obtained when pfs are estimated via Gaussian Processes. 
@@ -25,7 +25,7 @@ Pendulum angular position and corresponding control input. Results obtained when
 ![ALT Text](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/pendulum-running-example/GP_pendulum_joint_ci_1m_0.6l_cost_estimated.jpeg)
 Angular position and corresponding control input, when the cost is estimated using algorithm 2 of [see link](). The pfs are estimated using Guassian processes.
 
-Robotarium:
+*Robotarium:*
 - In-silico results:
 
 ![ALT Text](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/robotarium/Cost_Heat_Map%20(1).jpg)
