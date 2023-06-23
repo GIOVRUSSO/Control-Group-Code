@@ -45,6 +45,7 @@ Trajectories under algorithm 1 with estimated cost.
 
 
 - Experimental results:
+https://github.com/Yakub-Jesawada/Wikipedia/assets/98798839/47b78536-bfd8-49af-9510-6fd19da477d2
 
 https://github.com/Yakub-Jesawada/Wikipedia/assets/98798839/1dd524f3-55cf-4940-bd06-dd39ce451534
 
