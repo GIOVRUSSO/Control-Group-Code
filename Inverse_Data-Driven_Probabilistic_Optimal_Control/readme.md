@@ -25,5 +25,5 @@ Robotarium:
 
 - Experimental results:
 
-  ![Robotarium video](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/robotarium/robotarium_video.mp4)
+https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/robotarium/robotarium_video.mp4p4
 
