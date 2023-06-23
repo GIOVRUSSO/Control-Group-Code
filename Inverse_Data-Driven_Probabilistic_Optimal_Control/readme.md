@@ -56,3 +56,5 @@ https://github.com/Yakub-Jesawada/Wikipedia/assets/98798839/47b78536-bfd8-49af-9
 
 https://github.com/Yakub-Jesawada/Wikipedia/assets/98798839/1dd524f3-55cf-4940-bd06-dd39ce451534
 
+### Authors and Contributors 
+Hozefa Jesawada (jesawada@unisannio.it)
