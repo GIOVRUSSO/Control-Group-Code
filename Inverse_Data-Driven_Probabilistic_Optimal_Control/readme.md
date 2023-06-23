@@ -22,6 +22,16 @@ Pendulum Example: Continous case
 
 Robotarium:
 - In-silico results:
+![ALT Text](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/robotarium/Cost_Heat_Map%20(1).jpg)
+
+![ALT Text](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/robotarium/Training_Trajectories.jpg)
+
+![alt text](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/robotarium/Cost_Heat_Map_estimated.jpg)
+
+![Alt text](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/robotarium/Test_Trajectories.jpg)
+
+
+
 
 - Experimental results:
 
