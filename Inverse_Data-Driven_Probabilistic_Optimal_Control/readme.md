@@ -6,3 +6,8 @@ This repository collects the supporting code for the manuscript **ON CONVEX DATA
 The following list of files can be found in the repository, which reproduce the parameters/figures in the manuscript.
 - pendulum-running-example
 - robotarium
+
+### Results
+Pendulum Example: discrete case
+
+![Alt Text](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/pendulum-running-example/pendulum_joint_ci_1m_0.6l.jpeg)
