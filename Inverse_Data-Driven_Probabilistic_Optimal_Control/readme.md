@@ -46,5 +46,5 @@ Trajectories under algorithm 1 with estimated cost.
 
 - Experimental results:
 
-https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/.github/images/robotarium_video.mp4
+https://github.com/Yakub-Jesawada/Wikipedia/assets/98798839/1dd524f3-55cf-4940-bd06-dd39ce451534
 
