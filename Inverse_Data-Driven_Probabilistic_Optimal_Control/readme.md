@@ -46,7 +46,13 @@ Trajectories under algorithm 1 with estimated cost.
 
 - Experimental results:
 
+The following videos show robotarium robot performing the task:
+  - When the control policy using Algoritm 1 is applied while knowing the actual cost.
+
+
 https://github.com/Yakub-Jesawada/Wikipedia/assets/98798839/47b78536-bfd8-49af-9510-6fd19da477d2
+
+  - When the control policy using Algoritm 1 is applied while estimating the cost using Algorithm 2 given in [link]().
 
 https://github.com/Yakub-Jesawada/Wikipedia/assets/98798839/1dd524f3-55cf-4940-bd06-dd39ce451534
 
