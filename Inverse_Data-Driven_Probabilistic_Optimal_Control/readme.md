@@ -20,3 +20,10 @@ Pendulum Example: Continous case
 
 ![ALT Text](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/pendulum-running-example/GP_pendulum_joint_ci_1m_0.6l_cost_estimated.jpeg)
 
+Robotarium:
+- In-silico results:
+
+- Experimental results:
+
+  ![Robotarium video](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/robotarium/robotarium_video.mp4)
+
