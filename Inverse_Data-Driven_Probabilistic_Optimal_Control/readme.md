@@ -11,34 +11,42 @@ The following list of directories can be found in the repository, which reproduc
 *Pendulum Example: discrete case*
 
 ![Alt Text](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/pendulum-running-example/pendulum_joint_ci_1m_0.6l.jpeg)
+
 Target pendulum angular position and corresponding control input.  Results obtained when pfs are discrete and estimated via the histogram filter.  Panels obtained from $20$ simulations and bold lines represent the mean and the shaded region is confidence interval corresponding to the standard deviation(same for all pendulum simulation plots).
 
 
 ![Alt Text](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/pendulum-running-example/pendulum_joint_estimated_ci_1m_0.6l.jpg)
+
 Angular position and corresponding control input, when the cost is estimated using algorithm 2 of [see link](). The pfs are considered discrete and estimated using histogram filter.
 
 *Pendulum Example: Continous case*
 
 ![ALT Text](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/pendulum-running-example/GP_pendulum_joint_ci_1m_0.6l.jpeg)
+
 Pendulum angular position and corresponding control input. Results obtained when pfs are estimated via Gaussian Processes. 
 
 ![ALT Text](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/pendulum-running-example/GP_pendulum_joint_ci_1m_0.6l_cost_estimated.jpeg)
+
 Angular position and corresponding control input, when the cost is estimated using algorithm 2 of [see link](). The pfs are estimated using Guassian processes.
 
 *Robotarium:*
 - In-silico results:
 
 ![ALT Text](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/robotarium/Cost_Heat_Map%20(1).jpg)
-the cost used for the forward control problem.  Note that the cost increases in correspondence of the obstacles (in red in the right panels)  and its minimum is attained at the goal destination
+
+The cost used for the forward control problem.  Note that the cost increases in correspondence of the obstacles (in red in the right panels)  and its minimum is attained at the goal destination
 
 ![ALT Text](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/robotarium/Training_Trajectories.jpg)
-Robot trajectories starting from different initial conditions depicted as $(\star)$ when the policy from Algorithm 1 in [see link]() is used.
+
+Robot trajectories starting from different initial conditions depicted as $(\star)$ when the policy from Algorithm 1 in )[see link](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/Paper_preprint.pdf)) is used.
 
 ![alt text](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/robotarium/Cost_Heat_Map_estimated.jpg)
+
 Estimated cost using Algorithm 2.
 
 
 ![Alt text](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/robotarium/Test_Trajectories.jpg)
+
 Trajectories under algorithm 1 with estimated cost.
 
 
@@ -57,4 +65,4 @@ https://github.com/Yakub-Jesawada/Wikipedia/assets/98798839/47b78536-bfd8-49af-9
 https://github.com/Yakub-Jesawada/Wikipedia/assets/98798839/1dd524f3-55cf-4940-bd06-dd39ce451534
 
 ### Authors and Contributors 
-*Hozefa Jesawada* (jesawada@unisannio.it)
+Author: *Hozefa Jesawada* (jesawada@unisannio.it)
