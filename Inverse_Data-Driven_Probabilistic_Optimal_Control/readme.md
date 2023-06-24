@@ -17,7 +17,7 @@ Target pendulum angular position and corresponding control input.  Results obtai
 
 ![Alt Text](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/pendulum-running-example/pendulum_joint_estimated_ci_1m_0.6l.jpg)
 
-Angular position and corresponding control input, when the cost is estimated using algorithm 2 of [see link](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/Paper_preprint.pdf). The pfs are considered discrete and estimated using histogram filter.
+Angular position and corresponding control input, when the cost is estimated using Algorithm 2 given [here](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/Paper_preprint.pdf). The pfs are considered discrete and estimated using histogram filter.
 
 *Pendulum Example: Continous case*
 
@@ -27,7 +27,7 @@ Pendulum angular position and corresponding control input. Results obtained when
 
 ![ALT Text](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/pendulum-running-example/GP_pendulum_joint_ci_1m_0.6l_cost_estimated.jpeg)
 
-Angular position and corresponding control input, when the cost is estimated using algorithm 2 of [see link](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/Paper_preprint.pdf). The pfs are estimated using Guassian processes.
+Angular position and corresponding control input, when the cost is estimated using Algorithm 2 from [here](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/Paper_preprint.pdf). The pfs are estimated using Guassian processes.
 
 *Robotarium:*
 - In-silico results:
@@ -38,7 +38,7 @@ The cost used for the forward control problem.  Note that the cost increases in 
 
 ![ALT Text](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/robotarium/Training_Trajectories.jpg)
 
-Robot trajectories starting from different initial conditions depicted as $(\star)$ when the policy from Algorithm 1 in )[see link](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/Paper_preprint.pdf)) is used.
+Robot trajectories starting from different initial conditions depicted as $(\star)$ when the policy from Algorithm 1 from [here](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/Paper_preprint.pdf)) is used.
 
 ![alt text](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/robotarium/Cost_Heat_Map_estimated.jpg)
 
