@@ -12,6 +12,6 @@ Given the setup of the experiment in the manuscript, the first part in the code 
 
 ### robot_routing_simulate.py
 
-This file simulated the robot performing the obstacle avoidance task. Unlike *si_go_to_point.ipynb*, we can visualize the agent performing the task using this code. We provide *weights.npy* as an input and compute the policy of the agent. Apply the input sampled from the policy and continue this process till the task of reaching the goal is completed. We can also obtain state and input trajectories data as a .npy file. 
+This file simulated the robot performing the obstacle avoidance task. Unlike *si_go_to_point.ipynb*, we can visualize the agent performing the task using this code. We provide *Weights.npy* as an input and compute the policy of the agent. Apply the input sampled from the policy and continue this process till the task of reaching the goal is completed. We can also obtain state and input trajectories data as a .npy file. 
 
-Apart from simulation, this code file can also be used to perform hardware experiments. Just upload the *si_go_to_point_FPD.py* and *weights.npy* files to the Robotarium portal and you can obtain the video of the robot performing the task.
+Apart from simulation, this code file can also be used to perform hardware experiments. Just upload the *robot_routing_simulate.py* and *Weights.npy* files to the Robotarium portal and you can obtain the video of the robot performing the task.
