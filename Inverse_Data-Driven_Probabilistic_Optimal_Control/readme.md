@@ -34,7 +34,7 @@ Angular position and corresponding control input, when the cost is estimated usi
 *Robotarium:*
 - In-silico results:
 
-![Cost_Heat_Map_Actual](https://github.com/GIOVRUSSO/Control-Group-Code/assets/62793703/cbf7a4ce-d722-434c-b8c2-4545a79a608e)
+![Cost_Heat_Map_Actual](https://github.com/GIOVRUSSO/Control-Group-Code/assets/62793703/1e63ef88-7f3e-4ee7-aaff-dbb2733f1663)
 
 The cost used for the forward control problem.  Note that the cost increases in correspondence of the obstacles (in red in the right panels)  and its minimum is attained at the goal destination
 
@@ -42,7 +42,7 @@ The cost used for the forward control problem.  Note that the cost increases in 
 
 Robot trajectories starting from different initial conditions depicted as $(\star)$ when the policy from Algorithm 1 from [here](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/Paper_preprint.pdf)) is used.
 
-![Cost_Heat_Map_estimated](https://github.com/GIOVRUSSO/Control-Group-Code/assets/62793703/1c0c6973-edff-4181-8588-9a2a3b5ac4dc)
+![Cost_Heat_Map_estimated](https://github.com/GIOVRUSSO/Control-Group-Code/assets/62793703/5113f33c-7e94-4c2b-b2e3-5dee856f44f2)
 
 Estimated cost using Algorithm 2.
 
