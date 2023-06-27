@@ -6,7 +6,8 @@ This repository collects the supporting code for the manuscript **ON CONVEX DATA
 The following list of directories can be found in the repository, which reproduce the simulation and experimental results given in the manuscript.
 - pendulum-running-example:
   - This folder contains the code files required for replicating the results of pendulum running example given in the manuscript.
-- robotarium
+- robotarium:
+  - This folder contains the code files required for replicating the results of the robot routing example given in the manuscript. 
 
 ### Results
 *Pendulum Example: discrete case*
