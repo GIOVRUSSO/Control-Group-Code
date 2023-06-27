@@ -1,4 +1,4 @@
-posi# Stabilizing a pendulum to unstable equilibrium
+# Stabilizing a pendulum to unstable equilibrium
 This folder contains all the necessary code required to replicate the results of the running pendulum example of the manuscript.
 
 ### Contents 
