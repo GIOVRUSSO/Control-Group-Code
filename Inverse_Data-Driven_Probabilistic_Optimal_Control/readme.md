@@ -42,7 +42,7 @@ The cost used for the forward control problem.  Note that the cost increases in 
 
 Robot trajectories starting from different initial conditions depicted as $(\star)$ when the policy from Algorithm 1 from [here](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/Paper_preprint.pdf)) is used.
 
-
+![Cost_Heat_Map_estimated](https://github.com/GIOVRUSSO/Control-Group-Code/assets/62793703/1c0c6973-edff-4181-8588-9a2a3b5ac4dc)
 
 Estimated cost using Algorithm 2.
 
