@@ -34,7 +34,7 @@ Angular position and corresponding control input, when the cost is estimated usi
 *Robotarium:*
 - In-silico results:
 
-![Cost_Heat_Map_Actual](https://github.com/GIOVRUSSO/Control-Group-Code/assets/62793703/1e63ef88-7f3e-4ee7-aaff-dbb2733f1663)
+![Cost_Heat_Map_Actual](https://github.com/GIOVRUSSO/Control-Group-Code/assets/62793703/93b30a84-ecc6-43a9-91fe-fd7d7fc0ae91)
 
 The cost used for the forward control problem.  Note that the cost increases in correspondence of the obstacles (in red in the right panels)  and its minimum is attained at the goal destination
 
