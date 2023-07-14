@@ -10,7 +10,7 @@ The Robotarium folder contains the following files:
 
 Given the setup of the experiment in the manuscript, the first part of the code solves the forward problem/task of robot routing while avoiding obstacles using the control policy computed by Algorithm 1 of the manuscript. Multiple state and control input trajectories of a robot performing the task are obtained and saved in the *State_Data.npy* and *Input_Data.npy*. Then, the second part of the code uses these data files to estimate the cost of the agent using Algorithm 2 of the manuscript. We define a function that computes the features as defined in the manuscript. Next, we obtain the *weights.npy* by solving the inverse problem. We use the weights to formulate the estimated cost and test the effectiveness of the estimated cost by performing the robot routing cost while avoiding obstacles. The plots in Figure 3 of the manuscripts can be obtained from the last section of the code.
 
-Note: To replicate Figure 3 of the manuscript use the *Weights_Obtained.np* , *State_Data*, and *Input_Data* files.
+Note: To replicate Figure 3 of the manuscript use the *Weights_Obtained.npy*, *State_Data*, and *Input_Data* files.
 
 ### robot_routing_simulate.py
 
