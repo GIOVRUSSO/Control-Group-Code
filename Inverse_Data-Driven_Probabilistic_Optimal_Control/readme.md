@@ -11,6 +11,7 @@ The following list of directories can be found in the repository, which reproduc
 
 ### Results
 We present the simulation and experimental results given in the manuscript ([see this link](https://arxiv.org/abs/2306.13928))
+
 *Pendulum Example: discrete case*
 ![pendulumjointci1m06l](https://github.com/GIOVRUSSO/Control-Group-Code/assets/62793703/2984b2ce-6b53-4627-a838-e368a1b55124)
 
