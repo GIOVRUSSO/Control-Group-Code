@@ -11,6 +11,11 @@ The Robotarium folder contains the following files:
 Given the setup of the experiment in the manuscript, the first part of the code solves the forward problem/task of robot routing while avoiding obstacles using the control policy computed by Algorithm 1 of the manuscript. Multiple state and control input trajectories of a robot performing the task are obtained and saved in the *State_Data.npy* and *Input_Data.npy*. Then, the second part of the code uses these data files to estimate the cost of the agent using Algorithm 2 of the manuscript. 
 
 We define a function that computes the features as defined in the manuscript. 
+
+
+$g_{i}(\bv{x}_{k}) := \frac{1}{\sqrt{{(2\pi)^{2} \det(\bv{\Sigma}_o)}}} \exp\left(-\frac{1}{2}(\bv{x}_{k}-\bv{o}_{i})^\top \bv{\Sigma}_o^{-1} (\bv{x}_{k}-\bv{o}_{i})\right)$,
+
+
 ![feature_point_grid](https://github.com/GIOVRUSSO/Control-Group-Code/assets/62793703/d50ee3e0-3e3b-4595-b5fc-a3305e843b08)
 
 
