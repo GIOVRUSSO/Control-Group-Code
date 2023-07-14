@@ -12,7 +12,7 @@ Given the setup of the experiment in the manuscript, the first part of the code 
 
 We define a function that forms the feature vector. We used a 16-dimensional features vector, with the first feature being equal to, 
 
-![equation1](https://latex.codecogs.com/png.image?\dpi{110}\bg{white}((\mathbf{x}_{k}-\mathbf{x}_{d})^{2})),
+![equation1](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D%5Cbg%7Bwhite%7D(%5Cmathbf%7Bx%7D_%7Bk%7D-%5Cmathbf%7Bx%7D_%7Bd%7D)%5E%7B2%7D),
 
 and with the other features being Gaussians of the form,
 
