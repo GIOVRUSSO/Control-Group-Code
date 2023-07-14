@@ -10,7 +10,7 @@ The Robotarium folder contains the following files:
 
 Given the setup of the experiment in the manuscript, the first part of the code solves the forward problem/task of robot routing while avoiding obstacles using the control policy computed by Algorithm 1 of the manuscript. Multiple state and control input trajectories of a robot performing the task are obtained and saved in the *State_Data.npy* and *Input_Data.npy*. Then, the second part of the code uses these data files to estimate the cost of the agent using Algorithm 2 of the manuscript. 
 
-We define a function that computes the features as defined in the manuscript. 
+We define a function that forms the feature vector. We used a 16-dimensional features vector, with the first feature being equal to ![(equation](https://latex.codecogs.com/png.image?\large&space;\dpi{110}\bg{white}(\mathbf{x}_{k}-\mathbf{x}_{d})^{2}) and with the other $h_i$'s being Gaussians of the form \eqref{eqn:Gaussians_features} but centered around $15$ uniformly distributed points in the Robotarium work area.
 
 
 ![equation](https://latex.codecogs.com/png.image?\large&space;\dpi{110}\bg{white}g_{i}(\mathbf{x}_{k}):=\frac{1}{\sqrt{{(2\pi)^{2}\det(\mathbf{\Sigma}_o)}}}\exp\left(-\frac{1}{2}(\mathbf{x}_{k}-\mathbf{o}_{i})^\top\mathbf{\Sigma}_o^{-1}(\mathbf{x}_{k}-\mathbf{o}_{i})\right))
