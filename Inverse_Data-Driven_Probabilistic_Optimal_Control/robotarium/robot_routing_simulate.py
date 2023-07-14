@@ -11,7 +11,7 @@ import scipy.stats as st
 import time
 
 weights = np.load(r'D:\Network Security\KL Control\robotarium_python_simulator\rps\examples\go_to_point\Weights.npy')
-control_space_size = 5
+control_space_size = 3
 
 U_space_1 = np.array(np.linspace((-0.5),(0.5),control_space_size))
 U_space_2 = np.array(np.linspace((-0.5),(0.5),control_space_size))
@@ -77,7 +77,7 @@ def multivariate_rbf_kernel(X1, X2, gamma):
 
 
 def state_cost(state,goal_points,obs_points,weights):
-    v = np.array([0.02, 0.02], dtype=np.float32)
+    v = np.array([0.025, 0.025], dtype=np.float32)
     covar = np.diag(v)
     #cost = 60*(state[0]-goal_points[0])**2 + 60*(state[1]-goal_points[1])**2 + 200*(np.exp(-(np.abs(state[0]-obs_points[0,0])+np.abs(state[1]-obs_points[1,0]))) + np.exp(-(np.abs(state[0]-obs_points[0,1]) + np.abs(state[1]-obs_points[1,1]))) + np.exp(-(np.abs(state[0]-obs_points[0,2])+np.abs(state[1]-obs_points[1,2])))) #actual cost
     
@@ -86,8 +86,8 @@ def state_cost(state,goal_points,obs_points,weights):
     gauss_sum = 0
     
     for i in range(np.size(obs_points,axis=1)):
-        gauss_sum += -weights[:,i+1]*my_logpdf(state[:2],obs_points[:2,i],covar)
-        #gauss_sum += -weights[:,i+1]*multivariate_rbf_kernel(state[:2],obs_points[:2,i],15)
+        #gauss_sum += -weights[:,i+1]*my_logpdf(state[:2],obs_points[:2,i],covar)
+        gauss_sum += -weights[:,i+1]*multivariate_rbf_kernel(state[:2],obs_points[:2,i],20)
         
     cost = -weights[:,0]*((state[0]-goal_points[0])**2 + (state[1]-goal_points[1])**2) + gauss_sum + 10*(np.exp(-0.5*((state[0]-(-1.5))/0.03)**2)/(0.03*np.sqrt(2*np.pi)) 
                 + np.exp(-0.5*((state[0]-1.5)/0.03)**2)/(0.03*np.sqrt(2*np.pi)) + np.exp(-0.5*((state[1]-1.0)/0.03)**2)/(0.03*np.sqrt(2*np.pi)) 
@@ -120,14 +120,9 @@ def C_Bar(state,goal_points):
     
 def Control_step(state,U_space_1,U_space_2,goal_points,obs_points,weights):
         ###
-        #Perform an FPD step given an expert input, by first getting the corresponding pf and then applying the FPD solution
-        #tpf = stats.norm.pdf(u_axis, u, 0.2) #Input pf
-        #S = np.sum(tpf) #Normalizing input pf
-        
-        #target_pf = 1/(control_space_size**2)
         target_pf = 1
         time_step = 0.033
-        #ind = discretize(self.state, 2, [-np.pi, -5], [2*np.pi/50, 0.2]) #Discretize the state index for DKL calculation
+    
         
         pf = np.zeros((control_space_size,control_space_size)) #Initialize pf
         for i in range(control_space_size):
@@ -147,23 +142,14 @@ def Control_step(state,U_space_1,U_space_2,goal_points,obs_points,weights):
 
                 lb,ub = lb_ub_support(next_state,cov)
                 q_const = q_constant(lb,ub)
-                #f = plant_actual[ind[0],ind[1],i] #Get the actual and demonstrator plants from the binned data
-                #g = plant_target[ind[0],ind[1],i]
-                #log_DKL = np.exp(-(-f.entropy()-np.log(q_const))-state_cost(f.mean,goal_points,obs_points,weights))
-                #log_DKL = np.exp(-(-f.entropy()-np.log(q_const))-cost/N_samples)
                 log_DKL = np.exp(-(-f.entropy())-cost/N_samples)
                 pf[i,j] = target_pf*log_DKL #Calculate the DKL for each possible input, get corresponding probability
         S2 = np.sum(pf) #Normalize resulting policy
         #print(pf)
         pf = np.array([x/S2 for x in pf])
-        #action = np.random.choice(u_axis, p=pf) #Select a random action from the new policy
-        #previous_action = action
-        #self.step(action) #Simulation step
-        
         
         flat = pf.flatten()
 
-       
         sample_index = np.random.choice(a=flat.size, p=flat)
 
         # Take this index and adjust it so it matches the original array
