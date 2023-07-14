@@ -10,8 +10,8 @@ The following list of directories can be found in the repository, which reproduc
   - This folder contains the code files required for replicating the results of the robot routing example given in the manuscript. 
 
 ### Results
+We present the simulation and experimental results given in the manuscript ([see this link](https://arxiv.org/abs/2306.13928))
 *Pendulum Example: discrete case*
-
 ![pendulumjointci1m06l](https://github.com/GIOVRUSSO/Control-Group-Code/assets/62793703/2984b2ce-6b53-4627-a838-e368a1b55124)
 
 Target pendulum angular position and corresponding control input.  Results obtained when pfs are discrete and estimated via the histogram filter.  Panels obtained from $20$ simulations and bold lines represent the mean and the shaded region is confidence interval corresponding to the standard deviation(same for all pendulum simulation plots).
