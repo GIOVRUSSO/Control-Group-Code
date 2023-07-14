@@ -13,9 +13,7 @@ Given the setup of the experiment in the manuscript, the first part of the code 
 We define a function that computes the features as defined in the manuscript. 
 
 
-\begin{equation}\label{eqn:Gaussians_features}
-g_{i}(\bv{x}_{k}) := \frac{1}{\sqrt{{(2\pi)^{2} \det(\bv{\Sigma}_o)}}} \exp\left(-\frac{1}{2}(\bv{x}_{k}-\bv{o}_{i})^\top \bv{\Sigma}_o^{-1} (\bv{x}_{k}-\bv{o}_{i})\right),
-\end{equation}
+![equation](https://latex.codecogs.com/png.image?\LARGE&space;\dpi{110}\bg{white}g_{i}(\mathbf{x}_{k}):=\frac{1}{\sqrt{{(2\pi)^{2}\det(\mathbf{\Sigma}_o)}}}\exp\left(-\frac{1}{2}(\mathbf{x}_{k}-\mathbf{o}_{i})^\top\mathbf{\Sigma}_o^{-1}(\mathbf{x}_{k}-\mathbf{o}_{i})\right))
 
 
 ![feature_point_grid](https://github.com/GIOVRUSSO/Control-Group-Code/assets/62793703/d50ee3e0-3e3b-4595-b5fc-a3305e843b08)
