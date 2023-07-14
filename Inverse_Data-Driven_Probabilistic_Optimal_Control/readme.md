@@ -17,17 +17,16 @@ The following list of directories can be found in the repository, which reproduc
 Target pendulum angular position and corresponding control input.  Results obtained when pfs are discrete and estimated via the histogram filter.  Panels obtained from $20$ simulations and bold lines represent the mean and the shaded region is confidence interval corresponding to the standard deviation(same for all pendulum simulation plots).
 
 
-![Alt Text](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/pendulum-running-example/pendulum_joint_estimated_ci_1m_0.6l.jpg)
+![pendulumjointestimatedci1m06l](https://github.com/GIOVRUSSO/Control-Group-Code/assets/62793703/56d59a10-5ea0-4f10-b8ca-26cb157c2990)
 
 Angular position and corresponding control input, when the cost is estimated using Algorithm 2 given [here](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/Paper_preprint.pdf). The pfs are considered discrete and estimated using histogram filter.
 
 *Pendulum Example: Continous case*
 
-![ALT Text](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/pendulum-running-example/GP_pendulum_joint_ci_1m_0.6l.jpeg)
-
+![GPpendulumjointci1m06l](https://github.com/GIOVRUSSO/Control-Group-Code/assets/62793703/ce5191e2-11ca-4ae7-9f52-681c29b07ce7)
 Pendulum angular position and corresponding control input. Results obtained when pfs are estimated via Gaussian Processes. 
 
-![ALT Text](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/pendulum-running-example/GP_pendulum_joint_ci_1m_0.6l_cost_estimated.jpeg)
+![GPpendulumjointci1m06lcostestimated](https://github.com/GIOVRUSSO/Control-Group-Code/assets/62793703/b6994305-c5e5-47c9-b47b-892badb601fb)
 
 Angular position and corresponding control input, when the cost is estimated using Algorithm 2 from [here](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/Paper_preprint.pdf). The pfs are estimated using Guassian processes.
 
