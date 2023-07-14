@@ -12,7 +12,7 @@ The following list of directories can be found in the repository, which reproduc
 ### Results
 *Pendulum Example: discrete case*
 
-![Alt Text](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/pendulum-running-example/pendulum_joint_ci_1m_0.6l.jpeg)
+![pendulumjointci1m06l](https://github.com/GIOVRUSSO/Control-Group-Code/assets/62793703/2984b2ce-6b53-4627-a838-e368a1b55124)
 
 Target pendulum angular position and corresponding control input.  Results obtained when pfs are discrete and estimated via the histogram filter.  Panels obtained from $20$ simulations and bold lines represent the mean and the shaded region is confidence interval corresponding to the standard deviation(same for all pendulum simulation plots).
 
