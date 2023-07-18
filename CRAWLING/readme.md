@@ -28,7 +28,7 @@ To run Scenario $1$, choose how many cars are connected cars equipped with CRAWL
 For Scenario $2$, the nain file can directly be run from the command line, which will open the simulator GUI and allow uers to play the simulation. Scenario $2$ yields the following behavior, which can also be found in this repository as _video\_scenario2.webm_.
 
 [video_scenario2.webm](https://user-images.githubusercontent.com/10179753/207033728-0892432a-62cd-4403-8b82-1e43614a6dbe.webm)
-
+[scenario2_video](https://drive.google.com/file/d/1paSX3P6brfhDbNO3AKC8QnaOUAr5vfnc/view)
 
 
 ### Authors and contributors
