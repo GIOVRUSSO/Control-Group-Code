@@ -1,10 +1,11 @@
+clc
 clear all 
 close all
 
 % Run the simulation for a specific number of iterations
-delay = 11;
-iterations = 2350 + delay;
+iterations = 2350 + 11;
 ts = 0.033;
+
 % number of robots
 N = 12;
 % coupling matrix
@@ -44,11 +45,11 @@ end
 for k = 1:200
     dxl(:, 1200+k) = [-veq*k/200; -veq*(1-k/200)];
 end
-dxl(:, 1401:iterations + 2) = [-veq * ones(1, 952+delay); zeros(1, 952+delay)];
+dxl(:, 1401:iterations + 2) = [-veq * ones(1, 952+11); zeros(1, 952+11)];
 
-xl(:, 1:delay+1) = [-0.7*ones(1,delay+1); 0.09*ones(1,delay+1); 0*ones(1,delay+1)];
+xl(:, 1:11+1) = [-0.7*ones(1,11+1); 0.09*ones(1,11+1); 0*ones(1,11+1)];
 
-for t = delay+1:iterations
+for t = 11+1:iterations
     xl(1:2, t+1) = xl(1:2, t) + (dxl(:, t)+dxl(:,t+1))/2 * ts;
 end
 
@@ -78,7 +79,7 @@ si_to_uni_dyn = create_si_to_uni_dynamics('LinearVelocityGain', 1);
 uni_barrier_cert = create_uni_barrier_certificate_with_boundary();      
 %Get randomized initial conditions in the robotarium arena
 final_goal_points = zeros(3, N);
-final_goal_points(1:2, :) = xd(1:2,:,delay+1);
+final_goal_points(1:2, :) = xd(1:2,:,11+1);
 
 args = {'PositionError', 0.02, 'RotationError', 0.02};
 init_checker = create_is_initialized(args{:});
@@ -98,7 +99,7 @@ while(~init_checker(x, final_goal_points))
 end
 
 %% start the robots from static condition
-for k = delay+2:50
+for k = 11+2:50
     % Retrieve the most recent poses from the Robotarium.  The time delay is approximately 0.033 seconds
     x = r.get_poses(); 
     xi(:, :, k) = x;  
@@ -112,8 +113,8 @@ for k = delay+2:50
         dxi(:, i, k) = k0 * (xl(1:2, k) - xi(1:2, i, k) - (xl(1:2, k) - xd(1:2, i, k))) + dxl(:, k);
         %neighbour coupling
         for j = neighbors
-            dr1(:, i, k) = dr1(:, i, k) + k2tau * tanh(kpsi*((xi(1:2, j, k-delay) - xi(1:2, i, k-delay)) - (xd(1:2, j, k-delay) - xd(1:2, i, k-delay))));
-            dr0(:, i, k) = dr0(:, i, k) + k1tau * tanh(kpsi*((xi(1:2, j, k-delay) - xi(1:2, i, k-delay)) - (xd(1:2, j, k-delay) - xd(1:2, i, k-delay))));
+            dr1(:, i, k) = dr1(:, i, k) + k2tau * tanh(kpsi*((xi(1:2, j, k-11) - xi(1:2, i, k-11)) - (xd(1:2, j, k-11) - xd(1:2, i, k-11))));
+            dr0(:, i, k) = dr0(:, i, k) + k1tau * tanh(kpsi*((xi(1:2, j, k-11) - xi(1:2, i, k-11)) - (xd(1:2, j, k-11) - xd(1:2, i, k-11))));
         end    
         r1(:, i, k) = r1(:, i, k-1) + dr1(:, i, k-1) * ts;
         dr0(:, i, k) = dr0(:, i, k) + r1(:, i, k);        
@@ -121,7 +122,7 @@ for k = delay+2:50
         dxi(:, i, k) = dxi(:, i, k) + r0(:, i, k);    
         %control input--velocity
         for j = neighbors
-            dxi(:, i, k) = dxi(:, i, k) + k0tau * tanh(kpsi*((xi(1:2, j, k-delay) - xi(1:2, i, k-delay)) - (xd(1:2, j, k-delay) - xd(1:2, i, k-delay))));
+            dxi(:, i, k) = dxi(:, i, k) + k0tau * tanh(kpsi*((xi(1:2, j, k-11) - xi(1:2, i, k-11)) - (xd(1:2, j, k-11) - xd(1:2, i, k-11))));
         end
     end 
     %% Use barrier certificate and convert to unicycle dynamics
@@ -133,8 +134,49 @@ for k = delay+2:50
     %Iterate experiment   
     r.step();   
 end
+%% Plotting Initialization
+% Color Vector for Plotting
+% Note the Robotarium MATLAB instance runs in a docker container which will 
+% produce the same rng value every time unless seeded by the user.
+CM = rand(N,3);%{'.-k','.-b','.-r','.-g','.-m','.-y','.-c'};
+%Marker, font, and line sizes
+marker_size_robot = determine_robot_marker_size(r);
+font_size = determine_font_size(r, 0.05);
+line_width = 5;
+for i=1:N       
+    robot_caption = sprintf('Robot %d', i);
+    % Text with robot position information
+    robot_details = sprintf('X-Pos: %d \nY-Pos: %d', x(1,i), x(2,i));
+    % Plot colored circles showing robot location.
+    g(i) = plot(x(1,i),x(2,i),'o','MarkerSize', marker_size_robot,'LineWidth',5,'Color',CM(i,:));
+    % Plot the robot label text 
+    robot_labels{i} = text(500, 500, robot_caption, 'FontSize', font_size, 'FontWeight', 'bold');
+    % Plot the robot position information text
+    robot_details_text{i} = text(500, 500, robot_details, 'FontSize', font_size, 'FontWeight', 'bold'); 
+end
+% Plot the iteration and time in the lower left. Note when run on your 
+% computer, this time is based on your computers simulation time. For a
+% better approximation of experiment time on the Robotarium when running
+% this simulation on your computer, multiply iteration by 0.033. 
+tstart = tic; %The start time to compute time elapsed.
+iteration_caption = sprintf('Iteration %d', 0);
+time_caption = sprintf('Total Time Elapsed %0.2f', toc(tstart));
+
+iteration_label = text(-1.5, -0.8, iteration_caption, 'FontSize', font_size, 'Color', 'r', 'FontWeight', 'bold');
+time_label = text(-1.5, -0.9, time_caption, 'FontSize', font_size, 'Color', 'r', 'FontWeight', 'bold');
+
+% We can change the order of plotting priority, we will plot goals on the 
+% bottom and have the iteration/time caption on top.
+uistack([iteration_label], 'top'); % Iteration label is on top.
+uistack([time_label], 'top'); % Time label is above iteration label.
+
 
 %% start simulation and data collection
+%record video
+%% Set up and writing the movie.
+% writerObj = VideoWriter('video_simulator', 'MPEG-4'); % movie name.
+% writerObj.FrameRate = 540/4; % Frames per second. Larger number correlates to smaller movie time duration. 
+% open(writerObj);
 %disturbances
 time = 0:0.033:120;
 d =  zeros(2, N, length(time));
@@ -150,8 +192,17 @@ for k = 51:iterations
     % Retrieve the most recent poses from the Robotarium.  The time delay is approximately 0.033 seconds
     x = r.get_poses(); 
     xi(:, :, k) = x;  
+    delay = 0.1+0.1*sin(k*ts);
+    delay = round(delay/ts);
     %% Algorithm
     for i = 1:N
+        g(i).XData = x(1,i);
+        g(i).YData = x(2,i);   
+        robot_labels{i}.Position = x(1:2, i) + [-0.15;0.15];
+        robot_details = sprintf('X-Pos: %0.2f \nY-Pos: %0.2f', x(1,i), x(2,i));
+        robot_details_text{i}.String = robot_details;
+        robot_details_text{i}.Position = x(1:2, i) - [0.2;0.25];
+    
         %get the topological neighbors of agent i        
         neighbors = find(L(i,:) ~= 0);
         %leader coupling
@@ -175,15 +226,25 @@ for k = 51:iterations
     end
     %convert to unicycle dynamics
     dxu = si_to_uni_dyn(dxi(:, :, k),x); 
+%     dxu = uni_barrier_cert(dxu, x);   
     %Send velocities to agents
     r.set_velocities(1:N, dxu);
     %Iterate experiment   
-     r.step();
-     tend(k) = toc(tstart);
-     stepsize(k) = tend(k) - tend(k-1);%count stepsize
-
+    r.step();
+    tend(k) = toc(tstart);
+    stepsize(k) = tend(k) - tend(k-1);%calculate stepsize
+    
+    % Update Iteration and Time marker
+    iteration_caption = sprintf('Iteration %d', k);
+    time_caption = sprintf('Total Time Elapsed %0.2f', toc(tstart));
+    iteration_label.String = iteration_caption;
+    time_label.String = time_caption;
+    
+%     frame = getframe(gcf); % 'gcf' can handle if you zoom in to take a movie.
+%     writeVideo(writerObj, frame)
 end
 r.debug();
+% close(writerObj);% Saves the movie.
 %% collect data from simulator/hardware
 posdev = zeros(N, iterations);
 xdev = zeros(N, iterations);
@@ -197,108 +258,72 @@ for i = 1:N
 end
 
 save('position_deviation.mat','posdev');
-%save('control_effort.mat','dxi');
 save('stepsize.mat','stepsize');
 
-%% plot position deviation from simulator
-set(0,'DefaultAxesFontSize',8)
-set(0,'DefaultFigureColor','w')
-set(0,'defaulttextinterpreter','tex')
-set(0, 'DefaultAxesFontName', 'Times New Roman');
-fig=figure
-set(fig, 'Units','centimeters')
-set(fig,'Position', [0 0 8.89 4.1])
-set(gca, 'Units','centimeters')
-set(gca, 'Position',[1.7 1 5.5 2.9])
-time = 0:0.033:(iterations-51)*0.033;
-plot(time, posdev(1,51:end),'k')
-hold on
-plot(time, posdev(2,51:end),'r')
-plot(time, posdev(3,51:end),'k')
-for i = 4:12
-    plot(time, posdev(i,51:end),'r')
+
+%% Helper Functions
+
+% Marker Size Helper Function to scale size of markers for robots with figure window
+% Input: robotarium class instance
+function marker_size = determine_robot_marker_size(robotarium_instance)
+
+% Get the size of the robotarium figure window in pixels
+curunits = get(robotarium_instance.figure_handle, 'Units');
+set(robotarium_instance.figure_handle, 'Units', 'Pixels');
+cursize = get(robotarium_instance.figure_handle, 'Position');
+set(robotarium_instance.figure_handle, 'Units', curunits);
+
+% Determine the ratio of the robot size to the x-axis (the axis are
+% normalized so you could do this with y and figure height as well).
+robot_ratio = (robotarium_instance.robot_diameter + 0.03)/...
+    (robotarium_instance.boundaries(2) - robotarium_instance.boundaries(1));
+
+% Determine the marker size in points so it fits the window. cursize(3) is
+% the width of the figure window in pixels. (the axis are
+% normalized so you could do this with y and figure height as well).
+marker_size = cursize(3) * robot_ratio;
+
 end
-xlabel('$t[s]$','Interpreter','latex')
-ylabel({'$\vert \eta_i(t)-\eta_i^*(t) \vert_2$'},'Interpreter','latex')
-legend('Perturbed robots','Unperturbed robots')
 
-fig.PaperUnits = 'centimeters';  
-fig.PaperPosition = [0 0 8.89 4.1]; 
-fig.Units = 'centimeters'; 
-fig.PaperSize=[8.89 4.1];  
-print(fig, '-dpsc2','robotarium_simulation.ps', '-painters')
+% Marker Size Helper Function to scale size with figure window
+% Input: robotarium instance, desired size of the marker in meters
+function marker_size = determine_marker_size(robotarium_instance, marker_size_meters)
 
-%% load the data from hardware to plot in this section
-%% plot position deviation from the data collected from robotarium hardware
-load('posdev_hardware.mat')
-set(0,'DefaultAxesFontSize',8)
-set(0,'DefaultFigureColor','w')
-set(0,'defaulttextinterpreter','tex')
-set(0, 'DefaultAxesFontName', 'Times New Roman');
-fig2=figure
-set(fig2, 'Units','centimeters')
-set(fig2,'Position', [0 0 8.89 4.1])
-set(gca, 'Units','centimeters')
-set(gca, 'Position',[1.7 1 5.5 2.9])
+% Get the size of the robotarium figure window in pixels
+curunits = get(robotarium_instance.figure_handle, 'Units');
+set(robotarium_instance.figure_handle, 'Units', 'Pixels');
+cursize = get(robotarium_instance.figure_handle, 'Position');
+set(robotarium_instance.figure_handle, 'Units', curunits);
 
-posdevmean = (posdev0+posdev1+posdev2+posdev3+posdev4+posdev5+posdev6+posdev7+posdev8+posdev9)/10;
-%standard deviation
-for i =1:N
-   posdevstd(i,:) = std([posdev0(i,:)' posdev1(i,:)' posdev2(i,:)' posdev3(i,:)' posdev4(i,:)' posdev5(i,:)' posdev6(i,:)' posdev7(i,:)' posdev8(i,:)' posdev9(i,:)'],0,2);
+% Determine the ratio of the robot size to the x-axis (the axis are
+% normalized so you could do this with y and figure height as well).
+marker_ratio = (marker_size_meters)/(robotarium_instance.boundaries(2) -...
+    robotarium_instance.boundaries(1));
+
+% Determine the marker size in points so it fits the window. cursize(3) is
+% the width of the figure window in pixels. (the axis are
+% normalized so you could do this with y and figure height as well).
+marker_size = cursize(3) * marker_ratio;
+
 end
-%plot the confidence interval
-for i =4:N
-    patch([time fliplr(time)], [posdevmean(i,51:end)+posdevstd(i,51:end)  fliplr(posdevmean(i,51:end)-posdevstd(i,51:end))], [1 0.8 0.8], 'EdgeColor','none')
-end
-patch([time fliplr(time)], [posdevmean(2,51:end)+posdevstd(2,51:end)  fliplr(posdevmean(2,51:end)-posdevstd(2,51:end))], [1 0.8 0.8], 'EdgeColor','none')
-patch([time fliplr(time)], [posdevmean(1,51:end)+posdevstd(1,51:end)  fliplr(posdevmean(1,51:end)-posdevstd(1,51:end))], [0.8 0.8 0.8], 'EdgeColor','none')
-patch([time fliplr(time)], [posdevmean(3,51:end)+posdevstd(3,51:end)  fliplr(posdevmean(3,51:end)-posdevstd(3,51:end))], [0.8 0.8 0.8], 'EdgeColor','none')
-%plot mean position deviation from experiments
-plot(time, posdevmean(1,51:end),'k');hold on
-plot(time, posdevmean(2,51:end),'r')
-for i = 4:12
-    plot(time, posdevmean(i,51:end), 'r')
-end
-plot(time, posdevmean(1,51:end),'k')
-plot(time, posdevmean(3,51:end),'k')
-ylim([0,0.4])
-xlabel('$t[s]$','Interpreter','latex')
-ylabel({'$\vert \eta_i(t)-\eta_i^*(t) \vert_2$'},'Interpreter','latex')
-fig2.PaperUnits = 'centimeters';  
-fig2.PaperPosition = [0 0 8.89 4.1]; 
-fig2.Units = 'centimeters'; 
-fig2.PaperSize=[8.89 4.1];  
-print(fig2, '-dpsc2','robotarium_experiment.ps', '-painters')
 
-%% plot step size from hardware experimnents
-load('stepsize_hardware.mat')
-time = 0:0.033:(iterations-51)*0.033;
-set(0,'DefaultAxesFontSize',8)
-set(0,'DefaultFigureColor','w')
-set(0,'defaulttextinterpreter','tex') 
-set(0, 'DefaultAxesFontName', 'Times New Roman');
-fig3=figure
-stepsizeall = [stepsize0(51:end) stepsize1(51:end) stepsize2(51:end) stepsize3(51:end) stepsize4(51:end) stepsize5(51:end) stepsize6(51:end) stepsize7(51:end) stepsize8(51:end) stepsize9(51:end)]';
+% Font Size Helper Function to scale size with figure window
+% Input: robotarium instance, desired height of the font in meters
+function font_size = determine_font_size(robotarium_instance, font_height_meters)
 
-meanstepsize = (stepsize0(51:end)+stepsize1(51:end)+stepsize2(51:end)+stepsize3(51:end)+stepsize4(51:end)+stepsize5(51:end)+stepsize6(51:end)+stepsize7(51:end)+stepsize8(51:end)+stepsize9(51:end))/10;
-stepsizestd = zeros(iterations-50,1);
-%standard deviation
-for i=1:(iterations-50)
-   stepsizestd(i) = std(stepsizeall(:,i));
+% Get the size of the robotarium figure window in point units
+curunits = get(robotarium_instance.figure_handle, 'Units');
+set(robotarium_instance.figure_handle, 'Units', 'Pixels');
+cursize = get(robotarium_instance.figure_handle, 'Position');
+set(robotarium_instance.figure_handle, 'Units', curunits);
+
+% Determine the ratio of the font height to the y-axis
+font_ratio = (font_height_meters)/(robotarium_instance.boundaries(4) -...
+    robotarium_instance.boundaries(3));
+
+% Determine the font size in points so it fits the window. cursize(4) is
+% the hight of the figure window in points.
+font_size = cursize(4) * font_ratio;
+
 end
-%plot confidence interval
-patch([time fliplr(time)], [meanstepsize'+stepsizestd'  fliplr(meanstepsize'-stepsizestd')], [1 0.8 0.8], 'EdgeColor','none')
-ylim([0 0.2])
-hold on
-%plot mean stepsize
-plot(time, meanstepsize,'r.','MarkerSize',6)
-
-xlabel('$t[s]$','Interpreter','latex')
-ylabel({'Step size[s]'},'Interpreter','tex')
-box on
-fig3.PaperUnits = 'centimeters';  
-fig3.PaperPosition = [0 0 8.89 4.1]; 
-fig3.Units = 'centimeters'; 
-fig3.PaperSize=[8.89 4.1];  
-print(fig3, '-dpsc2','robotarium_stepsize.ps', '-painters')
 
