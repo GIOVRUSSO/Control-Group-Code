@@ -3,10 +3,16 @@ close all
 
 layer = 30;
 N = 2*layer*(layer+1);
-delay = 11;
-iterations = 2350 + delay;
+iterations = 2350 + 50;
 ts = 0.033;
 time = 0:ts:(iterations-1)*ts;
+
+delay = zeros(N, iterations);
+for i = 1:N
+    delay(i,:) = 0.1+0.1*sin(time);
+    delay(i,:) = round(delay(i,:),3);
+end
+delayind = fix(delay/ts);
 
 % control gains
 k0 = 1.4155;
@@ -35,21 +41,21 @@ r0 = zeros(2, N, iterations);
 
 xd = zeros(2, N, iterations);
 
-xl(:, 1:delay) = [-0.7*ones(1,delay); 0.09*ones(1,delay)];
-vl(:, 1:delay) = [veq * ones(1, delay); zeros(1, delay)];
+xl(:, 1:50) = [-0.7*ones(1,50); 0.09*ones(1,50)];
+vl(:, 1:50) = [veq * ones(1, 50); zeros(1, 50)];
 
 % design movement
-vl(:, delay+1:delay+1000) = [veq * ones(1, 1000); zeros(1, 1000)];
+vl(:, 50+1:50+1000) = [veq * ones(1, 1000); zeros(1, 1000)];
 for k = 1:200
-    vl(:, delay+1000+k) = [veq*(1-k/200); -veq*k/200];
+    vl(:, 50+1000+k) = [veq*(1-k/200); -veq*k/200];
 end
 for k = 1:200
-    vl(:, delay+1200+k) = [-veq*k/200; -veq*(1-k/200)];
+    vl(:, 50+1200+k) = [-veq*k/200; -veq*(1-k/200)];
 end
-vl(:, delay+1401:iterations) = [-veq * ones(1, 950); zeros(1, 950)];
+vl(:, 50+1401:iterations) = [-veq * ones(1, 950); zeros(1, 950)];
 
 % leader dynamics
-for t = delay+1:iterations
+for t = 50+1:iterations
     xl(:, t) = xl(1:2, t-1) + vl(:, t-1) * ts;
 end
 
@@ -60,7 +66,7 @@ for i = 1:layer
     end
 end
 
-xi(:, :, 1:delay+1) = xd(:, :, 1:delay+1);
+xi(:, :, 1:50+1) = xd(:, :, 1:50+1);
 
 % coupling matrix
 L = zeros(N, N);
@@ -88,7 +94,7 @@ d(:, 1, 1:length(t1)) = [0.04*ones(1,length(t1))+0.4*sin(0.5*t1).*exp(-0.1*t1); 
 d(:, 3, 1:length(t1)) = [-0.05*t1+ 0.4*sin(0.5*t1).*exp(-0.1*t1); -0.05*t1+ 0.4*sin(0.5*t1).*exp(-0.1*t1)];
 
 %% iterations
-for k = delay+1:iterations
+for k = 50+1:iterations
     for i = 1:N  
         % get the topological neighbors of agent i        
         neighbors = find(L(i,:) ~= 0);   
@@ -97,24 +103,24 @@ for k = delay+1:iterations
         dr0(:, i, k-1) = k1 * (xd(:, i, k-1) - xi(:, i, k-1));
         vi(:, i, k) = k0 * (xd(:, i, k-1) - xi(:, i, k-1)) + vl(:, k);
         for j = neighbors
-            dr1(:, i, k-1) = dr1(:, i, k-1) + k2tau * tanh(kpsi*((xi(:, j, k-delay) - xi(:, i, k-delay)) - (xd(:, j, k-delay) - xd(:, i, k-delay))));
-            dr0(:, i, k-1) = dr0(:, i, k-1) + k1tau * tanh(kpsi*((xi(:, j, k-delay) - xi(:, i, k-delay)) - (xd(:, j, k-delay) - xd(:, i, k-delay))));
+            dr1(:, i, k-1) = dr1(:, i, k-1) + k2tau * tanh(kpsi*((xi(:, j, k-delayind(i,k)) - xi(:, i, k-delayind(i,k))) - (xd(:, j, k-delayind(i,k)) - xd(:, i, k-delayind(i,k)))));
+            dr0(:, i, k-1) = dr0(:, i, k-1) + k1tau * tanh(kpsi*((xi(:, j, k-delayind(i,k)) - xi(:, i, k-delayind(i,k))) - (xd(:, j, k-delayind(i,k)) - xd(:, i, k-delayind(i,k)))));
         end    
         r1(:, i, k) = r1(:, i, k-1) + dr1(:, i, k-1) * ts;
         dr0(:, i, k-1) = dr0(:, i, k-1) + r1(:, i, k);        
         r0(:, i, k) = r0(:, i, k-1) + dr0(:, i, k-1) * ts;
         vi(:, i, k) = vi(:, i, k) + r0(:, i, k) + d(:, i, k); 
         for j = neighbors
-            vi(:, i, k) = vi(:, i, k) + k0tau * tanh(kpsi*((xi(:, j, k-delay) - xi(:, i, k-delay)) - (xd(:, j, k-delay) - xd(:, i, k-delay))));
+            vi(:, i, k) = vi(:, i, k) + k0tau * tanh(kpsi*((xi(:, j, k-delayind(i,k)) - xi(:, i, k-delayind(i,k))) - (xd(:, j, k-delayind(i,k)) - xd(:, i, k-delayind(i,k)))));
         end
         xi(:, i, k+1) = xi(:, i, k) + vi(:, i, k) * ts;
     end     
 end
 
-positiondev = zeros(N, iterations-delay);
+positiondev = zeros(N, iterations-50);
 for i = 1:N
-    for j = 1:iterations-delay
-       positiondev(i,j) = norm(xi(:,i,j+delay) - xd(:,i,j+delay)); 
+    for j = 1:iterations-50
+       positiondev(i,j) = norm(xi(:,i,j+50) - xd(:,i,j+50)); 
     end
 end
 %% plot state deviation (unperturbed robots only)
@@ -128,10 +134,10 @@ set(fig,'Position', [0 0 8.89 4.1])
 set(gca, 'Units','centimeters')
 set(gca, 'Position',[1.7 1 5 2.9])
 
-plot(time(1:end-delay),positiondev(2,:),'Color','r','linewidth',0.5);hold on
-plot(time(1:end-delay),positiondev(4,:),'Color','r','linewidth',0.5);hold on
+plot(time(1:end-50),positiondev(2,:),'Color','r','linewidth',0.5);hold on
+plot(time(1:end-50),positiondev(4,:),'Color','r','linewidth',0.5);hold on
 for i = 2:layer
-    plot(time(1:end-delay),positiondev(2*i*(i-1)+1:2*i*(i+1),:),'Color',[1 -1/900*i*(i-60) 0],'linewidth',0.5);hold on
+    plot(time(1:end-50),positiondev(2*i*(i-1)+1:2*i*(i+1),:),'Color',[1 -1/900*i*(i-60) 0],'linewidth',0.5);hold on
 end
 xlabel('$t[s]$','Interpreter','latex')
 xlim([0,80])
@@ -159,13 +165,13 @@ set(fig2,'Position', [0 0 8.89 4.1])
 set(gca, 'Units','centimeters')
 set(gca, 'Position',[1.7 1 5.5 2.9])
 
-plot(time(1:end-delay),positiondev(1,:),'Color','k','linewidth',0.5);hold on
-plot(time(1:end-delay),positiondev(2,:),'Color','r','linewidth',0.5)
-plot(time(1:end-delay),positiondev(3,:),'Color','k','linewidth',0.5)
-plot(time(1:end-delay),positiondev(4,:),'Color','r','linewidth',0.5)
+plot(time(1:end-50),positiondev(1,:),'Color','k','linewidth',0.5);hold on
+plot(time(1:end-50),positiondev(2,:),'Color','r','linewidth',0.5)
+plot(time(1:end-50),positiondev(3,:),'Color','k','linewidth',0.5)
+plot(time(1:end-50),positiondev(4,:),'Color','r','linewidth',0.5)
 
 for i = 2:layer
-    plot(time(1:end-delay),positiondev(2*i*(i-1)+1:2*i*(i+1),:),'r','linewidth',0.5);hold on
+    plot(time(1:end-50),positiondev(2*i*(i-1)+1:2*i*(i+1),:),'r','linewidth',0.5);hold on
 end
 
 xlabel('$t[s]$','Interpreter','latex')
