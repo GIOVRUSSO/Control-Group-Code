@@ -26,7 +26,7 @@ To use these files, a working SUMO installation is needed. Python, TraCI and the
 To run Scenario $1$, choose how many cars are connected cars equipped with CRAWLING, between $0$ and $150$. Then, run the cells in _Simulation launcher.ipynb_, with the amount of connected cars passed as the argument of the function _simFiles_ in the last cell. The sizes of the subfleets and the starting road links, target behaviors of connected cars and direction of uncontrolled cars can be modified in the definition of the _simFiles_ function. Note that such road links are described by their ID, which can be found in the xml file describing the road network.\
 For Scenario $1.c$, the main file can directly be run from the command line, which will open the simulator GUI and allow users to play the simulation. The video from Scenario $1.c$ can be found at the following link:
 
-[Video](https://drive.google.com/file/d/1paSX3P6brfhDbNO3AKC8QnaOUAr5vfnc/view)
+[Video]([https://drive.google.com/file/d/1paSX3P6brfhDbNO3AKC8QnaOUAr5vfnc/view](https://drive.google.com/file/d/1paSX3P6brfhDbNO3AKC8QnaOUAr5vfnc/view?usp=sharing))
 
 
 ### Authors and contributors
