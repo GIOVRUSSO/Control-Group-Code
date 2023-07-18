@@ -19,16 +19,14 @@ The SUMO simulator is used for the simulations, with our codebase being written 
 ·The setting files _agent.npy_ and _foe.npy_ contain information on the number, departing time and place and target destination for controlled and uncontrolled cars, respectively.\
 ·The file _main.py_ is the main file for the simulation. It contains all remaining code useful for the simulations (such as state space calculation and reward setting, see the paper), and interfaces with SUMO through TraCI. It also logs results once simulations are done.
 #### Scenario $2$-specific files
-·_main_twittersim.py_ is used to handle the simulation of Scenario $2$. As there are only two connected cars, they are directly handled in this file. The file also contains the tweet parser and interface to Twitter. A last difference is that this file calls up a graphical interface.\
-·_simvid.webm_ is the simulation video for Scenario $2$. It showcases the first connected car passing through the highway ramp, which is then obstructed (and colored in blue). The second connected car then takes an alternate route to avoid the obstruction.
+·_main_twittersim.py_ is used to handle the simulation of Scenario $2$. As there are only two connected cars, they are directly handled in this file. The file also contains the tweet parser and interface to Twitter. A last difference is that this file calls up a graphical interface.
 
 ### How to use this repository
 To use these files, a working SUMO installation is needed. Python, TraCI and the main scientific computing libraries need to be installed. Finally, for Scenario $2$, a Twitter account with developper access is needed to replicate the simulation.\
 To run Scenario $1$, choose how many cars are connected cars equipped with CRAWLING, between $0$ and $150$. Then, run the cells in _Simulation launcher.ipynb_, with the amount of connected cars passed as the argument of the function _simFiles_ in the last cell. The sizes of the subfleets and the starting road links, target behaviors of connected cars and direction of uncontrolled cars can be modified in the definition of the _simFiles_ function. Note that such road links are described by their ID, which can be found in the xml file describing the road network.\
-For Scenario $2$, the nain file can directly be run from the command line, which will open the simulator GUI and allow uers to play the simulation. Scenario $2$ yields the following behavior, which can also be found in this repository as _video\_scenario2.webm_.
+For Scenario $1.c$, the main file can directly be run from the command line, which will open the simulator GUI and allow users to play the simulation. The video from Scenario $1.c$ can be found at the following link:
 
-[video_scenario2.webm](https://user-images.githubusercontent.com/10179753/207033728-0892432a-62cd-4403-8b82-1e43614a6dbe.webm)
-[scenario2_video](https://drive.google.com/file/d/1paSX3P6brfhDbNO3AKC8QnaOUAr5vfnc/view)
+[Video](https://drive.google.com/file/d/1paSX3P6brfhDbNO3AKC8QnaOUAr5vfnc/view)
 
 
 ### Authors and contributors
