@@ -1,5 +1,5 @@
 # Stabilizing a pendulum to unstable equilibrium
-This folder contains all the necessary code required to replicate the results of the running pendulum example of the manuscript.
+This folder contains all the necessary code required to replicate the results of the running pendulum example of the manuscript ([see this link](https://arxiv.org/abs/2306.13928) for the preprint).
 
 ### Contents 
 The following files are contained in this folder,
