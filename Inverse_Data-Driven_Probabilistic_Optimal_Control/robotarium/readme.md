@@ -18,7 +18,7 @@ and with the other features being Gaussians of the form,
 with ![equation](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D%5Cbg%7Bwhite%7D%5Cmathbf%7B%5CSigma%7D_o=%5Cbegin%7Bbmatrix%7D0.025&0%5C%5C0&0.025%5C%5C%5Cend%7Bbmatrix%7D), centered around 15 uniformly distributed points in the Robotarium work area.
 
 
-The figure below shows the placement of the feature points on the work area of robotarium.
+The figure below shows the placement of the feature points on the work area of robotarium with corresponding weights value.
 ![feature_point_grid](https://github.com/GIOVRUSSO/Control-Group-Code/assets/62793703/d50ee3e0-3e3b-4595-b5fc-a3305e843b08)
 
 
