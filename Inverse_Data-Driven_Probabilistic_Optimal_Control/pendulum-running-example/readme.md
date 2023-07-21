@@ -21,9 +21,9 @@ This code implememts the discrete case of the running example of the manuscript.
 
 - Solving Inverse Problem:
 Next, we define the feature set as given in the manuscript. Using the collected data we solve a convex optimisation problem for cost estimation. The cost is reconstructed using the obtained weights.
-In the last section of the code we generate the plots of the angular position ($\theta_k$) and the input ($u_k$).
+In the last section of the code we generate the plots in left panel of Figure 1 and 2 of the manuscript.
 
 
 #### Pendulum IOC Continuous 
 
-This code implememts the continuous case of the running example of the manuscript. It takes GP models of the target and reference pendulum as input. To compute the integrals over the Gaussian distribution obtained from GP modelling, we use monte carlo sampling. Specifically, we calculate the average over 500 samples from the distribution. The rest of the code structure remains the same as the discrete case.
+This code implememts the continuous case of the running example of the manuscript. It takes GP models of the target and reference pendulum as input. To compute the integrals over the Gaussian distribution obtained from GP modelling, we use monte carlo sampling. Specifically, we calculate the average over 500 samples from the distribution. The rest of the code structure remains the same as the discrete case. In the last section of the code we generate the plots in right panel of Figure 1 and 2 of the manuscript.
