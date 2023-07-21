@@ -14,4 +14,4 @@ To run these simulation, one needs a working SUMO and TraCI installation. Then, 
 ·The files _main.py_ is the main file for the simulation. They contain all remaining code useful for the simulations (such as state space calculation and reward setting, see the paper), and interface with SUMO through TraCI. They also log results once simulations are done. There are three main files, one for each scenario.
 
 ### Results
-Once the simulations are done, logs are stored in the same folder as the code file. The naming convention is _logs\_run_ followed by the index of the simulation. The files are in npy format. For Scenario $1.c$, the main way results are seen is through the video. Hence, the simulation is started with a GUI.
+Once the simulations are done, logs are stored in the same folder as the code file. The naming convention is _logs\_run_ followed by the index of the simulation. The files are in npy format. For Scenario $1.c$, the results are seen through the video. Hence, the simulation is started with a GUI. A link to this veido can be found in the readme file of this repository.
