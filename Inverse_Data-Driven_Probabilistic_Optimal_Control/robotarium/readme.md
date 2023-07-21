@@ -1,4 +1,6 @@
 # Robotarium 
+
+This folder contains the code required to perform the robot routing experiment as given in the manuscript ([see this link](https://arxiv.org/abs/2306.13928) for the preprint).
 ### Prerequisites
 To the run code, the first step is to download and install the [robotarium python simulator package](https://github.com/robotarium/robotarium_python_simulator). Next, copy the files named *robot_routing_IOC.ipynb*, *robot_routing_simulate.py*, and *Weights_Obtained.npy* to the same folder.
 ### Contents 
@@ -8,8 +10,11 @@ The Robotarium folder contains the following files:
 
 ### robot_routing_IOC.ipynb
 
-Given the setup of the experiment in the manuscript, the first part of the code solves the forward problem/task of robot routing while avoiding obstacles using the control policy computed by Algorithm 1 of the manuscript. Multiple state and control input trajectories of a robot performing the task are obtained and saved in the *State_Data.npy* and *Input_Data.npy*. Then, the second part of the code uses these data files to estimate the cost of the agent using Algorithm 2 of the manuscript. 
+- Forward Problem:
+Given the setup of the experiment in the manuscript, the first part of the code solves the forward problem/task of robot routing while avoiding obstacles using the control policy computed by Algorithm 1 of the manuscript. Multiple state and control input trajectories of a robot performing the task are obtained and saved in the *State_Data.npy* and *Input_Data.npy*. 
 
+- Inverse Problem:
+The second part of the code uses these data files to estimate the cost of the agent using Algorithm 2 of the manuscript. 
 We define a function that forms the feature vector. We used a 16-dimensional features vector, with the first feature being the distance from the desired location of the robot,
 and with the other features being Gaussians of the form,
 
