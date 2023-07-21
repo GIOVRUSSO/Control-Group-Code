@@ -17,7 +17,7 @@ This file produces Gaussian process (GP) models of the system dynanics. First, w
 
 ### Pendulum IOC Discrete
 - Solving Forward Problem:
-This code implememts the discrete case of the running example of the manuscript. It takes Dicrete pmfs of the target and reference pendulum as input. We also define model predictive control (MPC) scheme for reference pendulum with mass =0.5kg. First part of the code computes the policy given the actual state cost. We simulate the pendulum stablisation task by applying the inputs sampled from the policy. We conduct 20 simulations and collect the state-input trajectory data. The data files are saved as *State_H1.npy, State_H2.npy* and *Input_H.npy* and can be used to replicate the results given in the manuscript. 
+This code implememts the discrete case of the running example of the manuscript. It takes Dicrete pmfs of the target and reference pendulum as input. We also define model predictive control (MPC) scheme for reference pendulum with mass =0.5kg. First part of the code computes the policy given the actual state cost. We simulate the pendulum stablisation task by applying the inputs sampled from the policy. We conduct 20 simulations and collect the state-input trajectory data. The data files are saved as *State_H1.npy, State_H2.npy* and *Control_H.npy* and can be used to replicate the results given in the manuscript. 
 
 - Solving Inverse Problem:
 Next, we define the feature set as given in the manuscript. Using the collected data we solve a convex optimisation problem for cost estimation. The cost is reconstructed using the obtained weights.
