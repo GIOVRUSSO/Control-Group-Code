@@ -5,16 +5,15 @@ This folder contains all the necessary code required to replicate the results of
 The following files are contained in this folder,
 
 - Code Files:
-  - ###Pendulum Binning:
-      Code for binning/dicretising the pendulum environment space, and obtaining state transistion pmfs for target and reference pendulum.
-  - Pendulum GP Modelling: Code for obtaining Gaussian process (GP) models of the reference and target pendulum. 
-  - Pendulum IOC Discrete: This code implememts the discrete case of the running example of the manuscript.
-  - Pendulum IOC Continuous: This code implememts the continuos case of the running example of the manuscript.
+  - *Pendulum Binning*: Code for binning/dicretising the pendulum environment space, and obtaining state transistion pmfs for target and reference pendulum.
+  - *Pendulum GP Modelling*: Code for obtaining Gaussian process (GP) models of the reference and target pendulum. 
+  - *Pendulum IOC Discrete*: This code implememts the discrete case of the running example of the manuscript.
+  - *Pendulum IOC Continuous*: This code implememts the continuos case of the running example of the manuscript.
 - Model and Data Binaries:
-  - Discrete_Pendulum_model.zip: this file stores the discrete pmfs for state transition for the reference and target pendulum.
-  - Target_GP_Model.dump: this file stores the GP model for the target pendulum.
-  - Reference_GP_Model.dumpp: this file stores the GP model for the reference pendulum.
-  - State_H1.npy, State_H2.npy and Control_H.npy: this files store the trajectory data of the pendulum angluar position, angular velocity, and control input respectively.  
+  - *Discrete_Pendulum_model.zip*: this file stores the discrete pmfs for state transition for the reference and target pendulum.
+  - *Target_GP_Model.dump*: this file stores the GP model for the target pendulum.
+  - *Reference_GP_Model.dump*: this file stores the GP model for the reference pendulum.
+  - *State_H1.npy, State_H2.npy* and *Control_H.npy*: this files store the trajectory data of the pendulum angluar position, angular velocity, and control input respectively.  
 
 ### Pendulum Binning
 
