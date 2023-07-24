@@ -5,9 +5,14 @@ This folder contains the code required to perform the robot routing experiment a
 To the run code, the first step is to download and install the [robotarium python simulator package](https://github.com/robotarium/robotarium_python_simulator). Next, copy the files named *robot_routing_IOC.ipynb*, *robot_routing_simulate.py*, and *Weights_Obtained.npy* to the same folder.
 ### Contents 
 The Robotarium folder contains the following files:
-- robot_routing_IOC.ipynb
-- robot_routing_simulate.py
 
+- Code Files:
+  - *robot_routing_IOC.ipynb*: The notebook implements the robot routing experiment by solving the forward and inverse using the algorithms given in the manuscript.
+  - *robot_routing_simulate.py*: The code file implements the robot routing task and can be used to perform physical experiment on the robotarium platform.
+- Binaries:
+  - *State_Data.npy*: Stores state trajectory data of the agent performing task with known actual cost.
+  - *Input_Data.npy*: Stores control input trajectory data of the agent performing task with known actual cost.
+  - *Weights_Obtained.npy*: Stores the weights obtained that can replicate the results in the manuscript.
 ### robot_routing_IOC.ipynb
 
 - Forward Problem:
