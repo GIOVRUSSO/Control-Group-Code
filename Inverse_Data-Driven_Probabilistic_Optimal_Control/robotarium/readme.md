@@ -20,7 +20,7 @@ Given the setup of the experiment in the manuscript, the first part of the code 
 
 - Inverse Problem:
 The second part of the code uses these data files to estimate the cost of the agent using Algorithm 2 of the manuscript. 
-We define a function that forms the feature vector. We used a 16-dimensional features vector, with the first feature being the distance from the desired location of the robot,
+We define a function that forms the feature vector. We used a 16-dimensional features vector, with the first feature being, $(x_{k}-x_{d})^{2}$  the distance from the desired location of the robot,
 and with the other features being Gaussians of the form,
 
   ![equation](https://latex.codecogs.com/png.image?\large&space;\dpi{110}\bg{white}g_{i}(\mathbf{x}_{k}):=\frac{1}{\sqrt{{(2\pi)^{2}\det(\mathbf{\Sigma}_o)}}}\exp\left(-\frac{1}{2}(\mathbf{x}_{k}-\mathbf{o}_{i})^\top\mathbf{\Sigma}_o^{-1}(\mathbf{x}_{k}-\mathbf{o}_{i})\right)),
