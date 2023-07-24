@@ -5,7 +5,8 @@ This folder contains all the necessary code required to replicate the results of
 The following files are contained in this folder,
 
 - Code Files:
-  - Pendulum Binning: Code for binning/dicretising the pendulum environment space, and obtaining state transistion pmfs for target and reference pendulum.
+  - ###Pendulum Binning:
+      Code for binning/dicretising the pendulum environment space, and obtaining state transistion pmfs for target and reference pendulum.
   - Pendulum GP Modelling: Code for obtaining Gaussian process (GP) models of the reference and target pendulum. 
   - Pendulum IOC Discrete: This code implememts the discrete case of the running example of the manuscript.
   - Pendulum IOC Continuous: This code implememts the continuos case of the running example of the manuscript.
