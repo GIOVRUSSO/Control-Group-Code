@@ -3,10 +3,13 @@ This folder contains all the necessary code required to replicate the results of
 
 ### Contents 
 The following files are contained in this folder,
-- Pendulum Binning
-- Pendulum GP Modelling
-- Pendulum IOC Discrete
-- Pendulum IOC Continuous
+
+- Code files:
+  - Pendulum Binning 
+  - Pendulum GP Modelling
+  - Pendulum IOC Discrete
+  - Pendulum IOC Continuous
+- 
 
 ### Pendulum Binning
 
