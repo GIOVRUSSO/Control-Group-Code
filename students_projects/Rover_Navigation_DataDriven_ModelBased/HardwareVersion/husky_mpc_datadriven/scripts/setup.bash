@@ -1,0 +1,6 @@
+export ROS_MASTER_URI=http://cpr-a200-0847:11311
+
+export ROS_IP=192.168.10.157
+
+export ROS_HOSTNAME=192.168.10.157
+
