@@ -3,5 +3,5 @@ This folder contains the code/data for robotarium experimental validation with n
 
 The *init.m* should be ran before running any other code from this folder.
 
-To get the figure in the manuscript, directly run *robotarium_validation.m*.
+To get the figure in the manuscript, run *robotarium_validation.m*.
 
