@@ -120,7 +120,7 @@ for k = 50+1:iterations
     end     
 end
 
-positiondev = zeros(N, iterations-, maxlayer);
+positiondev = zeros(N, iterations, maxlayer);
 
 for i = 1:N
     for j = 1:iterations-50
