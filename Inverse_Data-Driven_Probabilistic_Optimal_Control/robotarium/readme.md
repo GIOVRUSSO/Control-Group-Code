@@ -23,6 +23,10 @@ Given the setup of the experiment in the manuscript, the first part of the code 
 
 where,
 
+![equation](https://latex.codecogs.com/png.image?\large&space;\dpi{110}\bg{white}g_{i}(\mathbf{x}_{k}):=\frac{1}{\sqrt{{(2\pi)^{2}\det(\mathbf{\Sigma}_o)}}}\exp\left(-\frac{1}{2}(\mathbf{x}_{k}-\mathbf{o}_{i})^\top\mathbf{\Sigma}_o^{-1}(\mathbf{x}_{k}-\mathbf{o}_{i})\right)),
+
+with ![equation](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D%5Cbg%7Bwhite%7D%5Cmathbf%7B%5CSigma%7D_o=%5Cbegin%7Bbmatrix%7D0.025&0%5C%5C0&0.025%5C%5C%5Cend%7Bbmatrix%7D), and $\mathbf{o}_{i}$ being the coordinates of the barycenter of the $i$-{th} obstacle.
+
 ![CodeCogsEqn (11)](https://github.com/GIOVRUSSO/Control-Group-Code/assets/62793703/d9b7e1f3-71b0-4504-8660-5d4984cf9076)
 
 with $b_{x_j}$ and $b_{y_j}$ representing the $j_{th}$ component of the boundary coordinates $b_{x}=[-1.5,1.5]$ and $b_{y}=[-1,1]$, respectively, and $\sigma=0.02$ represents the standard deviation of the normal distribution.
@@ -32,12 +36,7 @@ Multiple state and control input trajectories of a robot performing the task are
 - Inverse Problem:
 The second part of the code uses these data files to estimate the cost of the agent using Algorithm 2 of the manuscript. 
 We define a function that forms the feature vector. We used a 16-dimensional features vector, with the first feature being, $$(x_{k}-x_{d})^{2}$$  the distance from the desired location of the robot,
-and with the other features being Gaussians of the form,
-
-
-![equation](https://latex.codecogs.com/png.image?\large&space;\dpi{110}\bg{white}g_{i}(\mathbf{x}_{k}):=\frac{1}{\sqrt{{(2\pi)^{2}\det(\mathbf{\Sigma}_o)}}}\exp\left(-\frac{1}{2}(\mathbf{x}_{k}-\mathbf{o}_{i})^\top\mathbf{\Sigma}_o^{-1}(\mathbf{x}_{k}-\mathbf{o}_{i})\right)),
-
-with ![equation](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D%5Cbg%7Bwhite%7D%5Cmathbf%7B%5CSigma%7D_o=%5Cbegin%7Bbmatrix%7D0.025&0%5C%5C0&0.025%5C%5C%5Cend%7Bbmatrix%7D), centered around 15 uniformly distributed points in the Robotarium work area. 
+and with the other features being Gaussians of the form $g_{i}(\textbf{x}_{k})$, centered around 15 uniformly distributed points in the Robotarium work area. 
 Next, we obtain the *weights.npy* by solving the inverse problem. The figure below shows the placement of the feature points on the Robotarium work area with corresponding weights value.
 ![feature_point_grid](https://github.com/GIOVRUSSO/Control-Group-Code/assets/62793703/d50ee3e0-3e3b-4595-b5fc-a3305e843b08)
 We use the weights to formulate the estimated cost and test the effectiveness of the estimated cost by performing the robot routing cost while avoiding obstacles. The plots in Figure 3 of the manuscripts can be obtained from the last section of the code.
