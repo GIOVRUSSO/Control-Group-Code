@@ -19,7 +19,7 @@ The Robotarium folder contains the following files:
 - Forward Problem:
 Given the setup of the experiment in the manuscript, the first part of the code solves the forward problem/task of robot routing while avoiding obstacles using the control policy computed by Algorithm 1 of the manuscript. The original state cost $c(\textbf{x}_{k})$ is defined as:
 
-![CodeCogsEqn (10)](https://github.com/GIOVRUSSO/Control-Group-Code/assets/62793703/ca052e3e-9e97-468b-b88e-295895c2e62e)
+![CodeCogsEqn (12)](https://github.com/GIOVRUSSO/Control-Group-Code/assets/62793703/8a2656ec-2e19-46dd-9b37-158162b6cf61)
 
 where,
 
