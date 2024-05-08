@@ -25,7 +25,11 @@ where,
 
 ![equation](https://latex.codecogs.com/png.image?\large&space;\dpi{110}\bg{white}g_{i}(\mathbf{x}_{k}):=\frac{1}{\sqrt{{(2\pi)^{2}\det(\mathbf{\Sigma}_o)}}}\exp\left(-\frac{1}{2}(\mathbf{x}_{k}-\mathbf{o}_{i})^\top\mathbf{\Sigma}_o^{-1}(\mathbf{x}_{k}-\mathbf{o}_{i})\right)),
 
-with ![equation](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D%5Cbg%7Bwhite%7D%5Cmathbf%7B%5CSigma%7D_o=%5Cbegin%7Bbmatrix%7D0.025&0%5C%5C0&0.025%5C%5C%5Cend%7Bbmatrix%7D), and $\mathbf{o}_{i}$ being the coordinates of the barycenter of the $i$-{th} obstacle.
+with 
+
+![equation](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D%5Cbg%7Bwhite%7D%5Cmathbf%7B%5CSigma%7D_o=%5Cbegin%7Bbmatrix%7D0.025&0%5C%5C0&0.025%5C%5C%5Cend%7Bbmatrix%7D), 
+
+and $\mathbf{o}_{i}$ being the coordinates of the barycenter of the $i$-{th} obstacle.
 
 ![CodeCogsEqn (11)](https://github.com/GIOVRUSSO/Control-Group-Code/assets/62793703/d9b7e1f3-71b0-4504-8660-5d4984cf9076)
 
