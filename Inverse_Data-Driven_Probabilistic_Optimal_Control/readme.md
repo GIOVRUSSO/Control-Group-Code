@@ -8,7 +8,7 @@ The following list of directories can be found in the repository, which reproduc
   - This folder contains the code files required for replicating the results of pendulum running example given in the manuscript.
 - robotarium:
   - This folder contains the code files required for replicating the results of the robot routing example given in the manuscript.
-- IHMCE_MAXENT_COMPARISON:
+- IHMCE_MaxEnt_Comparison:
   - This folder contains the code files required for replicating the results of benchmarking Algorithm 2 given in the manuscript. 
 
 ### Results
