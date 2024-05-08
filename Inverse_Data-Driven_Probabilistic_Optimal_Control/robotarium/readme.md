@@ -9,7 +9,7 @@ The Robotarium folder contains the following files:
 - Code Files:
   - *robot_routing_IOC.ipynb*: The notebook implements the robot routing experiment by solving the forward and inverse using the algorithms given in the manuscript.
   - *robot_routing_simulate.py*: The code file implements the robot routing task and can be used to perform physical experiment on the robotarium platform.
-  - *robot_routing_continuous.ipynb*: The notebook implements the robot routing experiment for scenario 1 of the manuscript by solving the routinh problem for the continuous state\action space by using the gaussian policy derived in equation (11) of the manuscript.
+  - *robot_routing_continuous.ipynb*: The notebook implements the robot routing experiment for scenario 1 of the manuscript by solving the routinh problem for the continuous state\action space by using the Gaussian policy derived in equation (11) of the manuscript.
 - Binaries:
   - *State_Data.npy*: Stores state trajectory data of the agent performing task with known actual cost.
   - *Input_Data.npy*: Stores control input trajectory data of the agent performing task with known actual cost.
