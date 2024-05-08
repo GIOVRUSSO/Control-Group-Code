@@ -43,7 +43,13 @@ Figure: Top left: original cost function. In the other panels, the cost reconstr
 (bottom-left) and IHMCE (bottom-right).
 
 *Robotarium:*
-- In-silico results:
+- Scenario 1: In-silico results
+
+  <img width="869" alt="Screenshot 2024-05-08 165800" src="https://github.com/GIOVRUSSO/Control-Group-Code/assets/62793703/fd6fe888-0379-45dd-b579-f51efaf835e0">
+
+Figure. Top-left: robot trajectories starting from different initial positions (⋆) when the policy in (11) - (12) is used (with N = 1). Top-right: the oi’s together with the weights obtained via Algorithm 2. Bottom: reconstructed cost (left) and robot trajectories when Algorithm 1 is used with this cost. The robot starts from initial positions that are different from those in the top panel.
+  
+- Scenario 2: In-silico results
 
 ![Cost_Heat_Map_Actual](https://github.com/GIOVRUSSO/Control-Group-Code/assets/62793703/91936520-70f7-48c9-b9e2-543bc7fa9e0c)
 
