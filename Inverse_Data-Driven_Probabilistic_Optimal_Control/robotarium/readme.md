@@ -49,4 +49,4 @@ Given the setup of scenario 1 of the application example in the manuscript, the 
 
 - Inverse Problem:
 The second part of the code uses these data files to estimate the cost of the agent using Algorithm 2 of the manuscript. 
-We define a function that forms the feature vector. We used a 15-dimensional features vector, with the feature being, $$(x_{k}-x_{i})^{2}$$  the distance from the location point $x_{i}$ of the robot.
+We define a function that forms the feature vector. We used a 15-dimensional features vector, with the feature being, $$(x_{k}-x_{i})^{2}$$  the distance from the location point $x_{i}$ of located at 15 uniformly spread points on the robotarium work area.
