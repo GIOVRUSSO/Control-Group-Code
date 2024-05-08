@@ -1,9 +1,15 @@
-#![actual_cost_function](https://github.com/GIOVRUSSO/Control-Group-Code/assets/62793703/d768b451-9746-4da1-981f-d9e40dd9a7b0)
+# Benchmarking Algorithm 2
+This folder contains all the necessary code required to replicate the results of Benchmarking Algorithm 2 of the manuscript ([see this link](https://arxiv.org/abs/2306.13928) for the preprint).
 
+### Contents 
+The following files are contained in this folder,
 
-
-#![learned_cost_function_IHMCE](https://github.com/GIOVRUSSO/Control-Group-Code/assets/62793703/e5a3160e-b3b1-4846-85a1-6ccc5ddff65d)
-
-
-#![learned_cost_function_MaxEnt](https://github.com/GIOVRUSSO/Control-Group-Code/assets/62793703/b80e1b31-e4bb-48ea-bc75-a530e3192a84)
+- Code Files:
+  - *Pendulum IOC Benchmarking*: This code implements the discrete case of the running example of the manuscript with the new cost feature vector as defined in Section 3.3 of the manuscript.
+  - *IHMCE_MAXENT_Pendulum*: This code implements the Algorithms from the articles titled 'Maximum Entropy Inverse Reinforcement Learning' and 'Infinite Horizon Maximum Causal Entropy Inverse Reinforcement Learning'.
+- Model and Data Binaries:
+  - *Discrete_Pendulum_model.zip*: this file stores the discrete pmfs for state transition for the reference and target pendulum.
+  - *Target_GP_Model.dump*: this file stores the GP model for the target pendulum.
+  - *Reference_GP_Model.dump*: this file stores the GP model for the reference pendulum.
+  - *State_H1.npy, State_H2.npy* and *Control_H.npy*: this files store the trajectory data of the pendulum angluar position, angular velocity, and control input respectively.  
 
