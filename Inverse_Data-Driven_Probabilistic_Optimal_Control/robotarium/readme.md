@@ -25,7 +25,7 @@ where,
 
 ![CodeCogsEqn (11)](https://github.com/GIOVRUSSO/Control-Group-Code/assets/62793703/d9b7e1f3-71b0-4504-8660-5d4984cf9076)
 
-with \(b_{x_j}\) and \(b_{y_j}\) representing the $j_{th}$ component of the boundary coordinates \(b_{x}=[-1.5,1.5]\) and \(b_{y}=[-1,1]\), respectively, and \(\sigma=0.02\) represents the standard deviation of the normal distribution.
+with $b_{x_j}$ and $b_{y_j}$ representing the $j_{th}$ component of the boundary coordinates $b_{x}=[-1.5,1.5]$ and $b_{y}=[-1,1]$, respectively, and $\sigma=0.02$ represents the standard deviation of the normal distribution.
 
 Multiple state and control input trajectories of a robot performing the task are obtained and saved in the *State_Data.npy* and *Input_Data.npy*. 
 
