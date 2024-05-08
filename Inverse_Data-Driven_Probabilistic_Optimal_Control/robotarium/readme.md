@@ -39,3 +39,14 @@ Note: To replicate Figure 3 of the manuscript use the *Weights_Obtained.npy*, *S
 This file simulated the robot performing the obstacle avoidance task. Unlike *robot_routing_IOC.ipynb*, we can visualize the agent performing the task using this code. We provide *Weights.npy* as an input and compute the policy of the agent. Apply the input sampled from the policy and continue this process till the task of reaching the goal is completed. We can also obtain state and input trajectory data as a .npy file. 
 
 Apart from simulation, this code file can also be used to perform hardware experiments. Just upload the *robot_routing_simulate.py* and *Weights.npy* files to the Robotarium portal and you can obtain the video of the robot performing the task.
+
+### robot_routing_continuous.ipynb
+
+### robot_routing_IOC.ipynb
+
+- Forward Problem:
+Given the setup of scenario 1 of the application example in the manuscript, the first part of the code solves the forward problem/task of robot routing considering a quadratic state cost and using the continuous action space control policy computed by equation (11) of the manuscript. Multiple state and control input trajectories of a robot performing the task are obtained and shown in the top left panel in Figure 4 of the manuscript. 
+
+- Inverse Problem:
+The second part of the code uses these data files to estimate the cost of the agent using Algorithm 2 of the manuscript. 
+We define a function that forms the feature vector. We used a 15-dimensional features vector, with the feature being, $$(x_{k}-x_{i})^{2}$$  the distance from the location point $x_{i}$ of the robot.
