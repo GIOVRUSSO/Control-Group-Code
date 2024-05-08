@@ -42,8 +42,6 @@ Apart from simulation, this code file can also be used to perform hardware exper
 
 ### robot_routing_continuous.ipynb
 
-### robot_routing_IOC.ipynb
-
 - Forward Problem:
 Given the setup of scenario 1 of the application example in the manuscript, the first part of the code solves the forward problem/task of robot routing considering a quadratic state cost and using the continuous action space control policy computed by equation (11) of the manuscript. Multiple state and control input trajectories of a robot performing the task are obtained and shown in the top left panel in Figure 4 of the manuscript. 
 
