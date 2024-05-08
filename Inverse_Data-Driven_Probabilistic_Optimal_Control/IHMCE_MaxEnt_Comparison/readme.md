@@ -17,8 +17,11 @@ Next, We define the cost feature set as given in the Section 3.3 of the manuscri
 In the last section of the code we generate the plots in middle panel of Figure 2 of the manuscript.
 
 ### IHMCE_MaxEnt_Comparison
--Infinite Horizon Maximum Causal Entropy IRL:
-The first part of the code implements the maximum discounted causal Entropy (MDCE) Algorithm of the article 'Infinite Horizon Maximum Causal Entropy Inverse Reinforcement Learning'. We define the class for soft value iteration. We define the function to calculate the expected feature value of the policy with actual and the policy with estimated cost. We use the expected value feature functions to perform the optimisation using the gradient descent.
+- Infinite Horizon Maximum Causal Entropy IRL:
+The first part of the code implements the maximum discounted causal Entropy (MDCE) Algorithm of the article 'Infinite Horizon Maximum Causal Entropy Inverse Reinforcement Learning'. We define the class for soft-value iteration with 0.9 set as the discount factor. We define the function to calculate the expected feature value of the policy with actual and the policy with estimated cost. To compute the expected feature value for the estimated cost we utilise Monte-Carlo sampling with a sample size of 100. We use the expected feature value functions to optimise the corresponding feature weights using gradient descent.
+
+- Maximum Causal Entropy IRL:
+The Second part of the code implements the Algorithm of the article 'Maximum Entropy Inverse Reinforcement Learning'. We replace the backward pass of the MaxEnt algorithm with value iteration and define the class for value iteration with 0.9 set as the discount factor. We define the function to calculate the expected feature value of the policy with actual and the policy with estimated cost. To compute the expected feature value for the estimated cost we utilise Monte-Carlo sampling with a sample size of 100. We use the expected feature value functions to optimise the corresponding feature weights using gradient descent.
 
   
 
