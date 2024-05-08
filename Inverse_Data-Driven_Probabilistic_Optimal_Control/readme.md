@@ -33,7 +33,7 @@ Pendulum angular position and corresponding control input. Results obtained when
 
 Angular position and corresponding control input, when the cost is estimated using Algorithm 2 from [here](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/Paper_preprint.pdf). The pfs are estimated using Guassian processes.
 
-*Benchmarking Algorithm 2*
+*Benchmarking Algorithm 2:*
 
 Algorithm 2 presented in the manuscript ([see this link](https://arxiv.org/abs/2306.13928)) is benchmarked against the Algorithms presented in the articles titled 'Maximum Entropy Inverse Reinforcement Learning' and 'Infinite Horizon Maximum Causal Entropy Inverse Reinforcement Learning'. 
 
