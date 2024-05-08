@@ -36,6 +36,7 @@ Angular position and corresponding control input, when the cost is estimated usi
 Algorithm 2 presented in the manuscript ([see this link](https://arxiv.org/abs/2306.13928)) is benchmarked against the Algorithms presented in the articles titled 'Maximum Entropy Inverse Reinforcement Learning' and 'Infinite Horizon Maximum Causal Entropy Inverse Reinforcement Learning'. 
 
 <img width="650" alt="Screenshot 2024-05-08 154526" src="https://github.com/GIOVRUSSO/Control-Group-Code/assets/62793703/f933c271-4d55-48c6-accc-ae7352b7c4b2">
+
 Figure: Top left: original cost function. In the other panels, the cost reconstructed via: Algorithm 2 (top-right), MaxEnt
 (bottom-left) and IHMCE (bottom-right).
 
