@@ -17,7 +17,15 @@ The Robotarium folder contains the following files:
 ### robot_routing_IOC.ipynb
 
 - Forward Problem:
-Given the setup of the experiment in the manuscript, the first part of the code solves the forward problem/task of robot routing while avoiding obstacles using the control policy computed by Algorithm 1 of the manuscript. Multiple state and control input trajectories of a robot performing the task are obtained and saved in the *State_Data.npy* and *Input_Data.npy*. 
+Given the setup of the experiment in the manuscript, the first part of the code solves the forward problem/task of robot routing while avoiding obstacles using the control policy computed by Algorithm 1 of the manuscript. The original state cost $c(\textbf{x}_{k})$ is defined as:
+
+![CodeCogsEqn (10)](https://github.com/GIOVRUSSO/Control-Group-Code/assets/62793703/ca052e3e-9e97-468b-b88e-295895c2e62e)
+
+where,
+
+![CodeCogsEqn (11)](https://github.com/GIOVRUSSO/Control-Group-Code/assets/62793703/d9b7e1f3-71b0-4504-8660-5d4984cf9076)
+
+Multiple state and control input trajectories of a robot performing the task are obtained and saved in the *State_Data.npy* and *Input_Data.npy*. 
 
 - Inverse Problem:
 The second part of the code uses these data files to estimate the cost of the agent using Algorithm 2 of the manuscript. 
