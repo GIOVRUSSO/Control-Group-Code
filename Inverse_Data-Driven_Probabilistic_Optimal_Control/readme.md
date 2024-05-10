@@ -3,13 +3,15 @@
 This repository collects the supporting code for the manuscript **ON CONVEX DATA-DRIVEN INVERSE OPTIMAL CONTROL FOR NONLINEAR, NON-STATIONARY AND STOCHASTIC SYSTEMS** ([see this link](https://arxiv.org/abs/2306.13928) for the preprint). The manuscript discusses an inverse control problem with a finite time horizon. The goal is to deduce the cost that influences an agent's actions from observations, even when the cost is possibly non-convex and non-stationary. We propose a solution by solving a convex optimization problem that estimates the cost, even in cases where the cost is not convex and the dynamics are nonlinear, non-stationary, and stochastic. Our approach is based on the maximum likelihood principle. We demonstrate the effectiveness of our approach through both computer simulations and experiments using physical hardware.
 
 ### Contents
-The following list of directories can be found in the repository, which reproduce the simulation and experimental results given in the manuscript.
+The following list of directories can be found in the repository, which reproduces the simulation and experimental results given in the manuscript.
 - pendulum-running-example:
-  - This folder contains the code files required for replicating the results of pendulum running example given in the manuscript.
+  - This folder contains the code files required for replicating the results of the pendulum running example given in the manuscript.
 - robotarium:
   - This folder contains the code files required for replicating the results of the robot routing example given in the manuscript.
 - IHMCE_MaxEnt_Comparison:
-  - This folder contains the code files required for replicating the results of benchmarking Algorithm 2 given in the manuscript. 
+  - This folder contains the code files required for replicating the results of benchmarking Algorithm 2 given in the manuscript.
+- grid world example:
+  - This folder contains the basic implementation of MaxEnt/IHMCE on a simple grid world environment     
 
 ### Results
 We present the simulation and experimental results given in the manuscript ([see this link](https://arxiv.org/abs/2306.13928))
