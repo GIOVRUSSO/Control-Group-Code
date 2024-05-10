@@ -51,23 +51,9 @@ Figure. Top-left: robot trajectories starting from different initial positions (
   
 - Scenario 2: In-silico results
 
-![Cost_Heat_Map_Actual](https://github.com/GIOVRUSSO/Control-Group-Code/assets/62793703/91936520-70f7-48c9-b9e2-543bc7fa9e0c)
+<img width="779" alt="Screenshot 2024-05-10 165445" src="https://github.com/GIOVRUSSO/Control-Group-Code/assets/62793703/eea03072-9a55-4545-b3dd-632d52a4260c">
 
-The cost used for the forward control problem.  Note that the cost increases in correspondence of the obstacles (in red in the right panels)  and its minimum is attained at the goal destination
-
-![ALT Text](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/robotarium/Training_Trajectories.jpg)
-
-Robot trajectories starting from different initial conditions depicted as $(\star)$ when the policy from Algorithm 1 from [here](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/Paper_preprint.pdf)) is used.
-
-![Cost_Heat_Map_estimated](https://github.com/GIOVRUSSO/Control-Group-Code/assets/62793703/5113f33c-7e94-4c2b-b2e3-5dee856f44f2)
-
-Estimated cost using Algorithm 2.
-
-
-![Alt text](https://github.com/GIOVRUSSO/Control-Group-Code/blob/master/Inverse_Data-Driven_Probabilistic_Optimal_Control/robotarium/Test_Trajectories.jpg)
-
-Trajectories under algorithm 1 with estimated cost.
-
+Figure. Top-left: cost for the FOC problem. Top-right: robot trajectories when the policy from Algorithm 1 is used (same initial positions and destination of Scenario 1). Bottom panels: cost reconstructed via Algorithm 2 (left) and robot trajectories when Algorithm 1 is used with the estimated cost. Robots start from initial positions that are different from these in the top panel.
 
 
 
