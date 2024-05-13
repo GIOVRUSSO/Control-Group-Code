@@ -13,7 +13,9 @@ The following files are contained in this folder,
 This code implememts the discrete case of the running example of the manuscript. It takes Dicrete pmfs of the target and reference pendulum as input. We also define model predictive control (MPC) scheme for reference pendulum with mass =0.5kg. First part of the code computes the policy given the actual state cost. We simulate the pendulum stablisation task by applying the inputs sampled from the policy. We conduct 20 simulations and collect the state-input trajectory data.  
 
 - Solving Inverse Problem:
-Next, We define the cost feature set as given in the Section 3.3 of the manuscript. Using the collected data we solve a convex optimisation problem for cost estimation. The cost is reconstructed using the obtained weights.
+Next, We define the cost feature set as
+https://latex.codecogs.com/png.image?\small&space;\dpi{150}\textbf{h}(\textbf{x}_{k})=[1-\exp(-(\cos(\theta_{k})-1)^{2}),1-\exp(-\omega_{k}^{2})]
+. Using the collected data we solve a convex optimisation problem for cost estimation. The cost is reconstructed using the obtained weights.
 In the last section of the code we generate the plots in middle panel of Figure 2 of the manuscript.
 
 ### IHMCE_MaxEnt_Comparison
