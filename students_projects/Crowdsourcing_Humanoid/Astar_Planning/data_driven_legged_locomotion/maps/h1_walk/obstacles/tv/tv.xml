@@ -1,0 +1,62 @@
+<mujoco model="tv">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <material name="GLASS.004" specular="0.5" shininess="0.5" rgba="0.014670 0.014670 0.014670 1.000000"/>
+    <material name="Material.041" specular="0.5" shininess="0.5" rgba="0.090838 0.090838 0.090838 1.000000"/>
+    <material name="Material.042" specular="0.5" shininess="0.5" rgba="0.012217 0.012217 0.012217 1.000000"/>
+    <material name="Material.043" specular="0.5" shininess="0.5" rgba="0.800000 0.800000 0.800000 1.000000"/>
+    <material name="Material.044" specular="0.5" shininess="0.5" rgba="0.195988 0.195988 0.195988 1.000000"/>
+    <material name="Material.045" specular="0.5" shininess="0.5" rgba="0.800000 0.800000 0.800000 1.000000"/>
+    <material name="Material.046" specular="0.5" shininess="0.5" rgba="0.800000 0.043768 0.017155 1.000000"/>
+    <material name="Material.047" specular="0.5" shininess="0.5" rgba="0.800000 0.800000 0.800000 1.000000"/>
+    <material name="Material.048" specular="0.5" shininess="0.5" rgba="0.009178 0.803020 0.000000 1.000000"/>
+    <material name="Material.049" specular="0.5" shininess="0.5" rgba="0.800000 0.800000 0.800000 1.000000"/>
+    <material name="Material.050" specular="0.5" shininess="0.5" rgba="0.020379 0.020379 0.020379 1.000000"/>
+    <material name="STAND.004" specular="0.5" shininess="0.5" rgba="0.800000 0.800000 0.800000 1.000000"/>
+    <texture type="2d" name="Basecolor_0" file="Basecolor_0.png"/>
+    <material name="SimplygonCastMaterial.005" texture="Basecolor_0" specular="0.5" shininess="0.5"/>
+    <material name="YELLOW_RUB.004" specular="0.5" shininess="0.5" rgba="0.800000 0.694251 0.005074 1.000000"/>
+    <material name="metal.004" specular="0.5" shininess="0.5" rgba="0.800000 0.800000 0.800000 1.000000"/>
+    <material name="white__rub.004" specular="0.5" shininess="0.5" rgba="0.569931 0.800408 0.044037 1.000000"/>
+    <mesh file="tv_0.obj"/>
+    <mesh file="tv_1.obj"/>
+    <mesh file="tv_2.obj"/>
+    <mesh file="tv_3.obj"/>
+    <mesh file="tv_4.obj"/>
+    <mesh file="tv_5.obj"/>
+    <mesh file="tv_6.obj"/>
+    <mesh file="tv_7.obj"/>
+    <mesh file="tv_8.obj"/>
+    <mesh file="tv_9.obj"/>
+  </asset>
+  <worldbody>
+    <body name="tv">
+      <geom mesh="tv_0" material="GLASS.004" class="visual"/>
+      <geom mesh="tv_1" material="Material.050" class="visual"/>
+      <geom mesh="tv_2" material="Material.049" class="visual"/>
+      <geom mesh="tv_3" material="Material.047" class="visual"/>
+      <geom mesh="tv_4" material="metal.004" class="visual"/>
+      <geom mesh="tv_5" material="Material.044" class="visual"/>
+      <geom mesh="tv_6" material="Material.042" class="visual"/>
+      <geom mesh="tv_7" material="Material.041" class="visual"/>
+      <geom mesh="tv_8" material="STAND.004" class="visual"/>
+      <geom mesh="tv_9" material="SimplygonCastMaterial.005" class="visual"/>
+      <geom mesh="tv_1" class="collision"/>
+      <geom mesh="tv_2" class="collision"/>
+      <geom mesh="tv_3" class="collision"/>
+      <geom mesh="tv_4" class="collision"/>
+      <geom mesh="tv_5" class="collision"/>
+      <geom mesh="tv_6" class="collision"/>
+      <geom mesh="tv_7" class="collision"/>
+      <geom mesh="tv_8" class="collision"/>
+      <geom mesh="tv_9" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>

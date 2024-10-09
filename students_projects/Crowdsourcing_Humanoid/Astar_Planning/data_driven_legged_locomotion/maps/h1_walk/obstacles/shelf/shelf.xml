@@ -1,0 +1,46 @@
+<mujoco model="shelf">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="10442045_PS01_S01_NV01_RQP3_3_0_Basecolor_0" file="10442045_PS01_S01_NV01_RQP3_3_0_Basecolor_0.png"/>
+    <material name="SimplygonCastMaterial.004" texture="10442045_PS01_S01_NV01_RQP3_3_0_Basecolor_0" specular="0.5" shininess="0.5"/>
+    <texture type="2d" name="30326790_PS01_S01_NV01_RQP3_3" file="30326790_PS01_S01_NV01_RQP3_3.png"/>
+    <material name="SimplygonCastMaterial.035" texture="30326790_PS01_S01_NV01_RQP3_3" specular="0.5" shininess="0.5"/>
+    <texture type="2d" name="Basecolor_1.005" file="Basecolor_1.005.png"/>
+    <material name="material_1.001" texture="Basecolor_1.005" specular="0.5" shininess="0.5"/>
+    <texture type="2d" name="texture-green-paper-pattern-scratch-background-photo-hd-wallpaper" file="texture-green-paper-pattern-scratch-background-photo-hd-wallpaper.png"/>
+    <material name="phong1SG.002" texture="texture-green-paper-pattern-scratch-background-photo-hd-wallpaper" specular="0.5" shininess="0.5"/>
+    <texture type="2d" name="grass_texture225" file="grass_texture225.png"/>
+    <material name="phong2SG.002" texture="grass_texture225" specular="0.0" shininess="0.5"/>
+    <texture type="2d" name="wildtextures-leather-Campo-rose" file="wildtextures-leather-Campo-rose.png"/>
+    <material name="phongE1SG.002" texture="wildtextures-leather-Campo-rose" specular="0.5" shininess="0.5"/>
+    <mesh file="shelf_0.obj"/>
+    <mesh file="shelf_1.obj"/>
+    <mesh file="shelf_2.obj"/>
+    <mesh file="shelf_3.obj"/>
+    <mesh file="shelf_4.obj"/>
+    <mesh file="shelf_5.obj"/>
+  </asset>
+  <worldbody>
+    <body name="shelf">
+      <geom mesh="shelf_0" material="phongE1SG.002" class="visual"/>
+      <geom mesh="shelf_1" material="phong1SG.002" class="visual"/>
+      <geom mesh="shelf_2" material="phong2SG.002" class="visual"/>
+      <geom mesh="shelf_3" material="material_1.001" class="visual"/>
+      <geom mesh="shelf_4" material="SimplygonCastMaterial.035" class="visual"/>
+      <geom mesh="shelf_5" material="SimplygonCastMaterial.004" class="visual"/>
+      <geom mesh="shelf_0" class="collision"/>
+      <geom mesh="shelf_1" class="collision"/>
+      <geom mesh="shelf_2" class="collision"/>
+      <geom mesh="shelf_3" class="collision"/>
+      <geom mesh="shelf_4" class="collision"/>
+      <geom mesh="shelf_5" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>

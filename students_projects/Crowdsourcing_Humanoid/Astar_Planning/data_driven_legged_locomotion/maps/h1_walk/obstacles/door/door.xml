@@ -1,0 +1,25 @@
+<mujoco model="door">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="plywood_diff_4k" file="plywood_diff_4k.png"/>
+    <material name="shader_wood.052" texture="plywood_diff_4k" specular="0.5" shininess="0.5"/>
+    <material name="shader_wood.053" specular="0.5" shininess="0.5" rgba="0.800000 0.800000 0.800000 1.000000"/>
+    <mesh file="door_0.obj"/>
+    <mesh file="door_1.obj"/>
+  </asset>
+  <worldbody>
+    <body name="door">
+      <geom mesh="door_0" material="shader_wood.053" class="visual"/>
+      <geom mesh="door_1" material="shader_wood.052" class="visual"/>
+      <geom mesh="door_0" class="collision"/>
+      <geom mesh="door_1" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>

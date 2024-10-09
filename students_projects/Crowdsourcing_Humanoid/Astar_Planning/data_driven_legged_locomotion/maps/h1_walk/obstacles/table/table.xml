@@ -1,0 +1,26 @@
+<mujoco model="table">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="60412885_PS01_S01_NV01_RQP3_3_0_Basecolor_0" file="60412885_PS01_S01_NV01_RQP3_3_0_Basecolor_0.png"/>
+    <material name="SimplygonCastMaterial.002" texture="60412885_PS01_S01_NV01_RQP3_3_0_Basecolor_0" specular="0.5" shininess="0.5"/>
+    <texture type="2d" name="Basecolor_0" file="Basecolor_0.png"/>
+    <material name="material_0.002" texture="Basecolor_0" specular="0.5" shininess="0.5"/>
+    <mesh file="table_0.obj"/>
+    <mesh file="table_1.obj"/>
+  </asset>
+  <worldbody>
+    <body name="table">
+      <geom mesh="table_0" material="SimplygonCastMaterial.002" class="visual"/>
+      <geom mesh="table_1" material="material_0.002" class="visual"/>
+      <geom mesh="table_0" class="collision"/>
+      <geom mesh="table_1" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>

@@ -1,0 +1,208 @@
+<mujoco model="bookshelf">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="Journal21" file="Journal21.png"/>
+    <material name="Material_#100.003" texture="Journal21" specular="1.0" shininess="0.5"/>
+    <texture type="2d" name="Journal42" file="Journal42.png"/>
+    <material name="Material_#101.003" texture="Journal42" specular="1.0" shininess="0.5"/>
+    <texture type="2d" name="Journal43" file="Journal43.png"/>
+    <material name="Material_#102.003" texture="Journal43" specular="1.0" shininess="0.5"/>
+    <texture type="2d" name="Journal7" file="Journal7.png"/>
+    <material name="Material_#103.003" texture="Journal7" specular="1.0" shininess="0.5"/>
+    <texture type="2d" name="Journal8" file="Journal8.png"/>
+    <material name="Material_#104.003" texture="Journal8" specular="1.0" shininess="0.5"/>
+    <texture type="2d" name="Journal44" file="Journal44.png"/>
+    <material name="Material_#105.003" texture="Journal44" specular="1.0" shininess="0.5"/>
+    <texture type="2d" name="Journal20" file="Journal20.png"/>
+    <material name="Material_#106.003" texture="Journal20" specular="1.0" shininess="0.5"/>
+    <material name="Material_#154.003" specular="1.0" shininess="0.5" rgba="0.760698 0.741291 0.741291 1.000000"/>
+    <material name="Material_#155.003" specular="1.0" shininess="0.5" rgba="0.047059 0.039216 0.027451 1.000000"/>
+    <material name="Material_#157.003" specular="1.0" shininess="0.5" rgba="0.152941 0.152941 0.152941 1.000000"/>
+    <material name="Material_#180.003" rgba="0.67 0.233 0.145 1.000000"/>
+    <material name="Material_#182.003" specular="1.0" shininess="0.5" rgba="0.098039 0.098039 0.098039 1.000000"/>
+    <material name="Material_#183.003" specular="1.0" shininess="0.5" rgba="0.929412 0.898039 0.827451 1.000000"/>
+    <material name="Material_#25.003" specular="1.0" shininess="0.5" rgba="0.500000 0.500000 0.500000 1.000000"/>
+    <texture type="2d" name="Journal15" file="Journal15.png"/>
+    <material name="Material_#26.003" texture="Journal15" specular="1.0" shininess="0.5"/>
+    <material name="Material_#27.003" texture="Journal2" specular="1.0" shininess="0.5"/>
+    <texture type="2d" name="Journal30" file="Journal30.png"/>
+    <material name="Material_#28.003" texture="Journal30" specular="1.0" shininess="0.5"/>
+    <texture type="2d" name="Journal10" file="Journal10.png"/>
+    <material name="Material_#30.003" texture="Journal10" specular="1.0" shininess="0.5"/>
+    <texture type="2d" name="Journal11" file="Journal11.png"/>
+    <material name="Material_#31.003" texture="Journal11" specular="1.0" shininess="0.5"/>
+    <texture type="2d" name="Journal27" file="Journal27.png"/>
+    <material name="Material_#32.003" texture="Journal27" specular="1.0" shininess="0.5"/>
+    <texture type="2d" name="Journal28" file="Journal28.png"/>
+    <material name="Material_#33.003" texture="Journal28" specular="1.0" shininess="0.5"/>
+    <material name="Material_#57.003" rgba="0.355 0.276 0.350 1.000000"/>
+    <material name="Material_#58.003" rgba="0.6 0.6 0.6 1.000000"/>
+    <material name="Material_#69.003" rgba="0.22 0.296 0.393 1.000000"/>
+    <material name="Material_#70.003" rgba="0.588000 0.588000 0.588000 1.000000"/>
+    <texture type="2d" name="Journal25" file="Journal25.png"/>
+    <material name="Material_#72.003" texture="Journal25" specular="1.0" shininess="0.5"/>
+    <texture type="2d" name="Journal41" file="Journal41.png"/>
+    <material name="Material_#73.003" texture="Journal41" specular="1.0" shininess="0.5"/>
+    <texture type="2d" name="Journal40" file="Journal40.png"/>
+    <material name="Material_#74.003" texture="Journal40" specular="1.0" shininess="0.5"/>
+    <texture type="2d" name="Journal19" file="Journal19.png"/>
+    <material name="Material_#75.003" texture="Journal19" specular="1.0" shininess="0.5"/>
+    <texture type="2d" name="Journal4" file="Journal4.png"/>
+    <material name="Material_#76.003" texture="Journal4" specular="1.0" shininess="0.5"/>
+    <texture type="2d" name="Journal9" file="Journal9.png"/>
+    <material name="Material_#77.003" texture="Journal9" specular="1.0" shininess="0.5"/>
+    <texture type="2d" name="Journal2" file="Journal2.png"/>
+    <material name="Material_#78.003" texture="Journal2" specular="1.0" shininess="0.5"/>
+    <texture type="2d" name="Forbes Russia 2014-08-12" file="Forbes Russia 2014-08-12.png"/>
+    <material name="Material_#79.003" texture="Forbes Russia 2014-08-12" specular="1.0" shininess="0.5"/>
+    <texture type="2d" name="Journal32" file="Journal32.png"/>
+    <material name="Material_#80.003" texture="Journal32" specular="1.0" shininess="0.5"/>
+    <texture type="2d" name="Journal33" file="Journal33.png"/>
+    <material name="Material_#81.003" texture="Journal33" specular="1.0" shininess="0.5"/>
+    <texture type="2d" name="Electronic House 2013 Summer-12" file="Electronic House 2013 Summer-12.png"/>
+    <material name="Material_#82.003" texture="Electronic House 2013 Summer-12" specular="1.0" shininess="0.5"/>
+    <texture type="2d" name="Journal14" file="Journal14.png"/>
+    <material name="Material_#83.003" texture="Journal14" specular="1.0" shininess="0.5"/>
+    <texture type="2d" name="Journal13" file="Journal13.png"/>
+    <material name="Material_#84.003" texture="Journal13" specular="1.0" shininess="0.5"/>
+    <material name="Material_#85.003" texture="Journal1" specular="1.0" shininess="0.5"/>
+    <texture type="2d" name="Journal24" file="Journal24.png"/>
+    <material name="Material_#86.003" texture="Journal24" specular="1.0" shininess="0.5"/>
+    <texture type="2d" name="Journal12" file="Journal12.png"/>
+    <material name="Material_#87.003" texture="Journal12" specular="1.0" shininess="0.5"/>
+    <texture type="2d" name="Journal6" file="Journal6.png"/>
+    <material name="Material_#88.003" texture="Journal6" specular="1.0" shininess="0.5"/>
+    <texture type="2d" name="Journal5" file="Journal5.png"/>
+    <material name="Material_#89.003" texture="Journal5" specular="1.0" shininess="0.5"/>
+    <material name="Material_#90.003" texture="Journal3" specular="1.0" shininess="0.5"/>
+    <texture type="2d" name="Journal31" file="Journal31.png"/>
+    <material name="Material_#91.003" texture="Journal31" specular="1.0" shininess="0.5"/>
+    <texture type="2d" name="Journal1" file="Journal1.png"/>
+    <material name="Material_#92.003" texture="Journal1" specular="1.0" shininess="0.5"/>
+    <texture type="2d" name="Journal16" file="Journal16.png"/>
+    <material name="Material_#93.003" texture="Journal16" specular="1.0" shininess="0.5"/>
+    <texture type="2d" name="Journal29" file="Journal29.png"/>
+    <material name="Material_#94.003" texture="Journal29" specular="1.0" shininess="0.5"/>
+    <texture type="2d" name="Journal3" file="Journal3.png"/>
+    <material name="Material_#95.003" texture="Journal3" specular="1.0" shininess="0.5"/>
+    <texture type="2d" name="Journal17" file="Journal17.png"/>
+    <material name="Material_#96.003" texture="Journal17" specular="1.0" shininess="0.5"/>
+    <texture type="2d" name="Journal22" file="Journal22.png"/>
+    <material name="Material_#98.003" texture="Journal22" specular="1.0" shininess="0.5"/>
+    <texture type="2d" name="Journal26" file="Journal26.png"/>
+    <material name="Material_#99.003" texture="Journal26" specular="1.0" shininess="0.5"/>
+    <mesh file="bookshelf_1.obj"/>
+    <mesh file="bookshelf_2.obj"/>
+    <mesh file="bookshelf_3.obj"/>
+    <mesh file="bookshelf_4.obj"/>
+    <mesh file="bookshelf_5.obj"/>
+    <mesh file="bookshelf_6.obj"/>
+    <mesh file="bookshelf_7.obj"/>
+    <mesh file="bookshelf_8.obj"/>
+    <mesh file="bookshelf_9.obj"/>
+    <mesh file="bookshelf_10.obj"/>
+    <mesh file="bookshelf_11.obj"/>
+    <mesh file="bookshelf_12.obj"/>
+    <mesh file="bookshelf_13.obj"/>
+    <mesh file="bookshelf_14.obj"/>
+    <mesh file="bookshelf_15.obj"/>
+    <mesh file="bookshelf_16.obj"/>
+    <mesh file="bookshelf_17.obj"/>
+    <mesh file="bookshelf_18.obj"/>
+    <mesh file="bookshelf_19.obj"/>
+    <mesh file="bookshelf_20.obj"/>
+    <mesh file="bookshelf_21.obj"/>
+    <mesh file="bookshelf_22.obj"/>
+    <mesh file="bookshelf_23.obj"/>
+    <mesh file="bookshelf_24.obj"/>
+    <mesh file="bookshelf_25.obj"/>
+    <mesh file="bookshelf_26.obj"/>
+    <mesh file="bookshelf_27.obj"/>
+    <mesh file="bookshelf_28.obj"/>
+    <mesh file="bookshelf_29.obj"/>
+    <mesh file="bookshelf_30.obj"/>
+    <mesh file="bookshelf_31.obj"/>
+    <mesh file="bookshelf_32.obj"/>
+    <mesh file="bookshelf_33.obj"/>
+    <mesh file="bookshelf_34.obj"/>
+    <mesh file="bookshelf_35.obj"/>
+    <mesh file="bookshelf_36.obj"/>
+    <mesh file="bookshelf_37.obj"/>
+    <mesh file="bookshelf_38.obj"/>
+    <mesh file="bookshelf_39.obj"/>
+    <mesh file="bookshelf_40.obj"/>
+    <mesh file="bookshelf_41.obj"/>
+    <mesh file="bookshelf_42.obj"/>
+    <mesh file="bookshelf_43.obj"/>
+    <mesh file="bookshelf_44.obj"/>
+    <mesh file="bookshelf_45.obj"/>
+    <mesh file="bookshelf_46.obj"/>
+    <mesh file="bookshelf_47.obj"/>
+    <mesh file="bookshelf_48.obj"/>
+    <mesh file="bookshelf_49.obj"/>
+    <mesh file="bookshelf_50.obj"/>
+    <mesh file="bookshelf_51.obj"/>
+  </asset>
+  <worldbody>
+    <body name="bookshelf">
+      <geom mesh="bookshelf_1" material="Material_#182.003" class="visual"/>
+      <geom mesh="bookshelf_2" material="Material_#180.003" class="visual"/>
+      <geom mesh="bookshelf_3" material="Material_#157.003" class="visual"/>
+      <geom mesh="bookshelf_4" material="Material_#155.003" class="visual"/>
+      <geom mesh="bookshelf_5" material="Material_#154.003" class="visual"/>
+      <geom mesh="bookshelf_6" material="Material_#25.003" class="visual"/>
+      <geom mesh="bookshelf_7" material="Material_#106.003" class="visual"/>
+      <geom mesh="bookshelf_8" material="Material_#30.003" class="visual"/>
+      <geom mesh="bookshelf_9" material="Material_#28.003" class="visual"/>
+      <geom mesh="bookshelf_10" material="Material_#27.003" class="visual"/>
+      <geom mesh="bookshelf_11" material="Material_#26.003" class="visual"/>
+      <geom mesh="bookshelf_12" material="Material_#105.003" class="visual"/>
+      <geom mesh="bookshelf_13" material="Material_#104.003" class="visual"/>
+      <geom mesh="bookshelf_14" material="Material_#103.003" class="visual"/>
+      <geom mesh="bookshelf_15" material="Material_#102.003" class="visual"/>
+      <geom mesh="bookshelf_16" material="Material_#101.003" class="visual"/>
+      <geom mesh="bookshelf_17" material="Material_#100.003" class="visual"/>
+      <geom mesh="bookshelf_18" material="Material_#99.003" class="visual"/>
+      <geom mesh="bookshelf_19" material="Material_#98.003" class="visual"/>
+      <geom mesh="bookshelf_20" material="Material_#32.003" class="visual"/>
+      <geom mesh="bookshelf_21" material="Material_#96.003" class="visual"/>
+      <geom mesh="bookshelf_22" material="Material_#95.003" class="visual"/>
+      <geom mesh="bookshelf_23" material="Material_#94.003" class="visual"/>
+      <geom mesh="bookshelf_24" material="Material_#93.003" class="visual"/>
+      <geom mesh="bookshelf_25" material="Material_#92.003" class="visual"/>
+      <geom mesh="bookshelf_26" material="Material_#91.003" class="visual"/>
+      <geom mesh="bookshelf_27" material="Material_#90.003" class="visual"/>
+      <geom mesh="bookshelf_28" material="Material_#89.003" class="visual"/>
+      <geom mesh="bookshelf_29" material="Material_#88.003" class="visual"/>
+      <geom mesh="bookshelf_30" material="Material_#31.003" class="visual"/>
+      <geom mesh="bookshelf_31" material="Material_#87.003" class="visual"/>
+      <geom mesh="bookshelf_32" material="Material_#86.003" class="visual"/>
+      <geom mesh="bookshelf_33" material="Material_#85.003" class="visual"/>
+      <geom mesh="bookshelf_34" material="Material_#84.003" class="visual"/>
+      <geom mesh="bookshelf_35" material="Material_#83.003" class="visual"/>
+      <geom mesh="bookshelf_36" material="Material_#82.003" class="visual"/>
+      <geom mesh="bookshelf_37" material="Material_#81.003" class="visual"/>
+      <geom mesh="bookshelf_38" material="Material_#80.003" class="visual"/>
+      <geom mesh="bookshelf_39" material="Material_#79.003" class="visual"/>
+      <geom mesh="bookshelf_40" material="Material_#33.003" class="visual"/>
+      <geom mesh="bookshelf_41" material="Material_#78.003" class="visual"/>
+      <geom mesh="bookshelf_42" material="Material_#77.003" class="visual"/>
+      <geom mesh="bookshelf_43" material="Material_#76.003" class="visual"/>
+      <geom mesh="bookshelf_44" material="Material_#75.003" class="visual"/>
+      <geom mesh="bookshelf_45" material="Material_#74.003" class="visual"/>
+      <geom mesh="bookshelf_46" material="Material_#73.003" class="visual"/>
+      <geom mesh="bookshelf_47" material="Material_#72.003" class="visual"/>
+      <geom mesh="bookshelf_48" material="Material_#70.003" class="visual"/>
+      <geom mesh="bookshelf_49" material="Material_#58.003" class="visual"/>
+      <geom mesh="bookshelf_50" material="Material_#57.003" class="visual"/>
+      <geom mesh="bookshelf_51" material="Material_#69.003" class="visual"/>
+    </body>
+  </worldbody>
+</mujoco>

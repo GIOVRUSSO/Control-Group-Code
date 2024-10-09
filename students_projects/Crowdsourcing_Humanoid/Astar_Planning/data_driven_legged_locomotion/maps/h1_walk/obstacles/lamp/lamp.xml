@@ -1,0 +1,21 @@
+<mujoco model="lamp">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="Basecolor_0" file="Basecolor_0.png"/>
+    <material name="SimplygonCastMaterial.003" texture="Basecolor_0" specular="0.5" shininess="0.5"/>
+    <mesh file="lamp.obj"/>
+  </asset>
+  <worldbody>
+    <body name="lamp">
+      <geom material="SimplygonCastMaterial.003" mesh="lamp" class="visual"/>
+      <geom mesh="lamp" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>
