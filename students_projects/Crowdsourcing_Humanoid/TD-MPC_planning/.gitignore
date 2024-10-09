@@ -1,0 +1,36 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Distribution / packaging
+bin/
+build/
+develop-eggs/
+dist/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Experiments
+experiments/
+
+# LOGS
+*LOG*
+
+# IDE
+.vscode/
+
+# Video files
+videos/
+# CACHE
+*/__pycache__/*
+*/*/__pycache__/*
+
+*/mjpc/*
+experiments/*
