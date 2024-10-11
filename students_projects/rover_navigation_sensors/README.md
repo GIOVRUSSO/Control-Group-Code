@@ -84,7 +84,6 @@ This project is focusing on the development of an autonomous rover navigation sy
 
 ## Setup Instructions
 
-Ecco il contenuto formattato come un file `README.md`. Puoi copiare e incollare direttamente il testo qui sotto:
 
 ```markdown
 # Setup Instructions for ROS Navigation Project
