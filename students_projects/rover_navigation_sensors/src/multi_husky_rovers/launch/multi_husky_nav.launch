@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+
+<launch>
+  <param name="/use_sim_time" value="true"/>
+
+  <group ns="husky1">
+   
+    <include file="$(find husky_mpc_datadriven)/multi_husky_rovers/launch/one_husky_nav.launch" >
+      <arg name="x" value="4.5" />
+      <arg name="y" value="7" />
+      <arg name="z" value="0.0" />
+      <arg name="yaw" value="0.0" />
+      <arg name="robot_name"  value="husky1" />
+    </include>
+    <include file="$(find husky_mpc_datadriven)/launch/dual_ekf_navsat.launch">
+      
+      <arg name="robot_name" value="husky1"/>
+      <arg name="tf_prefix" value="husky1"/>
+    </include>
+
+    <node pkg="tf2_ros" type="static_transform_publisher" name="world_broadcast" args="4.5 7 0 0 0 0 1 earth husky1_tf/map" />
+
+  </group>
+
+  <group ns="husky2">
+    <!-- <param name="tf_prefix" value="husky2_tf" /> -->
+    <include file="$(find husky_mpc_datadriven)/multi_husky_rovers/launch/one_husky_nav.launch" >
+      <arg name="x" value="1.5" />
+      <arg name="y" value="4.5" />
+      <arg name="z" value="0.5" />
+      <arg name="yaw" value="0.0" />
+      <arg name="robot_name"  value="husky2" />
+      <!-- <arg name="enable_move_base" value="true"/> -->
+    </include>
+    <include file="$(find husky_mpc_datadriven)/launch/dual_ekf_navsat.launch">
+      <!-- <arg name="tf_prefix" value="$(arg tf_prefix)"/> -->
+      <arg name="robot_name" value="husky2"/>
+      <arg name="tf_prefix" value="husky2_tf"/>
+    </include>
+
+    <include file="$(find husky_mpc_datadriven)/launch/move_base.launch">
+      <arg name="no_static_map" value="true"/>
+      <arg name="robot_name" value="husky2"/>
+    </include>
+    <node pkg="tf2_ros" type="static_transform_publisher" name="world_broadcast" args="4.5 1.5 0 0 0 0 1 earth husky2_tf/map" />
+
+    <include file="$(find husky_mpc_datadriven)/src/point_cloud_perception/launch/voxel_filtering_node.launch"/>
+    <include file="$(find husky_mpc_datadriven)/src/point_cloud_perception/launch/segmentation_node.launch"/>
+    <include file="$(find husky_mpc_datadriven)/src/point_cloud_perception/launch/clustering_node.launch"/> 
+    <include file="$(find husky_mpc_datadriven)/launch/waypoint_follower_node.launch"/>
+    <include file="$(find husky_mpc_datadriven)/launch/state_manager_node.launch"/>
+
+  </group>
+
+  <arg name="rviz_config" default="$(find husky_mpc_datadriven)/rviz/rviz_clustering.rviz"/>
+  
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rviz_config)" required="true"/>
+
+</launch>

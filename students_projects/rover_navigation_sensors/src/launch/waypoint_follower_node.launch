@@ -1,0 +1,3 @@
+<launch>
+    <node pkg="husky_mpc_datadriven" type="waypoint_follower_node.py" name="waypoint_follower_node" output="screen"/>
+</launch>

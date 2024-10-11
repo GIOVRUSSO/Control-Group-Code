@@ -1,0 +1,3 @@
+<launch>
+    <node pkg="husky_mpc_datadriven" type="state_manager_node.py" name="state_manager_node" output="screen"/>
+</launch>

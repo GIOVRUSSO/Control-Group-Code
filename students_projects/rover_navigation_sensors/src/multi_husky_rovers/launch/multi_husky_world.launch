@@ -1,0 +1,18 @@
+<launch>
+
+  <arg name="my_world" default="$(find husky_mpc_datadriven)/worlds/world3_2.world"/>
+
+  <!-- start world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(arg my_world)"/> <!-- world_name is wrt GAZEBO_RESOURCE_PATH environment variable -->
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <!-- include our robots -->
+  <include file="$(find husky_mpc_datadriven)/multi_husky_rovers/launch/multi_husky_nav.launch"/>
+  <include file="$(find husky_mpc_datadriven)/multi_husky_rovers/launch/topic_utility.launch"/>
+</launch>
