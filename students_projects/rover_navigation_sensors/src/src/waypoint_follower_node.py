@@ -149,7 +149,7 @@ class WaypointFollowerNode():
 
         self.cache.set_targets(interpolated_wps[0], interpolated_wps[1])
         
-        self.plot_waypoints(interpolated_wps, tangents, 'Interpolated Waypoints')
+        #self.plot_waypoints(interpolated_wps, tangents, 'Interpolated Waypoints')
         
         num_waypoints = len(interpolated_wps[0])
         #print("Interpolated number of waypoints: ", num_waypoints)
@@ -160,10 +160,10 @@ class WaypointFollowerNode():
 
             pose = PoseStamped()
             
-            base_frame_to_map_transform = get_transform(self._control_frame, self._reference_frame)
-            if base_frame_to_map_transform is None:
-                rospy.logerr("Failed to get transform from" + self._control_frame + "to" + self._reference_frame)
-                return
+            # base_frame_to_map_transform = get_transform(self._control_frame, self._reference_frame)
+            # if base_frame_to_map_transform is None:
+            #     rospy.logerr("Failed to get transform from" + self._control_frame + "to" + self._reference_frame)
+            #     return
             
             
             pose.header.frame_id = self._reference_frame
@@ -176,7 +176,7 @@ class WaypointFollowerNode():
             pose.pose.orientation.w = q[3]
 
             # Transform the pose to the control frame
-            pose = do_transform_pose(pose, base_frame_to_map_transform)
+            # pose = do_transform_pose(pose, base_frame_to_map_transform)
             
             if self._obstacle_manager.has_obstacles_changed():
                 state = self.move_base_client.get_state()
