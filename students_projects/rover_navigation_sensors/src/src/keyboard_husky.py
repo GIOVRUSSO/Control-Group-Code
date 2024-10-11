@@ -33,7 +33,7 @@ ang_vel = 0.0
 
 rospy.init_node('husky_teleop_keyboard')
 
-rospy.set_param('husky_teleop_topic', '/husky1/husky_velocity_controller/cmd_vel')
+rospy.set_param('husky_teleop_topic', '/husky2/husky_velocity_controller/cmd_vel')
 topic = rospy.get_param('husky_teleop_topic')
 
 cmd_vel_pub = rospy.Publisher(topic, Twist, queue_size=10)
