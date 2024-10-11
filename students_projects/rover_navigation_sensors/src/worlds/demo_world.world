@@ -1,0 +1,5131 @@
+<sdf version='1.7'>
+  <world name='default'>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <contact>
+              <collide_bitmask>65535</collide_bitmask>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <wind/>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <state world_name='default'>
+      <sim_time>311 2000000</sim_time>
+      <real_time>17 277233896</real_time>
+      <wall_time>1728471590 73995934</wall_time>
+      <iterations>17230</iterations>
+      <model name='demo_world'>
+        <pose>118.217 19.2351 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <model name='collapsed_police_station'>
+          <pose>141.908 15.92 0 0 -0 0</pose>
+          <scale>1 1 1</scale>
+          <link name='link'>
+            <pose>141.908 15.92 0 0 -0 0</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+        </model>
+        <model name='fire'>
+          <pose>133.945 12.4215 0 0 -0 0</pose>
+          <scale>1 1 1</scale>
+          <link name='fire'>
+            <pose>133.945 12.4215 0 0 -0 0</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+        </model>
+        <model name='fire_clone'>
+          <pose>133.936 10.8357 0 0 -0 0</pose>
+          <scale>1 1 1</scale>
+          <link name='fire'>
+            <pose>133.936 10.8357 0 0 -0 0</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+        </model>
+        <model name='fire_clone_0'>
+          <pose>134.159 9.37725 0 0 -0 0</pose>
+          <scale>1 1 1</scale>
+          <link name='fire'>
+            <pose>134.159 9.37725 0 0 -0 0</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+        </model>
+        <model name='fire_clone_1'>
+          <pose>134.734 8.0385 0 0 -0 0</pose>
+          <scale>1 1 1</scale>
+          <link name='fire'>
+            <pose>134.734 8.0385 0 0 -0 0</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+        </model>
+        <model name='fire_clone_2'>
+          <pose>135.499 6.716 0 0 -0 0</pose>
+          <scale>1 1 1</scale>
+          <link name='fire'>
+            <pose>135.499 6.716 0 0 -0 0</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+        </model>
+        <model name='grass_plane'>
+          <pose>75.2987 74.8067 0 0 -0 1.57052</pose>
+          <scale>1 1 1</scale>
+          <link name='link'>
+            <pose>75.2987 74.8067 0 0 -0 1.57052</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+        </model>
+        <model name='mili_map'>
+          <pose>74.6405 20.9742 0 0 -0 1.56266</pose>
+          <scale>1 1 1</scale>
+          <link name='House 1::link'>
+            <pose>75.4297 117.971 0 0 -0 1.56266</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='digital_wall_1::link'>
+            <pose>14.8866 51.4614 2.5 0 -0 3.13346</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='digital_wall_2::link'>
+            <pose>54.8039 41.1363 2.5 0 -0 3.13346</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='digital_wall_3::link'>
+            <pose>94.8839 50.8105 2.5 0 -0 3.13346</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='digital_wall_4::link'>
+            <pose>134.801 40.4854 2.5 0 -0 3.13346</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='fire_station_1::link'>
+            <pose>17.2689 98.4436 0 0 -0 1.56266</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='fire_station_2::link'>
+            <pose>133.265 97.4998 0 0 -0 1.56266</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='jet_1::jet'>
+            <pose>47.8981 114.195 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='jet_2::jet'>
+            <pose>32.8986 114.317 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='jet_3::jet'>
+            <pose>40.2926 101.256 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='jet_4::jet'>
+            <pose>102.896 113.747 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='jet_5::jet'>
+            <pose>117.896 113.625 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='jet_6::jet'>
+            <pose>110.29 100.687 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='officer_1::officer'>
+            <pose>41.5077 66.2453 0 0 -0 1.56266</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='officer_2::officer'>
+            <pose>108.506 65.7001 0 0 -0 1.56266</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='officer_3::officer'>
+            <pose>75.2507 95.9717 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_10::soldier'>
+            <pose>39.5729 74.2613 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_11::soldier'>
+            <pose>41.5728 74.245 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_12::soldier'>
+            <pose>43.5728 74.2287 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_13::soldier'>
+            <pose>45.5727 74.2125 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_14::soldier'>
+            <pose>47.5726 74.1962 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_15::soldier'>
+            <pose>35.5486 71.2939 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_16::soldier'>
+            <pose>37.5486 71.2777 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_17::soldier'>
+            <pose>39.5485 71.2614 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_18::soldier'>
+            <pose>41.5484 71.2451 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_19::soldier'>
+            <pose>43.5484 71.2288 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_1::soldier'>
+            <pose>35.5974 77.2937 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_20::soldier'>
+            <pose>45.5483 71.2126 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_21::soldier'>
+            <pose>47.5482 71.1963 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_22::soldier'>
+            <pose>114.595 76.651 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_23::soldier'>
+            <pose>112.595 76.6672 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_24::soldier'>
+            <pose>110.595 76.6835 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_25::soldier'>
+            <pose>108.595 76.6998 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_26::soldier'>
+            <pose>106.595 76.7161 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_27::soldier'>
+            <pose>104.595 76.7323 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_28::soldier'>
+            <pose>102.595 76.7486 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_29::soldier'>
+            <pose>114.57 73.6511 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_2::soldier'>
+            <pose>37.5974 77.2775 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_30::soldier'>
+            <pose>112.57 73.6673 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_31::soldier'>
+            <pose>110.571 73.6836 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_32::soldier'>
+            <pose>108.571 73.6999 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_33::soldier'>
+            <pose>106.571 73.7162 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_34::soldier'>
+            <pose>104.571 73.7324 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_35::soldier'>
+            <pose>102.571 73.7487 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_36::soldier'>
+            <pose>114.546 70.6512 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_37::soldier'>
+            <pose>112.546 70.6674 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_38::soldier'>
+            <pose>110.546 70.6837 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_39::soldier'>
+            <pose>108.546 70.7 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_3::soldier'>
+            <pose>39.5973 77.2612 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_40::soldier'>
+            <pose>106.546 70.7163 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_41::soldier'>
+            <pose>104.546 70.7325 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_42::soldier'>
+            <pose>102.546 70.7488 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_4::soldier'>
+            <pose>41.5972 77.2449 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_5::soldier'>
+            <pose>43.5972 77.2286 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_6::soldier'>
+            <pose>45.5971 77.2124 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_7::soldier'>
+            <pose>47.597 77.1961 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_8::soldier'>
+            <pose>35.573 74.2938 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='soldier_9::soldier'>
+            <pose>37.573 74.2776 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='stop_sign_1::link'>
+            <pose>70.259 97.0124 0 0 0 -0.00814</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='stop_sign_2::link'>
+            <pose>80.2587 96.931 0 0 0 -0.00814</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='tank1_1::tank1'>
+            <pose>9.0495 71.5095 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='tank1_2::tank1'>
+            <pose>17.0492 71.4444 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='tank1_3::tank1'>
+            <pose>25.049 71.3794 0 0 -0 -1.57893</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='tank2_1::tank2'>
+            <pose>133.119 79.5003 0 0 -0 3.13346</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='tank2_2::tank2'>
+            <pose>133.054 71.5006 0 0 -0 3.13346</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='tank2_3::tank2'>
+            <pose>132.988 63.5009 0 0 -0 3.13346</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+        </model>
+        <model name='tank1'>
+          <pose>99.833 14.026 0 0 -0 0</pose>
+          <scale>1 1 1</scale>
+          <link name='tank1'>
+            <pose>99.833 14.026 0 0 -0 0</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+        </model>
+      </model>
+      <model name='ground_plane'>
+        <pose>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='oak_tree'>
+        <pose>64.7149 102.555 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>64.7149 102.555 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='oak_tree_0'>
+        <pose>84.3391 103.312 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>84.3391 103.312 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='oak_tree_clone'>
+        <pose>65.4069 90.5125 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>65.4069 90.5125 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='oak_tree_clone_0'>
+        <pose>66.1783 77.1778 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>66.1783 77.1778 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='oak_tree_clone_1'>
+        <pose>84.8252 90.9559 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>84.8252 90.9559 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='oak_tree_clone_2'>
+        <pose>84.8228 76.7209 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>84.8228 76.7209 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='pine_tree'>
+        <pose>70.8659 42.0719 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>70.8659 42.0719 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='pine_tree_clone'>
+        <pose>118.671 41.7986 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>118.671 41.7986 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='pine_tree_clone_0'>
+        <pose>66.8368 122.661 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>66.8368 122.661 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='pine_tree_clone_1'>
+        <pose>84.7773 122.888 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>84.7773 122.888 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <light name='sun'>
+        <pose>0 0 10 0 -0 0</pose>
+      </light>
+    </state>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>105.234 -83.1059 260.069 0 1.0978 1.55726</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+    <model name='demo_world'>
+      <model name='collapsed_police_station'>
+        <static>1</static>
+        <link name='link'>
+          <collision name='collision'>
+            <geometry>
+              <mesh>
+                <uri>model://collapsed_police_station/meshes/collapsed_police_station.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='visual'>
+            <geometry>
+              <mesh>
+                <uri>model://collapsed_police_station/meshes/collapsed_police_station.dae</uri>
+              </mesh>
+            </geometry>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <pose>23.6912 -3.31506 0 0 -0 0</pose>
+      </model>
+      <model name='fire'>
+        <static>1</static>
+        <link name='fire'>
+          <pose>0 0 0 0 -0 0</pose>
+          <collision name='fire_collision'>
+            <geometry>
+              <box>
+                <size>0.01 0.01 0.01</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='fire_visual'>
+            <cast_shadows>0</cast_shadows>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://fire/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>fire</name>
+                <uri>model://fire/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <pose>15.7279 -6.81359 0 0 -0 0</pose>
+      </model>
+      <model name='fire_clone'>
+        <static>1</static>
+        <link name='fire'>
+          <pose>0 0 0 0 -0 0</pose>
+          <collision name='fire_clone_collision'>
+            <geometry>
+              <box>
+                <size>0.01 0.01 0.01</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='fire_clone_visual'>
+            <cast_shadows>0</cast_shadows>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://fire/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>fire</name>
+                <uri>model://fire/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <pose>15.7187 -8.39939 0 0 -0 0</pose>
+      </model>
+      <model name='fire_clone_0'>
+        <static>1</static>
+        <link name='fire'>
+          <pose>0 0 0 0 -0 0</pose>
+          <collision name='fire_clone_0_collision'>
+            <geometry>
+              <box>
+                <size>0.01 0.01 0.01</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='fire_clone_0_visual'>
+            <cast_shadows>0</cast_shadows>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://fire/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>fire</name>
+                <uri>model://fire/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <pose>15.9422 -9.85785 0 0 -0 0</pose>
+      </model>
+      <model name='fire_clone_1'>
+        <static>1</static>
+        <link name='fire'>
+          <pose>0 0 0 0 -0 0</pose>
+          <collision name='fire_clone_1_collision'>
+            <geometry>
+              <box>
+                <size>0.01 0.01 0.01</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='fire_clone_1_visual'>
+            <cast_shadows>0</cast_shadows>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://fire/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>fire</name>
+                <uri>model://fire/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <pose>16.5172 -11.1966 0 0 -0 0</pose>
+      </model>
+      <model name='fire_clone_2'>
+        <static>1</static>
+        <link name='fire'>
+          <pose>0 0 0 0 -0 0</pose>
+          <collision name='fire_clone_2_collision'>
+            <geometry>
+              <box>
+                <size>0.01 0.01 0.01</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='fire_clone_2_visual'>
+            <cast_shadows>0</cast_shadows>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://fire/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>fire</name>
+                <uri>model://fire/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <pose>17.282 -12.5191 0 0 -0 0</pose>
+      </model>
+      <model name='grass_plane'>
+        <static>1</static>
+        <link name='link'>
+          <collision name='collision'>
+            <geometry>
+              <box>
+                <size>150 150 0.1</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='visual'>
+            <cast_shadows>0</cast_shadows>
+            <geometry>
+              <box>
+                <size>150 150 0.1</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>model://grass_plane/materials/scripts</uri>
+                <uri>model://grass_plane/materials/textures</uri>
+                <name>vrc/grass_plane</name>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <pose>-42.9183 55.5716 0 0 -0 1.57052</pose>
+      </model>
+      <model name='mili_map'>
+        <frame name='digital_wall_1::__model__' attached_to='digital_wall_1::link'>
+          <pose relative_to='__model__'>30 60 0 0 -0 1.5708</pose>
+        </frame>
+        <static>1</static>
+        <link name='digital_wall_1::link'>
+          <pose>30 60 2.5 0 -0 1.5708</pose>
+          <collision name='mili_map_collision'>
+            <geometry>
+              <box>
+                <size>30 0.8 5</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='mili_map_visual'>
+            <geometry>
+              <box>
+                <size>30 0.8 5</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>model://digital_wall/materials/scripts</uri>
+                <uri>model://digital_wall/materials/textures</uri>
+                <name>vrc/digital_wall</name>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='digital_wall_2::__model__' attached_to='digital_wall_2::link'>
+          <pose relative_to='__model__'>20 20 0 0 -0 1.5708</pose>
+        </frame>
+        <static>1</static>
+        <link name='digital_wall_2::link'>
+          <pose>20 20 2.5 0 -0 1.5708</pose>
+          <collision name='digital_wall_2_collision'>
+            <geometry>
+              <box>
+                <size>30 0.8 5</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='digital_wall_2_visual'>
+            <geometry>
+              <box>
+                <size>30 0.8 5</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>model://digital_wall/materials/scripts</uri>
+                <uri>model://digital_wall/materials/textures</uri>
+                <name>vrc/digital_wall</name>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='digital_wall_3::__model__' attached_to='digital_wall_3::link'>
+          <pose relative_to='__model__'>30 -20 0 0 -0 1.5708</pose>
+        </frame>
+        <static>1</static>
+        <link name='digital_wall_3::link'>
+          <pose>30 -20 2.5 0 -0 1.5708</pose>
+          <collision name='digital_wall_3_collision'>
+            <geometry>
+              <box>
+                <size>30 0.8 5</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='digital_wall_3_visual'>
+            <geometry>
+              <box>
+                <size>30 0.8 5</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>model://digital_wall/materials/scripts</uri>
+                <uri>model://digital_wall/materials/textures</uri>
+                <name>vrc/digital_wall</name>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='digital_wall_4::__model__' attached_to='digital_wall_4::link'>
+          <pose relative_to='__model__'>20 -60 0 0 -0 1.5708</pose>
+        </frame>
+        <static>1</static>
+        <link name='digital_wall_4::link'>
+          <pose>20 -60 2.5 0 -0 1.5708</pose>
+          <collision name='digital_wall_4_collision'>
+            <geometry>
+              <box>
+                <size>30 0.8 5</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='digital_wall_4_visual'>
+            <geometry>
+              <box>
+                <size>30 0.8 5</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>model://digital_wall/materials/scripts</uri>
+                <uri>model://digital_wall/materials/textures</uri>
+                <name>vrc/digital_wall</name>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='fire_station_1::__model__' attached_to='fire_station_1::link'>
+          <pose relative_to='__model__'>77 58 0 0 -0 0</pose>
+        </frame>
+        <static>1</static>
+        <link name='fire_station_1::link'>
+          <collision name='main'>
+            <pose>0 -0.135 5 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>19.98 9.68 10</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <collision name='front_top'>
+            <pose>0 4.957 7 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>20 0.515 6</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <collision name='column_0'>
+            <pose>9.333 4.957 2 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>1.315 0.515 4</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <collision name='column_1'>
+            <pose>3.33 4.957 2 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>2.63 0.515 4</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <collision name='column_2'>
+            <pose>-3.33 4.957 2 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>2.63 0.515 4</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <collision name='column_3'>
+            <pose>-9.333 4.957 2 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>1.315 0.515 4</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <collision name='roof_back'>
+            <pose>0 -2.742 10.467 0.25 -0 0</pose>
+            <geometry>
+              <box>
+                <size>21.47 6.12 0.28</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <collision name='roof_front'>
+            <pose>0 3.12 10.467 -0.25 0 0</pose>
+            <geometry>
+              <box>
+                <size>21.47 6.12 0.28</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <collision name='roof_base'>
+            <pose>0 0.188 9.705 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>21.47 11.86 0.28</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <collision name='roof_filling_0'>
+            <pose>0 0.188 9.985 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>21.47 9.53 0.28</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <collision name='roof_filling_1'>
+            <pose>0 0.188 10.14 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>21.47 8.41 0.28</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <collision name='roof_filling_2'>
+            <pose>0 0.188 10.42 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>21.47 6.25 0.28</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <collision name='roof_filling_3'>
+            <pose>0 0.188 10.7 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>21.47 4.05 0.28</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <collision name='roof_filling_4_collision'>
+            <pose>0 0.188 10.98 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>21.47 1.83 0.28</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='roof_filling_4_visual'>
+            <geometry>
+              <mesh>
+                <uri>model://fire_station/meshes/fire_station.dae</uri>
+              </mesh>
+            </geometry>
+          </visual>
+          <pose>77 58 0 0 -0 0</pose>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='fire_station_2::__model__' attached_to='fire_station_2::link'>
+          <pose relative_to='__model__'>77 -58 0 0 -0 0</pose>
+        </frame>
+        <static>1</static>
+        <link name='fire_station_2::link'>
+          <collision name='main'>
+            <pose>0 -0.135 5 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>19.98 9.68 10</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <collision name='front_top'>
+            <pose>0 4.957 7 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>20 0.515 6</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <collision name='column_0'>
+            <pose>9.333 4.957 2 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>1.315 0.515 4</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <collision name='column_1'>
+            <pose>3.33 4.957 2 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>2.63 0.515 4</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <collision name='column_2'>
+            <pose>-3.33 4.957 2 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>2.63 0.515 4</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <collision name='column_3'>
+            <pose>-9.333 4.957 2 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>1.315 0.515 4</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <collision name='roof_back'>
+            <pose>0 -2.742 10.467 0.25 -0 0</pose>
+            <geometry>
+              <box>
+                <size>21.47 6.12 0.28</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <collision name='roof_front'>
+            <pose>0 3.12 10.467 -0.25 0 0</pose>
+            <geometry>
+              <box>
+                <size>21.47 6.12 0.28</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <collision name='roof_base'>
+            <pose>0 0.188 9.705 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>21.47 11.86 0.28</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <collision name='roof_filling_0'>
+            <pose>0 0.188 9.985 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>21.47 9.53 0.28</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <collision name='roof_filling_1'>
+            <pose>0 0.188 10.14 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>21.47 8.41 0.28</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <collision name='roof_filling_2'>
+            <pose>0 0.188 10.42 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>21.47 6.25 0.28</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <collision name='roof_filling_3'>
+            <pose>0 0.188 10.7 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>21.47 4.05 0.28</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <collision name='roof_filling_4'>
+            <pose>0 0.188 10.98 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>21.47 1.83 0.28</size>
+              </box>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='roof_filling_4_visual'>
+            <geometry>
+              <mesh>
+                <uri>model://fire_station/meshes/fire_station.dae</uri>
+              </mesh>
+            </geometry>
+          </visual>
+          <pose>77 -58 0 0 -0 0</pose>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='House 1::__model__' attached_to='House 1::link'>
+          <pose relative_to='__model__'>97 0 0 0 -0 0</pose>
+        </frame>
+        <static>1</static>
+        <link name='House 1::link'>
+          <collision name='house_1_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://house_1/meshes/house_1.dae</uri>
+                <scale>1.5 1.5 1.5</scale>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='house1_visual'>
+            <geometry>
+              <mesh>
+                <uri>model://house_1/meshes/house_1.dae</uri>
+                <scale>1.5 1.5 1.5</scale>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <uri>model://house_1/materials/scripts</uri>
+                <uri>model://house_1/materials/textures</uri>
+                <name>House_1/Diffuse</name>
+              </script>
+              <shader type='normal_map_tangent_space'>
+                <normal_map>House_1_Normal.png</normal_map>
+              </shader>
+            </material>
+          </visual>
+          <pose>97 0 0 0 -0 0</pose>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='stop_sign_1::__model__' attached_to='stop_sign_1::link'>
+          <pose relative_to='__model__'>76 5 0 0 0 -1.5708</pose>
+        </frame>
+        <static>1</static>
+        <link name='stop_sign_1::link'>
+          <collision name='stop_sign_1_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://stop_sign/meshes/stop_sign.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='stop_sign_1_visual'>
+            <geometry>
+              <mesh>
+                <uri>model://stop_sign/meshes/stop_sign.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <uri>model://stop_sign/materials/scripts</uri>
+                <uri>model://stop_sign/materials/textures</uri>
+                <name>StopSign/Diffuse</name>
+              </script>
+            </material>
+          </visual>
+          <pose>76 5 0 0 0 -1.5708</pose>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='stop_sign_2::__model__' attached_to='stop_sign_2::link'>
+          <pose relative_to='__model__'>76 -5 0 0 0 -1.5708</pose>
+        </frame>
+        <static>1</static>
+        <link name='stop_sign_2::link'>
+          <collision name='stop_sign_2_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://stop_sign/meshes/stop_sign.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='stop_sign_2_visual'>
+            <geometry>
+              <mesh>
+                <uri>model://stop_sign/meshes/stop_sign.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <uri>model://stop_sign/materials/scripts</uri>
+                <uri>model://stop_sign/materials/textures</uri>
+                <name>StopSign/Diffuse</name>
+              </script>
+            </material>
+          </visual>
+          <pose>76 -5 0 0 0 -1.5708</pose>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='tank1_1::__model__' attached_to='tank1_1::tank1'>
+          <pose relative_to='__model__'>50 66 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='tank1_1::tank1'>
+          <pose>50 66 0 0 -0 3.14159</pose>
+          <collision name='tank1_1::tank1_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://tank1/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='tank1_1::tank1_visual'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://tank1/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>tank1_1::tank1</name>
+                <uri>model://tank1/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='tank1_2::__model__' attached_to='tank1_2::tank1'>
+          <pose relative_to='__model__'>50 58 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='tank1_2::tank1'>
+          <pose>50 58 0 0 -0 3.14159</pose>
+          <collision name='tank1_2::tank1_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://tank1/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='tank1_2::tank1_visual'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://tank1/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>tank1_2::tank1</name>
+                <uri>model://tank1/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='tank1_3::__model__' attached_to='tank1_3::tank1'>
+          <pose relative_to='__model__'>50 50 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='tank1_3::tank1'>
+          <pose>50 50 0 0 -0 3.14159</pose>
+          <collision name='tank1_3::tank1_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://tank1/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='tank1_3::tank1_visual'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://tank1/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>tank1_3::tank1</name>
+                <uri>model://tank1/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='tank2_1::__model__' attached_to='tank2_1::tank2'>
+          <pose relative_to='__model__'>59 -58 0 0 -0 1.5708</pose>
+        </frame>
+        <static>1</static>
+        <link name='tank2_1::tank2'>
+          <pose>59 -58 0 0 -0 1.5708</pose>
+          <collision name='tank2_1::tank2_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://tank2/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='tank2_1::tank2_visual'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://tank2/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>tank2_1::tank2</name>
+                <uri>model://tank2/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='tank2_2::__model__' attached_to='tank2_2::tank2'>
+          <pose relative_to='__model__'>51 -58 0 0 -0 1.5708</pose>
+        </frame>
+        <static>1</static>
+        <link name='tank2_2::tank2'>
+          <pose>51 -58 0 0 -0 1.5708</pose>
+          <collision name='tank2_2::tank2_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://tank2/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='tank2_2::tank2_visual'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://tank2/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>tank2_2::tank2</name>
+                <uri>model://tank2/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='tank2_3::__model__' attached_to='tank2_3::tank2'>
+          <pose relative_to='__model__'>43 -58 0 0 -0 1.5708</pose>
+        </frame>
+        <static>1</static>
+        <link name='tank2_3::tank2'>
+          <pose>43 -58 0 0 -0 1.5708</pose>
+          <collision name='tank2_3::tank2_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://tank2/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='tank2_3::tank2'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://tank2/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>tank2_3::tank2</name>
+                <uri>model://tank2/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='jet_1::__model__' attached_to='jet_1::jet'>
+          <pose relative_to='__model__'>93 27.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='jet_1::jet'>
+          <pose>93 27.5 0 0 -0 3.14159</pose>
+          <collision name='jet_1::jet_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://jet/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='jet_1::jet'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://jet/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>jet_1::jet</name>
+                <uri>model://jet/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='jet_2::__model__' attached_to='jet_2::jet'>
+          <pose relative_to='__model__'>93 42.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='jet_2::jet'>
+          <pose>93 42.5 0 0 -0 3.14159</pose>
+          <collision name='jet_2::jet_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://jet/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='jet_2::jet'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://jet/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>jet_2::jet</name>
+                <uri>model://jet/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='jet_3::__model__' attached_to='jet_3::jet'>
+          <pose relative_to='__model__'>80 35 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='jet_3::jet'>
+          <pose>80 35 0 0 -0 3.14159</pose>
+          <collision name='jet_3::jet_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://jet/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='jet_3::jet'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://jet/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>jet_3::jet</name>
+                <uri>model://jet/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='jet_4::__model__' attached_to='jet_4::jet'>
+          <pose relative_to='__model__'>93 -27.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='jet_4::jet'>
+          <pose>93 -27.5 0 0 -0 3.14159</pose>
+          <collision name='jet_4::jet_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://jet/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='jet_4::jet'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://jet/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>jet_4::jet</name>
+                <uri>model://jet/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='jet_5::__model__' attached_to='jet_5::jet'>
+          <pose relative_to='__model__'>93 -42.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='jet_5::jet'>
+          <pose>93 -42.5 0 0 -0 3.14159</pose>
+          <collision name='jet_5::jet_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://jet/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='jet_5::jet'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://jet/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>jet_5::jet</name>
+                <uri>model://jet/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='jet_6::__model__' attached_to='jet_6::jet'>
+          <pose relative_to='__model__'>80 -35 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='jet_6::jet'>
+          <pose>80 -35 0 0 -0 3.14159</pose>
+          <collision name='jet_6::jet_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://jet/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='jet_6::jet'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://jet/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>jet_6::jet</name>
+                <uri>model://jet/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_1::__model__' attached_to='soldier_1::soldier'>
+          <pose relative_to='__model__'>56 39.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_1::soldier'>
+          <pose>56 39.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_1::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_1::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_1::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_2::__model__' attached_to='soldier_2::soldier'>
+          <pose relative_to='__model__'>56 37.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_2::soldier'>
+          <pose>56 37.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_2::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_2::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_2::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_3::__model__' attached_to='soldier_3::soldier'>
+          <pose relative_to='__model__'>56 35.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_3::soldier'>
+          <pose>56 35.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_3::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_3::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_3::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_4::__model__' attached_to='soldier_4::soldier'>
+          <pose relative_to='__model__'>56 33.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_4::soldier'>
+          <pose>56 33.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_4::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_4::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_4::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_5::__model__' attached_to='soldier_5::soldier'>
+          <pose relative_to='__model__'>56 31.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_5::soldier'>
+          <pose>56 31.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_5::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_5::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_5::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_6::__model__' attached_to='soldier_6::soldier'>
+          <pose relative_to='__model__'>56 29.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_6::soldier'>
+          <pose>56 29.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_6::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_6::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_6::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_7::__model__' attached_to='soldier_7::soldier'>
+          <pose relative_to='__model__'>56 27.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_7::soldier'>
+          <pose>56 27.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_7::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_7::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_7::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_8::__model__' attached_to='soldier_8::soldier'>
+          <pose relative_to='__model__'>53 39.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_8::soldier'>
+          <pose>53 39.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_8::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_8::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_8::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_9::__model__' attached_to='soldier_9::soldier'>
+          <pose relative_to='__model__'>53 37.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_9::soldier'>
+          <pose>53 37.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_9::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_9::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_9::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_10::__model__' attached_to='soldier_10::soldier'>
+          <pose relative_to='__model__'>53 35.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_10::soldier'>
+          <pose>53 35.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_10::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_10::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_10::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_11::__model__' attached_to='soldier_11::soldier'>
+          <pose relative_to='__model__'>53 33.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_11::soldier'>
+          <pose>53 33.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_11::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_11::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_11::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_12::__model__' attached_to='soldier_12::soldier'>
+          <pose relative_to='__model__'>53 31.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_12::soldier'>
+          <pose>53 31.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_12::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_12::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_12::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_13::__model__' attached_to='soldier_13::soldier'>
+          <pose relative_to='__model__'>53 29.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_13::soldier'>
+          <pose>53 29.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_13::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_13::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_13::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_14::__model__' attached_to='soldier_14::soldier'>
+          <pose relative_to='__model__'>53 27.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_14::soldier'>
+          <pose>53 27.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_14::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_14::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_14::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_15::__model__' attached_to='soldier_15::soldier'>
+          <pose relative_to='__model__'>50 39.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_15::soldier'>
+          <pose>50 39.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_15::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_15::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_15::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_16::__model__' attached_to='soldier_16::soldier'>
+          <pose relative_to='__model__'>50 37.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_16::soldier'>
+          <pose>50 37.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_16::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_16::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_16::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_17::__model__' attached_to='soldier_17::soldier'>
+          <pose relative_to='__model__'>50 35.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_17::soldier'>
+          <pose>50 35.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_17::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_17::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_17::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_18::__model__' attached_to='soldier_18::soldier'>
+          <pose relative_to='__model__'>50 33.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_18::soldier'>
+          <pose>50 33.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_18::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_18::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_18::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_19::__model__' attached_to='soldier_19::soldier'>
+          <pose relative_to='__model__'>50 31.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_19::soldier'>
+          <pose>50 31.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_19::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_19::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_19::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_20::__model__' attached_to='soldier_20::soldier'>
+          <pose relative_to='__model__'>50 29.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_20::soldier'>
+          <pose>50 29.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_20::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_20::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_20::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_21::__model__' attached_to='soldier_21::soldier'>
+          <pose relative_to='__model__'>50 27.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_21::soldier'>
+          <pose>50 27.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_21::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_21::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_21::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='officer_1::__model__' attached_to='officer_1::officer'>
+          <pose relative_to='__model__'>45 33.5 0 0 -0 0</pose>
+        </frame>
+        <static>1</static>
+        <link name='officer_1::officer'>
+          <pose>45 33.5 0 0 -0 0</pose>
+          <collision name='officer_1::officer_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://officer/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='officer_1::officer'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://officer/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>officer_1::officer</name>
+                <uri>model://officer/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_22::__model__' attached_to='soldier_22::soldier'>
+          <pose relative_to='__model__'>56 -39.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_22::soldier'>
+          <pose>56 -39.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_22::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_22::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_22::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_23::__model__' attached_to='soldier_23::soldier'>
+          <pose relative_to='__model__'>56 -37.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_23::soldier'>
+          <pose>56 -37.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_23::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_23::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_23::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_24::__model__' attached_to='soldier_24::soldier'>
+          <pose relative_to='__model__'>56 -35.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_24::soldier'>
+          <pose>56 -35.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_24::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_24::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_24::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_25::__model__' attached_to='soldier_25::soldier'>
+          <pose relative_to='__model__'>56 -33.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_25::soldier'>
+          <pose>56 -33.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_25::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_25::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_25::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_26::__model__' attached_to='soldier_26::soldier'>
+          <pose relative_to='__model__'>56 -31.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_26::soldier'>
+          <pose>56 -31.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_26::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_26::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_26::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_27::__model__' attached_to='soldier_27::soldier'>
+          <pose relative_to='__model__'>56 -29.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_27::soldier'>
+          <pose>56 -29.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_27::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_27::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_27::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_28::__model__' attached_to='soldier_28::soldier'>
+          <pose relative_to='__model__'>56 -27.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_28::soldier'>
+          <pose>56 -27.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_28::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_28::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_28::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_29::__model__' attached_to='soldier_29::soldier'>
+          <pose relative_to='__model__'>53 -39.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_29::soldier'>
+          <pose>53 -39.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_29::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_29::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_29::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_30::__model__' attached_to='soldier_30::soldier'>
+          <pose relative_to='__model__'>53 -37.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_30::soldier'>
+          <pose>53 -37.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_30::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_30::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_30::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_31::__model__' attached_to='soldier_31::soldier'>
+          <pose relative_to='__model__'>53 -35.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_31::soldier'>
+          <pose>53 -35.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_31::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_31::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_31::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_32::__model__' attached_to='soldier_32::soldier'>
+          <pose relative_to='__model__'>53 -33.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_32::soldier'>
+          <pose>53 -33.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_32::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_32::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_32::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_33::__model__' attached_to='soldier_33::soldier'>
+          <pose relative_to='__model__'>53 -31.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_33::soldier'>
+          <pose>53 -31.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_33::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_33::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_33::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_34::__model__' attached_to='soldier_34::soldier'>
+          <pose relative_to='__model__'>53 -29.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_34::soldier'>
+          <pose>53 -29.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_34::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_34::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_34::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_35::__model__' attached_to='soldier_35::soldier'>
+          <pose relative_to='__model__'>53 -27.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_35::soldier'>
+          <pose>53 -27.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_35::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_35::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_35::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_36::__model__' attached_to='soldier_36::soldier'>
+          <pose relative_to='__model__'>50 -39.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_36::soldier'>
+          <pose>50 -39.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_36::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_36::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_36::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_37::__model__' attached_to='soldier_37::soldier'>
+          <pose relative_to='__model__'>50 -37.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_37::soldier'>
+          <pose>50 -37.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_37::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_37::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_37::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_38::__model__' attached_to='soldier_38::soldier'>
+          <pose relative_to='__model__'>50 -35.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_38::soldier'>
+          <pose>50 -35.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_38::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_38::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_38::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_39::__model__' attached_to='soldier_39::soldier'>
+          <pose relative_to='__model__'>50 -33.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_39::soldier'>
+          <pose>50 -33.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_39::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_39::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_39::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_40::__model__' attached_to='soldier_40::soldier'>
+          <pose relative_to='__model__'>50 -31.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_40::soldier'>
+          <pose>50 -31.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_40::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_40::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_40::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_41::__model__' attached_to='soldier_41::soldier'>
+          <pose relative_to='__model__'>50 -29.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_41::soldier'>
+          <pose>50 -29.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_41::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_41::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_41::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='soldier_42::__model__' attached_to='soldier_42::soldier'>
+          <pose relative_to='__model__'>50 -27.5 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='soldier_42::soldier'>
+          <pose>50 -27.5 0 0 -0 3.14159</pose>
+          <collision name='soldier_42::soldier_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='soldier_42::soldier'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://soldier/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>soldier_42::soldier</name>
+                <uri>model://soldier/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='officer_2::__model__' attached_to='officer_2::officer'>
+          <pose relative_to='__model__'>45 -33.5 0 0 -0 0</pose>
+        </frame>
+        <static>1</static>
+        <link name='officer_2::officer'>
+          <pose>45 -33.5 0 0 -0 0</pose>
+          <collision name='officer_2::officer_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://officer/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='officer_2::officer'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://officer/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>officer_2::officer</name>
+                <uri>model://officer/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <frame name='officer_3::__model__' attached_to='officer_3::officer'>
+          <pose relative_to='__model__'>75 0 0 0 -0 3.14159</pose>
+        </frame>
+        <static>1</static>
+        <link name='officer_3::officer'>
+          <pose>75 0 0 0 -0 3.14159</pose>
+          <collision name='officer_3::officer_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://officer/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='officer_3::officer'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://officer/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>officer_3::officer</name>
+                <uri>model://officer/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <pose>-43.5765 1.7391 0 0 -0 1.56266</pose>
+      </model>
+      <model name='tank1'>
+        <static>1</static>
+        <link name='tank1'>
+          <pose>0 0 0 0 -0 0</pose>
+          <collision name='tank1_collision'>
+            <geometry>
+              <mesh>
+                <uri>model://tank1/model.dae</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='tank1'>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>model://tank1/model.dae</uri>
+              </mesh>
+            </geometry>
+            <material>
+              <script>
+                <name>tank1</name>
+                <uri>model://tank1/model.dae</uri>
+              </script>
+            </material>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <pose>-18.384 -5.20909 0 0 -0 0</pose>
+      </model>
+      <static>1</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose>118.217 19.2351 0 0 -0 0</pose>
+    </model>
+    <model name='oak_tree'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='oak_tree_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='branch'>
+          <geometry>
+            <mesh>
+              <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+              <submesh>
+                <name>Branch</name>
+              </submesh>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://oak_tree/materials/scripts/</uri>
+              <uri>model://oak_tree/materials/textures/</uri>
+              <name>OakTree/Branch</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='bark'>
+          <geometry>
+            <mesh>
+              <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+              <submesh>
+                <name>Bark</name>
+              </submesh>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://oak_tree/materials/scripts/</uri>
+              <uri>model://oak_tree/materials/textures/</uri>
+              <name>OakTree/Bark</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>64.7149 102.555 0 0 -0 0</pose>
+    </model>
+    <model name='oak_tree_clone'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='oak_tree_clone_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='branch'>
+          <geometry>
+            <mesh>
+              <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+              <submesh>
+                <name>Branch</name>
+              </submesh>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://oak_tree/materials/scripts/</uri>
+              <uri>model://oak_tree/materials/textures/</uri>
+              <name>OakTree/Branch</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='bark'>
+          <geometry>
+            <mesh>
+              <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+              <submesh>
+                <name>Bark</name>
+              </submesh>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://oak_tree/materials/scripts/</uri>
+              <uri>model://oak_tree/materials/textures/</uri>
+              <name>OakTree/Bark</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>65.4069 90.5125 0 0 -0 0</pose>
+    </model>
+    <model name='oak_tree_clone_0'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='oak_tree_clone_0_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='branch'>
+          <geometry>
+            <mesh>
+              <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+              <submesh>
+                <name>Branch</name>
+              </submesh>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://oak_tree/materials/scripts/</uri>
+              <uri>model://oak_tree/materials/textures/</uri>
+              <name>OakTree/Branch</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='bark'>
+          <geometry>
+            <mesh>
+              <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+              <submesh>
+                <name>Bark</name>
+              </submesh>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://oak_tree/materials/scripts/</uri>
+              <uri>model://oak_tree/materials/textures/</uri>
+              <name>OakTree/Bark</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>66.1783 77.1778 0 0 -0 0</pose>
+    </model>
+    <model name='oak_tree_0'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='oak_tree_0_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='branch'>
+          <geometry>
+            <mesh>
+              <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+              <submesh>
+                <name>Branch</name>
+              </submesh>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://oak_tree/materials/scripts/</uri>
+              <uri>model://oak_tree/materials/textures/</uri>
+              <name>OakTree/Branch</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='bark'>
+          <geometry>
+            <mesh>
+              <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+              <submesh>
+                <name>Bark</name>
+              </submesh>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://oak_tree/materials/scripts/</uri>
+              <uri>model://oak_tree/materials/textures/</uri>
+              <name>OakTree/Bark</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>84.3391 103.312 0 0 -0 0</pose>
+    </model>
+    <model name='oak_tree_clone_1'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='oak_tree_clone_1_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='branch'>
+          <geometry>
+            <mesh>
+              <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+              <submesh>
+                <name>Branch</name>
+              </submesh>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://oak_tree/materials/scripts/</uri>
+              <uri>model://oak_tree/materials/textures/</uri>
+              <name>OakTree/Branch</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='bark'>
+          <geometry>
+            <mesh>
+              <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+              <submesh>
+                <name>Bark</name>
+              </submesh>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://oak_tree/materials/scripts/</uri>
+              <uri>model://oak_tree/materials/textures/</uri>
+              <name>OakTree/Bark</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>84.8252 90.9559 0 0 -0 0</pose>
+    </model>
+    <model name='oak_tree_clone_2'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='oak_tree_clone_2_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='branch'>
+          <geometry>
+            <mesh>
+              <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+              <submesh>
+                <name>Branch</name>
+              </submesh>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://oak_tree/materials/scripts/</uri>
+              <uri>model://oak_tree/materials/textures/</uri>
+              <name>OakTree/Branch</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='bark'>
+          <geometry>
+            <mesh>
+              <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+              <submesh>
+                <name>Bark</name>
+              </submesh>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://oak_tree/materials/scripts/</uri>
+              <uri>model://oak_tree/materials/textures/</uri>
+              <name>OakTree/Bark</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>84.8228 76.7209 0 0 -0 0</pose>
+    </model>
+    <model name='pine_tree'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='pine_tree_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://pine_tree/meshes/pine_tree.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='branch'>
+          <geometry>
+            <mesh>
+              <uri>model://pine_tree/meshes/pine_tree.dae</uri>
+              <submesh>
+                <name>Branch</name>
+              </submesh>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://pine_tree/materials/scripts/</uri>
+              <uri>model://pine_tree/materials/textures/</uri>
+              <name>PineTree/Branch</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='bark'>
+          <geometry>
+            <mesh>
+              <uri>model://pine_tree/meshes/pine_tree.dae</uri>
+              <submesh>
+                <name>Bark</name>
+              </submesh>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://pine_tree/materials/scripts/</uri>
+              <uri>model://pine_tree/materials/textures/</uri>
+              <name>PineTree/Bark</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>70.8659 42.0719 0 0 -0 0</pose>
+    </model>
+    <model name='pine_tree_clone'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='pine_tree_clone_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://pine_tree/meshes/pine_tree.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='branch'>
+          <geometry>
+            <mesh>
+              <uri>model://pine_tree/meshes/pine_tree.dae</uri>
+              <submesh>
+                <name>Branch</name>
+              </submesh>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://pine_tree/materials/scripts/</uri>
+              <uri>model://pine_tree/materials/textures/</uri>
+              <name>PineTree/Branch</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='bark'>
+          <geometry>
+            <mesh>
+              <uri>model://pine_tree/meshes/pine_tree.dae</uri>
+              <submesh>
+                <name>Bark</name>
+              </submesh>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://pine_tree/materials/scripts/</uri>
+              <uri>model://pine_tree/materials/textures/</uri>
+              <name>PineTree/Bark</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>118.671 41.7986 0 0 -0 0</pose>
+    </model>
+    <model name='pine_tree_clone_0'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='pine_tree_clone_0_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://pine_tree/meshes/pine_tree.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='branch'>
+          <geometry>
+            <mesh>
+              <uri>model://pine_tree/meshes/pine_tree.dae</uri>
+              <submesh>
+                <name>Branch</name>
+              </submesh>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://pine_tree/materials/scripts/</uri>
+              <uri>model://pine_tree/materials/textures/</uri>
+              <name>PineTree/Branch</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='bark'>
+          <geometry>
+            <mesh>
+              <uri>model://pine_tree/meshes/pine_tree.dae</uri>
+              <submesh>
+                <name>Bark</name>
+              </submesh>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://pine_tree/materials/scripts/</uri>
+              <uri>model://pine_tree/materials/textures/</uri>
+              <name>PineTree/Bark</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>66.8368 122.661 0 0 -0 0</pose>
+    </model>
+    <model name='pine_tree_clone_1'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='pine_tree_clone_1_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://pine_tree/meshes/pine_tree.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='branch'>
+          <geometry>
+            <mesh>
+              <uri>model://pine_tree/meshes/pine_tree.dae</uri>
+              <submesh>
+                <name>Branch</name>
+              </submesh>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://pine_tree/materials/scripts/</uri>
+              <uri>model://pine_tree/materials/textures/</uri>
+              <name>PineTree/Branch</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='bark'>
+          <geometry>
+            <mesh>
+              <uri>model://pine_tree/meshes/pine_tree.dae</uri>
+              <submesh>
+                <name>Bark</name>
+              </submesh>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://pine_tree/materials/scripts/</uri>
+              <uri>model://pine_tree/materials/textures/</uri>
+              <name>PineTree/Bark</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>84.7773 122.888 0 0 -0 0</pose>
+    </model>
+  </world>
+</sdf>
