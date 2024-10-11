@@ -1,0 +1,3 @@
+<launch>
+    <node pkg="husky_mpc_datadriven" type="segmentation_node.py" name="segmentation_node" output="screen"/>
+</launch>

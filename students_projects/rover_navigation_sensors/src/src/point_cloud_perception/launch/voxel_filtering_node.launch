@@ -1,0 +1,3 @@
+<launch>
+    <node pkg="husky_mpc_datadriven" type="voxel_filtering_node.py" name="voxel_filtering_node" output="screen"/>
+</launch>

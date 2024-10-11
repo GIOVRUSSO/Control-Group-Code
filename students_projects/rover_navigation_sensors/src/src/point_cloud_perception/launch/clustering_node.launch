@@ -1,0 +1,3 @@
+<launch>
+    <node pkg="husky_mpc_datadriven" type="clustering_node.py" name="clustering_node" output="screen"/>
+</launch>
