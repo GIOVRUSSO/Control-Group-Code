@@ -287,15 +287,15 @@ class ControllerKLC:
             dist=dist if dist < 0.65 else 1 
             cluster_sum += 50*my_logpdf(state[:2],obstacle_centroids[i][:2],covar_cluster)*(obstacle_centroids[i][2]-1)*dist 
         
-        distance_from_goal = np.linalg.norm(np.array(state) - np.array(self.goal))
-        
+        # distance_from_goal = np.linalg.norm(np.array(state) - np.array(self.goal))
+        distance_from_goal = np.sqrt((state[0] - self.goal[0])**2 + (state[1] - self.goal[1])**2)
         target_covariance = np.array([0.1, 0.1], dtype=np.float32)
         covar_target = np.diag(target_covariance)
         
         # This term is used to get a lower cost when the state is closer to the goal
         target_cost = -7 * my_logpdf(state[:2], self.goal[:2], covar_target)
         
-        cost = 5.25 * distance_from_goal + gauss_sum + cluster_sum + target_cost
+        cost = 0.4 * distance_from_goal + gauss_sum + cluster_sum + target_cost
         
         return cost
     
@@ -451,3 +451,14 @@ class ControllerKLC:
                 # Assign the angle and speed values to the state vector
                 self.stateVect[ind] = [x, y] 
                 self.discStates[ind]=[i,j]
+    
+    def set_zmin(self, zmin):
+        self.zmin = zmin
+    
+    def extract_passive_dynamics(self, mode):
+        if mode == 0:
+            self.passive_dynamics = uniform_plant().get_plant(self.zdiscr[0])
+        elif mode == 1:
+            self.passive_dynamics = linearized_plant().get_plant(dim = 2)
+        elif mode == 2:
+            self.passive_dynamics = trajectory_based_plant().get_plant(2, uniform_plant().get_plant(self.zdiscr[0], zmin=self.zmin, zstep=self.zstep, zdiscr=self.zdiscr))       
