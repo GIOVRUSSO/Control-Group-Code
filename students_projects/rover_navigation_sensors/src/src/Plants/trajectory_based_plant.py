@@ -6,7 +6,7 @@ class trajectory_based_plant():
     def __init__(self):
         self.data_path = '/home/adamo/catkin_ws/src/rover_navigation/src/src/teleoperation_data.npy'
 
-    def get_plant(self, dim, uniform):
+    def get_plant(self, dim, uniform, zmin = [0,0], zstep = [0.3,0.3], zdiscr = [30,30]):
 
         trackData = np.load(self.data_path)
         self.conditional = uniform
@@ -23,10 +23,9 @@ class trajectory_based_plant():
 
         # Set up parameters and dimensions
         self.Zdim = dim
-        self.Zmin = [0, 0]
-        self.Zstep = [0.3, 0.3]
-        self.Zdiscr = [30, 30]
-
+        self.Zmin = zmin
+        self.Zstep = zstep
+        self.Zdiscr = zdiscr
         (full, Y) = self.getJointPMFs()
         cond = self.getConditional(full, Y)
 

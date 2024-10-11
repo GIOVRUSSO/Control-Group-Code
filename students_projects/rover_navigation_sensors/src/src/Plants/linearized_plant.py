@@ -16,16 +16,16 @@ class linearized_plant:
     :param dim: The dimensionality of the state space.
     :return: The conditional probability matrix.
     """
-    def get_plant(self, dim):
+    def get_plant(self, dim, zmin = [0,0], zstep = [0.5,0.5], zdiscr = [30,30]):
 
         # Load system data from a file
         self.sysData = np.load('/home/adamo/catkin_ws/src/rover_navigation/src/src/data/3TypeSimulation.npy')
 
         # Set up parameters and dimensions
         self.Zdim = dim
-        self.Zmin = [0, 0] 
-        self.Zstep = [0.5, 0.5]
-        self.Zdiscr = [21, 21]
+        self.Zmin = [0,0]
+        self.Zstep = zstep
+        self.Zdiscr = zdiscr
 
         # Compute the joint and conditional probability matrices
         (full, Y) = self.getJointPMFs()
