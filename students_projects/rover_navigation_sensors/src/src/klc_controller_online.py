@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import norm
 from math import log
-from rover_navigation.src.src.obstacle_manager import *
+from obstacle_manager import *
 import rospy
 from Plants.uniform_plant import *
 from Plants.linearized_plant import *
