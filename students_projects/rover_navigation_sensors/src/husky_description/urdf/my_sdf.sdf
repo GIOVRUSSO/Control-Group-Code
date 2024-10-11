@@ -1,0 +1,529 @@
+<sdf version='1.7'>
+  <model name='husky'>
+    <link name='base_link'>
+      <inertial>
+        <pose>0.000817 -0.083477 0.068186 0 -0 0</pose>
+        <mass>46.874</mass>
+        <inertia>
+          <ixx>0.707356</ixx>
+          <ixy>-0.0293794</ixy>
+          <ixz>-0.143007</ixz>
+          <iyy>1.84332</iyy>
+          <iyz>-0.0257476</iyz>
+          <izz>2.04219</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 0.061875 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.9874 0.5709 0.12375</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='base_link_collision_1'>
+        <pose>0 0 0.175625 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.78992 0.5709 0.10375</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__top_plate_link_collision_2'>
+        <pose>0.0812 0 0.245 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://husky_description/meshes/top_plate.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__vlp16_mount_left_support_collision_3'>
+        <pose>0.0812 0.06 0.305 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.04 0.02 0.12</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__vlp16_mount_plate_collision_4'>
+        <pose>0.0812 0 0.365 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.04 0.02 0.12</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__velodyne_base_link_collision_5'>
+        <pose>0.0812 0 0.40715 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.0717</length>
+            <radius>0.0516</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__velodyne_collision_6'>
+        <pose>0.0812 0 0.409 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__vlp16_mount_right_support_collision_7'>
+        <pose>0.0812 -0.06 0.305 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.04 0.02 0.12</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://husky_description/meshes/base_link.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__front_bumper_link_visual_1'>
+        <pose>0.48 0 0.091 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://husky_description/meshes/bumper.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__rear_bumper_link_visual_2'>
+        <pose>-0.48 0 0.091 0 -0 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://husky_description/meshes/bumper.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__top_chassis_link_visual_3'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://husky_description/meshes/top_chassis.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__top_plate_link_visual_4'>
+        <pose>0.0812 0 0.245 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://husky_description/meshes/top_plate.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__vlp16_mount_left_support_visual_5'>
+        <pose>0.0812 0.06 0.305 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.04 0.02 0.12</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__vlp16_mount_plate_visual_6'>
+        <pose>0.0812 0 0.36815 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.04 0.141 0.0063</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__velodyne_base_link_visual_7'>
+        <pose>0.0812 0 0.3713 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velodyne_description/meshes/VLP16_base_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__velodyne_base_link_visual_8'>
+        <pose>0.0812 0 0.3713 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velodyne_description/meshes/VLP16_base_2.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__velodyne_visual_9'>
+        <pose>0.0812 0 0.3713 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velodyne_description/meshes/VLP16_scan.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__vlp16_mount_right_support_visual_10'>
+        <pose>0.0812 -0.06 0.305 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.04 0.02 0.12</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__user_rail_link_visual_11'>
+        <pose>0.272 0 0.245 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://husky_description/meshes/user_rail.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <sensor name='velodyne-VLP16' type='ray'>
+        <visualize>0</visualize>
+        <update_rate>10</update_rate>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>1875</samples>
+              <resolution>1</resolution>
+              <min_angle>-3.14159</min_angle>
+              <max_angle>3.14159</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>16</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.261799</min_angle>
+              <max_angle>0.261799</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.3</min>
+            <max>131</max>
+            <resolution>0.001</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0</stddev>
+          </noise>
+        </ray>
+        <plugin name='gazebo_ros_laser_controller' filename='libgazebo_ros_velodyne_laser.so'>
+          <topicName>points</topicName>
+          <frameName>velodyne</frameName>
+          <organize_cloud>0</organize_cloud>
+          <min_range>0.9</min_range>
+          <max_range>130.0</max_range>
+          <gaussianNoise>0.008</gaussianNoise>
+        </plugin>
+        <pose>0.0812 0 0.409 0 -0 0</pose>
+      </sensor>
+    </link>
+    <joint name='front_left_wheel' type='revolute'>
+      <pose relative_to='base_link'>0.256 0.2854 0.03282 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>front_left_wheel_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='front_left_wheel_link'>
+      <pose relative_to='front_left_wheel'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>2.637</mass>
+        <inertia>
+          <ixx>0.02467</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.04411</iyy>
+          <iyz>0</iyz>
+          <izz>0.02467</izz>
+        </inertia>
+      </inertial>
+      <collision name='front_left_wheel_link_collision'>
+        <pose>0 0 0 1.57079 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1143</length>
+            <radius>0.1651</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+07</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <fdir1>1 0 0</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='front_left_wheel_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://husky_description/meshes/wheel.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='front_right_wheel' type='revolute'>
+      <pose relative_to='base_link'>0.256 -0.2854 0.03282 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>front_right_wheel_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='front_right_wheel_link'>
+      <pose relative_to='front_right_wheel'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>2.637</mass>
+        <inertia>
+          <ixx>0.02467</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.04411</iyy>
+          <iyz>0</iyz>
+          <izz>0.02467</izz>
+        </inertia>
+      </inertial>
+      <collision name='front_right_wheel_link_collision'>
+        <pose>0 0 0 1.57079 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1143</length>
+            <radius>0.1651</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+07</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <fdir1>1 0 0</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='front_right_wheel_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://husky_description/meshes/wheel.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='rear_left_wheel' type='revolute'>
+      <pose relative_to='base_link'>-0.256 0.2854 0.03282 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>rear_left_wheel_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='rear_left_wheel_link'>
+      <pose relative_to='rear_left_wheel'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>2.637</mass>
+        <inertia>
+          <ixx>0.02467</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.04411</iyy>
+          <iyz>0</iyz>
+          <izz>0.02467</izz>
+        </inertia>
+      </inertial>
+      <collision name='rear_left_wheel_link_collision'>
+        <pose>0 0 0 1.57079 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1143</length>
+            <radius>0.1651</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+07</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <fdir1>1 0 0</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='rear_left_wheel_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://husky_description/meshes/wheel.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='rear_right_wheel' type='revolute'>
+      <pose relative_to='base_link'>-0.256 -0.2854 0.03282 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>rear_right_wheel_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='rear_right_wheel_link'>
+      <pose relative_to='rear_right_wheel'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>2.637</mass>
+        <inertia>
+          <ixx>0.02467</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.04411</iyy>
+          <iyz>0</iyz>
+          <izz>0.02467</izz>
+        </inertia>
+      </inertial>
+      <collision name='rear_right_wheel_link_collision'>
+        <pose>0 0 0 1.57079 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1143</length>
+            <radius>0.1651</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+07</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <fdir1>1 0 0</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='rear_right_wheel_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://husky_description/meshes/wheel.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
+      <robotNamespace>/</robotNamespace>
+      <legacyModeNS>1</legacyModeNS>
+    </plugin>
+    <plugin name='imu_controller' filename='libhector_gazebo_ros_imu.so'>
+      <robotNamespace>/</robotNamespace>
+      <updateRate>100.0</updateRate>
+      <bodyName>base_link</bodyName>
+      <topicName>imu/data</topicName>
+      <accelDrift>0.005 0.005 0.005</accelDrift>
+      <accelGaussianNoise>0.005 0.005 0.005</accelGaussianNoise>
+      <rateDrift>0.005 0.005 0.005</rateDrift>
+      <rateGaussianNoise>0.005 0.005 0.005</rateGaussianNoise>
+      <headingDrift>0.005</headingDrift>
+      <headingGaussianNoise>0.005</headingGaussianNoise>
+    </plugin>
+    <plugin name='gps_controller' filename='libhector_gazebo_ros_gps.so'>
+      <robotNamespace>/</robotNamespace>
+      <updateRate>40</updateRate>
+      <bodyName>base_link</bodyName>
+      <frameId>base_link</frameId>
+      <topicName>navsat/fix</topicName>
+      <velocityTopicName>navsat/vel</velocityTopicName>
+      <referenceLatitude>49.9</referenceLatitude>
+      <referenceLongitude>8.9</referenceLongitude>
+      <referenceHeading>90</referenceHeading>
+      <referenceAltitude>0</referenceAltitude>
+      <drift>0.0001 0.0001 0.0001</drift>
+    </plugin>
+    <static>0</static>
+    <plugin name='ground_truth_odom' filename='libgazebo_ros_p3d.so'>
+      <updateRate>50.0</updateRate>
+      <bodyName>base_link</bodyName>
+      <topicName>/gazebo/odom</topicName>
+      <gaussianNoise>0.0</gaussianNoise>
+      <frameName>map</frameName>
+    </plugin>
+  </model>
+</sdf>
