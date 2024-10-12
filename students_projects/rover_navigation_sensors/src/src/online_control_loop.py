@@ -37,18 +37,18 @@ result = waypoint_follower.follow_waypoints([wp_x,wp_y], target)
 
 while result != 0 or result != 1:
     current_position = state_manager.get_2D_position()
-    new_target_x = target[0] - current_position[0]
-    new_target_y = target[1] - current_position[1]
-    new_target = [new_target_x, new_target_y]
+    # new_target_x = target[0] - current_position[0]
+    # new_target_y = target[1] - current_position[1]
+    # new_target = [new_target_x, new_target_y]
     
-    print("New target: ", new_target)
-    klc.set_goal(new_target)
+    # print("New target: ", new_target)
+    # klc.set_goal(new_target)
     klc.set_zmin([int(current_position[0]), int(current_position[1])])
     klc.extract_passive_dynamics(mode)
     klc.compute_state_vect()
     mx, my, htime, sx, sy = klc.update()
     wp_x, wp_y = cache.get_targets()
-    result = waypoint_follower.follow_waypoints([wp_x,wp_y], new_target)
+    result = waypoint_follower.follow_waypoints([wp_x,wp_y], target)
 
 if result == 0:
     rospy.loginfo("Last waypoint reached. Target achieved")
