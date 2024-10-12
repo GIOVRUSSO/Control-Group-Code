@@ -79,7 +79,7 @@ class WaypointFollowerNode():
         server_up = self.move_base_client.wait_for_server()
         if server_up:
             self.move_base_client.send_goal(target)
-            finished_within_time = self.move_base_client.wait_for_result(timeout=rospy.Duration(10.0))
+            finished_within_time = self.move_base_client.wait_for_result(timeout=rospy.Duration(4.5))
             if not finished_within_time:
                 self.move_base_client.cancel_goal()
                 rospy.loginfo("Timed out achieving goal")
