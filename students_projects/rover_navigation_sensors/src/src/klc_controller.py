@@ -459,6 +459,6 @@ class ControllerKLC:
         if mode == 0:
             self.passive_dynamics = uniform_plant().get_plant(self.zdiscr[0])
         elif mode == 1:
-            self.passive_dynamics = linearized_plant().get_plant(dim = 2)
+            self.passive_dynamics = linearized_plant().get_plant(dim = 2, zmin=self.zmin, zstep=self.zstep, zdiscr=self.zdiscr)
         elif mode == 2:
             self.passive_dynamics = trajectory_based_plant().get_plant(2, uniform_plant().get_plant(self.zdiscr[0], zmin=self.zmin, zstep=self.zstep, zdiscr=self.zdiscr))       
