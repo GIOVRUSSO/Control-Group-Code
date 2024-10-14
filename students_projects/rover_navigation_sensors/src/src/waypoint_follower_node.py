@@ -81,7 +81,7 @@ class WaypointFollowerNode():
             self.move_base_client.send_goal(target)
             finished_within_time = self.move_base_client.wait_for_result(timeout=rospy.Duration(4.5))
             if not finished_within_time:
-                self.move_base_client.cancel_goal()
+                #self.move_base_client.cancel_goal()
                 rospy.loginfo("Timed out achieving goal")
             else:
                 state = self.move_base_client.get_state()
@@ -90,6 +90,7 @@ class WaypointFollowerNode():
                     return True
                 elif state == GoalStatus.PREEMPTED:
                     rospy.loginfo("Goal pre-empted!")
+                    return False
                 else:
                     rospy.loginfo(self.move_base_client.get_result())
         else:
@@ -145,7 +146,7 @@ class WaypointFollowerNode():
         #print("Original number of waypoints: ", len(waypoints[0]))
         
         # 2. Interpolation with cubic splines
-        interpolated_wps, tangents = self.cubic_spline_interp(filtered_wps)
+        interpolated_wps, tangents = self.linear_interp(filtered_wps)
 
         self.cache.set_targets(interpolated_wps[0], interpolated_wps[1])
         
@@ -181,18 +182,22 @@ class WaypointFollowerNode():
             if self._obstacle_manager.has_obstacles_changed():
                 state = self.move_base_client.get_state()
                 if state != GoalStatus.SUCCEEDED and state != GoalStatus.PREEMPTED:
-                    self.move_base_client.cancel_goal()
+                    #self.move_base_client.cancel_goal()
                     rospy.loginfo("Goal cancelled due to obstacle change")
                     return 2
 
             self.publish_waypoint(pose, pose.header,0)
             print ("Publised waypoint:",pose.pose.position.x,pose.pose.position.y)
-                
+            
+            if np.sqrt((pose.pose.position.x - desired_target[0])**2 + (pose.pose.position.y - desired_target[1])**2) < 0.5:
+                return 0
+            
             if not self.go_to_waypoint(pose):
                 return 2
+            
 
         last_wp = [interpolated_wps[0][-1], interpolated_wps[1][-1]]
-        if np.linalg.norm(np.array(desired_target) - np.array(last_wp)) < 0.15:
+        if np.linalg.norm(np.array(desired_target) - np.array(last_wp)) < 0.5:
             return 0
         else:
             return 1
