@@ -39,10 +39,8 @@ class ControllerKLC:
     
     :default distance_threshold: 0.5
     """
-    def __init__(self, goal, mode, distance_threshold=0.5):
-        
-
-        
+    def __init__(self, goal, mode, distance_threshold=1.0):
+    
         self.state_manager_node = StateManager()
         self.obstacle_cluster_manager = ObstacleClusterManager()
 
@@ -74,16 +72,19 @@ class ControllerKLC:
         self.zmin = [0, 0] 
 
         #Discretization steps
-        self.zstep = [0.3, 0.3]
+        self.zstep = [0.5, 0.5]
 
         #Amount of discrete bins
         self.zdiscr = [30, 30]
 
         #Number of iterations for the simulations
-        #self.zsim = 15
+        self.zsim = 15
         
         #Duration of the simulation
         self.duration = 30
+        
+        self.waypoints_x = []
+        self.waypoints_y = []
     
         self.cost = np.zeros((self.zdiscr[0],self.zdiscr[1]))
 
@@ -91,30 +92,31 @@ class ControllerKLC:
 
         self.passive_dynamics = np.zeros((self.zdiscr[0], self.zdiscr[0], self.zdiscr[0], self.zdiscr[0]))
         
-        if mode == 0:
-            self.passive_dynamics = uniform_plant().get_plant(self.zdiscr[0])
-        elif mode == 1:
-            self.passive_dynamics = linearized_plant().get_plant(2)
-        elif mode == 2:
-            self.passive_dynamics = trajectory_based_plant().get_plant(2, uniform_plant().get_plant(self.zdiscr[0]))   
-
+        self.extract_passive_dynamics(mode)
 
         self.stateVect = np.zeros((self.zdiscr[0]**2, 2)) # Enumeration of all the possible states of the system
         self.discStates = np.zeros((self.zdiscr[0]**2, 2))
 
+        self.compute_state_vect()
+                
+        heatmap = np.zeros((self.zdiscr[0], self.zdiscr[1]))
+        
         for i in range(self.zdiscr[0]):
-            #Enumerate the states from 1 to 30^2. Here we explicitly build the enumeration to later build the Q matrix and for convenience
-            for j in range(self.zdiscr[0]):
-                # Compute the angle and speed values for the current state
-                x = self.zmin[0]+(i)*self.zstep[0]
-                y = self.zmin[1]+(j)*self.zstep[0]
-                
-                # Calculate the index of the current state in the state vector
-                ind = i*self.zdiscr[0] + j #Linearized index
-                
-                # Assign the angle and speed values to the state vector
-                self.stateVect[ind] = [x, y] 
-                self.discStates[ind]=[i,j]
+            for j in range(self.zdiscr[1]):
+                #Build the diagonal matrix with the exponential of the opposite of the cost
+                state = self.stateVect[i*self.zdiscr[0] + j]
+                heatmap[j, i] = self.dynamic_cost(state)
+
+        # Plot heatmap of the cost
+        plt.figure(figsize=(10, 10))
+        plt.imshow(heatmap, cmap='viridis', interpolation='nearest', origin='lower')
+        plt.colorbar(label='State cost')
+        
+        plt.title('State cost heatmap', fontsize=20)
+        plt.xlabel('x', fontsize=20)
+        plt.ylabel('y', fontsize=20)
+        plt.show()
+
 
         self.Prob = np.zeros((self.zdiscr[0]**2, self.zdiscr[0]**2)) #Initialize the probability matrix P
 
@@ -148,12 +150,21 @@ class ControllerKLC:
     """   
     def update(self):
 
-
-        state = self.state_manager_node.get_2D_position()
-        print("State: " + str(state))
+        self.waypoints_x = []
+        self.waypoints_y = []
+        
+        while not self.state_manager_node.is_valid_state():
+            pass
+        initial_state = self.state_manager_node.get_2D_position()
+        initial_state[0] = initial_state[0] + 0.1
+        initial_state[1] = initial_state[1] + 0.05
+        print("State: " + str(initial_state))
+        
         nSteps = self.duration
-        self.poses.append(state)
-        np.save('poses.npy',self.poses)
+        # self.poses.append(initial_state)
+        # np.save('poses.npy',self.poses)
+
+        state=initial_state
 
         diagMinusQ = np.zeros((self.zdiscr[0]**2, self.zdiscr[0]**2)) #Q matrix
         hist = [[0,0]]*nSteps
@@ -168,44 +179,46 @@ class ControllerKLC:
                 
         for t in range(nSteps):
 
-            ind = int(state[0])*self.zdiscr[0]+int(state[1]) #Get the index of the current state
-            hist[t]=self.stateVect[ind] #Log the state
+            #ind = int(state[0])*self.zdiscr[0]+int(state[1]) #Get the index of the current state
+            hist[t]=state #Log the state
             state = self.loop(state) #Sample the new state
-            t+=1
-            
-            distance_to_target = np.linalg.norm(np.array(state) - np.array(self.goal))
+            print("State planned: " + str(state))
 
+         
+            self.waypoints_x.append(state[0])
+            self.waypoints_y.append(state[1])
+            
+            distance_to_target = np.sqrt((state[0]-self.xd)**2+(state[1]-self.yd)**2)#np.linalg.norm(np.array(state) - np.array(self.goal))
+            
+            print("Distance to target: " + str(distance_to_target))
             #Stopping condition: if the distance is less than a defined threshold
             if distance_to_target < self.distance_threshold:
+                
                 #print(f"Arrivato al target in {t} passi.")
                 nSteps = t
                 break
             
-        waypoints_x = [pt[0] for pt in hist]
-        waypoints_y = [pt[1] for pt in hist]
+        fullH = [pt[0] for pt in hist]
+        fullHv = [pt[1] for pt in hist]
         # print("Waypoints x: ", waypoints_x)
         # print("Waypoints y: ", waypoints_y)
         
         meanx = [0]*nSteps #Get the means and stds for plotting
         stdsx = [0]*nSteps
         for i in range(nSteps):
-            meanx[i] = np.mean(waypoints_x)
-            stdsx[i] = np.std(waypoints_x)
+            meanx[i] = np.mean(fullH)
+            stdsx[i] = np.std(fullH)
 
         meany = [0]*nSteps #Get the means and stds for plotting
         stdsy = [0]*nSteps
         for i in range(nSteps):
-            meany[i] = np.mean(waypoints_y)
-            stdsy[i] = np.std(waypoints_y)
+            meany[i] = np.mean(fullHv)
+            stdsy[i] = np.std(fullHv)
 
         htime = np.array([time for time in range(self.duration)])
 
-        self.cache.set_targets(waypoints_x, waypoints_y)
+        self.cache.set_targets(self.waypoints_x, self.waypoints_y)
         return [meanx, meany, htime, stdsx, stdsy]
-
-    
-    # Utility methods for init and update methods
-
 
     """
     Discretize the continuous state variables.
@@ -223,6 +236,26 @@ class ControllerKLC:
             ind = int((elt - Zmin[i])//Zstep[i]) #Discretize
             res[i] = ind
         return(tuple(res)) #Return as tuple for array indexing
+    
+    
+
+    def cost_function(self, state):
+        k = 30
+        sx = 0.7
+        sy = 0.7
+        q1 = 0.2
+        q2 = 0.2
+        obsTerm = 0
+
+        for obs in self.obstacles.get_obs():
+            xterm = ((state[0] - obs[0]) / sx) 
+            yterm = ((state[1] - obs[1]) / sy) 
+            obsTerm += k * np.exp(-0.5 * (xterm + yterm))
+
+
+        return q1*(state[0] - self.xd) ** 2 + q2*(state[1] - self.yd) ** 2 + obsTerm
+    
+    
     
     """
     This method calculates the cost of a given state.
@@ -289,13 +322,14 @@ class ControllerKLC:
         
         # distance_from_goal = np.linalg.norm(np.array(state) - np.array(self.goal))
         distance_from_goal = np.sqrt((state[0] - self.goal[0])**2 + (state[1] - self.goal[1])**2)
+        quadratic_distance = (state[0] - self.goal[0])**2 + (state[1] - self.goal[1])**2
         target_covariance = np.array([0.1, 0.1], dtype=np.float32)
         covar_target = np.diag(target_covariance)
         
         # This term is used to get a lower cost when the state is closer to the goal
-        target_cost = -7 * my_logpdf(state[:2], self.goal[:2], covar_target)
+        target_cost = -0.4 * my_logpdf(state[:2], self.goal[:2], covar_target)
         
-        cost = 0.4 * distance_from_goal + gauss_sum + cluster_sum + target_cost
+        cost = 0.5 *quadratic_distance + gauss_sum  + cluster_sum + target_cost
         
         return cost
     
@@ -311,7 +345,7 @@ class ControllerKLC:
     def export_cost_plots(self,cost_function, directory_path = pathlib.Path(__file__).parent):
 
         
-        X, Y = np.meshgrid(np.linspace(-10, 10, 100), np.linspace(-10, 10, 100))
+        X, Y = np.meshgrid(np.linspace(-5, 15, 100), np.linspace(-5, 15, 100))
         z = np.array([cost_function(np.array([x,y])) for x,y in zip(np.ravel(X), np.ravel(Y))])
         Z = z.reshape(X.shape)
         grad = np.gradient(Z)
@@ -375,26 +409,15 @@ class ControllerKLC:
     :return: The new state.
     """
     def loop(self, x):
-        #Control loop 
-        
-        ind = (int(x[0]),int(x[1]))
-        
-        #Get the pf corresponding to the passive dynamics
+    
+        ind = self.discretize(x,  self.zdim, self.zmin, self.zstep) #Discretize the state
         pf = self.passive_dynamics[ind[0],ind[1]] #Get the pf corresponding to the passive dynamics
         pf_1D = self.unravelPF(pf) #Unravel it
-        
-        #Calculate the actual transition pf using z and the passive dynamics
-        pf_weighted = np.multiply(pf_1D,self.z)
-        
-        #Normalize
-        S = np.sum(pf_weighted) 
-
-        pf_weighted = pf_weighted/S #probabilities contain NaN: it happens when S=0, i.e. when the passive dynamics are zero.
-        
-        #Sample new state
+        pf_weighted = pf_1D*self.z #Calculate the actual transition pf using z and the passive dynamics
+        S = np.sum(pf_weighted) #Normalize
+        pf_weighted = pf_weighted/S #probabilities contain NaN ERRORE SPESSO USCITO FUORI forse perché non si riesce a minimizzare la funzione di costo a causa di qualche limite raggiunto
         ind = np.random.choice(range(self.zdiscr[0]**2), p=pf_weighted) #Get the new (enumerated) state index using the calculated dynamics
-        newState = self.discStates[ind]#self.stateVect[ind] #Get the new state from the state vector
-        
+        newState = self.stateVect[ind] #Get the new state from the state vector
         return(newState)
     
     """
