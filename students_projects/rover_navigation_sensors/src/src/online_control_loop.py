@@ -12,7 +12,7 @@ cache = CostCache()
 
 state_manager = StateManager()
 
-target = [6.5, 5.5]
+target = [6.5, 3.5]
 mode = 0
 
 control_frame = 'husky2_tf/base_link'
@@ -29,7 +29,6 @@ np.save("mean_stdv_plot_data", np.array([mx, sx, my, sy]))
 
 #cache.set_next_target(mx, my)
 
-dur = 30
 print("Got waypoints. Starting to follow the planned trajectory...")
 waypoint_follower = WaypointFollowerNode()
 
@@ -42,12 +41,13 @@ while result != 0 or result != 1:
     # new_target = [new_target_x, new_target_y]
     
     # print("New target: ", new_target)
-    # klc.set_goal(new_target)
+    #klc.set_goal(new_target)
     klc.set_zmin([int(current_position[0]), int(current_position[1])])
     klc.extract_passive_dynamics(mode)
     klc.compute_state_vect()
     mx, my, htime, sx, sy = klc.update()
     wp_x, wp_y = cache.get_targets()
+    print("Waypoints: ", wp_x, wp_y)
     result = waypoint_follower.follow_waypoints([wp_x,wp_y], target)
 
 if result == 0:
