@@ -10,7 +10,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-
 cache = CostCache()
 
 target = [6.5, 3.5]
@@ -20,7 +19,7 @@ mode = 0
 klc = ControllerKLC(target, mode)
 #mx, my, htime, sx, sy = klc.update()
 
-mx, my, htime, sx, sy, wp_x, wp_y = klc.update()
+mx, my, htime, sx, sy = klc.update()
 
 
 np.save("mean_stdv_plot_data", np.array([mx, sx, my, sy]))
@@ -31,7 +30,7 @@ dur = 30
 
 waypoint_follower = WaypointFollowerNode()
 
-waypoint_follower.follow_waypoints([wp_x,wp_y], target)
+waypoint_follower.follow_waypoints([mx,my], target)
 
 klc.export_metrics(mx, my, htime)
 
