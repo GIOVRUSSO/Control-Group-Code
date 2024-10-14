@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.interpolate import interp1d
 from matplotlib.animation import FuncAnimation
-from rover_navigation.src.src.obstacle_manager import *
+from obstacle_manager import *
 from klc_controller import *
 
 plt.rcParams.update({'font.size': 20})
