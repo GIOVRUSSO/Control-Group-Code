@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+<vType accel="3.0" decel="6.0" id="Car_NAPOLI" color="255,0,255" length="5.0" minGap="2.5" maxSpeed="120.0" sigma="0.0" />
+<vType accel="3.0" decel="6.0" id="Car_SALERNO" color="0,255,255" length="5.0" minGap="2.5" maxSpeed="120.0" sigma="0.0" />
+<vType accel="3.0" decel="6.0" id="Car_AVELLINO" color="0,255,0" length="5.0" minGap="2.5" maxSpeed="120.0" sigma="0.0" />
+<vType accel="3.0" decel="6.0" id="Car_BENEVENTO" color="255,255,0" length="5.0" minGap="2.5" maxSpeed="120.0" sigma="0.0" />
+<vType accel="3.0" decel="6.0" id="Car_FISCIANO" color="255,0,0" length="5.0" minGap="2.5" maxSpeed="120.0" sigma="0.0" />
+<vType accel="3.0" decel="6.0" id="Car_PENTA" color="0,0,255" length="5.0" minGap="2.5" maxSpeed="120.0" sigma="0.0" />
+<vType accel="3.0" decel="6.0" id="bus" color="0,0,255" length="7.0" minGap="2.5" maxSpeed="120.0" sigma="0.0" guiShape="bus"/>
+<vType accel="3.0" decel="6.0" id="Car_AGENT" color="255,255,255" length="5.0" minGap="2.5" maxSpeed="120.0" sigma="0.0" />
+<vType accel="3.0" decel="6.0" id="Car_RANDOM" color="159,159,159" length="5.0" minGap="2.5" maxSpeed="120.0" sigma="0.0" />
+<vType id="routerByDistance" maxSpeed="1.0"/>
+...
+</routes>
