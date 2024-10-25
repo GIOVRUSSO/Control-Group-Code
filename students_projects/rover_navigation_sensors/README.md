@@ -6,15 +6,15 @@ This project is focusing on the development of an autonomous rover navigation sy
 
 ### Key Features:
 - **Autonomous Navigation**: Waypoint-based navigation with path adjustments in response to dynamic obstacles.
-- **Sensor Fusion**: Localization using GPS, IMU, and LiDAR sensors, integrating data with an EKF-based fusion system.
-- **Multi-Robot Simulation**: Integration of multiple Husky rovers in a Gazebo environment with real-time obstacle detection.
+- **Sensor Fusion**: Localization using GPS, IMU, and LiDAR sensors, integrating data with an EKF-based fusion system. #TODO key files for this function.
+- **Multi-Robot Simulation**: Integration of multiple Husky rovers in a Gazebo environment with real-time obstacle detection. #TODO key files for this features
 - **Teleoperation**: Manual control interface for teleoperating the rover using a keyboard.
 - **Extraction of passive dynamics from teleoperation data**: teleoperation facility can be used for generating trajectories which can be taken into account as example data or passive dynamics by the control algorithm for the planning phase.
 
 ## Project Structure
 
 
-### Main Components:
+### Main Components: #TODO add brief description for move_base + official link document
 
 1. **`config`**:
    - Contains configuration files for controlling the rover, managing localization, and planning navigation.
