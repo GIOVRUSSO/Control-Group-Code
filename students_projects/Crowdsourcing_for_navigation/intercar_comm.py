@@ -5,7 +5,7 @@ from behaviours_maker import valid_neighbors
 from queue import PriorityQueue
 from text2speech_handler import playWarningAudio
 
-PLAY_AUDIO = False # flag for playing audio as soon as a wip area is detected
+PLAY_AUDIO = True # flag for playing audio as soon as a wip area is detected
 workAudioPlayed = [] # data structure to keep track of audios played for the different wip areas
 
 # method for looking for alternative roads as soon as a road is considered "wip", inputs are:

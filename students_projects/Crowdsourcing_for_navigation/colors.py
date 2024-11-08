@@ -42,34 +42,36 @@ def getIfromRGB(rgb):
     RGBint = (red<<16) + (green<<8) + blue
     return RGBint
 
-# method for coloring edges in the scenario according to their reward (MUST BE ADAPTED TO EACH COST FUNCTION), inputs are:
+# method for coloring edges in the scenario according to their reward, inputs are:
 # - reward array,
 # - data structure containing all static data related to the map,
 # - data structure keeping track of previously colored streets
-def colorMap(r,mapdata,rewards4colors):
+def colorMap(r,mapdata,rewards4colors,ss_edges):
     edgelist = mapdata.edgelist
-    maxrew = np.max(r)
-    maxre4=0
-    minrew = np.min(r)
-    minre4=0
+    # check maximum and minimum rewards
+    maxrew = np.max(r[r!=0])
+    minrew = np.min(r[r!=0])
     vals = list(rewards4colors.values())
-    sumvals = np.sum(vals)
-    if sumvals!=0:
-        maxre4 = np.max(vals)
-        minre4 = np.min(vals)
-    maxr = 0
-    minr = 0
+    sumvals = np.sum(r)
     maxr = maxrew
     minr = minrew
     if sumvals == 0:
-        maxr = 1000
-    print('maxr '+str(maxr)+' minr '+str(minr)+' maxre4 '+str(maxre4)+' minre4 '+str(minre4)+' maxrew '+str(maxrew)+' minrew '+str(minrew))
-    for edgeindex in range(len(edgelist)):
+        maxr = 1
+    print('maxr '+str(maxr)+' minr '+str(minr)+' maxrew '+str(maxrew)+' minrew '+str(minrew))
+    for edgeindex in range(len(edgelist)): # color each edge accordingly
         ed = edgelist[edgeindex].getID()
         rvalue = minr
         colorvalue = 0
-        if r[edgeindex]!=0:
-            rewards4colors[ed] = r[edgeindex]
-            rvalue = rewards4colors[ed]
-            colorvalue = int(abs(rvalue-minr)/abs(maxr-minr)*1000)+10
+        rewards4colors[ed] = r[edgeindex]
+        rvalue = rewards4colors[ed]
+        diff = maxr-minr
+        numdiff = rvalue-minr
+        if diff == 0:
+            diff = 1
+            numdiff = 1
+        colorvalue = int(abs(numdiff)/abs(diff)*1000)+10
+        if sumvals == 0:
+            colorvalue = 1000
+        if ed not in ss_edges:
+            colorvalue = 0
         traci.edge.setParameter(ed,'color',colorvalue)

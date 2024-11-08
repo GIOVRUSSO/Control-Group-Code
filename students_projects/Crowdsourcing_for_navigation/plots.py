@@ -45,6 +45,8 @@ def plotter(x,avg_array,std_array,title,save_fig,IMG_FOLDER,NUMBER_OF_CARS,TIME_
 # - the time horizon for the crowdsourcing algorithm used for the simulations
 def versus_plotter(x,avg_array1,std_array1,avg_array2,std_array2,title,save_fig,IMG_FOLDER,NUMBER_OF_CARS,TIME_HORIZON):
     showplots = False
+    printvalues = True
+    save_fig = True
     avg_array1 = np.array(avg_array1)
     std_array1 = np.array(std_array1)
     avg_array2 = np.array(avg_array2)
@@ -64,6 +66,13 @@ def versus_plotter(x,avg_array1,std_array1,avg_array2,std_array2,title,save_fig,
         fig.savefig(IMG_FOLDER+str(NUMBER_OF_CARS)+'cars_'+str(TIME_HORIZON)+'hor_'+str(title).lower().replace(' ','_')+'versus.png')
     if showplots:
         plt.show()
+    if printvalues:
+        print(title)
+        print('controlled cars')
+        print(str(np.mean(avg_array1[avg_array1!=0]))+' +- '+str(np.std(std_array1[std_array1!=0])))
+        print('uncontrolled cars')
+        print(str(np.mean(avg_array2[avg_array2!=0]))+' +- '+str(np.std(std_array2[std_array2!=0])))
+        
 
 # method for plotting the different metrics on a global scale and in comparison between controlled and uncontrolled vehicles, inputs are:
 # - a flag for selecting between plotting data related to all simulations or data related to one run (optional)
@@ -71,8 +80,7 @@ def elaborate_and_make_plots(TIMEDATA=False):
 
     SAVE_IMG=True
     IMG_FOLDER = 'img/'
-    DATA_SOURCE = 'SalernoScenario_12h_incident/'
-
+    DATA_SOURCE = 'UnisaScenario_12h_incident/' # folder from which to take data for plotting
     filelist = os.listdir(DATA_SOURCE)
     print(filelist)
     if not TIMEDATA:
@@ -171,6 +179,7 @@ def elaborate_and_make_plots(TIMEDATA=False):
                     fil = DATA_SOURCE+f
                     f_name = fil.split('/')[1].split('_')
                     runfile = int(f_name[0].replace('run',''))
+                    # runfile = run
                     f_name[6] = f_name[6].replace('.ny.npy','')
                     print(f_name)
                     if f_name[6].startswith('agent'):
@@ -266,11 +275,10 @@ def elaborate_and_make_plots(TIMEDATA=False):
             waitingtimes_std[runfile] = (np.std(sim_waiting))
             noise[runfile] = (np.mean(sim_noise))
             noise_std[runfile] = (np.std(sim_noise))
-            co2em[runfile] = (np.mean(sim_co2))
-            co2em_std[runfile] = (np.std(sim_co2))
+            co2em[runfile] = (np.mean(co2em))
+            co2em_std[runfile] = (np.std(co2em_std))
             traveltimes[runfile] = (np.mean(sim_travel))
             traveltimes_std[runfile] = (np.std(sim_travel))
-            
             
             agentspeedsplot[runfile] = (np.mean(sim_speeds_agent))
             agentspeedsplot_std[runfile] = (np.std(sim_speeds_agent))
@@ -296,8 +304,7 @@ def elaborate_and_make_plots(TIMEDATA=False):
             foeco2em[runfile] = (np.mean(sim_co2_foe))
             foeco2em_std[runfile] = (np.std(sim_co2_foe))
             foetraveltimes[runfile] = (np.mean(sim_travel_foe))
-            foetraveltimes_std[runfile] = (np.std(sim_travel_foe))
-                    
+            foetraveltimes_std[runfile] = (np.std(sim_travel_foe))        
             
         # create plots    
         plotter(x_axis,speedsplot,speedsplot_std,'speed',SAVE_IMG,IMG_FOLDER,NUMBER_OF_CARS,TIME_HORIZON,'[m/s]')

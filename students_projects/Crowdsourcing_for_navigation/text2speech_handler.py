@@ -81,7 +81,7 @@ def playAudio(mapdata,current,prox,lan,dist=None,prox_edge=None,roundabout=False
                 play = False
         else: # audio is required outside of a roundabout
             aud_text = aud_text+("in the roundabout, take the " if lan=='en' else "alla rotonda, prendi la ")
-            val = mapdata.roundabouts[int(mapdata.streets_in_roundabouts[prox.getID()].replace('r',''))].exit_order(mapdata,path) # find roundabout exit to look for
+            val = mapdata.roundabouts[int(mapdata.streets_in_roundabouts[prox_edge.getID()].replace('r',''))].exit_order(mapdata,path) # find roundabout exit to look for
             aud_text = aud_text+order_number_string(val,lan)+(" exit." if lan=='en' else " uscita.")
     if play: # play audio using pygame library
         aud = gTTS(text=aud_text,lang=lan,slow=False)
@@ -143,25 +143,24 @@ def search_next(mapdata,path):
     net = mapdata.net
     warning_edge = None
     prev_warning_edge = None
+    prevlen = 0
     for e in path: # loop in the path until multiple choices are available at a crossing
         neighbours = valid_neighbors(net.getEdge(e),mapdata)
-        if len(neighbours)>=2:
+        if prevlen > 1:
             warning_edge = e
             break
-        else:
-            prev_warning_edge = e
+        if len(neighbours)>=2:
+            prevlen = len(neighbours)
+        prev_warning_edge = e
     print('warning edge is '+str(warning_edge))
+    print('prev warning edge is '+str(prev_warning_edge))
     if warning_edge is not None: # if a crossing is found
-        if prev_warning_edge is None: # if it was the first crossing, use the one immediately after
-            prev_warning_edge = warning_edge
-            warning_edge = path[path.index(warning_edge)+1]
-        # calculate pathlen to warn about distance
         pathlen = 0
         for e in path:
             pathlen += net.getEdge(e).getLength()
-            if e==warning_edge:
+            if e==prev_warning_edge:
                 break
-        if warning_edge in mapdata.streets_in_roundabouts: # warn about distance and the fact that next up is a roundabout
+        if prev_warning_edge in mapdata.streets_in_roundabouts: # warn about distance and the fact that next up is a roundabout
             return True,True,pathlen,warning_edge,prev_warning_edge
         else: # warn about distance and the fact that next up is a crossing
             return True,False,pathlen,warning_edge,prev_warning_edge

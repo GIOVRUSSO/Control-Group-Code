@@ -13,10 +13,12 @@ from behaviours_maker import calculate_pathlen
 # decomment the starting edge from which you want the animation to start
 # start = '766350967' # start edge of cars in Salerno city centre map, located in Concordia parking area
 # start = '-79867013#1' # start edge of cars in Unisa map, located in Multipiano parking area
-start = '-579690548#1' # start edge of cars in Unisa map, located in Campus parking area
+# start = '-579690548#1' # start edge of cars in Unisa map, located in Campus parking area
+start = '579690551#3' # start edge of cars in Unisa map, located in Campus parking area
 # end = '50827474' # end edge of cars in Salerno city centre map, direction towards Avellino
 # end = '-40567772#0' # end edge of cars in Unisa map, direction towards Avellino
-end = '330222144' # end edge of cars in Unisa map, direction towards Napoli
+# end = '330222144' # end edge of cars in Unisa map, direction towards Napoli
+end = '1084284613' # end edge of cars in Unisa map, direction towards Salerno
 # end = '93450829' # end edge of cars in Salerno city centre map, direction towards Napoli
 # end = '102235300#2' # end edge of cars in Salerno city centre map, direction towards other cities in the province of Salerno
 SCENARIO = 'Unisa'
@@ -27,7 +29,7 @@ start = mapdata.net.getEdge(start)
 traci.start(['sumo-gui','-c','osm_'+str(SCENARIO)+'.sumocfg','--step-length',str(1.0)])
 paths = [None]*4
 for i in range(4):
-    # for k in mapdata.edgelist:
+    # for k in mapdata.edgelist: # for algorithm execution display, decomment this and the following line to show how the different algorithms work
     #     traci.edge.setParameter(k.getID(),'color',0)
     paths[i] = index2path(i,end,start,mapdata,works=works)
     if i == 0:

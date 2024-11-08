@@ -48,7 +48,7 @@ def reading_thread(ser):
             (raw_data, msg2) = nmr.read() # msg will be global variable that main will read
             msgstr = str(msg2)
             if msgstr.__contains__('lat=') and msgstr.__contains__('lon=') and (not msgstr.__contains__('lat=,') and not msgstr.__contains__('lon=,')): # if latitude and longitude are included in the message
-                f = open('log_gps_video.txt','a')
+                f = open('log_gps_test.txt','a')
                 msg = msg2 # update msg variable
                 if verbose:
                     print(f"lat: {msg.lat} - lon: {msg.lon}")
@@ -66,7 +66,7 @@ def reading_thread_file(mapdata):
     msg = None
     stop = False
     coords = []
-    f = open('log_gps_test_old.txt','r')
+    f = open('log_gps_test.txt','r')
     dats = f.readlines()
     for dat in dats:
         cs = dat.split(':')
@@ -162,19 +162,19 @@ WORKS_THRESHOLD = 1 # threshold value after which an area is considered to be "w
 # - flag to establish whether behaviours should be built online or not (if False, the respective "behaviours" npy file must be loaded)(optional),
 # - flag to establish whether wip areas must be included in the simulation or not (useful for switching between scenarios)(optional)
 def single_sim(NUM_VEHICLES, PERC_UNI_CARS, SHOW_GUI, T_HORIZON, STEP_SIZE, INCLUDE_BUS, INCLUDE_RANDOM, START_TIME, PERC_AGENT_CARS, mapdata, USE_DESIRED_AGENTS=False, DESIRED_AGENTS=0, NUM_ALGS=1, ONLINE=False, CONSIDER_WORKS=False):
-    LANG = 'it'
+    LANG = 'en'
     SCENARIO = mapdata.scenario
     PERC_AGENT_CARS = DESIRED_AGENTS/NUM_VEHICLES if USE_DESIRED_AGENTS else PERC_AGENT_CARS*PERC_UNI_CARS
     NUM_AGENTS = NUM_VEHICLES*PERC_AGENT_CARS
     PLAY_AUDIO = check_audio_from_params()
     verbose = False # many prints ahead, change to True for debugging purposes
-    # open('log_gps_vil.txt','w').close() # decomment if using real GPS
-    # ser = serial.Serial('/dev/rfcomm0', 9600) # decomment if using real GPS
+    open('log_gps_test.txt','w').close() # decomment if using real GPS
+    ser = serial.Serial('/dev/rfcomm0', 9600) # decomment if using real GPS
     global proceed
     proceed = False
     # create a thread
-    # thread = Thread(target=reading_thread, args=[ser]) # decomment if using real GPS
-    thread = Thread(target=reading_thread_file, args=[mapdata]) # decomment if using pre-recorded GPS locations
+    thread = Thread(target=reading_thread, args=[ser]) # decomment if using real GPS
+    # thread = Thread(target=reading_thread_file, args=[mapdata]) # decomment if using pre-recorded GPS locations
     # run the thread
     thread.daemon = True
     thread.start()
@@ -261,7 +261,7 @@ def single_sim(NUM_VEHICLES, PERC_UNI_CARS, SHOW_GUI, T_HORIZON, STEP_SIZE, INCL
         while True:
             proceed = False
             move = False
-            if len(insim)==0 and totarrived>=1: # if simulation is empty and at least 1 vehicle arrived, stop loop (it works under the hypothesis of the simulation always having a vehicle inside)
+            if len([x for x in insim if not x.__contains__('bus') and not x.__contains__('random')])==0 and totarrived>=1: # if simulation is empty and at least 1 vehicle arrived, stop loop (it works under the hypothesis of the simulation always having a vehicle inside)
                 break
             traci.simulationStep() # step of the loop
             vehicles_in_sim = traci.vehicle.getIDList()
@@ -420,7 +420,7 @@ def single_sim(NUM_VEHICLES, PERC_UNI_CARS, SHOW_GUI, T_HORIZON, STEP_SIZE, INCL
                             ss = state_space(statecars,T_HORIZON,mapdata,end_edge[vehicle]) # identify reduced state space
                             ss_edges = conv_ss2edges(ss,edgelist) # turn indexes into edges
                             
-                            for s in vn: # look for works among the neighbours
+                            for s in ss_edges: # look for works among the neighbours
                                 if s.getID() in works:
                                     if tweet(works,s.getID(),vehs,end_edge,mapdata,True,vehs[vehicle],LANG,WORKS_THRESHOLD): # try to signal the area
                                         if s.getID() not in signalled_works: # updating signalled_works data structure
@@ -437,12 +437,11 @@ def single_sim(NUM_VEHICLES, PERC_UNI_CARS, SHOW_GUI, T_HORIZON, STEP_SIZE, INCL
                                     for v in ss_edges:
                                         if (v.getID(),end_edge[vehicle]) not in behaviour_created or len(signalled_works)!=prev_signalled_works:
                                             behaviour_created.append((v.getID(),end_edge[vehicle]))
-                                    prev_signalled_works = len(signalled_works)
                                 
-                            if len(vn)>2: # there is more than 1 valid neighbour
-                                r = compute_reward(ss,passed[vehicle],mapdata,end_edge[vehicle],signalled_works,vehs[vehicle],paths_db,agents) # compute reward
+                            if len(vn)>2 or len(signalled_works)!=prev_signalled_works: # there is more than 1 valid neighbour
+                                r = compute_reward(ss,mapdata,signalled_works,vehs[vehicle],paths_db,agents) # compute reward
                                 if colorreward:
-                                    colorMap(r,mapdata,rewards4colors)
+                                    colorMap(r,mapdata,rewards4colors,ss_edges)
                                 new_state,indmin = agents[vehicle].receding_horizon_DM(statecars,T_HORIZON,ss,r,ONLINE,behaviour_db,edgelist) # use crowdsourcing algorithm to select the next state
                                 prox_edge = edgelist[new_state] # find newly-selected edge
                                 # update VehicleData attributes and variable for selected path
@@ -463,17 +462,21 @@ def single_sim(NUM_VEHICLES, PERC_UNI_CARS, SHOW_GUI, T_HORIZON, STEP_SIZE, INCL
                                 prox_edge = vn[0]
                                 indmin = vehs[vehicle].selected_id
                                 selpath = paths_db[currentid][agents[vehicle].targetIndex+indmin]
-                        if len(vn2)>2: # upon crossing with multiple possible selections, play audio
-                            if NUM_AGENTS==1 and currentid==roadid and PLAY_AUDIO:
-                                playAudio(mapdata,currentid,prox_edge,LANG,roundabout=(currentid in mapdata.streets_in_roundabouts))
-                        else: # look for next crossing, then play audio
-                            if NUM_AGENTS==1 and PLAY_AUDIO and selpath is not None:
-                                true_play_audio, in_roundabout, dist, audio_edge, prev_audio_edge = search_next(mapdata,paths_db[currentid][agents[vehicle].targetIndex+indmin])
-                                if currentid in mapdata.streets_in_roundabouts: # next selection is inside a roundabout, no need for audio play
-                                    true_play_audio = False
-                                if true_play_audio and audio_edge!=played_audio_edge:
-                                    playAudio(mapdata,currentid,net.getEdge(audio_edge),LANG,dist,net.getEdge(prev_audio_edge),in_roundabout,path=(None if not in_roundabout or paths_db[currentid] is None else paths_db[currentid][agents[vehicle].targetIndex+indmin]))
-                                    played_audio_edge = audio_edge
+                        if PLAY_AUDIO:
+                            if len(vn2)>2: # upon crossing with multiple possible selections, play audio
+                                if NUM_AGENTS==1 and currentid==roadid:
+                                    playAudio(mapdata,currentid,prox_edge,LANG,roundabout=(currentid in mapdata.streets_in_roundabouts))
+                            else: # look for next crossing, then play audio
+                                if NUM_AGENTS==1 and selpath is not None:
+                                    true_play_audio, in_roundabout, dist, audio_edge, prev_audio_edge = search_next(mapdata,paths_db[currentid][agents[vehicle].targetIndex+indmin])
+                                    if currentid in mapdata.streets_in_roundabouts: # next selection is inside a roundabout, no need for audio play
+                                        true_play_audio = False
+                                    if true_play_audio and audio_edge!=played_audio_edge:
+                                        playAudio(mapdata,currentid,net.getEdge(audio_edge),LANG,dist,net.getEdge(prev_audio_edge),in_roundabout,path=(None if not in_roundabout or paths_db[currentid] is None else paths_db[currentid][agents[vehicle].targetIndex+indmin]))
+                                        played_audio_edge = audio_edge
+                            if len(signalled_works)!=prev_signalled_works:
+                                played_audio_edge = None
+                        prev_signalled_works = len(signalled_works)
                         next_edge[vehicle] = prox_edge.getID()
                         if prox_edge.getID() == end_edge[vehicle]:
                             print(vehicle+' ARRIVED')
@@ -507,6 +510,8 @@ def single_sim(NUM_VEHICLES, PERC_UNI_CARS, SHOW_GUI, T_HORIZON, STEP_SIZE, INCL
                                         traci.edge.setParameter(e,'color',colorv)
                             if vehicle in prev_edge:
                                 traci.edge.setParameter(prev_edge[vehicle],'color',0)
+                        print('selected edge '+str(prox_edge.getID())+' selected index '+str(vehs[vehicle].selected_id))
+                    
                     prev_edge[vehicle] = roadid
                     if roadid not in passed[vehicle]:
                         passed[vehicle][roadid] = 1
@@ -567,38 +572,8 @@ def single_sim(NUM_VEHICLES, PERC_UNI_CARS, SHOW_GUI, T_HORIZON, STEP_SIZE, INCL
                           sum(vehs[vehicle].noxemission)
                         ))
         traci.close()
-        # gathering data from checkpoints (THIS WILL PROBABLY BE REMOVED)
-        speed_time_averages = []
-        speed_space_averages = []
-        flow_averages = []
-        for t in destinations:
-            checkpoint = None
-            for c in checkpoints:
-                if t[1] in checkpoints[c]['place']:
-                    checkpoint = checkpoints[c]
-            if len(checkpoint['speed'])>0:
-                speed_time_averages.append(sum(checkpoint['speed'])/len(checkpoint['speed'])*t[2])
-                inversesum = 0
-                for sp in checkpoint['speed']:
-                    if sp>0:
-                        inversesum += 1/sp
-                if inversesum>0:
-                    speed_space_averages.append(len(checkpoint['speed'])/inversesum*t[2])
-                    flow_averages.append(checkpoint['flow']*3600/scounter*t[2])
-        speed_tavg = sum(speed_time_averages)/100
-        speed_savg = sum(speed_space_averages)/100
-        flow_avg = sum(flow_averages)/100
-        # gathering time data of metrics of cars
-        agent_time_data = {}
-        foes_time_data = {}
-        agent_time_data['co2'] = agent_co2s
-        agent_time_data['fuel'] = agent_fuels
-        agent_time_data['noise'] = agent_noises
-        foes_time_data['co2'] = foes_co2s
-        foes_time_data['fuel'] = foes_fuels
-        foes_time_data['noise'] = foes_noises
                 
-        return retds,NUM_AGENTS,correctlyarrived,speed_tavg,speed_savg,flow_avg,agent_time_data,foes_time_data
+        return retds,NUM_AGENTS,correctlyarrived
     else:
         return None
 
@@ -645,7 +620,7 @@ def move_car_on_road(mapdata,roadid,agent_car,cl_prev_edge,current_edge,path,x,y
                 else: # different edges detected, car either moved to the next edge or it is moving to a wrong edge
                     if path is not None: # path to add suggestion
                         if current_edge in path: # detected edge is in the path
-                            if len(traci.simulation.findRoute(a_prev_edge,current_edge).edges)<5: # it is pretty close, move there
+                            if len(traci.simulation.findRoute(a_prev_edge,current_edge).edges)<4: # it is pretty close, move there
                                 move = True
                                 out_of_course_counter = 0
                             else: # take it as a wrong edge

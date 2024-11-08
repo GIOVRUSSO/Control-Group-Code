@@ -16,14 +16,14 @@ from behaviours_maker import create_paths
 
 CREATE_BEHAVIOURS = False # put to True if offline paths and behaviours need to be created
 RUN_SIMULATION = True # put to True if simulations must be run
-NUM_ALGS = 4 # number of behaviours to take into account
+NUM_ALGS = 4 # number of behaviours to take into account    
 IMG_FOLDER = 'SalernoScenario_12h_incident/' # folder in which files will be saved
-SCENARIO = 'Unisa' # name of the scenario
+SCENARIO = 'Salerno' # name of the scenario
 NUMBER_OF_CARS = 20 # number of cars that will enter the simulation
 NUM_AGENTS = 1 # number of agents to enter the simulation (this will be ignored if USE_NUM_AGENTS=False)
 USE_NUM_AGENTS = True # consider NUM_AGENTS as the number of agents to enter the simulation or use the percentage value expressed by PERC_AGENTS
 PERC_AGENTS = 0.3 # percentage of agent vehicles among the vehicles traversing paths of interest
-TIME_HORIZON = 3 # time horizon for the crowdsourcing algorithm, keep around 5
+TIME_HORIZON = 5 # time horizon for the crowdsourcing algorithm, keep around 5
 SAVE_FILE = False # put to True if files for algorithm evaluation need to be saved
 
 USE_PARAM_GUI = True # put to True if you want to use the parameter GUI
@@ -65,15 +65,15 @@ if RUN_SIMULATION:
     noxem_std = []
     x_axis = []
     maxrange = 21 if NUMBER_OF_CARS>=20 else 11 # this works under the assumption that simulations will include no less than 10 cars
-    # numberofsim = range(1,maxrange) if not HIL else [1]
-    numberofsim = [1] # decomment this and comment the previous line if only one simulation must be run
+    numberofsim = range(0,maxrange) if not HIL else [1]
+    # numberofsim = [1] # decomment this and comment the previous line if only one simulation must be run
     mapdata = MapData(SCENARIO) # load mapdata
     if len(numberofsim)<2: # run a single simulation
         i = 0
         j = 0
         if not USE_NUM_AGENTS:
             NUM_AGENTS = PERC_AGENTS*NUMBER_OF_CARS
-        retval,agents,arrived,sta,ssa,fa,atd,ftd = single_sim(NUMBER_OF_CARS,1.0,True,TIME_HORIZON,0.05,True,True,12,PERC_AGENTS,mapdata,USE_NUM_AGENTS,NUM_AGENTS,NUM_ALGS=NUM_ALGS,ONLINE=False,CONSIDER_WORKS=True)
+        retval,agents,arrived = single_sim(NUMBER_OF_CARS,1.0,True,TIME_HORIZON,0.05,True,True,12,PERC_AGENTS,mapdata,USE_NUM_AGENTS,NUM_AGENTS,NUM_ALGS=NUM_ALGS,ONLINE=False,CONSIDER_WORKS=True)
         # prepare data structures for file saving
         vehicle_speeds = []
         vehicle_fuelconsumptions = []
@@ -173,12 +173,6 @@ if RUN_SIMULATION:
             np.save(IMG_FOLDER+"run"+str(i)+"_"+str(j)+"_"+str(NUMBER_OF_CARS)+'cars_'+str(TIME_HORIZON)+'hor_'+str(NUM_AGENTS)+'_agents_foespmx.ny',foes_pmxemissions)
             np.save(IMG_FOLDER+"run"+str(i)+"_"+str(j)+"_"+str(NUMBER_OF_CARS)+'cars_'+str(TIME_HORIZON)+'hor_'+str(NUM_AGENTS)+'_agents_foeshc.ny',foes_hcemissions)
             np.save(IMG_FOLDER+"run"+str(i)+"_"+str(j)+"_"+str(NUMBER_OF_CARS)+'cars_'+str(TIME_HORIZON)+'hor_'+str(NUM_AGENTS)+'_agents_foesnox.ny',foes_noxemissions)
-            np.save(IMG_FOLDER+"run"+str(i)+"_"+str(j)+"_"+str(NUMBER_OF_CARS)+'cars_'+str(TIME_HORIZON)+'hor_'+str(NUM_AGENTS)+'_agents_timedatafoesco2.ny',ftd['co2'])
-            np.save(IMG_FOLDER+"run"+str(i)+"_"+str(j)+"_"+str(NUMBER_OF_CARS)+'cars_'+str(TIME_HORIZON)+'hor_'+str(NUM_AGENTS)+'_agents_timedatafoesnoise.ny',ftd['noise'])
-            np.save(IMG_FOLDER+"run"+str(i)+"_"+str(j)+"_"+str(NUMBER_OF_CARS)+'cars_'+str(TIME_HORIZON)+'hor_'+str(NUM_AGENTS)+'_agents_timedatafoesfuel.ny',ftd['fuel'])
-            np.save(IMG_FOLDER+"run"+str(i)+"_"+str(j)+"_"+str(NUMBER_OF_CARS)+'cars_'+str(TIME_HORIZON)+'hor_'+str(NUM_AGENTS)+'_agents_timedataagentco2.ny',atd['co2'])
-            np.save(IMG_FOLDER+"run"+str(i)+"_"+str(j)+"_"+str(NUMBER_OF_CARS)+'cars_'+str(TIME_HORIZON)+'hor_'+str(NUM_AGENTS)+'_agents_timedataagentnoise.ny',atd['noise'])
-            np.save(IMG_FOLDER+"run"+str(i)+"_"+str(j)+"_"+str(NUMBER_OF_CARS)+'cars_'+str(TIME_HORIZON)+'hor_'+str(NUM_AGENTS)+'_agents_timedataagentfuel.ny',atd['fuel'])
         
         sp_avg = np.mean(vehicle_speeds)
         fuel_avg = np.mean(vehicle_fuelconsumptions)
@@ -224,17 +218,11 @@ if RUN_SIMULATION:
         x_axis.append(NUM_AGENTS)
         print('SPAWNED AGENTS || ARRIVED AGENTS')
         print(str(agents)+' || '+str(len(arrived)))
-        print('SPEED TIME AVERAGE || SPEED SPACE AVERAGE || FLOW AVERAGE')
-        print(str(sta)+' || '+str(ssa)+' || '+str(fa))
     else: 
         repeatsim = 3 if not USE_PARAM_GUI else int(params_s[1])
         start = 0
         step_perc = 1/max(numberofsim)
         for i in numberofsim:
-            # if i==14:
-            #     start = 1
-            # else:
-            #     start = 0
             run_speed = []
             run_fuel = []
             run_waiting = []
@@ -250,9 +238,7 @@ if RUN_SIMULATION:
             # start simulations and repeat them
             for j in range(start,repeatsim):
                 ssize = 0.05
-                # if i == 0:
-                #     ssize = 1.0
-                retval,agents,arrived,sta,ssa,fa,atd,ftd = single_sim(NUMBER_OF_CARS,1.0,True,TIME_HORIZON,ssize,True,True,12,step_perc*(i),mapdata,False,i,NUM_ALGS=NUM_ALGS,ONLINE=False,CONSIDER_WORKS=False)
+                retval,agents,arrived = single_sim(NUMBER_OF_CARS,1.0,False,TIME_HORIZON,ssize,True,True,12,step_perc*(i),mapdata,False,i,NUM_ALGS=NUM_ALGS,ONLINE=False,CONSIDER_WORKS=False)
                 # retval,agents,arrived,sta,ssa,fa,atd,ftd = single_sim(NUMBER_OF_CARS,1.0,False,i,ssize,True,True,12,1,mapdata,False,i,NUM_ALGS=NUM_ALGS,ONLINE=True,CONSIDER_WORKS=False) # decomment this and comment the previous line for time analysis
                 # prepare data structures for file saving
                 vehicle_speeds = []
@@ -362,12 +348,6 @@ if RUN_SIMULATION:
                     np.save(IMG_FOLDER+"run"+str(i)+"_"+str(j)+"_"+str(NUMBER_OF_CARS)+'cars_'+str(TIME_HORIZON)+'hor_'+str(NUM_AGENTS)+'_agents_foespmx.ny',foes_pmxemissions)
                     np.save(IMG_FOLDER+"run"+str(i)+"_"+str(j)+"_"+str(NUMBER_OF_CARS)+'cars_'+str(TIME_HORIZON)+'hor_'+str(NUM_AGENTS)+'_agents_foeshc.ny',foes_hcemissions)
                     np.save(IMG_FOLDER+"run"+str(i)+"_"+str(j)+"_"+str(NUMBER_OF_CARS)+'cars_'+str(TIME_HORIZON)+'hor_'+str(NUM_AGENTS)+'_agents_foesnox.ny',foes_noxemissions)
-                    np.save(IMG_FOLDER+"run"+str(i)+"_"+str(j)+"_"+str(NUMBER_OF_CARS)+'cars_'+str(TIME_HORIZON)+'hor_'+str(NUM_AGENTS)+'_agents_timedatafoesco2.ny',ftd['co2'])
-                    np.save(IMG_FOLDER+"run"+str(i)+"_"+str(j)+"_"+str(NUMBER_OF_CARS)+'cars_'+str(TIME_HORIZON)+'hor_'+str(NUM_AGENTS)+'_agents_timedatafoesnoise.ny',ftd['noise'])
-                    np.save(IMG_FOLDER+"run"+str(i)+"_"+str(j)+"_"+str(NUMBER_OF_CARS)+'cars_'+str(TIME_HORIZON)+'hor_'+str(NUM_AGENTS)+'_agents_timedatafoesfuel.ny',ftd['fuel'])
-                    np.save(IMG_FOLDER+"run"+str(i)+"_"+str(j)+"_"+str(NUMBER_OF_CARS)+'cars_'+str(TIME_HORIZON)+'hor_'+str(NUM_AGENTS)+'_agents_timedataagentco2.ny',atd['co2'])
-                    np.save(IMG_FOLDER+"run"+str(i)+"_"+str(j)+"_"+str(NUMBER_OF_CARS)+'cars_'+str(TIME_HORIZON)+'hor_'+str(NUM_AGENTS)+'_agents_timedataagentnoise.ny',atd['noise'])
-                    np.save(IMG_FOLDER+"run"+str(i)+"_"+str(j)+"_"+str(NUMBER_OF_CARS)+'cars_'+str(TIME_HORIZON)+'hor_'+str(NUM_AGENTS)+'_agents_timedataagentfuel.ny',atd['fuel'])
         
             sp_avg = np.mean(run_speed)
             fuel_avg = np.mean(run_fuel)
@@ -413,5 +393,3 @@ if RUN_SIMULATION:
             x_axis.append(step_perc*(i)*NUMBER_OF_CARS)
             print('SPAWNED AGENTS || ARRIVED AGENTS')
             print(str(agents)+' || '+str(len(arrived)))
-            print('SPEED TIME AVERAGE || SPEED SPACE AVERAGE || FLOW AVERAGE')
-            print(str(sta)+' || '+str(ssa)+' || '+str(fa))

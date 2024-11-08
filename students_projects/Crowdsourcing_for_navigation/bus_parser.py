@@ -40,7 +40,7 @@ def bus_parser(starttime,scenario):
             eels = e.split(' ')
             currentline = eels[0]+" "+eels[1]
             buslines[currentline] = {}
-        elif stringels[0].__contains__('Validità'):
+        elif stringels[0].__contains__('Validit'):
             valindexes.clear()
             for i in range(len(stringels)):
                 if stringels[i].__contains__(code):

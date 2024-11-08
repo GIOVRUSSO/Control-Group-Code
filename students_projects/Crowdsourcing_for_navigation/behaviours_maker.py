@@ -129,7 +129,7 @@ def index2path(j,target_edge,e,mapdata,works=None):
                 if ed in testext:
                     needforworks = True
                     break
-            if needforworks:
+            if needforworks: # check if avoiding works is actually helpful
                 dpathlen = calculate_pathlen(testext,works,mapdata)
                 avoiding_path = build_path(mapdata,e.getID(),target_edge,'e_dijkstra',forbidnode=works)
                 dwpathlen = calculate_pathlen(avoiding_path,works,mapdata)
