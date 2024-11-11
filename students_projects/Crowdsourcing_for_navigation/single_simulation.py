@@ -374,7 +374,7 @@ def single_sim(NUM_VEHICLES, PERC_UNI_CARS, SHOW_GUI, T_HORIZON, STEP_SIZE, INCL
                                 prev_signalled_works = len(signalled_works)
                               
                         if len(vn)>2: # there is more than 1 valid neighbour
-                            r = compute_reward(ss,mapdata,works,vehs[vehicle],paths_db,agents)
+                            r = compute_reward(ss,mapdata,signalled_works,vehs[vehicle],paths_db,agents)
                             if colorreward:
                                 colorMap(r,mapdata,rewards4colors,ss_edges)
                                 for stre in edgelist:
