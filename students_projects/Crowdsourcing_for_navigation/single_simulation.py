@@ -53,14 +53,12 @@ def state_space(n_node, tHor,mapdata,target):
 
 # method for creating the reward array for each of the edges of the reduced state space, inputs are:
 # - list of edges belonging to the reduced state space,
-# - data structure keeping track of which vehicles traversed which roads (THIS WILL PROBABLY BE REMOVED, IT DEPENDS ON THE COST FUNCTION),
 # - data structure containing all static data related to the map,
 # - target edge of the vehicle calling this method,
 # - list of known wip areas,
 # - instance of VehicleData related to the car calling this function,
-# - data structure containing all paths (PROBABLY WILL BE DELETED, IT DEPENDS ON THE COST FUNCTION),
-# - data structure containing all agents (PROBABLY WILL BE DELETED, IT DEPENDS ON THE COST FUNCTION)
-# FOR UNISA MAP, COST FUNCTION MUST INCLUDE RELEVANCE AS 0.5 AND DISTANCE AS 100
+# - data structure containing all paths,
+# - data structure containing all agents
 def compute_reward(ss,mapdata,works,vehicle,paths,agents):
     worksweight = 2000 # weight to assign to wip areas
     edgelist = mapdata.edgelist
