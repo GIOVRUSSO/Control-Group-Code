@@ -21,7 +21,7 @@ After cloning the project, download the follow Python libraries using pip
   tk
   xlrd == 1.2.0
 ```
-
+Also, download and install the most recent version of SUMO.
 According to the desired use of the software, different scripts must be run or different lines of code must be decommented.
 
 WARNING: Before running any scenario, make sure to create the files for offline paths and behaviours. In order to do so, run the "simulation_runner.py" script by setting the following parameters in the script
@@ -40,7 +40,6 @@ If you do not plan to use any offline-built data, make sure to comment the "impo
 As of now, the scripts have been designed to load starting and ending edges for vehicles from text files inside their respective "ScenarioData" folders. If for any reason they need to be changed, modify the following files accordingly:
 - "config.txt" includes data for starting and ending edges, so change edges labeled as "start" to modify spawning edges for vehicles, change edges labeled as "target" to modify target edges for vehicles (WARNING: changing the destinations will mess with offline-built behaviours, so make sure to re-build them if you want to change the destinations);
 - "works.txt" includes a list of edges labeled as "work-in-progress areas" (where vehicles will slow down), modify it as you wish to include new or remove old "wip areas" (this will possibly mess with the algorithm performances, so be careful);
-- "checkpoints.txt" includes a list of checkpoints where specific measurements occur, change as you wish (in the same amount as the destinations in the "config.txt" file)(this will probably be removed as it has no use for now);
 - "roundabouts.txt" includes a list of edges inside the road network defining which of them belong to roundabouts or are roundabout exits, changing this will mess with the driving directions given by the vocal assistant so it is highly recommended not to change anything (this file can be dynamically built by the "mapdata" module if desired).
 
 ### Run simulated scenario
