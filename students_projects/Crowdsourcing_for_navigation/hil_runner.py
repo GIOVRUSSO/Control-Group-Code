@@ -18,7 +18,6 @@ from intercar_comm import tweet
 from spawners import *
 from colors import *
 from text2speech_handler import playAudio
-from node_file_parser import parse_file_for_checkpoints    
 from traci import TraCIException
 from single_simulation import compute_reward
 from single_simulation import randomSignal
@@ -184,7 +183,6 @@ def single_sim(NUM_VEHICLES, PERC_UNI_CARS, SHOW_GUI, T_HORIZON, STEP_SIZE, INCL
     targets = mapdata.targets
     edgelist = mapdata.edgelist
     destinations = mapdata.destinations
-    checkpoints = parse_file_for_checkpoints(str(SCENARIO)+'ScenarioData/checkpoints.txt')
     while msg is None: # GPS signal has yet to be received
         pass
     print('message read')
@@ -392,10 +390,6 @@ def single_sim(NUM_VEHICLES, PERC_UNI_CARS, SHOW_GUI, T_HORIZON, STEP_SIZE, INCL
                     if vehicle == agent_car and not thread.is_alive:
                         print('thread is not alive')
                         traci.vehicle.setSpeed(agent_car,-1)
-                    if roadid in checkpoints: # checkpoints data update (THIS WILL PROBABLY BE DELETED AS IT HAS NO USE)
-                        if secondcounter%secondtot==0:
-                            checkpoints[roadid]['speed'].append(vehicle_speed)
-                            checkpoints[roadid]['flow'] += 1
                     # if vehicle is an agent and it enters a new edge/crossing, launch the decision making step
                     if vehicle.__contains__('agent') and (vehicle not in prev_edge or vehicle in prev_edge and prev_edge[vehicle]!=roadid) and (vehicle in next_edge and next_edge[vehicle]!=end_edge[vehicle] or vehicle not in next_edge) and len(roadid)>2:
                         # currentid = roadid if not roadid.__contains__(':') else next_edge[vehicle] # identify id of edge on which make the evaluations
