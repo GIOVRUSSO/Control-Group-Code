@@ -29,7 +29,7 @@ def KL_div(p, q):
     return KL_d
 
 
-def compute_cost(n_x_1, n_x_2, flag_obs, obs_size):
+def compute_cost(x_axis, obs_points, goal_points, n_x_1, n_x_2, flag_obs, obs_size):
     # Cost definition
     # Cost for the obstacles
     cost_obs_term = np.zeros(n_x_1 * n_x_2)
@@ -104,6 +104,7 @@ N = 1   # Number of robots
 r = robotarium.Robotarium(number_of_robots=N, show_figure=True, initial_conditions=np.array(np.mat('1.2; 0.6; 0')),
                           sim_in_real_time=True)
 
+
 # Create single integrator position controller
 single_integrator_position_controller = create_si_position_controller()
 
@@ -138,7 +139,7 @@ if is_obs:
 
 
 # Primitives definition
-N_policies = 4      # Number of primitives
+N_primitives = 4      # Number of primitives
 # Mean values of the input given by the primitives:
 control_input = np.array([[max_u, 0],       # go right
                           [-max_u, 0],      # go left
@@ -146,9 +147,9 @@ control_input = np.array([[max_u, 0],       # go right
                           [0, -max_u]])     # go down
 cov = np.array([0.005, 0.005, 0.005, 0.005])    # Covariance of each primitive
 
-pi_u = np.zeros((N_policies, n_u_bins, n_u_bins))   # Initialize primitives
+pi_u = np.zeros((N_primitives, n_u_bins, n_u_bins))   # Initialize primitives
 
-for i in range(N_policies):
+for i in range(N_primitives):
     pi_u[i] = stats.multivariate_normal.pdf(
         np.array([[u_axis[i1], u_axis[i2]] for i1 in range(n_u_bins) for i2 in range(n_u_bins)]),
         control_input[i], np.array([[cov[i], 0], [0, cov[i]]])).reshape(n_u_bins, n_u_bins)
@@ -157,7 +158,7 @@ for i in range(N_policies):
 
 
 # Compute the cost
-tot_cost = compute_cost(n_x_bins1, n_x_bins2, is_obs, obs_marker_size_m)
+tot_cost = compute_cost(x_axis, obs_points, goal_points, n_x_bins1, n_x_bins2, is_obs, obs_marker_size_m)
 
 
 # Simulation
@@ -183,11 +184,11 @@ while (np.size(at_pose(np.vstack((x_si, x[2, :])), goal_points, position_error=0
     q_u = q_u / np.sum(q_u)
 
     # Define variables and constraints of the optimization problem
-    w = cp.Variable((1, N_policies))    # Weights
+    w = cp.Variable((1, N_primitives))    # Weights
     constraints = [w >= 0, cp.sum(w) == 1]
 
     KL = []     # Initialize KL divergence
-    cost_el = np.zeros((N_policies, n_u_bins, n_u_bins))     # Initialize cost for each policy and value of u
+    cost_el = np.zeros((N_primitives, n_u_bins, n_u_bins))     # Initialize cost for each policy and value of u
 
     # For each value of u
     for z1 in range(n_u_bins):
@@ -210,34 +211,34 @@ while (np.size(at_pose(np.vstack((x_si, x[2, :])), goal_points, position_error=0
 
             # Define p_u as the weighted sum of the primitives
             p_u_comb = 0
-            for i in range(N_policies):
+            for i in range(N_primitives):
                 p_u_comb = p_u_comb + w[0, i] * pi_u[i, z1, z2]
 
-            # KL divergence between p_u and q_u
+            # KL divergence between pi_u and q_u
             KL = np.append(KL, cp.sum(cp.rel_entr(p_u_comb, q_u[z1, z2])))
 
             cost_x = np.sum(np.multiply(p_x, tot_cost))
 
-            for i in range(N_policies):
+            for i in range(N_primitives):
                 cost_el[i, z1, z2] = pi_u[i, z1, z2] * (cost_x + KL_div(p_x, q_x))
 
     cost = 0
-    for i in range(N_policies):
+    for i in range(N_primitives):
         cost = cost + w[0, i] * np.sum(cost_el[i])
 
     L = np.sum(KL) + cost  # sum KL over u
 
-    # Find the optimal weights in this step t
+    # Find the optimal weights at this step k
     objective = cp.Minimize(L)
     prob = cp.Problem(objective, constraints)
     # Limit the max iterations to reduce computational time
     result = prob.solve(solver=cp.SCS, verbose=False, max_iters=1000)
 
-    if any(w.value.reshape(N_policies) < 0) | any(w.value.reshape(N_policies) > 1):
+    if any(w.value.reshape(N_primitives) < 0) | any(w.value.reshape(N_primitives) > 1):
         w.value = np.clip(w.value, 0, 1)  # Clip for safety
 
     p_comb = 0  # Initialize optimal policy
-    for i in range(N_policies):
+    for i in range(N_primitives):
         p_comb = p_comb + w.value[0, i] * pi_u[i]  # Linear combination of the primitives with the optimal weights
     p_comb = p_comb / np.sum(p_comb)
     # Sample from the optimal policy
