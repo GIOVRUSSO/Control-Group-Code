@@ -1,0 +1,12 @@
+# Neo-FREE: Policy Composition Through Thousand Brains And Free Energy Optimization
+
+This repository contains the Python code developed for the proceeding ***Neo-FREE: Policy Composition Through Thousand Brains And Free Energy Optimization***.
+The application involves the navigation of a unicycle robot from the Robotarium [[1]](#1) in an environment with obstacles. Specifically:
+- The folder *simulations* contains the code for the simulated environment;
+- The folder *real_experiment* contains the code developed for the real-hardware simulation, which can be reproduced by uploading on the Robotarium webpage.
+
+
+
+## References
+<a id="1">[1]</a> 
+S. Wilson et al., "The Robotarium: Globally Impactful Opportunities, Challenges, and Lessons Learned in Remote-Access, Distributed Control of Multirobot Systems," in IEEE Control Systems Magazine, vol. 40, no. 1, pp. 26-44, Feb. 2020
