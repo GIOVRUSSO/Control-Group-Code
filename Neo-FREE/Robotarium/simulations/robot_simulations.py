@@ -31,7 +31,7 @@ def KL_div(p, q):
     return KL_d
 
 
-def compute_cost(n_x_1, n_x_2, flag_obs, obs_size):
+def compute_cost(x_axis, obs_points, goal_points, n_x_1, n_x_2, flag_obs, obs_size):
     # Cost definition
     # Cost for the obstacles
     cost_obs_term = np.zeros(n_x_1 * n_x_2)
@@ -58,8 +58,8 @@ def compute_cost(n_x_1, n_x_2, flag_obs, obs_size):
                                            * n_x_bins2)).flatten()
         dist_vec_y = np.array([[np.abs(x_axis[1][i2] - boundary_points[b_ind + 2]) for i2 in range(n_x_2)]]
                               * n_x_1).flatten()
-        cost_b_term = cost_b_term + np.exp(-1 / (2 * var_b) * dist_vec_x ** 2) + np.exp(
-            -1 / (2 * var_b) * dist_vec_y ** 2)
+        cost_b_term = (cost_b_term + np.exp(-1 / (2 * var_b) * dist_vec_x ** 2) +
+                       np.exp(-1 / (2 * var_b) * dist_vec_y ** 2))
 
     # Total cost
     total_cost = 300 * cost_obs_term + 0.5 * cost_g + 30 * cost_b_term
@@ -129,7 +129,7 @@ for i in range(N_primitives):
 
 
 # Compute the cost
-tot_cost = compute_cost(n_x_bins1, n_x_bins2, is_obs, obs_marker_size_m)
+tot_cost = compute_cost(x_axis, obs_points, goal_points, n_x_bins1, n_x_bins2, is_obs, obs_marker_size_m)
 
 
 # Cost Heatmap
