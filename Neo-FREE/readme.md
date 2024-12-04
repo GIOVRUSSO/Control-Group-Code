@@ -5,6 +5,15 @@ The application involves the navigation of a unicycle robot from the Robotarium 
 - The folder *simulations* contains the code for the simulated environment;
 - The folder *real_experiment* contains the code developed for the real-hardware simulation, which can be reproduced by uploading on the Robotarium webpage.
 
+The Python simulator for Robotarium is available at https://github.com/robotarium/robotarium_python_simulator.
+
+The following dependencies are required for the simulations:
+- NumPy (http://www.numpy.org)
+- matplotlib (http://matplotlib.org/index.html)
+- CVXPY (https://www.cvxpy.org)
+- SciPy (https://scipy.org).
+
+
 
 
 ## References
