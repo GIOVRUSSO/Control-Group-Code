@@ -7,8 +7,9 @@ The resulting video of the real-hardware experiment is shown here:
 
 
 
-https://github.com/user-attachments/assets/dedf6564-5ccb-4260-abfe-08cbd07b2178
 
 
-(*Note*: the video does not show the obstacles because of technical issues with the Robotarium projector during the last few weeks.
-It is going to be replaced in the next days and the complete video will be uploaded right after.)
+https://github.com/user-attachments/assets/3e743320-dc65-43fa-a618-dbb6135872bd
+
+
+
