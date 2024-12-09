@@ -4,7 +4,11 @@ This repository contains the Python code developed for the proceeding ***Neo-FRE
 
 The application involves the navigation of a unicycle robot from the Robotarium [[1]](#1) in an environment with obstacles. Specifically:
 - The folder *Robotarium/simulations* contains the code for the simulated environment;
-- The folder *Robotarium/real_experiment* contains the code developed for the real-hardware simulation, which can be reproduced by uploading on the Robotarium webpage, and the resulting video.
+- The folder *Robotarium/real_experiment* contains the code developed for the real-hardware simulation, which can be reproduced by uploading on the Robotarium webpage. The resulting video is shown here:
+
+  https://github.com/user-attachments/assets/cb9e6789-ee19-4578-86c9-79c5fd861c47
+
+
 
 The Python simulator for Robotarium is available at https://github.com/robotarium/robotarium_python_simulator.
 
