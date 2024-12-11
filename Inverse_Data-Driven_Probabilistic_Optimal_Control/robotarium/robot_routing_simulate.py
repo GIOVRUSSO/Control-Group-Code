@@ -1,4 +1,3 @@
-
 import rps.robotarium as robotarium
 from rps.utilities.transformations import *
 from rps.utilities.barrier_certificates import *
@@ -10,16 +9,17 @@ import numpy as np
 import scipy.stats as st
 import time
 
-weights = np.load(r'D:\Network Security\KL Control\robotarium_python_simulator\rps\examples\go_to_point\Weights.npy')
+# weights = np.load(r'D:\Network Security\KL Control\robotarium_python_simulator\rps\examples\go_to_point\Weights.npy')
 control_space_size = 3
 
-U_space_1 = np.array(np.linspace((-0.5),(0.5),control_space_size))
-U_space_2 = np.array(np.linspace((-0.5),(0.5),control_space_size))
+U_space_1 = np.array(np.linspace((-0.15),(0.15),control_space_size))
+U_space_2 = np.array(np.linspace((-0.15),(0.15),control_space_size))
 
 time_step = 0.033
 
 #weights = np.array([-3.00613544e+01,-1.35285679e+01,-3.16906745e+01,-3.42397218e+01,-1.82064449e+01,-9.78983289e-01,-3.14145396e-01,2.16345019e-01,-1.99320125e+01,3.33850141e-01,1.98431644e-02,-3.61292790e-01])
 #weights = np.array([-13.82806378,-7.37552209,-19.5130216,-16.57098794,-6.44948079,-0.56244083, 0.08046996,-0.72077351,-12.43774902,-0.02072203,0.07882772,0.7128548])
+
 def model_step(x,velocities,time_step):
     poses = np.zeros((2,1))
     
@@ -76,7 +76,30 @@ def multivariate_rbf_kernel(X1, X2, gamma):
     return K
 
 
-def state_cost(state,goal_points,obs_points,weights):
+# def state_cost_w(state,goal_points,obs_points,weights):
+#     v = np.array([0.025, 0.025], dtype=np.float32)
+#     covar = np.diag(v)
+#     #cost = 60*(state[0]-goal_points[0])**2 + 60*(state[1]-goal_points[1])**2 + 200*(np.exp(-(np.abs(state[0]-obs_points[0,0])+np.abs(state[1]-obs_points[1,0]))) + np.exp(-(np.abs(state[0]-obs_points[0,1]) + np.abs(state[1]-obs_points[1,1]))) + np.exp(-(np.abs(state[0]-obs_points[0,2])+np.abs(state[1]-obs_points[1,2])))) #actual cost
+    
+#     #cost = 70*((state[0]-goal_points[0])**2 + (state[1]-goal_points[1])**2) + 100*(my_logpdf(state[:2],obs_points[:2,0],covar) + my_logpdf(state[:2],obs_points[:2,1],covar) + my_logpdf(state[:2],obs_points[:2,2],covar) + my_logpdf(state[:2],obs_points[:2,3],covar) + my_logpdf(state[:2],np.array([-1.7,-1]),covar) + my_logpdf(state[:2],np.array([1.7,1]),covar))
+    
+#     gauss_sum = 0
+    
+#     for i in range(np.size(obs_points,axis=1)):
+#         # gauss_sum += -weights[:,i+1]*my_logpdf(state[:2],obs_points[:2,i],covar)
+#         gauss_sum += -weights[:,i+1]*multivariate_rbf_kernel(state[:2],obs_points[:2,i],20)
+        
+#     cost = -weights[:,0]*((state[0]-goal_points[0])**2 + (state[1]-goal_points[1])**2) + gauss_sum + 10*(np.exp(-0.5*((state[0]-(-1.5))/0.03)**2)/(0.03*np.sqrt(2*np.pi)) 
+#                 + np.exp(-0.5*((state[0]-1.5)/0.03)**2)/(0.03*np.sqrt(2*np.pi)) + np.exp(-0.5*((state[1]-1.0)/0.03)**2)/(0.03*np.sqrt(2*np.pi)) 
+#                 + np.exp(-0.5*((state[1]-(-1.0))/0.03)**2)/(0.03*np.sqrt(2*np.pi)))
+    
+#     #cost = 30*((state[0]-goal_points[0])**2 + (state[1]-goal_points[1])**2) + gauss_sum + 10*(np.exp(-0.5*((state[0]-(-1.5))/0.02)**2)/(0.02*np.sqrt(2*np.pi)) 
+#     #            + np.exp(-0.5*((state[0]-1.5)/0.02)**2)/(0.02*np.sqrt(2*np.pi)) + np.exp(-0.5*((state[1]-1.0)/0.02)**2)/(0.02*np.sqrt(2*np.pi)) 
+#     #            + np.exp(-0.5*((state[1]-(-1.0))/0.02)**2)/(0.02*np.sqrt(2*np.pi)))
+    
+#     return(cost)
+
+def state_cost(state,goal_points,obs_points):
     v = np.array([0.025, 0.025], dtype=np.float32)
     covar = np.diag(v)
     #cost = 60*(state[0]-goal_points[0])**2 + 60*(state[1]-goal_points[1])**2 + 200*(np.exp(-(np.abs(state[0]-obs_points[0,0])+np.abs(state[1]-obs_points[1,0]))) + np.exp(-(np.abs(state[0]-obs_points[0,1]) + np.abs(state[1]-obs_points[1,1]))) + np.exp(-(np.abs(state[0]-obs_points[0,2])+np.abs(state[1]-obs_points[1,2])))) #actual cost
@@ -86,17 +109,16 @@ def state_cost(state,goal_points,obs_points,weights):
     gauss_sum = 0
     
     for i in range(np.size(obs_points,axis=1)):
-        #gauss_sum += -weights[:,i+1]*my_logpdf(state[:2],obs_points[:2,i],covar)
-        gauss_sum += -weights[:,i+1]*multivariate_rbf_kernel(state[:2],obs_points[:2,i],20)
+        gauss_sum += 20*my_logpdf(state[:2],obs_points[:2,i],covar)
+        # gauss_sum += 20*multivariate_rbf_kernel(state[:2],obs_points[:2,i],20)
         
-    cost = -weights[:,0]*((state[0]-goal_points[0])**2 + (state[1]-goal_points[1])**2) + gauss_sum + 10*(np.exp(-0.5*((state[0]-(-1.5))/0.03)**2)/(0.03*np.sqrt(2*np.pi)) 
+    cost = 30*((state[0]-goal_points[0])**2 + (state[1]-goal_points[1])**2) + gauss_sum + 10*(np.exp(-0.5*((state[0]-(-1.5))/0.03)**2)/(0.03*np.sqrt(2*np.pi)) 
                 + np.exp(-0.5*((state[0]-1.5)/0.03)**2)/(0.03*np.sqrt(2*np.pi)) + np.exp(-0.5*((state[1]-1.0)/0.03)**2)/(0.03*np.sqrt(2*np.pi)) 
                 + np.exp(-0.5*((state[1]-(-1.0))/0.03)**2)/(0.03*np.sqrt(2*np.pi)))
     
-    #cost = 30*((state[0]-goal_points[0])**2 + (state[1]-goal_points[1])**2) + gauss_sum + 10*(np.exp(-0.5*((state[0]-(-1.5))/0.02)**2)/(0.02*np.sqrt(2*np.pi)) 
+    # cost = 30*((state[0]-goal_points[0])**2 + (state[1]-goal_points[1])**2) + gauss_sum + 10*(np.exp(-0.5*((state[0]-(-1.5))/0.02)**2)/(0.02*np.sqrt(2*np.pi)) 
     #            + np.exp(-0.5*((state[0]-1.5)/0.02)**2)/(0.02*np.sqrt(2*np.pi)) + np.exp(-0.5*((state[1]-1.0)/0.02)**2)/(0.02*np.sqrt(2*np.pi)) 
     #            + np.exp(-0.5*((state[1]-(-1.0))/0.02)**2)/(0.02*np.sqrt(2*np.pi)))
-    
     return(cost)
 
 def C_Bar(state,goal_points):
@@ -118,7 +140,7 @@ def C_Bar(state,goal_points):
                 
     return(Expected_Cost)
     
-def Control_step(state,U_space_1,U_space_2,goal_points,obs_points,weights):
+def Control_step(state,U_space_1,U_space_2,goal_points,obs_points):
         ###
         target_pf = 1
         time_step = 0.033
@@ -138,7 +160,7 @@ def Control_step(state,U_space_1,U_space_2,goal_points,obs_points,weights):
 
                 cost=0
                 for k in range(N_samples):
-                    cost+=state_cost(next_sample[k,:],goal_points,obs_points,weights)
+                    cost+=state_cost(next_sample[k,:],goal_points,obs_points)
 
                 lb,ub = lb_ub_support(next_state,cov)
                 q_const = q_constant(lb,ub)
@@ -161,7 +183,7 @@ def Control_step(state,U_space_1,U_space_2,goal_points,obs_points,weights):
         return(action)
     
 
-goal_points = np.array(np.mat('-1.4; -0.8; 0'))
+goal_points = np.array(np.mat('-1.4; -0.78; 0'))
 
 obs_points = np.array(np.mat('0 0 0 0 0 -0.8;0 0.2 0.4 0.6 0.8 -0.8;0 0 0 0 0 0'))
 
@@ -170,14 +192,18 @@ obs_points_f = np.array(np.mat('0 0 0 0 0 0.8 0.8 0.8 0.8 0.8 -0.8 -0.8 -0.8 -0.
     
 # Instantiate Robotarium object
 N = 1
-initial_conditions = [np.array(np.mat('1;0.9; 0')),np.array(np.mat('1;-0.8; 0')),np.array(np.mat('-1.4;0.9; 0'))]
+M = 3
+# initial_conditions = [np.array(np.mat('1.4;0.9; 0')),np.array(np.mat('0.2;0.9;0')),np.array(np.mat('1.2;-0.8; 0')),np.array(np.mat('-1.0;0.9; 0'))]
+initial_conditions = [np.array(np.mat('1.0;0.9; 0')),np.array(np.mat('1.0;-0.8; 0')),np.array(np.mat('-1.4;0.9; 0'))]
 #initial_conditions = [np.array(np.mat('-1;0.9; 0'))]
-X_Si = [0]*3
-D_Xi = [0]*3
+X_Si = [0]*M
+D_Xi = [0]*M
+X_SI_Prev= [0]*M
 
-for I in range(3):
+for I in range(M):
     
     X_si = []
+    X_si_prev = []
     D_xi = []
 
     r = robotarium.Robotarium(number_of_robots=N, show_figure=True, initial_conditions=initial_conditions[I], sim_in_real_time=False)
@@ -199,6 +225,7 @@ for I in range(3):
     # define x initially
     x = r.get_poses()
     x_si = uni_to_si_states(x)
+    X_si_prev.append(x_si)
     
     # Plotting Parameters
     CM = np.random.rand(N+10,3) # Random Colors
@@ -241,6 +268,7 @@ for I in range(3):
         x_si = uni_to_si_states(x)
         #print(x_si.shape)
         X_si.append(x_si)
+        X_si_prev.append(x_si)
         
         #Update Plot
         # Update Robot Marker Plotted Visualization
@@ -258,7 +286,7 @@ for I in range(3):
 
         # Create single-integrator control inputs
         #dxi = single_integrator_position_controller(x_si, goal_points[:2][:])
-        dxi = Control_step(x_si,U_space_1,U_space_2,goal_points,obs_points_f,weights)
+        dxi = Control_step(x_si,U_space_1,U_space_2,goal_points,obs_points) 
         D_xi.append(dxi)
         #print(dxi)
 
@@ -275,14 +303,14 @@ for I in range(3):
         
     D_Xi[I] = D_xi
     X_Si[I] = X_si
+    X_SI_Prev[I] = X_si_prev
 
     #Call at end of script to print debug information and for your script to run on the Robotarium server properly
     r.call_at_scripts_end()
     
-#D_Xi = np.array(D_Xi,dtype=o
-#X_Si = np.array(X_Si,dtype=object)
+D_Xi = np.array(D_Xi,dtype=object)
+X_Si = np.array(X_Si,dtype=object)
 
-np.save('State_Data_Simulation.npy',X_Si)
-np.save('Input_Data_Simulation.npy',D_Xi)
-
-   
+np.save('New_State_Data_Simulation.npy',X_Si)
+np.save('New_Input_Data_Simulation.npy',D_Xi)
+np.save('New_State_Data_Simulation_Prev.npy',X_SI_Prev)
