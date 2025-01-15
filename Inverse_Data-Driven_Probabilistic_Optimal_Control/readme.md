@@ -53,7 +53,8 @@ Figure. Top-left: robot trajectories starting from different initial positions (
   
 - Scenario 2: In-silico results
 
-<img width="779" alt="Screenshot 2024-05-10 165445" src="https://github.com/GIOVRUSSO/Control-Group-Code/assets/62793703/eea03072-9a55-4545-b3dd-632d52a4260c">
+![Screenshot 2025-01-15 121703](https://github.com/user-attachments/assets/71f8ab6c-c9bc-421d-94ed-75356dbf5776)
+
 
 Figure. Top-left: cost for the FOC problem. Top-right: robot trajectories when the policy from Algorithm 1 is used (same initial positions and destination of Scenario 1). Bottom panels: cost reconstructed via Algorithm 2 (left) and robot trajectories when Algorithm 1 is used with the estimated cost. Robots start from initial positions that are different from these in the top panel.
 
