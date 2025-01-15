@@ -11,9 +11,9 @@ The optimal weights are computed by solving the minimization problem illustrated
 In order to improve the computational efficiency, the cost function is rewritten, by exploiting the definitions and substituting the first constraint $` p_{\mathbf{u},{k}}\left(\mathbf{u}_{{k}}\mid \mathbf{x}_{{k-1}} \right)  = \sum_{i\in \mathcal{P}}\mathbf{w}_{k}^{(i)} \pi^{({i})}\left(\mathbf{u}_{k}\mid \mathbf{x}_{k-1} \right) `$, as follows:
 ```math
 \begin{split}
-&{D}_{KL} \left( p_{\mathbf{x},{k}} \left(\mathbf{x}_{{k}}\mid \mathbf{x}_{{k-1}}, \mathbf{u}_{{k}} \right)  \,\big\|\,   q_{\mathbf{x},{k}} \left(\mathbf{x}_{{k}}\mid \mathbf{x}_{{k-1}}, \mathbf{u}_{{k}} \right) \right) +\\
+&{D}_{KL} \left( p_{\mathbf{u},{k}}\left(\mathbf{u}_{{k}}\mid \mathbf{x}_{{k-1}} \right)   \,\big\|\,  q_{\mathbf{u},{k}}\left(\mathbf{u}_{{k}}\mid \mathbf{x}_{{k-1}} \right)  \right) +\\
 &\sum_{i \in \mathcal{P}} \mathbf{w}_{k}^{(i)} \mathbb{E}_{\pi^{({i})}\left(\mathbf{u}_{{k}}\mid \mathbf{x}_{{k-1}} \right)} \left[
-    {D}_{KL} \left(p_{{k}}\left(\mathbf{x}_{{k}}, \mathbf{u}_{{k}} \mid \mathbf{x}_{{k-1}} \right) \,\big\|\, q_{{k}}\left(\mathbf{x}_{{k}}, \mathbf{u}_{{k}} \mid \mathbf{x}_{{k-1}} \right)\right)
+    {D}_{KL} \left(p_{\mathbf{x},{k}} \left(\mathbf{x}_{{k}}\mid \mathbf{x}_{{k-1}}, \mathbf{u}_{{k}} \right)  \,\big\|\,   q_{\mathbf{x},{k}} \left(\mathbf{x}_{{k}}\mid \mathbf{x}_{{k-1}}, \mathbf{u}_{{k}} \right) \right)
     + c_{k}^{(u)}\left(\mathbf{U}_{k}\right)
     + \mathbb{E}_{p_{\mathbf{x},{k}} \left(\mathbf{x}_{{k}} \mid \mathbf{x}_{{k-1}}, \mathbf{u}_{{k}} \right)} \left[ c_{k}^{(x)}\left(\mathbf{X}_{k}\right) + l_{k}^{\star}\left(\mathbf{X}_{k-1}\right) \right]
 \right]
