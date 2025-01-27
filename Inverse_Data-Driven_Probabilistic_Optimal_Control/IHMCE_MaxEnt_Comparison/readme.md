@@ -28,9 +28,9 @@ The first part of the code implements the maximum discounted causal Entropy (MDC
 The Second part of the code implements the Algorithm of the article 'Maximum Entropy Inverse Reinforcement Learning' on the discrete case pendulum. We replace the backward pass of the MaxEnt algorithm with value iteration and define the class for value iteration with 0.9 as the discount factor. We define the cost feature set $\textbf{h}(\textbf{x}_{k})$ as defined above. We define the function to calculate the expected feature value of the policy with actual and the policy with estimated cost. To compute the forward pass and obtain expected feature value for estimated. We use the expected feature value of the expert policy and learner policy to optimise the corresponding feature weights using gradient descent.
 
 
-Note: We implemented   
+Note: We implemented the benchmarking algorithms (MaxEnt and IHMCE) as efficiently as possible. 
 $\textbf{Experiment settings:}$
-- Initial learning rate: 1.0, (we use an exponential decay function to update the learning rate after each iteration)
-- Discount factor for soft-value iteration: 0.9
-- Initial weights $\textbf{w}$ are sampled from uniform distribution with support on $[-100,100]$
+- Initial learning rate: 1.0 (we use an exponential decay function to update the learning rate after each iteration)
+- Discount factor for soft-value iteration: 0.99
+- Initial weights $\textbf{w}$ are sampled from a uniform distribution with support on $[-100,100]$ (we conducted 10 different experiment with 10 distinct initial conditions) 
 - Gradient descent stopping threshold:= 0.001
