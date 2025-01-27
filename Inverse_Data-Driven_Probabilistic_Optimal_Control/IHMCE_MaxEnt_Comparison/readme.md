@@ -29,6 +29,7 @@ The Second part of the code implements the Algorithm of the article 'Maximum Ent
 
 
 Note: We implemented the benchmarking algorithms (MaxEnt and IHMCE) as efficiently as possible. 
+
 $\textbf{Experiment settings:}$
 - Initial learning rate: 1.0 (we use an exponential decay function to update the learning rate after each iteration)
 - Discount factor for soft-value iteration: 0.99
