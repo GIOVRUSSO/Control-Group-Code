@@ -30,8 +30,7 @@ The Second part of the code implements the Algorithm of the article 'Maximum Ent
 
 Note: We implemented   
 $\textbf{Experiment settings:}$
-
-- Initial learning rate: 1.0, we use an exponential decay function to update the learning rate after each iteration
+- Initial learning rate: 1.0, (we use an exponential decay function to update the learning rate after each iteration)
 - Discount factor for soft-value iteration: 0.9
-- Initial weights $\textbf{w}$ are sampled from uniform distribution with support on $[-100,100]$.
+- Initial weights $\textbf{w}$ are sampled from uniform distribution with support on $[-100,100]$
 - Gradient descent stopping threshold:= 0.001
