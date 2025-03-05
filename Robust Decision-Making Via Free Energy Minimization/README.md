@@ -17,9 +17,6 @@ The following list of directories can be found in the repository, reproducing th
 ### Results
 We present the simulation and experimental results given in the manuscript.
 
-*Benchmarking Algorithm 2:*
-
-
 *Robotarium:*
 - In-silico results:
 
