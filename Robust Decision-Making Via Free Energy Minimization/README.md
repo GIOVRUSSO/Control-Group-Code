@@ -1,6 +1,6 @@
-# DR-FREE: Installing Robustness In Optimal Decisions Via  Free Energy Minimization
+# Robust Decision-Making Via Free Energy Minimization
 ### Introduction
-This repository collects the supporting code for the manuscript **DR-FREE: Installing Robustness In Optimal Decisions Via  Free Energy Minimization**. The manuscript discusses the challenge of ensuring the robust performance of autonomous agents amidst environmental and training ambiguities. We introduce DR-FREE, an energy-based computational model that embeds robustness directly into decision-making via free energy minimization. By leveraging a distributionally robust extension of the free energy principle, DR-FREE yields policies that are both optimal and resilient against uncertainty, as demonstrated through real rover experiments.
+This repository collects the supporting code for the manuscript **Robust Decision-Making Via Free Energy Minimization**. The manuscript discusses the challenge of ensuring the robust performance of autonomous agents amidst environmental and training ambiguities. We introduce DR-FREE, an energy-based computational model that embeds robustness directly into decision-making via free energy minimization. By leveraging a distributionally robust extension of the free energy principle, DR-FREE yields policies that are both optimal and resilient against uncertainty, as demonstrated through real rover experiments.
 ### Contents
 The following list of directories can be found in the repository, reproducing the simulation and experimental results in the manuscript.
 - Experiments:
