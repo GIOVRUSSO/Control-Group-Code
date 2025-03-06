@@ -32,13 +32,13 @@ The first part of the code implements the DR-FREE algorithm given in the manuscr
 - Belief update:
 The second part of the code uses these data files to estimate the cost of the agent using the belief update algorithm of the manuscript. 
 We define a function that forms the feature vector.  Next, we obtain the *Weights_DR.npy* by solving the convex belief update problem. The figure below shows the placement of the feature points on the Robotarium work area with corresponding weight values.
-![feature_point_grid](https://github.com/user-attachments/assets/6343edfe-0184-40e6-adbe-07ec5cc66e04)
+![feature_point_grid](https://github.com/user-attachments/assets/f749acb2-1d2f-4234-8e71-0b165b21e832)
 We use the weights to formulate the estimated cost and test the effectiveness of the estimated cost by performing the robot routing cost while avoiding obstacles.
 
 ### eta_policy.ipynb
 
 The notebook shows how DR-FREE policy changes as a function of the ambiguity radius $(\eta(x_{k-1},u_{k}))$
-![Screenshot 2025-02-28 105424](https://github.com/user-attachments/assets/28a42fd2-3c4d-4274-be8c-72d1ffd50d38)
+![Screenshot 2025-02-28 105424](https://github.com/user-attachments/assets/68fe5ad0-f0cc-4b1e-b908-3a6b506970bd)
 
 Figure. By increasing the radius of ambiguity $(\eta(x_{k-1},u_{k}))$, the DR-FREE policy (left) flattens to a uniform distribution (right).
 
