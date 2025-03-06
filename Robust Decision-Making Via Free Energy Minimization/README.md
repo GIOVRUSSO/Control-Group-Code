@@ -20,7 +20,7 @@ We present the simulation and experimental results given in the manuscript.
 *Robotarium:*
 - In-silico results:
 
-![Screenshot 2025-02-28 105328](https://github.com/user-attachments/assets/4ceea5eb-768f-494a-b85e-6449ffa043ff)
+![Screenshot 2025-03-06 100737](https://github.com/user-attachments/assets/39d90d82-93d9-4a71-be70-41581d8e6679)
 
 Figure. At every training stage, we compare DR-FREE with a free-energy minimizing agent that, while making optimal decisions, does not account for ambiguity. With identical starting positions across experiments, DR-FREE consistently guides the robot to complete its task, whereas the ambiguity-unaware agent fails.
 
