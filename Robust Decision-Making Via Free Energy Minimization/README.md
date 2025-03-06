@@ -14,17 +14,17 @@ The following list of directories can be found in the repository, reproducing th
 - Assets
   - contains all the plots of the manuscript, the data from the experiments used to generate these plots, and the Robotarium movie. 
 
-### Results
+### Summary of Key Experimental Results
 We present the simulation and experimental results given in the manuscript.
 
 *Robotarium:*
 - In-silico results:
 
-  ![Screenshot 2025-02-28 105328](https://github.com/user-attachments/assets/deea8cb1-bfe5-4427-a46b-b7f25b9a1af4)
+![Screenshot 2025-02-28 105328](https://github.com/user-attachments/assets/4ceea5eb-768f-494a-b85e-6449ffa043ff)
 
 Figure. At every training stage, we compare DR-FREE with a free-energy minimizing agent that, while making optimal decisions, does not account for ambiguity. With identical starting positions across experiments, DR-FREE consistently guides the robot to complete its task, whereas the ambiguity-unaware agent fails.
 
-  ![Screenshot 2025-02-28 140146](https://github.com/user-attachments/assets/41696956-ca99-4943-b0fe-c6c7371c90e8)
+![Screenshot 2025-02-28 140310](https://github.com/user-attachments/assets/60bef038-40c3-4368-b058-5dccbe7e55c5)
 
 Figure. (left panel) The nonconvex state cost for the navigation task. (right panel) Reconstructed cost using the belief updating algorithm.
 
@@ -33,7 +33,8 @@ Figure. (left panel) The nonconvex state cost for the navigation task. (right pa
 The following videos show robotarium robot performing the task:
   - When the control policy is obtained using DR-FREE Algoritm.
 
-https://github.com/user-attachments/assets/41724483-9ade-4a6b-89b8-fd4c7bf963fa
+
+https://github.com/user-attachments/assets/6f488a94-5981-42ad-8888-0a18ce6d943b
 
 
 
