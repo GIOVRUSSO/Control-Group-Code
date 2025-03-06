@@ -13,9 +13,9 @@ The following files are contained in this folder,
 
 The code implements the **Maximum Discounted Causal Entropy (MDCE) Algorithm** from the article *"Infinite Horizon Maximum Causal Entropy Inverse Reinforcement Learning"* in a discrete-state Robotarium environment. The state space is discretized into a **50×50 grid**, and a **soft-value iteration** class is defined using a **0.9 discount factor**. The cost feature set follows the definitions in the manuscript. To evaluate policy performance, the code computes the **expected feature values** for both the actual policy and the policy derived from the estimated cost. The expected feature values for the estimated cost are obtained via **Monte Carlo sampling** with a sample size of **100**. These values are then leveraged to optimize feature weights using **gradient ascent**, refining the learned cost representation.
 
-%<img ![Cost_Heat_Map_IHMCE](https://github.com/user-attachments/assets/8fa6d258-5acc-4381-8d64-7d4fd08e0879)
+# ![Cost_Heat_Map_IHMCE](https://github.com/user-attachments/assets/8fa6d258-5acc-4381-8d64-7d4fd08e0879)
 
-<img src="[image-url](https://github.com/user-attachments/assets/8fa6d258-5acc-4381-8d64-7d4fd08e0879)" alt="Alt Text" width="30" height="20">
+<img src="![Cost_Heat_Map_IHMCE](https://github.com/user-attachments/assets/8fa6d258-5acc-4381-8d64-7d4fd08e0879)" alt="Alt Text" width="30" height="20">
 
 Figure. Cost reconstructed by IHMCE algorithm. 
 
