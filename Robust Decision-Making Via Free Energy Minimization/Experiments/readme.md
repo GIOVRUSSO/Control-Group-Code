@@ -38,7 +38,7 @@ We use the weights to formulate the estimated cost and test the effectiveness of
 ### eta_policy.ipynb
 
 The notebook shows how DR-FREE policy changes as a function of the ambiguity radius $(\eta(x_{k-1},u_{k}))$
-![Screenshot 2025-02-28 105424](https://github.com/user-attachments/assets/68fe5ad0-f0cc-4b1e-b908-3a6b506970bd)
+![Screenshot 2025-03-09 144722](https://github.com/user-attachments/assets/b6fce2fe-0e57-4287-b5cd-5ff86f0419b9)
 
 Figure. By increasing the radius of ambiguity $(\eta(x_{k-1},u_{k}))$, the DR-FREE policy (left) flattens to a uniform distribution (right).
 
