@@ -40,7 +40,7 @@ We use the weights to formulate the estimated cost and test the effectiveness of
 The notebook shows how DR-FREE policy changes as a function of the ambiguity radius $(\eta(x_{k-1},u_{k}))$
 ![Screenshot 2025-03-09 144722](https://github.com/user-attachments/assets/b6fce2fe-0e57-4287-b5cd-5ff86f0419b9)
 
-Figure. By increasing the radius of ambiguity $(\eta(x_{k-1},u_{k}))$, the DR-FREE policy (left) becomes proportional to the generative model $(q^{(u)}_{k})$  and ambiguity radius $(\eta(x_{k-1},u_{k}))$ (right).
+Figure. By increasing the radius of ambiguity $(\eta(x_{k-1},u_{k}))$, the DR-FREE policy (left) becomes proportional to the generative model $(q^{u}_{k})$  and ambiguity radius $(\eta(x_{k-1},u_{k}))$ (right).
 
 ### GP_Model_Training.ipynb
 
